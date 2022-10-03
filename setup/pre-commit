@@ -1,0 +1,22 @@
+#!/bin/bash
+
+find $(git status --porcelain | awk '{print $2}' | paste -s -d' ' -) -size +5M | sed 's|^\./||' | sort -u >.gitignore-largefiles
+
+cat .gitignore-largefiles >>.gitignore
+
+git diff --quiet --exit-code .gitignore
+exit_status=$?
+
+if [ $exit_status -eq 1 ]; then
+   set +e
+   for i in $(cat .gitignore-largefiles); do
+       set +e
+       echo "omitting large file: $i"
+       git rm --cached $i
+   done
+   git add .gitignore
+   # no need to commit explicitly
+fi
+
+rm -f .gitignore-largefiles
+
