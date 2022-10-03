@@ -1,4 +1,4 @@
-# Programming For Biology 2018
+# Programming For Biology 2022
 
 __Instructors__  
 Simon Prochnik  
@@ -9,23 +9,20 @@ Sofia Robb
 ## BioPython  -- Sofia Robb
   - [Lecture](../lectures/biopython.md)
   - [Workshop](../problemsets/biopython_problemset.md)
-## NGS -- Anoja Perera
-  - [Lecture](NGS/CSHL_Sequencing_AP_2019.pdf) 
+## NGS -- Molly Zeller
+  - [Lecture](NGS/) 
   - [Workshop](NGS)
 ## Sequence Homology -- Bill Pearson
-  - [Lecture1](Sequence_homology/cshl_pfb_19a.pdf) 
+  - [Lecture1](Sequence_homology/) 
   - [Workshop1](https://fasta.bioch.virginia.edu/mol_evol/)
-  - [Lecture2](Sequence_homology/cshl_pfb_19a.pdf)
+  - [Lecture2](Sequence_homology/)
   - [Workshop2](https://fasta.bioch.virginia.edu/mol_evol/pfb_python_matrices.html)
 ## Genome Assembly -- Deb Triant
-  - [Lecture](../lectures/tbd.pdf)
+  - [Lecture](../lectures/)
   - [Workshop](GenomeAssembly)
 ## Bioinformatics and Useful Tools -- Simon Prochnik
   - [Lecture](../lectures/tbd)
   - [jupyter notebook lecture notes](lectures/jupyterNotebook.md)
-## STAR RNA Aligner -- Alex Dobin
-  - [Lecture](STAR_RNA_aligner/tbd)
-  - [Workshop](STAR_RNA_aligner)
 ## RNAseq -- Brian Haas
   - [Lecture](RNAseq/tbd)
   - [Workshop](RNAseq) 
@@ -34,8 +31,3 @@ Sofia Robb
 ## GMOD -- Scott Cain
   - [Lecture](GMOD/tbd)
   - [Workshop](GMOD)
-## Protein Function -- Huaiyu Mi
-  - [Lecture](Protein_Function_Annotation/tdb)
-  - [Workshop](Protein_Function_Annotation)
-## Structural Variation -- Tomas Marques
-  - [Lecture](../lectures/tbd)
