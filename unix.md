@@ -147,7 +147,7 @@ ccod/
 The command here is `ls -F`, which produces a listing of files and directories in the current directory (more on that later).  Below its output, the command prompt appears again.
 
 
-Some programs will take a long time to run. After you issue their command names, you won't recover the shell prompt until they're done. You can either launch a new shell (from Terminal's File menu), or run the command in the background by adding an ampersand after the command
+Some programs will take a long time to run. After you issue their command names, you won't recover the shell prompt until they're done. To keep working, you can either launch a new shell (from Terminal's File menu), or run the command in the background by adding an ampersand after the command
 
 ```
 (~) 54% long_running_application &
@@ -162,20 +162,21 @@ Most shells offer command-line editing.  Up until the comment you press \<Enter\
 - _Backspace_: Delete the previous character and back up one.
 - _Left arrow_, right arrow: Move the text insertion point (cursor) one character to the left or right.
 - _control-a (^a)_: Move the cursor to the beginning of the line. (Mnemonic: A is first letter of alphabet)
-- _control-e (^e)_: Move the cursor to the end of the line. Mnemonic: E for the End (^z was already used for interrupt a command).
+- _control-e (^e)_: Move the cursor to the end of the line. Mnemonic: E for the End (^z was already used to interrupt a command).
 - _control-d (^d)_: Delete the character currently under the cursor. D=Delete.
 - _control-k (^k)_: Delete the entire line from the cursor to the end. k=kill.  The line isn't actually deleted, but put into a temporary holding place called the "kill buffer". This is like cutting text
 - _control-y (^y)_: Paste the contents of the kill buffer onto the command-line starting at the cursor.  y=yank. This is like paste.
-- _Up arrow, down arrow_: Move up and down in the command history.  This lets you reissue previous commands, possibly after modifying them.
+- _Up arrow, down arrow_: Move up and down in the command history.  This lets you rerun previous commands, possibly modifying them before you do.
 
 There are also some useful shell commands you can issue:  
 
 - `history` Show all the commands that you have issued recently, nicely numbered.
 - `!<number>` Reissue an old command, based on its number (which you can get from `history`).
-- `!!` Reissue the immediate previous command.
+- `!!` Reissue the last command.
 - `!<partial command string>`: Reissue the previous command that began with the indicated letters.  For example, `!l` (the letter el, not a number 1) would reissue the`ls -F` command from the earlier example.
+- *control-r (^r)*: enter string and search through history for commands that match it.
 
-**bash** offers automatic command completion and spelling correction.  If you type part of a command and then the tab key, it will prompt you with all the possible completions of the command.  For example:
+**zsh** offers automatic command completion and spelling correction.  If you type part of a command and then the tab key, it will prompt you with all the possible completions of the command.  For example:
 
 ```
 (~) 51% fd<tab><tab>
@@ -195,19 +196,21 @@ final_exam_questions.txt  genomics_problem.txt
 genebridge.txt            mapping_run.txt
 ```
 
-There are several more advanced types of wildcard patterns that you can read about in the **tcsh** manual page.  For example, if you want to match files that begin with the characters "f" or "g" and end with ".txt", you can use a range of characters inside square brackets `[f-g]` as part of the wildcard pattern. Here's an example
+There are several more advanced types of wildcard patterns that you can read about in the **tcsh** manual page.  For example, if you want to match files that begin with the characters "f" or "g" and end with ".txt", you can put both characters inside square brackets `[fg]` as part of the wildcard pattern. Here's an example
 
 ```
-(~) 57% ls -F [f-g]*.txt
+(~) 57% ls -F [fg]*.txt
 final_exam_questions.txt  genebridge.txt            genomics_problem.txt
 ```
+
+You can also search for a range of characters e.g. `[a-e]` or `[1-5]`.
 
 #### Home Sweet Home
 
 
-When you first log in, you'll be placed in a part of the system that is your personal directory, called the _home directory_.  You are free to do with this area what you will: in particular you can create and delete files and other directories.  In general, you cannot create files elsewhere in the system.
+When you first log in, you'll be in your personal directory (or folder), called the _home directory_.  You are free to do with this area what you will: in particular you can create and delete files and other directories.  In general, you cannot create files elsewhere in the system.
 
-Your home directory lives somewhere in the filesystem.  On our iMacs, it is a directory with the same name as your login name, located in `/Users`.  The full directory path is therefore `/Users/username`.  Since this is a pain to write, the shell allows you to abbreviate it as `~username` (where "username" is your user name), or simply as `~`.  The weird character (called "tilde" or "twiddle") is usually hidden at the upper left corner of your keyboard.
+Your home directory lives somewhere in the filesystem.  On our iMacs, it is a directory with the same name as your login name, located inside the directory `/Users`.  The full directory path is therefore `/Users/username`.  Since this is a pain to write, the shell allows you to abbreviate it as `~username` (where "username" is your user name), or simply as `~`.  The weird character (called "tilde" or "twiddle") is hard to find, but usually at the upper left corner of your keyboard.
 
 To see what is in your home directory, issue the command `ls -F`:
 
@@ -227,10 +230,10 @@ In addition to the files and directories shown with `ls -F`, there may be one or
 ../               .fetchhost        .netscape/        News/
 .Xauthority       .fvwmrc           .xinitrc*         nsmail/
 .Xdefaults        .history          .xsession@        public_html/
-.bash_profile     .less             .xsession-errors
-.bashrc           .lessrc           INBOX
+.zprofile         .less             .xsession-errors
+.zshrc            .lessrc           INBOX
 ```
-> Whoa!  There's a lot of hidden stuff there.  But don't go deleting dot files.  Many of them are essential configuration files for commands and other programs.  For example, the `.profile` file contains configuration information for the **bash** shell.  You can peek into it and see all of **bash**'s many options.  You can edit it (when you know what you're doing) in order to change things like the command prompt and command search path.
+> Whoa!  There's a lot of hidden stuff there.  But don't go deleting dot files.  Many of them are essential configuration files for commands and other programs.  For example, the `.zprofile` file contains configuration information for the **zsh** shell.  You can peek into it and see all of **zsh**'s many options.  You can edit it (when you know what you're doing) in order to change things like the command prompt and command search path.
 
 
 #### Getting Around
@@ -292,10 +295,10 @@ If you get lost, the `pwd` command prints out the full path to the current direc
 #### Essential Unix Commands
 
 
-With the exception of a few commands that are built directly into the shell, all Unix commands are standalone executable programs.  When you type the name of a command, the shell will search through all the directories listed in the PATH environment variable for an executable of the same name.  If found, the shell will execute the command. Otherwise, it will give a "command not found" error.
+With the exception of a few commands that are built directly into the shell (e.g. `history`, `for`, `if`), all Unix commands are actually executable programs.  When you type the name of a command, the shell will search through all the directories listed in the PATH environment variable for an executable of the same name.  If found, the shell will execute the command. Otherwise, it will give a "command not found" error.
 
 
-Most commands live in `/bin`, `/usr/bin`, or `/usr/local/bin`.
+Most commands live in `/bin`, `/sbin`, `/usr/bin`, `/usr/sbin/` or `/usr/local/bin`.
 
 #### Getting Information About Commands
 
@@ -349,7 +352,7 @@ The `wc` (word count) program is an example of a command that recognizes both lo
      23     941 /var/log/messages
 ```
 
-You can cluster short switches by concatenating them together, as shown in this example:
+You can cluster one-character switches by concatenating them together, as shown in this example:
 
 ```
 (~) 104% wc -cl /var/log/messages
@@ -360,7 +363,7 @@ Many commands will give a brief usage summary when you call them with the `-h` o
 
 #### Spaces and Funny Characters
 
-The shell uses whitespace (spaces, tabs, and other non-printing characters) to separate arguments.  If you want to embed whitespace in an argument, put single quotes around it.  For example:
+The shell uses spaces to separate arguments.  If you want to embed a space (see below for other whitespace or non-printing characters like a tab or newline etc) in an argument, put single quotes around it.  For example:
 
 ```
 mail -s 'An important message' 'Bob Ghost <bob@ghost.org>'
@@ -371,13 +374,13 @@ This will send an e-mail to the fictitious person Bob Ghost.  The `-s` switch ta
 Certain special non-printing characters have _escape codes_ associated with them:
 
 
-| Escape Code | Description                              |
-| ----------- | ---------------------------------------- |
-| \\n         | new line character                       |
-| \\t         | tab character                            |
-| \\r         | carriage return character                |
-| \\a         | bell character (ding! ding!)             |
-| \\nnn       | the character whose ASCII code is **nnn** |
+| Escape Code | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| \\n         | new line character                                           |
+| \\t         | tab character                                                |
+| \\r         | carriage return character                                    |
+| \\a         | bell character (ding! ding!)                                 |
+| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A' |
 
 
 #### Useful Commands
@@ -398,35 +401,35 @@ Here are some commands that are used extremely frequently.  Use `man` to learn m
 | `chmod` | Change the permissions of a file or directory. |
 
 
-| Command           | Description                              |
-| ----------------- | ---------------------------------------- |
+| Command           | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
 | `cat`             | Concatenate program.  Can be used to concatenate multiple files together into a single file, or, much more frequently, to view the contents of a file or files in the terminal. |
 | `echo`            | print a copy of some text to the screen. E.g. `echo 'Hello World!'` |
 | `more`            | Scroll through a file page by page.  Very useful when viewing large files.  Works even with files that are too big to be opened by a text editor. |
-| `less`            | A version of `more` with more features.  |
+| `less`            | A version of `more` with more features.                      |
 | `head`            | View the first few lines of a file.  You can control how many lines to view. |
 | `tail`            | View the end of a file.  You can control how many lines to view.  You can also use `tail -f` to view a file that you are writing to. |
-| `wc`              | Count words, lines and/or characters in one or more files. |
+| `wc`              | Count words, lines and/or characters in one or more files.   |
 | `tr`              | Substitute one character for another.  Also useful for deleting characters. |
-| `sort`            | Sort the lines in a file alphabetically or numerically. |
-| `uniq`            | Remove duplicated lines in a file.       |
-| `cut`             | Remove columns from each line of a file or files. |
-| `fold`            | Wrap each input line to fit in a specified width. |
+| `sort`            | Sort the lines in a file alphabetically or numerically.      |
+| `uniq`            | Remove duplicated lines in a file.                           |
+| `cut`             | Remove columns from each line of a file or files.            |
+| `fold`            | Wrap each input line to fit in a specified width.            |
 | `grep`            | Filter a file for lines matching a specified pattern.  Can also be reversed to print out lines that don't match the specified pattern. |
-| `gzip` (`gunzip`) | Compress (uncompress) a file.            |
+| `gzip` (`gunzip`) | Compress (uncompress) a file.                                |
 | `tar`             | Archive or unarchive an entire directory into a single file. |
-| `emacs`           | Run the Emacs text editor (good for experts). |
-| `vi`              | Run the vi text editor (better for experts). |
+| `emacs`           | Run the Emacs text editor (good for experts).                |
+| `vi`              | Run the vi text editor (confusing even for experts).         |
 
 
 #### Networking
 
-| Command                | Description                              |
-| ---------------------- | ---------------------------------------- |
-| `ssh`                  | A secure (encrypted) way to log into machines. |
+| Command                | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| `ssh`                  | A secure (encrypted) way to log into machines.               |
 | `scp`                  | A secure way to copy (cp) files to and from remote machines. |
-| `ping`                 | See if a remote host is up.              |
-| `ftp`/ `sftp` (secure) | Transfer files using the File Transfer Protocol. |
+| `ping`                 | See if a remote host is available.                           |
+| `ftp`/ `sftp` (secure) | Transfer files using the File Transfer Protocol.             |
 
 #### Standard I/O and Redirection
 
@@ -437,14 +440,13 @@ Unix commands communicate via the command-line interface.  They can print inform
 Every Unix program starts out with three connections to the outside world.  These connections are called "streams", because they act like a stream of information (metaphorically speaking):
 
 
-| Stream Type     | Description                              |
-| --------------- | ---------------------------------------- |
+| Stream Type     | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
 | standard input  | This is a communications stream initially attached to the keyboard.  When the program reads from standard input, it reads whatever text you type in. |
-| standard output | This stream is initially attached to the terminal. Anything the program prints to this channel appears in your terminal window. |
-| standard error  | This stream is also initially attached to the terminal. It is a separate channel intended for printing error messages. |
+| standard output | This stream is initially attached to the terminal. Anything the program prints to this stream appears in your terminal window. |
+| standard error  | This stream is also initially attached to the terminal. It is a separate stream intended for printing error messages. |
 
-The word "initially" might lead you to think that standard input, output, and error can somehow be detached from their starting places and reattached somewhere else.  And you'd be right.  You can attach
-one or more of these three streams to a file, a device, or even to another program.  This sounds esoteric, but it is actually very useful.
+The word "initially" might lead you to think that standard input, output, and error can somehow be detached from their starting places and reattached somewhere else.  And you'd be right.  You can attach one or more of these three streams to a file, a device, or even to another program.  This sounds esoteric, but it is actually very useful.
 
 #### A Simple Example
 
@@ -528,7 +530,7 @@ This example searches for "gatttgc" in three places.  First it looks in file `bi
 #### Standard I/O and Pipes
 
 
-The coolest thing about the Unix shell is its ability to chain commands together into pipelines.  Here's an example:
+The coolest thing about the Unix shell is its ability to chain commands together into mini pipelines.  Here's an example:
 
 ```
 (~) 65% grep gatttgc big_file.fasta | wc -l
