@@ -84,7 +84,7 @@ You will be using the Terminal application a lot, so I suggest that you drag its
 #### OK. I've Logged in.  What Now?
 
 
-The terminal window is running **shell** called "bash." The shell is a loop that:
+The terminal window is running **shell** called "zsh". (Mac recently changed from bash) The shell is a loop that:
 1. Prints a prompt
 2. Reads a line of input from the keyboard
 3. Parses the line into one or more commands
@@ -92,7 +92,7 @@ The terminal window is running **shell** called "bash." The shell is a loop that
 5. Go back step 1.
 
 
-There are many different shells with bizarre names like **bash**, **sh**, **csh**, **tcsh**, **ksh**, and **zsh**.  The "sh" part means shell.  Each shell has different and somewhat confusing features. We have set up your accounts to use **bash**.  Stay with **bash** and you'll get used to it, eventually.
+There are many different shells with bizarre names like **bash**, **sh**, **csh**, **tcsh**, **ksh**, and **zsh**.  The "sh" part means shell.  Each shell has slightly different syntax and features. Your accounts are set up to use **zsh**.  It's very similar to **bash** which is  standard on linux systems. Stay with **zsh** and you'll get used to it, eventually.
 
 
 #### Command-Line Prompt
@@ -120,10 +120,10 @@ This is another:
 srobb@bush202 1:12PM>
 ```
 
-What you get depends on how the system administrator has customized your login.  You can customize it yourself when you know how.
+What you see depends on how the system administrator has customized your login.  You can customize it yourself (but we won't go into that here)
 
 
-The prompt tells you the shell is ready to accept a command.  When a long-running command is going, the prompt will not reappear until the system is ready to deal with your next request.
+The prompt tells you the shell is ready to accept a command.  Most commands run almost instantly, but if you run a long command, the prompt will not reappear until it is finished and the system is ready to accept your next request.
 
 #### Issuing Commands
 
