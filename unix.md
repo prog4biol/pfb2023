@@ -48,7 +48,7 @@ What are our tips for having a successful programming course?
 Underlying the pretty Mac OSX Graphical User Interface (GUI) is a powerful command-line operating system (OS). The command-line gives you access to the internals of the OS, and is also a convenient way to write custom software and scripts.  
 
 
-Many bioinformatics tools are written to run on the command-line and have no Graphical User Interface. In many cases, a command-line tool is more versatile than a graphical tool, because you can easily combine command-line tools into automated scripts that accomplish tasks without human intervention.  
+Many bioinformatics tools are written to run on the command-line and have no Graphical User Interface. In many cases, a command-line tool is more versatile than a graphical tool, because you can easily combine command-line tools into automated scripts that accomplish custom tasks without human intervention.  
 
 
 In this course, we will be writing Python scripts and running them exclusively from the command-line based.
@@ -965,7 +965,7 @@ Follow Step 3 to create your __local repository__ and **link it** to the __remot
   ![Create a directory on your computer and follow these instructions.](images/github-newRepoInstructions.png)  
     
 
-    
+​    
 
 
 The new local repository consists of three "trees" maintained by git. The first one is your "Working Directory" which holds the actual files. the second one is the "Index" which acts as a staging area and finally the "HEAD" which points to the last commit you've made.
@@ -1064,7 +1064,7 @@ Let's do it!
 1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2019)
 2. Click the 'Clone or Download' Button
 3. Copy the URL
-  ~[Clone PFB2019](images/github-clone.png)
+    ~[Clone PFB2019](images/github-clone.png)
 4. _Clone_ the repository to your local machine
    `git clone https://github.com/prog4biol/pfb2019.git`
 
