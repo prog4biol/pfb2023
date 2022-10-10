@@ -2,7 +2,7 @@
 
 1. Naming directories
 
-`mkdir pfb2019_SEW`
+`mkdir pfb2022_SEW`
 
  - Keep directory names informative.
  - No spaces or special characters.

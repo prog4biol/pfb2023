@@ -1,10 +1,10 @@
 How Setup a Forked Repo
 -------
-In order for TAs to make changes to the *pfb2019* course repository (repo), TAs will first need to create their own "forked" version of the repo from GitHub, "clone" their newly-forked repository to their laptops, then set the *pfb2019* repo as the "upstream" repository.
+In order for TAs to make changes to the *pfb2022* course repository (repo), TAs will first need to create their own "forked" version of the repo from GitHub, "clone" their newly-forked repository to their laptops, then set the *pfb2022* repo as the "upstream" repository.
 
 1. Log into [GitHub](http://github.com) with your user name (create an account if you don't already have one).
 
-2. Next, go to the [*pfb2019* repo](https://github.com/prog4biol/pfb2019) and click on the "Fork" button in the upper-right corner ofthe page (under your profile picture/avatar). This will create for you your own remote copy of the *pfb2019* repo.
+2. Next, go to the [*pfb2022* repo](https://github.com/prog4biol/pfb2022) and click on the "Fork" button in the upper-right corner ofthe page (under your profile picture/avatar). This will create for you your own remote copy of the *pfb2022* repo.
 
 3. After forking, you'll be taken to your newly-forked repo. Next, click on the green "Clone or download" button and make sure "Clone with HTTPS" is selected. Copy the URL provided.
 
@@ -13,10 +13,10 @@ In order for TAs to make changes to the *pfb2019* course repository (repo), TAs 
    git clone paste-your-url-here
    ```
 
-5. Next, link the `prog4biol/pfb2019` remote repo URL as your local repo's "upstream" remote repository:
+5. Next, link the `prog4biol/pfb2022` remote repo URL as your local repo's "upstream" remote repository:
    ```bash
-   cd pfb2019
-   git remote add upstream https://github.com/prog4biol/pfb2019.git
+   cd pfb2022
+   git remote add upstream https://github.com/prog4biol/pfb2022.git
    ```
 
 For a more in-depth tutorial on forking, please visit the [GitHub Help](https://help.github.com/en/articles/fork-a-repo) page.
@@ -29,10 +29,10 @@ How To Sync
 
 Now that your forked repo is cloned and configured with "upstream", you have a three-node directed-graph of remote and local repositories. The graph is directed because changes will flow in only one direction, as shown in the following diagram:
 ```
-     [upstream/pfb2019] <-- [origin/pfb2019]
+     [upstream/pfb2022] <-- [origin/pfb2022]
               |                  ^
 	      V                  |
-             [local/pfb2019] ----+
+             [local/pfb2022] ----+
 ```
 
 You may now add changes to your local repo. To do this, follow these steps:
