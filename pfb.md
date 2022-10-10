@@ -72,7 +72,7 @@ print("Hello, PFB2022!")
 
 #### Running Python Scripts
 
-Typing the Python command followed by the name of a script makes Python execute the script. Recall that we just saw you can run an interactive interpreter by just typing `python` on the command line.
+Typing the Python command followed by the name of a script makes Python execute the script. Recall that we just saw you can run an interactive interpreter by just typing `python3` on the command line.
 
 Execute the Python script like this (% represents the prompt)
 
