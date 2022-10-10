@@ -1062,7 +1062,7 @@ Let's do it!
 3. Copy the URL
     ~[Clone PFB2022](images/github-clone.png)
 4. _Clone_ the repository to your local machine
-   `git clone https://github.com/prog4biol/pfb2022.git`
+   `git clone git@github.com:prog4biol/pfb2022.git`
 
 Now you have a copy of the course material on your computer!
 
