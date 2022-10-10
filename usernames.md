@@ -1,7 +1,7 @@
 | name | id |
 |------|-----|
 |Douglas Barrows   |dba|
-|Cynthia Cardinault|cca|
+|Cynthia Soto Cardinault|cca|
 |Luca Cirillo      |lci|
 |Emmanuel Crespo   |ecr|
 |Omer Donmez       |odo|
