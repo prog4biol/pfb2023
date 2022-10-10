@@ -34,8 +34,8 @@ Host *
   IdentityFile ~/.ssh/id_ed25519
 ```
 
-#### Add to your GitHub Settings --> SSH and GPC Keys --> Click "New SSH Key"
-Paste the contents of your public "Lock" to GitHub
+#### Add to your GitHub.com account: Settings --> SSH and GPC Keys --> Click "New SSH Key"
+Paste the contents of your public "Lock" to GitHub with a title
 ```
 cat ~/.ssh/id_ed25519.pub
 ```
