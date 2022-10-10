@@ -1,14 +1,47 @@
 # Unix 2 Problem Set
 
-1. Looks back at the notes and create your ssh key and add to your github account. 
-2. If you have not already done so, follow [Steps 1-3 in Unix: GIT for Beginners](https://github.com/prog4biol/pfb2022#git-for-beginners). Here is a **summary** of those steps, **Please go to lecture for detailed steps**:
+1. Go to GitHub and create a free accout.
+
+2. Looks back at the notes and create your ssh key and add to your github account.  [Notes for key creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#generating-a-new-ssh-key)
+ 
+ #### Create Key and passphrase
+`$ ssh-keygen -t ed25519 -C "your_email@example.com"`
+`> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]`
+```
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+```
+
+#### Adding your SSH key to the ssh-agent
+```
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+```
+
+#### Add Key info to ssh configuration file
+```
+$ vi ~/.ssh/config
+```
+##### then add
+```
+Host *
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+#### Add to your GitHub Settings --> SSH and GPC Keys --> Click "New SSH Key"
+Paste the contents of your public "Lock" to GitHub
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+3. Create your first repository for your problem set code. [Notes for repository creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#git-for-beginners).
    NOTE: Don't create a repository inside of another repostitory.
-   - Create a GitHub Account and Click "New" to create a new repository.
-   - Add info about your repository
-   - Please see the lecture notes for more detailed steps. In summary you will be doing the following: Create a local (your machine) directory with `mkdir <dirname>`, move into the new directory with `cd <dirname>` and set it up as a repository with `git init`. Now link it to your remote repository with `git remote add`.
-   
-   
-   Don't `git init` in your home directory. Make a new directory (something like pfb_problemsets or problemsets or problem_sets), change directory into the new directory, then `git init` 
+   - Create a new Repository by clicking "New" on the repository github page. https://github.com/YOURUSERNAME/repositories 
+   - Create a local (your machine) directory with `mkdir <dirname>` 
+   - move into the new directory with `cd <dirname>` 
+   - start setting up your repository with the code produced by github. Start with `git init`. 
+   - **Don't `git init` in your home directory. Make a new directory (something like pfb_problemsets or problemsets or problem_sets), change directory into the new directory, then `git init` 
+   - Now link it to your remote repository with `git remote add`.
 
 3. Move any files you created in Unix_01 Problem set to your local problemset git repository.
 
@@ -19,9 +52,7 @@
    - `git push`
    - Visit the your GitHub repository website (on github.com) and see the files from your local repository that you just pushed up to your remote repository.
 
-5. If you are tired of typing your github username and password create and add an ssh key to your github account. Information can be found [here](https://help.github.com/articles/connecting-to-github-with-ssh/) on github.com. Follow the instructions for these two steps in the turorial.
-   - [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) 
-   - [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account)
+
 
 6. Create a directory call `files` in your ProblemSets directory. 
 
