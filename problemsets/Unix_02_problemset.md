@@ -2,7 +2,7 @@
 
 1. Go to GitHub and create a free accout.
 
-2. Looks back at the notes and create your ssh key and add to your github account.  [Notes for key creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#generating-a-new-ssh-key)
+2. Look back at the notes and create your SSH key and add it to your github account.  [Notes for key creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#generating-a-new-ssh-key)
  
  #### Create Key and passphrase
 ```
