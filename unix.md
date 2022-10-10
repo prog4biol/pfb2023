@@ -1,4 +1,4 @@
-# Programming For Biology 2019
+# Programming For Biology 2022
 [programmingforbiology.org](http://programmingforbiology.org)
 
 __Instructors__  
@@ -156,7 +156,7 @@ Most shells offer command-line editing.  Up until the comment you press \<Enter\
 - _Backspace_: Delete the previous character and back up one.
 - _Left arrow_, right arrow: Move the text insertion point (cursor) one character to the left or right.
 - _control-a (^a)_: Move the cursor to the beginning of the line. (Mnemonic: A is first letter of alphabet)
-- _control-e (^e)_: Move the cursor to the end of the line. Mnemonic: E for the End (^z was already used to interrupt a command).
+- _control-e (^e)_: Move the cursor to the end of the line. (Mnemonic: E for the End) (^z was already used to interrupt a command).
 - _control-d (^d)_: Delete the character currently under the cursor. D=Delete.
 - _control-k (^k)_: Delete the entire line from the cursor to the end. k=kill.  The line isn't actually deleted, but put into a temporary holding place called the "kill buffer". This is like cutting text
 - _control-y (^y)_: Paste the contents of the kill buffer onto the command-line starting at the cursor.  y=yank. This is like paste.
@@ -374,7 +374,7 @@ Certain special non-printing characters have _escape codes_ associated with them
 | \\t         | tab character                                                |
 | \\r         | carriage return character                                    |
 | \\a         | bell character (ding! ding!)                                 |
-| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A' |
+| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A'\[Ascii code tables:](https://www.rapidtables.com/code/text/ascii-table.html)|
 
 
 #### Useful Commands
@@ -1008,7 +1008,7 @@ Add some files to your new repository:
 6. Save `:w` and Exit `:q`
 7. (Add) Stage your changes. `git add git_exercises.txt`
 8. (Commit) Become sure you want your changes. `git commit -m 'added a line of text'`
-9. (Push) Sync/Upload your changes to the __remote__ repository. `git push origin master`
+9. (Push) Sync/Upload your changes to the __remote__ repository. `git push origin main`
 
 
 That is all there is to it! There are more complicated things you can do, but we won't get into those. You will know when you are ready to learn more about git when you figure out there is something you want to do but don't know how. There are thousands of online tutorials for you to search and follow.
@@ -1057,12 +1057,12 @@ Let's clone the course material.
 
 Let's do it!
 
-1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2019)
+1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2022)
 2. Click the 'Clone or Download' Button
 3. Copy the URL
-    ~[Clone PFB2019](images/github-clone.png)
+    ~[Clone PFB2022](images/github-clone.png)
 4. _Clone_ the repository to your local machine
-   `git clone https://github.com/prog4biol/pfb2019.git`
+   `git clone https://github.com/prog4biol/pfb2022.git`
 
 Now you have a copy of the course material on your computer!
 
@@ -1078,21 +1078,99 @@ If changes are made to any of these files in the online, remote repository, and 
 
 
 
+## SSH Keys
+
+Github requires authentication with the use of ssh keys. Essentially, our github repos are LOCKED, we need a KEY to write to them. We will generate the a key (private) and a lock (public). Then We tell gethub about our lock and keep our key to ourselves.
+
+ [Here is a great GitHub Tutoral](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
+
+### Adding a new SSH key to your GitHub account
 
 
 
+ 
+ Here is a summary of the steps:
+ 
+### Generating a new SSH KEY
+Make your key and add your email address.
+```
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+```
 
-#### Links to *slightly* less basic topics  
+
+Save your key and lock in your `.ssh` directory. It will prompt you for a path, the default is usually a good place to store your SSH key files
+```
+> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]
+```
+
+Next, pick a passphrase, something easy. It is a password, so that not just anyone on your physical computer can access your GitHub account. You CAN leave it blank. 
+```
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+```
+ 
+ ### Adding your SSH key to the ssh-agent
+ 
+ ```
+ $ eval "$(ssh-agent -s)"
+> Agent pid 59566
+ ```
+
+  First, check to see if your ~/.ssh/config file exists in the default location.
+  ```
+  $ open ~/.ssh/config
+> The file /Users/YOU/.ssh/config does not exist.
+  ```
+  
+If the file doesn't exist, create the file.
+```
+$ touch ~/.ssh/config
+```
+
+Open your ~/.ssh/config file using `vi` and add the following content:
+```
+Host *
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+
+### Adding a new SSH key to your GitHub account
+Print the contents of your PUBLIC ssh key file (our lock) and paste them into your github account
+
+```
+$ cat  ~/.ssh/id_ed25519.pub
+```
+
+### Paste into your GitHub account
+
+1.  Go to Settings 
+  
+  ![Settings](images/github-userbar-account-settings.png)
+
+2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
+
+3.  Click New SSH key or Add SSH key. 
+![Add SSH key](images/github-ssh-add-ssh-key-with-auth.png)
+
+4.  Add a title, for example "PFB CSHL KEY" 
+![Paste Key](images/github-ssh-key-paste-with-type.png).
+
+5.  Click "Add SSH Key" 
+![Click Add](images/github-ssh-add-key.png)
+
+
+
+## Links to *slightly* less basic topics  
 
 You will KNOW if you need to use these features of git.
 
 1. [View Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
-3. [Undoing Previous Commits](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
+3. [Undoing Previous Commits](https://github.com/blog/2022-how-to-undo-almost-anything-with-git)
 
 ---
 
-### [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
+## [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
 
 ---
 
