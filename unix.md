@@ -1135,20 +1135,23 @@ Host *
 
 
 ## Adding a new SSH key to your GitHub account
-Get the contents of your PUBLIC ssh key file and paste them into your github account
+Print the contents of your PUBLIC ssh key file (our lock) and paste them into your github account
 
-## Print the contents of your Public key to your terminal
 ```
 $ cat  ~/.ssh/id_ed25519.pub
 ```
 
 ## Paste into your GitHub account
 
-1.  Go to Settings ![Settings](images/github-userbar-account-settings)
+1.  Go to Settings 
+![Settings](images/github-userbar-account-settings.png)
 2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
-3.  Click New SSH key or Add SSH key. ![Add SSH key](images/github-ssh-add-ssh-key-with-auth)
-4.  Add a title, for example "PFB CSHL KEY" ![Paste Key](images/github-ssh-key-paste-with-type.png).
-5.  Click "Add SSH Key" ![Click Add](images/github-ssh-add-key.png)
+3.  Click New SSH key or Add SSH key. 
+![Add SSH key](images/github-ssh-add-ssh-key-with-auth.png)
+4.  Add a title, for example "PFB CSHL KEY" 
+![Paste Key](images/github-ssh-key-paste-with-type.png).
+5.  Click "Add SSH Key" 
+![Click Add](images/github-ssh-add-key.png)
 
 
 #### Links to *slightly* less basic topics  
