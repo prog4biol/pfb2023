@@ -46,7 +46,7 @@ cat ~/.ssh/id_ed25519.pub
    - Create a local (your machine) directory with `mkdir <dirname>` 
    - move into the new directory with `cd <dirname>` 
    - start setting up your repository with the code produced by github. Start with `git init`. 
-   - **Don't `git init` in your home directory. Make a new directory (something like pfb_problemsets or problemsets or problem_sets), change directory into the new directory, then `git init` 
+   - **Don't `git init` in your home directory. Make a new directory (something like pfb_problemsets or problemsets or problem_sets), change directory into the new directory, then `git init`** 
    - Now link it to your remote repository with `git remote add`.
 
 3. Move any files you created in Unix_01 Problem set to your local problemset git repository.
