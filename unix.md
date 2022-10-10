@@ -374,7 +374,7 @@ Certain special non-printing characters have _escape codes_ associated with them
 | \\t         | tab character                                                |
 | \\r         | carriage return character                                    |
 | \\a         | bell character (ding! ding!)                                 |
-| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A' |
+| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A'\[Ascii code tables:](https://www.rapidtables.com/code/text/ascii-table.html)|
 
 
 #### Useful Commands
