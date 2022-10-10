@@ -41,7 +41,7 @@ cat ~/.ssh/id_ed25519.pub
 ```
 
 3. Create your first repository for your problem set code. [Notes for repository creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#git-for-beginners).
-   NOTE: Don't create a repository inside of another repostitory.
+   **NOTE: Don't create a repository inside of another repostitory.**
    - Create a new Repository by clicking "New" on the repository github page. https://github.com/YOURUSERNAME/repositories 
    - Create a local (your machine) directory with `mkdir <dirname>` 
    - move into the new directory with `cd <dirname>` 
