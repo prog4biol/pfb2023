@@ -491,8 +491,8 @@ Here's the complete list of redirection commands for `bash`:
 | `< myfile.txt`      | Redirect the contents of the file to standard input |
 | `> myfile.txt`      | Redirect standard output to file         |
 | `>> logfile.txt`    | Append standard output to the end of the file |
-| `1 > myfile.txt`    | Redirect just standard output to file (same as above) |
-| `2 > myfile.txt`    | Redirect just standard error to file     |
+| `1> myfile.txt`    | Redirect just standard output to file (same as above) |
+| `2> myfile.txt`    | Redirect just standard error to file     |
 | `&> myfile.txt` | Redirect both stdout and stderr to file  |
 
 
