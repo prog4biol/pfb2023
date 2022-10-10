@@ -1,4 +1,4 @@
-# Programming For Biology 2019
+# Programming For Biology 2022
 [programmingforbiology.org](http://programmingforbiology.org)
 
 __Instructors__  
@@ -1057,12 +1057,12 @@ Let's clone the course material.
 
 Let's do it!
 
-1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2019)
+1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2022)
 2. Click the 'Clone or Download' Button
 3. Copy the URL
-    ~[Clone PFB2019](images/github-clone.png)
+    ~[Clone PFB2022](images/github-clone.png)
 4. _Clone_ the repository to your local machine
-   `git clone https://github.com/prog4biol/pfb2019.git`
+   `git clone https://github.com/prog4biol/pfb2022.git`
 
 Now you have a copy of the course material on your computer!
 
@@ -1088,7 +1088,7 @@ You will KNOW if you need to use these features of git.
 
 1. [View Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
-3. [Undoing Previous Commits](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
+3. [Undoing Previous Commits](https://github.com/blog/2022-how-to-undo-almost-anything-with-git)
 
 ---
 
