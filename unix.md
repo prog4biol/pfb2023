@@ -1078,8 +1078,77 @@ If changes are made to any of these files in the online, remote repository, and 
 
 
 
+### SSH Keys
+
+Github requires authentication with the use of ssh keys. Essentially, our github repos are LOCKED, we need a KEY to write to them. We will generate the a key (private) and a lock (public). Then We tell gethub about our lock and keep our key to ourselves.
+
+ [Here is a great GitHub Tutoral](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
+
+## Adding a new SSH key to your GitHub account
 
 
+
+ 
+ Here is a summary of the steps:
+ 
+## Generating a new SSH KEY
+Make your key and add your email address.
+```
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+
+Save your key and lock in your `.ssh` directory. It will prompt you for a path, the default is usually a good place to store your SSH key files
+```
+> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]
+```
+
+Next, pick a passphrase, something easy. It is a password, so that not just anyone on your physical computer can access your GitHub account. You CAN leave it blank. 
+```
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+```
+ 
+ ## Adding your SSH key to the ssh-agent
+ 
+ ```
+ $ eval "$(ssh-agent -s)"
+> Agent pid 59566
+ ```
+
+  First, check to see if your ~/.ssh/config file exists in the default location.
+  ```
+  $ open ~/.ssh/config
+> The file /Users/YOU/.ssh/config does not exist.
+  ```
+  
+If the file doesn't exist, create the file.
+```
+$ touch ~/.ssh/config
+```
+
+Open your ~/.ssh/config file using `vi` and add the following content:
+```
+Host *
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+
+## Adding a new SSH key to your GitHub account
+Get the contents of your PUBLIC ssh key file and paste them into your github account
+
+## Print the contents of your Public key to your terminal
+```
+$ cat  ~/.ssh/id_ed25519.pub
+```
+
+## Paste into your GitHub account
+
+1.  Go to Settings ![Settings](images/github-userbar-account-settings)
+2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
+3.  Click New SSH key or Add SSH key. ![Add SSH key](images/github-ssh-add-ssh-key-with-auth)
+4.  Add a title, for example "PFB CSHL KEY" ![Paste Key](images/github-ssh-key-paste-with-type.png).
+5.  Click "Add SSH Key" ![Click Add](images/github-ssh-add-key.png)
 
 
 #### Links to *slightly* less basic topics  
