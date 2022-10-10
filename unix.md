@@ -1008,7 +1008,7 @@ Add some files to your new repository:
 6. Save `:w` and Exit `:q`
 7. (Add) Stage your changes. `git add git_exercises.txt`
 8. (Commit) Become sure you want your changes. `git commit -m 'added a line of text'`
-9. (Push) Sync/Upload your changes to the __remote__ repository. `git push origin master`
+9. (Push) Sync/Upload your changes to the __remote__ repository. `git push origin main`
 
 
 That is all there is to it! There are more complicated things you can do, but we won't get into those. You will know when you are ready to learn more about git when you figure out there is something you want to do but don't know how. There are thousands of online tutorials for you to search and follow.
