@@ -75,7 +75,12 @@ __Download a file__.
 Change directory to your home directory. You likely have permissions to write to your home directory. Now use `wget` or `curl` to download files. On some systems only one of these may be available
 ```
 cd ~
+
+
+Note '-O' is the letter O not the number Zero 0
+```
 curl -O https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/cuffdiff.txt
+
 ```
 
 __Redirect STDOUT__  
