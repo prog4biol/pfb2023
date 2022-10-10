@@ -1159,7 +1159,8 @@ $ cat  ~/.ssh/id_ed25519.pub
 ![Click Add](images/github-ssh-add-key.png)
 
 
-#### Links to *slightly* less basic topics  
+
+## Links to *slightly* less basic topics  
 
 You will KNOW if you need to use these features of git.
 
@@ -1169,7 +1170,7 @@ You will KNOW if you need to use these features of git.
 
 ---
 
-### [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
+## [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
 
 ---
 
