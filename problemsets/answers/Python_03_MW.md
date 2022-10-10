@@ -273,7 +273,7 @@ eco_site_end = eco_site_start + len(eco_site)
 ```
 
 
-	- Use [string formating](https://github.com/prog4biol/pfb2019/blob/master/README.md#string-formatting) to print out these two values like this:
+	- Use [string formating](https://github.com/prog4biol/pfb2022/blob/master/README.md#string-formatting) to print out these two values like this:
 	```
 	EcoRI startPos:yourStartPos endPos:yourEndPos
 	```

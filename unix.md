@@ -491,8 +491,8 @@ Here's the complete list of redirection commands for `bash`:
 | `< myfile.txt`      | Redirect the contents of the file to standard input |
 | `> myfile.txt`      | Redirect standard output to file         |
 | `>> logfile.txt`    | Append standard output to the end of the file |
-| `1 > myfile.txt`    | Redirect just standard output to file (same as above) |
-| `2 > myfile.txt`    | Redirect just standard error to file     |
+| `1> myfile.txt`    | Redirect just standard output to file (same as above) |
+| `2> myfile.txt`    | Redirect just standard error to file     |
 | `&> myfile.txt` | Redirect both stdout and stderr to file  |
 
 
@@ -1078,20 +1078,20 @@ If changes are made to any of these files in the online, remote repository, and 
 
 
 
-### SSH Keys
+## SSH Keys
 
 Github requires authentication with the use of ssh keys. Essentially, our github repos are LOCKED, we need a KEY to write to them. We will generate the a key (private) and a lock (public). Then We tell gethub about our lock and keep our key to ourselves.
 
  [Here is a great GitHub Tutoral](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
 
-## Adding a new SSH key to your GitHub account
+### Adding a new SSH key to your GitHub account
 
 
 
  
  Here is a summary of the steps:
  
-## Generating a new SSH KEY
+### Generating a new SSH KEY
 Make your key and add your email address.
 ```
 $ ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -1109,7 +1109,7 @@ Next, pick a passphrase, something easy. It is a password, so that not just anyo
 > Enter same passphrase again: [Type passphrase again]
 ```
  
- ## Adding your SSH key to the ssh-agent
+ ### Adding your SSH key to the ssh-agent
  
  ```
  $ eval "$(ssh-agent -s)"
@@ -1134,24 +1134,33 @@ Host *
 ```
 
 
-## Adding a new SSH key to your GitHub account
-Get the contents of your PUBLIC ssh key file and paste them into your github account
+### Adding a new SSH key to your GitHub account
+Print the contents of your PUBLIC ssh key file (our lock) and paste them into your github account
 
-## Print the contents of your Public key to your terminal
 ```
 $ cat  ~/.ssh/id_ed25519.pub
 ```
 
-## Paste into your GitHub account
+### Paste into your GitHub account
 
-1.  Go to Settings ![Settings](images/github-userbar-account-settings)
+1.  Go to Settings 
+  
+  ![Settings](images/github-userbar-account-settings.png)
+
 2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
-3.  Click New SSH key or Add SSH key. ![Add SSH key](images/github-ssh-add-ssh-key-with-auth)
-4.  Add a title, for example "PFB CSHL KEY" ![Paste Key](images/github-ssh-key-paste-with-type.png).
-5.  Click "Add SSH Key" ![Click Add](images/github-ssh-add-key.png)
+
+3.  Click New SSH key or Add SSH key. 
+![Add SSH key](images/github-ssh-add-ssh-key-with-auth.png)
+
+4.  Add a title, for example "PFB CSHL KEY" 
+![Paste Key](images/github-ssh-key-paste-with-type.png).
+
+5.  Click "Add SSH Key" 
+![Click Add](images/github-ssh-add-key.png)
 
 
-#### Links to *slightly* less basic topics  
+
+## Links to *slightly* less basic topics  
 
 You will KNOW if you need to use these features of git.
 
@@ -1161,7 +1170,7 @@ You will KNOW if you need to use these features of git.
 
 ---
 
-### [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
+## [Link To Unix 2 Problem Set](problemsets/Unix_02_problemset.md)
 
 ---
 
