@@ -5,8 +5,14 @@
 2. Looks back at the notes and create your ssh key and add to your github account.  [Notes for key creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#generating-a-new-ssh-key)
  
  #### Create Key and passphrase
-`$ ssh-keygen -t ed25519 -C "your_email@example.com"`
-`> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]`
+```
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+```
+> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]
+```
+
 ```
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
 > Enter same passphrase again: [Type passphrase again]
