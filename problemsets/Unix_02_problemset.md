@@ -12,7 +12,7 @@
 
 3. Move any files you created in Unix_01 Problem set to your local problemset git repository.
 
-4. Add all the new files in your local repository to your remote repository
+4. Push all the new files in your local repository to your remote repository
    - `git status` to see all the files you need to add
    - `git add <filename>`  or  `git add <filename1> <filename2> <filename3> ...`  
    - `git commit -m 'adding previous problem set files'`
