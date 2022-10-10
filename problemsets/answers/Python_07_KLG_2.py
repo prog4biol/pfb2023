@@ -3,7 +3,7 @@
 # Python 7 - Regular Expressions - Problem Set
 # ===================
 
-# 2. In the file [Python_07_nobody.txt](https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/Python_07_nobody.txt) substitute every occurrence of 'Nobody' with your favorite name and write an output file with that person's name (ex. Michael.txt).
+# 2. In the file [Python_07_nobody.txt](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_07_nobody.txt) substitute every occurrence of 'Nobody' with your favorite name and write an output file with that person's name (ex. Michael.txt).
 
 ## here I want to use regular expressions and resulting match objects to find the occurrences of Nobody
 ## and substitute them with a different name
@@ -22,14 +22,14 @@ for line in nobody_file:
         print(line)
 
 
-# 3. Using pattern matching, find all the header lines in [Python_07.fasta](https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/Python_07.fasta). Note that the format for a header in a fasta file is a line that starts with a greater than symbol and is followed by some text (e.g. `>seqName description` where seqName is the sequence name or identifier. The identifier cannot have spaces in it. The description that follows it can have spaces.)
+# 3. Using pattern matching, find all the header lines in [Python_07.fasta](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_07.fasta). Note that the format for a header in a fasta file is a line that starts with a greater than symbol and is followed by some text (e.g. `>seqName description` where seqName is the sequence name or identifier. The identifier cannot have spaces in it. The description that follows it can have spaces.)
 
 # 4. If a line matches the format of a FASTA header, extract the sequence name and description using sub patterns (groups). 
 # 	- Print lines something like this `id:"extracted seq name" desc:"extracted description"`
 
 # 5. Create a FASTA parser, or modify your FASTA parser from the previous problem set, to use regular expressions. Also make sure your parser can deal with a sequence that is split over many lines.
 
-# 6. The enzyme ApoI has a restriction site: R^AATTY where R and Y are degenerate nucleotideides. See the IUPAC table to identify the nucleotide possibilities for the R and Y. Write a regular expression to find and print all occurrences of the site in the following sequence [Python_07_ApoI.fasta](https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/Python_07_ApoI.fasta). 
+# 6. The enzyme ApoI has a restriction site: R^AATTY where R and Y are degenerate nucleotideides. See the IUPAC table to identify the nucleotide possibilities for the R and Y. Write a regular expression to find and print all occurrences of the site in the following sequence [Python_07_ApoI.fasta](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_07_ApoI.fasta). 
 
 # ```
 # >seq1

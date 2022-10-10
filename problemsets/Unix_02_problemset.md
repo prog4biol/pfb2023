@@ -1,7 +1,7 @@
 # Unix 2 Problem Set
 
 
-1. If you have not already done so, follow [Steps 1-3 in Unix: GIT for Beginners](https://github.com/prog4biol/pfb2019#git-for-beginners). Here is a **summary** of those steps, **Please go to lecture for detailed steps**:
+1. If you have not already done so, follow [Steps 1-3 in Unix: GIT for Beginners](https://github.com/prog4biol/pfb2022#git-for-beginners). Here is a **summary** of those steps, **Please go to lecture for detailed steps**:
    NOTE: Don't create a repository inside of another repostitory.
    - Create a GitHub Account and Click "New" to create a new repository.
    - Add info about your repository
