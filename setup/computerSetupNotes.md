@@ -1,6 +1,6 @@
 # Computer setup
 
-2019: Jamal Sharif-Castro
+2022: Adam
 
 
 # local machines
@@ -16,6 +16,3 @@
    - wget & curl
    - zcat & zgrep
 
-
-
-- we always have network response errors with all the IO when using network home directories
