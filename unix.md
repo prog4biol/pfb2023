@@ -374,7 +374,8 @@ Certain special non-printing characters have _escape codes_ associated with them
 | \\t         | tab character                                                |
 | \\r         | carriage return character                                    |
 | \\a         | bell character (ding! ding!)                                 |
-| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A'\[Ascii code tables:](https://www.rapidtables.com/code/text/ascii-table.html)|
+| \\NNN       | the character whose octal ASCII code is **NNN** e.g. `printf '\101'` prints 'A' <br>[ASCII code tables](https://www.rapidtables.com/code/text/ascii-table.html)|
+
 
 
 #### Useful Commands
@@ -1051,18 +1052,18 @@ git checkout <filename>
 
 ### Cloning a Repository
 
-Sometimes you want to download and use someone else's repository. This is different form above where we created our own repository. This is just a copy of someone else's repository
+Sometimes you want to download and use someone else's repository. This is different from above where we created our own repository. This is just a copy of someone else's repository
 
 Let's clone the course material.
 
 Let's do it!
 
-1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2022)
-2. Click the 'Clone or Download' Button
+1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2022) 
+2. Click the 'Code or Download' Button
 3. Copy the URL
     ~[Clone PFB2022](images/github-clone.png)
 4. _Clone_ the repository to your local machine
-   `git clone https://github.com/prog4biol/pfb2022.git`
+   `git clone git@github.com:prog4biol/pfb2022.git`
 
 Now you have a copy of the course material on your computer!
 
