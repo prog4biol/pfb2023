@@ -58,22 +58,16 @@ In this course, we will be writing Python scripts and running them exclusively f
 #### Logging into Your Workstation
 
 
-Your workstation is an iMac. To log into it, provide your user name and password. Your username will be the first letter of your first name and two first letters of your last. You can check your username [here](usernames.md).
-
-For example, for Sofia Robb her username will be sro. The password is cshl.
-
-_Your username:_ sro
-
-_Your password:_ cshl
+Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'student' and the password is 'pfb2022'
 
 #### Bringing up the Command-Line 
 
 
 To bring up the command-line, use the Finder to navigate to _Applications->Utilities_ and double-click on the _Terminal_ application. This will bring up a window like the following:
 
-![OSX Terminal](images/terminal_screenshot.png)
 
 
+<img src="unix.assets/Screen Shot 2022-10-09 at 8.27.56 PM.png" alt="Screen Shot 2022-10-09 at 8.27.56 PM" style="zoom:90%;" />
 
 You can open several Terminal windows at once. This is often helpful.
 
