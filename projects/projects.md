@@ -54,7 +54,7 @@ The volume of sequencing data being produced continues to out-pace the ability t
 
 TA: Shasta  
 TeamName: VI (visiually impaired)  
-GitHub Repo:  https://github.com/webbshasta/pfb2019_VisuallyImpaired  
+GitHub Repo:  https://github.com/webbshasta/pfb2022_VisuallyImpaired  
 Participants:    
  - Renee  
  - Cody
@@ -131,7 +131,7 @@ TA: Kirsten
 
 TeamName: RNA1   
 
-GitHub Repo: https://github.com/kirstengott/pfb2019_rna1  
+GitHub Repo: https://github.com/kirstengott/pfb2022_rna1  
 
 Participants:  
  - Marina
