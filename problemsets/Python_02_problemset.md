@@ -55,6 +55,6 @@ E. Quit Interpreter
 
 8. In your previous nested loops, test the number 50. What prints to the screen? Is it the correct response? If not, you have a semantic error and need to alter your code to be correct with any number.  
 
-9. Write a new script that does all the testing in 7-11, but gets the value being tested from the command line and stores it in a variable. Add in a print statement that reminds the user what number is being tested. [Remember `sys` in the notes](pfb2022#command-line-parameters-a-special-built-in-list). 
+9. Write a new script that does all the testing in 3-8, but gets the value being tested from the command line and stores it in a variable. Add in a print statement that reminds the user what number is being tested. [Remember `sys` in the notes](pfb2022#command-line-parameters-a-special-built-in-list). 
 
 10. ADD/COMMIT/PUSH
