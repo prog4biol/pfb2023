@@ -577,7 +577,7 @@ False
 ```
 
 
-### Logic: Control Statements
+### Logic: Conditional Statements
 
 
 Control Statements are used to direct the flow of your code and create the opportunity for decision making. The foundation of control statements is building on truth.
