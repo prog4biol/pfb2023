@@ -1,8 +1,8 @@
 NGS Workshop Tutorial
 =====================
-To See answers to the below questions, go to Jessen's the answers branch of his [repo](https://github.com/bredeson/pfb2019/blob/answers/workshops/NGS/README.md).
+To See answers to the below questions, go to Jessen's the answers branch of his [repo](https://github.com/bredeson/pfb2022/blob/answers/workshops/NGS/README.md).
 
-**NOTE:** Unless otherwise specified, example command lines are available in this workshop's [lecture notes](https://github.com/bredeson/pfb2019/blob/master/workshops/NGS/bio_info_formats.pdf) 
+**NOTE:** Unless otherwise specified, example command lines are available in this workshop's [lecture notes](https://github.com/bredeson/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) 
 
 1. First, install the `gnuplot` command line plotting software using HomeBrew:
    ```bash

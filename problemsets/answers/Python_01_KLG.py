@@ -43,7 +43,7 @@ print('My favorite animal:', animal)
 ## plus in the print remove the space
 print('My favorite animal:' + animal)
 
-# 4. Use `sys.argv` (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line. Remember to check out the [example in the notes](https://github.com/prog4biol/pfb2019#command-line-parameters-a-special-built-in-list). Print all the variables in one print statement.
+# 4. Use `sys.argv` (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line. Remember to check out the [example in the notes](https://github.com/prog4biol/pfb2022#command-line-parameters-a-special-built-in-list). Print all the variables in one print statement.
 #     - try using commas to separate your print arguments. 
 #     - try using '+' to separate your print arguments.
 

@@ -6,15 +6,16 @@ Python 1 Problem Set
     - Print out "Hello New York"
     - Store your name in a variable
     - Print the contents of this variable.
+    - QUIT the Interpreter
     
-2. Working with a text editor. Use vi to write a script. 
+2. Working with a text editor. Use `vi` to write a script. 
    - Make sure to include `#!/usr/bin/env python3` at the top!! 
    - Add code to print out, your name  
    
         ```
          My name: Sofia
         ```
-    - On the command line make it executable using `chmod` (only have to do this one time per script).
+    - On the command line make it executable using `chmod` (**only have to do this one time per script**).
     - Run it from the command line. 
     - Remember it is important to write only a bit, test, then write more.
     - If it works, ADD/COMMIT. Make a good message, like "added name to print"
@@ -44,7 +45,7 @@ Python 1 Problem Set
         ```
         >>>  Remember, write a bit, then run your code, write some more, then run again. This makes code easier to debug. 
 
-4. Use `sys.argv` (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line. Remember to check out the [example in the notes](https://github.com/prog4biol/pfb2019#command-line-parameters-a-special-built-in-list). Print all the variables in one print statement.
+4. Use `sys.argv` (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line. Remember to check out the [example in the notes](https://github.com/prog4biol/pfb2022#command-line-parameters-a-special-built-in-list). Print all the variables in one print statement.
     - try using commas to separate your print arguments. 
     - try using '+' to separate your print arguments.
 
