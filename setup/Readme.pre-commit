@@ -1,0 +1,13 @@
+### Pre-commit ###
+Changes for avoid bumping up maximum file-size limit to 45MB
+
+OPTION 1: 
+    1. Go to our PFB GitHub Repository. e.g: /pfb2022
+    2. Click in the 'setup' folder
+    3. Search the 'pre-commit' file, and copy the content
+    4. Paste it into a new file inside your '.git/hooks/' folder
+
+OPTION 2:
+Go to the shell/bash of your terminal, and type:
+% cp setup/pre-commit .git/hooks/.
+(be sure to be inside the /pfb2022 folder)
