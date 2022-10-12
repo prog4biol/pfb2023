@@ -1264,7 +1264,7 @@ The positional index of an exact string in a larger string can be found and retu
 >>> dna.count('T')
 4
 ```
-> The number of times 'T' is found is returned. The string stored in 'dna' is not altered.
+> The number of times 'T' is found and returned. The string stored in 'dna' is not altered.
 
 
 #### Replace one string with another
