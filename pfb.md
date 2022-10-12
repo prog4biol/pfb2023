@@ -1,4 +1,7 @@
+
+
 # Programming For Biology 2022
+
 [programmingforbiology.org](http://programmingforbiology.org)
 
 __Instructors__  
@@ -938,7 +941,7 @@ You can call `dir()` on any object, most often, you'll use it in the interactive
 Notes about quotation marks:  
 
 - Single and double quotes are equivalent.  
-- A variable name inside quotes is just the string identifier, not the value stored inside the variable. `format()` is useful for variable interpolation in python 
+- A variable name inside quotes is just the string identifier, not the value stored inside the variable. `f''` or f-strings are useful for variable interpolation in python 
 - Triple quotes (single or doubel) are used before and after a string that spans multiple lines.  
 
 Use of quotation examples:  
@@ -1454,84 +1457,69 @@ Let's take a list of expression values and create a tab delimited string that wi
 
 ### String Formatting
 
-Strings can be formated using the  `format()` function. Pretty intuitive, but wait til you see the details! For example, if you want to include literal stings and variables in your print statement and do not want to concatenate or use multiple arguments in the `print()` function you can use string formatting.  
+Strings can be formated using new f-strings  `f''`, `f""` and `f'''`
+
+ `'''`. That last one is the triple quote multiline string. For example, if you want to include literal stings and variables in your print statement and do not want to concatenate or use multiple arguments in the `print()` function you can use string formatting.
 
 ```python
->>> string = "This sequence: {} is {} nucleotides long and is found in {}."
->>> string.format(dna,dna_len,gene_name)
+>>> f'This sequence: {dna} is {dna_len} nucleotides long and is found in {gene_name}.'
 'This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.'
->>> print(string) # string.format() does not alter string
-This sequence: {} is {} nucleotides long and is found in {}.
->>> new_string = string.format(dna,dna_len,gene_name)
->>> print(new_string)
-This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.
 ```
-We put together the three variables and literal strings into a single string using the function `format()`. The original string is not altered, a new string is returned that incorporates the arguments. You can save the returned value in a new variable. Each `{}` is a placeholder for the string that needs to be inserted. 
+We put together the three variables and literal strings into a single string using f-strings. A new string is returned that incorporates the arguments. You can save the returned value in a new variable. Each `{}` is a placeholder for the variable that needs to be inserted. 
 
-Something nice about `format()` is that you can print int and string variable types without converting first.
+Something very nice about f-strings is that you can print int and string variable types without converting first.
 
-You can also directly call `format()` inside a `print()` function. Here are two examples
+You will often put f-strings inside print functions.
 
 ```python
->>> string = "This sequence: {} is {} nucleotides long and is found in {}."
->>> print(string.format(dna,dna_len,gene_name))
+>>> print(f'This sequence: {dna} is {dna_len} nucleotides long and is found in {gene_name}.')
 This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.
 ```
-Or you use the `format()` function on a literal string:
+There is an older function `format()` that is similar, but not as concise. Here's an example in case you see one in older code:
 ```python
 >>> print( "This sequence: {} is {} nucleotides long and is found in {}.".format(dna,dna_len,gene_name))
 This sequence: TGAACATCTAAAAGATGAAGTTT is 23 nucleotides long and is found in Brca1.
 ```
-#### The `format()` mini-language
+#### The f-string mini-language
 
 So far, we have just used `{}` to show where to insert the value of a variable in a string. You can add special characters inside the `{}` to change the way the variable is formatted when it's inserted into the string. 
-
-> You can number these, not necessarily in order.
-
-```python
->>> '{0}, {1}, {2}'.format('a', 'b', 'c')
-'a, b, c'
->>> '{2}, {1}, {0}'.format('a', 'b', 'c')
-'c, b, a'
-```
-
-To change the spacing of strings and the way numbers are formatted, you add `:` and other special characters like this `{:>5}` to right-justify a string in a five-character field.
 
 Lets right justify some numbers.  
 
 ```python
->>> print( "{:>5}".format(2) )
+>>> print( f"{2:>5}" )   # 2 is the number we want to print, the characters after the colon define
+                         # the formatting e.g. > for right justify 5 for min field width
     2
->>> print( "{:>5}".format(20) )
+>>> print( f"{20:>5}" )
    20
->>> print( "{:>5}".format(200) )
+>>> print( f"{200:>5}" )
   200
 ```
 
 How about padding with zeroes? This means the five-character field will be filled as needed with zeroes to the left of any numbers you want to display
 ```python
->>> print( "{:05}".format(2) )
+>>> print( f"{2:05}" )
 00002
->>> print( "{:05}".format(20) )
+>>> print( f"{20:05}" )
 00020
 ```
 
 Use a `<` to indicate left-justification.
 ```python
->>> print( "{:<5} genes".format(2) )
+>>> print( f"{2:<5} genes" )
 2     genes
->>> print( "{:<5} genes".format(20) )
+>>> print( f"{20:<5} genes" )
 20    genes
->>> print( "{:<5} genes".format(200) )
+>>> print( f"{20:<5} genes" )
 200   genes
 ```
 Center aligning is done with `^` instead of `>` or `<`. You can also pad with characters other than 0. Here let's try `_` or underscore as in `:_^`. The fill symbol goes before the alignment symbol.
 ```python
->>> print( "{:_^10}".format(2) )
+>>> print( f"{2:_^10}" )
 ____2_____
->>> print( "{:_^10}".format(20) )
+>>> print( f"{20:_^10}" )
 ____20____
->>> print( "{:_^10}".format(200) )
+>>> print( f"{200:_^10}" )
 ___200____
 
 ```
@@ -1578,11 +1566,23 @@ __Common Types__
 So much can be done with the `format()` function. Here is one last example, but not the last functionality of this function.  Let round a floating point number to fewer decimal places, starting with a lot.  (The default is 6.) Note that the function rounds to the nearest decimal place, but not always exactly the way you expect because of the way computers represent decimals with 1s and 0s.
 
 ```python
-'{:f}'.format(3.141592653589793)
-'3.141593'
->>> '{:.4f}'.format(3.141592653589793)
+>>> f'{3.141592653589793:f}'
+'3.141593'   # note this is converted to a string, useful for printing
+             # they are f-strings, after all, so this makes sense
+>>> f'{3.141592653589793:.4f}'
 '3.1416'
 ```
+
+ F-strings allow you to embed expressions inside string literals, so you can do things like this. Neat.
+
+```
+>>> f'sum is {3+4}'
+'sum is 7'
+>>> f'sum is {3.1234+4.4324:.2f}'
+'sum is 7.56'
+```
+
+
 
 ---
 
