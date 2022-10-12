@@ -1,5 +1,3 @@
-
-
 # Programming For Biology 2022
 
 [programmingforbiology.org](http://programmingforbiology.org)
