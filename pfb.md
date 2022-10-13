@@ -3005,7 +3005,7 @@ The pattern in made up of atoms.  Each atom represents **ONE** character.
 | Atom                               | Description                              |
 | ---------------------------------- | ---------------------------------------- |
 | a-z, A-Z, 0-9 and some punctuation | These are ordinary characters that match themselves |
-| "."                                | The dot, or period. This matches any single character except for the newline. |
+| "."                                | The dot, or period. These matches any single character except for the newline. |
 
 
 #### Character Classes
@@ -3156,7 +3156,7 @@ You can combine parenthesis and quantifiers to quantify entire subpatterns.
 ```
 Who's afraid of the big (bad )?wolf\?
 ```
-> This matches:
+> These matches:
 >
 > - "Who's afraid of the big bad wolf?"
 > - As well as "Who's afraid of the big wolf?".
