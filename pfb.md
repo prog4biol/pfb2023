@@ -2828,9 +2828,9 @@ with open("seq.nt.txt","r") as seq_read, open("nt.counts.txt","w") as seq_write:
     line = line.rstrip()
     nt_count = len(line)
     total_nts += nt_count
-    seq_write.write(str(nt_count) + "\n")
+    seq_write.write(f"{nt_count}\n")
 
-  seq_write.write("Total: " + str(total_nts) +"\n")
+  seq_write.write(f"Total: {total_nts}\n") # better than concatenation + str()
 
 print("Wrote 'nt.counts.txt'")
 ```
