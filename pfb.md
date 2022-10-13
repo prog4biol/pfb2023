@@ -3005,7 +3005,7 @@ The pattern in made up of atoms.  Each atom represents **ONE** character.
 | Atom                               | Description                              |
 | ---------------------------------- | ---------------------------------------- |
 | a-z, A-Z, 0-9 and some punctuation | These are ordinary characters that match themselves |
-| "."                                | The dot, or period. These matches any single character except for the newline. |
+| "."                                | The dot, or period. This matches any single character except for the newline. |
 
 
 #### Character Classes
@@ -3156,7 +3156,7 @@ You can combine parenthesis and quantifiers to quantify entire subpatterns.
 ```
 Who's afraid of the big (bad )?wolf\?
 ```
-> These matches:
+> This matches:
 >
 > - "Who's afraid of the big bad wolf?"
 > - As well as "Who's afraid of the big wolf?".
@@ -3206,7 +3206,7 @@ Who's afraid of the big bad w(.)\1f
 > -  "Who's afraid of the big bad wife" 
 
 
-In a similar way, 
+In a similar vein, 
 ```
 \b(\w+)s love \1 food\b
 ```
@@ -3347,8 +3347,8 @@ TCTAATTCCTCATTAGTAATAAGTAAAATGTTTATTGTTGTAGCTCTGGATATTATCCGGTTTCCAAAGACAGTCTTCTA
 By default, regular expressions are "greedy".  They try to match as much as they can. Use the quantifier '?' to make the match not greedy. The not greedy match is called 'lazy' 
 
 ```python
->>> str = 'The fox ate my box of doughnuts'
->>> found = re.search(r"(f.+x)",str)
+>>> phrase = 'The fox ate my box of doughnuts'
+>>> found = re.search(r"(f.+x)",phrase)
 >>> print(found.group(1))
 fox ate my box
 ```
@@ -3357,7 +3357,7 @@ fox ate my box
 
 Let's make this match lazy by using '?'
 ```python
->>> found = re.search(r"(f.+?x)",str)
+>>> found = re.search(r"(f.+?x)",phrase)
 >>> print(found.group(1))
 fox
 ```
@@ -3428,27 +3428,27 @@ not found
 Earlier we went over how to find an **exact pattern** and replace it using the `replace()` method. To find a pattern, or inexact match, and make a replacement the regular expression `sub()` function is used. This function takes the pattern, the replacement, the string to be searched, the number of times to do the replacement, and flags.
 
 ```python
->>> str = "Who's afraid of the big bad wolf?"
->>> re.sub(r'w.+f' , 'goat', str)
+>>> phrase = "Who's afraid of the big bad wolf?"
+>>> re.sub(r'w.+f' , 'goat', phrase)
 "Who's afraid of the big bad goat?"
->>> print(str)
+>>> print(phrase)
 Who's afraid of the big bad wolf?
 ```
 > The `sub()` function returns "Who's afraid of the big bad goat?"  
-> The value of variable str has not been altered  
+> The value of variable phrase has not been altered  
 > The new string can be stored in a new variable for later use.
 
 Let's save the new string that is returned in a variable
 ```python
->>> str = "He had a wife."
->>> new_str = re.sub(r'w.+f' , 'goat', str)
->>> print(new_str)
+>>> phrase = "He had a wife."
+>>> new_phrase = re.sub(r'w.+f' , 'goat', phrase)
+>>> print(new_phrase)
 He had a goate.
->>> print(str)
+>>> print(phrase)
 He had a wife.
 ```
 > The characters between 'w' and 'f' have been replaced with 'goat'.  
-> The new string is saved in new_str  
+> The new string is saved in new_phrase  
 
 
 
@@ -3456,9 +3456,9 @@ He had a wife.
 
 Sometimes you want to find a pattern and use it in the replacement. 
 ```python
->>> str = "Who's afraid of the big bad wolf?"
->>> new_str = re.sub(r"(\w+) (\w+) wolf" , r"\2 \1 wolf" , str)
->>> print(new_str)
+>>> phrase = "Who's afraid of the big bad wolf?"
+>>> new_phrase = re.sub(r"(\w+) (\w+) wolf" , r"\2 \1 wolf" , phrase)
+>>> print(new_phrase)
 Who's afraid of the bad big wolf?
 ```
 > We found two words before 'wolf' and swapped the order.
