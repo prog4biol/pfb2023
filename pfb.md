@@ -3206,7 +3206,7 @@ Who's afraid of the big bad w(.)\1f
 > -  "Who's afraid of the big bad wife" 
 
 
-In a similar vein, 
+In a similar way, 
 ```
 \b(\w+)s love \1 food\b
 ```
