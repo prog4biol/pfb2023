@@ -2459,7 +2459,16 @@ These functions work on several other data types too!
 | `dict.values()`                        | Returns list of dictionary dict's values |
 
 
-### Sets
+
+### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
+
+
+
+---
+
+## Python 6
+
+## Sets
 
 
 A set is another Python data type. It is essentially a dictionary with keys but no values.
@@ -2644,12 +2653,7 @@ nt count: {'G': 20, 'T': 21, 'A': 13, 'C': 16, 'N': 1}
 
 ---
 
-### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
 
-
-
----
-## Python 6
 
 
 ### I/O and Files
