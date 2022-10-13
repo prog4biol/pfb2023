@@ -2838,6 +2838,7 @@ print("Wrote 'nt.counts.txt'")
 Output:
 ```
 $ python3 file_read_write.py
+Wrote 'nt.counts.txt'
 $ cat nt.counts.txt
 71
 71
