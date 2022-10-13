@@ -25,7 +25,7 @@ print(fav_dict[fav_thing])
 
 4. Now print your favorite tree.
 
-5. Add your favorite 'organism' to the dictionary. Make organism the new value of `fav_thing`
+5. Add your favorite 'organism' to the dictionary. Make organism the new key of `fav_thing`
 ```python
 fav_thing = 'organism'
 print(fav_dict[fav_thing])
