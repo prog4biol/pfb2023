@@ -11,14 +11,14 @@ Python 6 - IO - Problem Set
 
 
 3. Open and print the reverse complement of each sequence in [Python_06.seq.txt](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_06.seq.txt). Each line is the following format:    `seqName\tsequence\n.` Make sure to print the output in fasta format including the sequence name and a note in the description that this is the reverse complement. Print to STDOUT and capture the output into a file with a command line redirect '>'. 
-   - **Remember is is always a good idea to start with a test set for which you know the correct output.**
+   - **Remember is always a good idea to start with a test set for which you know the correct output.**
 
 4. Open the [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) file [Python_06.fastq](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_06.fastq) and go through each line of the file. Count the number of lines and the number of characters per line. Have your program report the:  
     - total number of lines  
     - total number of characters  
     - average line length   
 
-5. Write your first FASTA parser. This is a script that reads in a FASTA file and stores each FASTA record separately for easy access for future analysis.
+5. Write your first FASTA parser script. This is a script that reads in a FASTA file and stores each FASTA record separately for easy access for future analysis.
 
 Things to keep in mind:
    - open your file
