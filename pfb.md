@@ -3020,7 +3020,7 @@ A group of characters that are allowed to be matched one time. There are a few p
 | `\w`  | Word character. Also can be written `[A-Za-z0-9_]` Note underscore is part of this class |
 | `\W`  | Not a word character, or `[^A-Za-z0-9_]` |
 | `\s`  | White space character. Also can be written `[ \r\t\n]`. Note the space character after the first `[` |
-| `\S`  | Not whitespace. Also `[^ \r\\t\n]`       |
+| `\S`  | Not whitespace. Also `[^ \r\t\n]`        |
 | `[^]` |a carat within a bracketed list of characters indicates anything but the characters that follows |
 
 #### Anchors
