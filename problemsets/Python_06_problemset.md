@@ -84,7 +84,7 @@ _Get all genes:_
 3. In dropdown box, select "Alpaca Genes" 
 4. On the left, click Attributes
 5. Expand GENE:
-6. Deselect "transcript stable ID","Gene stable ID version", and "transcript stable ID version".
+6. Deselect "transcript stable ID", "Gene stable ID version", and "transcript stable ID version".
 7. Click Results (top left)
 8. Export all results to "File" "TSV" --> GO
 9. Rename the file to "alpaca_all_genes.tsv"
