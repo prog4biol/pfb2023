@@ -3415,18 +3415,13 @@ None
 
 Nest it!
 ```python
->>> 
 >>> if re.search( r"(.{50})TATTATZ(.{25})"  , dna ):
 ...    print("found it")
 ... else:
 ...    print("not found")
 ...
 not found
->>> print(found)
-None
 ```
-
-
 
 #### Using Regular expressions in substitutions 
 
