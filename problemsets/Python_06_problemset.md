@@ -80,11 +80,11 @@ __Generate Gene Lists:__
 _Get all genes:_
 
 1. Go to [Ensembl Biomart](http://useast.ensembl.org/biomart/martview/4b8fb1941e75e7763e8c4ccf1ffcd9c5).
-2. In dropdown box, select "Ensembl Genes 98"  (or most current version)
+2. In dropdown box, select "Ensembl Genes 107"  (or most current version)
 3. In dropdown box, select "Alpaca Genes" 
 4. On the left, click Attributes
 5. Expand GENE:
-6. Deselect "transcript stable ID".
+6. Deselect "transcript stable ID","Gene stable ID version", and "transcript stable ID version".
 7. Click Results (top left)
 8. Export all results to "File" "TSV" --> GO
 9. Rename the file to "alpaca_all_genes.tsv"
@@ -107,7 +107,7 @@ _In the same Ensembl window, follow the steps below to get genes that have been 
 10. Rename the file to "alpaca_pigmentation_genes.tsv"
 
 
-__Open each of the three files and add the geneIDs to a Set. One Set per file.__
+__Open each of the three files and add the geneIDs (Gene stable ID) to a Set. One Set per file.__
 
 A. Find all the genes that are not cell proliferation genes.  
 B. Find all genes that are both stem cell proliferation genes and pigment genes.  
