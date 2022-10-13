@@ -31,7 +31,7 @@ fav_thing = 'organism'
 print(fav_dict[fav_thing])
 ```
 
-6. Take a value from the command line for `fav_thing` and print the value of that item from the dictionary. Maybe you want to print out all the keys to the user so that they know what to pick from. Check out `input()`. Here is a <a href="https://www.tutorialspoint.com/python/python_files_io.htm">link</a>.
+6. Take a value from the command line for `fav_thing` and print the value of that item from the dictionary. Maybe you want to print out all the keys to the user so that they know what to pick from. Check out `input()`. Here is a <a href="[https://www.tutorialspoint.com/python/python_files_io.htm](https://www.w3schools.com/python/ref_func_input.asp)">link</a>.
 
 7. Change the value of your favorite organism.
 
