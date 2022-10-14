@@ -1262,7 +1262,7 @@ The positional index of an exact string in a larger string can be found and retu
 >>> dna.count('T')
 4
 ```
-> The number of times 'T' is found is returned. The string stored in 'dna' is not altered.
+> The number of times 'T' is found and returned. The string stored in 'dna' is not altered.
 
 
 #### Replace one string with another
@@ -3029,7 +3029,7 @@ A group of characters that are allowed to be matched one time. There are a few p
 | `\w`  | Word character. Also can be written `[A-Za-z0-9_]` Note underscore is part of this class |
 | `\W`  | Not a word character, or `[^A-Za-z0-9_]` |
 | `\s`  | White space character. Also can be written `[ \r\t\n]`. Note the space character after the first `[` |
-| `\S`  | Not whitespace. Also `[^ \r\\t\n]`       |
+| `\S`  | Not whitespace. Also `[^ \r\t\n]`        |
 | `[^]` |a carat within a bracketed list of characters indicates anything but the characters that follows |
 
 #### Anchors
@@ -3049,32 +3049,27 @@ g..t
 ```
 > matches "gaat", "goat", and "gotta get a goat" (twice)
 
-
-<br><br> 
 ```
 g[gatc][gatc]t
 ```
 > matches "gaat", "gttt", "gatt", and "gotta get an agatt" (once) 
 
-
-<br><br> 
 ```
 \d\d\d-\d\d\d\d
 ```
 > matches 867-5309, and 5867-5309 but not 8-67-5309.
 
-<br><br> 
-
 ```
 ^\d\d\d-\d\d\d\d
 ```
 >  matches 867-5309 and 867-53091 but not 5867-5309.
-<br><br> 
+ 
 ```
 ^\d\d\d-\d\d\d\d$
 ```
+
 > only matche 3 digits followed by a dash followed by 4 digits, not extra characters anywhere are allowed
-<br><br> 
+<br> 
 
 
 
@@ -3361,8 +3356,8 @@ TCTAATTCCTCATTAGTAATAAGTAAAATGTTTATTGTTGTAGCTCTGGATATTATCCGGTTTCCAAAGACAGTCTTCTA
 By default, regular expressions are "greedy".  They try to match as much as they can. Use the quantifier '?' to make the match not greedy. The not greedy match is called 'lazy' 
 
 ```python
->>> str = 'The fox ate my box of doughnuts'
->>> found = re.search(r"(f.+x)",str)
+>>> phrase = 'The fox ate my box of doughnuts'
+>>> found = re.search(r"(f.+x)",phrase)
 >>> print(found.group(1))
 fox ate my box
 ```
@@ -3371,7 +3366,7 @@ fox ate my box
 
 Let's make this match lazy by using '?'
 ```python
->>> found = re.search(r"(f.+?x)",str)
+>>> found = re.search(r"(f.+?x)",phrase)
 >>> print(found.group(1))
 fox
 ```
@@ -3429,45 +3424,40 @@ None
 
 Nest it!
 ```python
->>> 
 >>> if re.search( r"(.{50})TATTATZ(.{25})"  , dna ):
 ...    print("found it")
 ... else:
 ...    print("not found")
 ...
 not found
->>> print(found)
-None
 ```
-
-
 
 #### Using Regular expressions in substitutions 
 
 Earlier we went over how to find an **exact pattern** and replace it using the `replace()` method. To find a pattern, or inexact match, and make a replacement the regular expression `sub()` function is used. This function takes the pattern, the replacement, the string to be searched, the number of times to do the replacement, and flags.
 
 ```python
->>> str = "Who's afraid of the big bad wolf?"
->>> re.sub(r'w.+f' , 'goat', str)
+>>> phrase = "Who's afraid of the big bad wolf?"
+>>> re.sub(r'w.+f' , 'goat', phrase)
 "Who's afraid of the big bad goat?"
->>> print(str)
+>>> print(phrase)
 Who's afraid of the big bad wolf?
 ```
 > The `sub()` function returns "Who's afraid of the big bad goat?"  
-> The value of variable str has not been altered  
+> The value of variable phrase has not been altered  
 > The new string can be stored in a new variable for later use.
 
 Let's save the new string that is returned in a variable
 ```python
->>> str = "He had a wife."
->>> new_str = re.sub(r'w.+f' , 'goat', str)
->>> print(new_str)
+>>> phrase = "He had a wife."
+>>> new_phrase = re.sub(r'w.+f' , 'goat', phrase)
+>>> print(new_phrase)
 He had a goate.
->>> print(str)
+>>> print(phrase)
 He had a wife.
 ```
 > The characters between 'w' and 'f' have been replaced with 'goat'.  
-> The new string is saved in new_str  
+> The new string is saved in new_phrase  
 
 
 
@@ -3475,9 +3465,9 @@ He had a wife.
 
 Sometimes you want to find a pattern and use it in the replacement. 
 ```python
->>> str = "Who's afraid of the big bad wolf?"
->>> new_str = re.sub(r"(\w+) (\w+) wolf" , r"\2 \1 wolf" , str)
->>> print(new_str)
+>>> phrase = "Who's afraid of the big bad wolf?"
+>>> new_phrase = re.sub(r"(\w+) (\w+) wolf" , r"\2 \1 wolf" , phrase)
+>>> print(new_phrase)
 Who's afraid of the bad big wolf?
 ```
 > We found two words before 'wolf' and swapped the order.

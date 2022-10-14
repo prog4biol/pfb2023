@@ -43,6 +43,7 @@ GAACTCCAAAAATGAAAACATAGTAGCAATCAAAGCATCCCACTATTTTTTGTCTCTCGTTTCATTAGCGTTGTAAATTA
 6. Modifiy the script in the previous problem to write the contents to a new file called "Python_06_uc.txt"
 
 
+
 7. Open and print the reverse complement of each sequence in [Python_06.seq.txt](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_06.seq.txt). Each line is the following format:    `seqName\tsequence\n.` Make sure to print the output in fasta format including the sequence name and a note in the description that this is the reverse complement. Print to STDOUT and capture the output into a file with a command line redirect '>'. 
    - **Remember is is always a good idea to start with a test set for which you know the correct output.**
 
@@ -51,7 +52,8 @@ GAACTCCAAAAATGAAAACATAGTAGCAATCAAAGCATCCCACTATTTTTTGTCTCTCGTTTCATTAGCGTTGTAAATTA
     - total number of characters  
     - average line length   
 
-9. Write your first FASTA parser. This is a script that reads in a FASTA file and stores each FASTA record separately for easy access for future analysis.
+
+9. Write your first FASTA parser script. This is a script that reads in a FASTA file and stores each FASTA record separately for easy access for future analysis.
 
 Things to keep in mind:
    - open your file
@@ -80,11 +82,11 @@ __Generate Gene Lists:__
 _Get all genes:_
 
 1. Go to [Ensembl Biomart](http://useast.ensembl.org/biomart/martview/4b8fb1941e75e7763e8c4ccf1ffcd9c5).
-2. In dropdown box, select "Ensembl Genes 98"  (or most current version)
+2. In dropdown box, select "Ensembl Genes 107"  (or most current version)
 3. In dropdown box, select "Alpaca Genes" 
 4. On the left, click Attributes
 5. Expand GENE:
-6. Deselect "transcript stable ID".
+6. Deselect "transcript stable ID", "Gene stable ID version", and "transcript stable ID version".
 7. Click Results (top left)
 8. Export all results to "File" "TSV" --> GO
 9. Rename the file to "alpaca_all_genes.tsv"
@@ -107,7 +109,7 @@ _In the same Ensembl window, follow the steps below to get genes that have been 
 10. Rename the file to "alpaca_pigmentation_genes.tsv"
 
 
-__Open each of the three files and add the geneIDs to a Set. One Set per file.__
+__Open each of the three files and add the geneIDs (Gene stable ID) to a Set. One Set per file.__
 
 A. Find all the genes that are not cell proliferation genes.  
 B. Find all genes that are both stem cell proliferation genes and pigment genes.  
