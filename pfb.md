@@ -3633,7 +3633,7 @@ You can also use the `get()` method to retrieve records.
 >>> kmers.get('ggaa')
 [4, 10]
 ```
-> These two statements returns the same results, but if the key does not exist you will get nothing and not an error.
+> These two statements return the same results, but if the key does not exist you will get nothing and not an error.
 
 #### Dictionaries of dictionaries
 
