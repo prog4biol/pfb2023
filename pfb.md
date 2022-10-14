@@ -3697,8 +3697,6 @@ Alter one gene's nucleotide count with `+=` assignment operator:
 >>>
 >>> genes['gene1']['nt_comp']
 {'C': 2, 'G': 1, 'A': 2, 'T': 6}
->>>
->>>
 ```
 
 To retrieve the A composition of every gene use a for loop.
