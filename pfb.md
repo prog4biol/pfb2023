@@ -3633,7 +3633,7 @@ You can also use the `get()` method to retrieve records.
 >>> kmers.get('ggaa')
 [4, 10]
 ```
-> These two statements returns the same results, but if the key does not exist you will get nothing and not an error.
+> These two statements return the same results, but if the key does not exist you will get nothing and not an error.
 
 #### Dictionaries of dictionaries
 
@@ -3697,8 +3697,6 @@ Alter one gene's nucleotide count with `+=` assignment operator:
 >>>
 >>> genes['gene1']['nt_comp']
 {'C': 2, 'G': 1, 'A': 2, 'T': 6}
->>>
->>>
 ```
 
 To retrieve the A composition of every gene use a for loop.
@@ -3786,10 +3784,10 @@ mens	small	Carolina Blue
 We want something like this:
 
 ```
-womens	small	antique heliconia	2
-womens	xs	heather orange	1
-womens	medium	kiwi	2
-womens	medium	royal heather	1
+womens	small	antique heliconia   2
+womens	xs      heather orange      1
+womens	medium  kiwi                2
+womens	medium	royal heather       1
 ```
 
 [shirts.py](scripts/shirts.py)
@@ -3824,14 +3822,14 @@ for style in shirts:
 Output:
 ```
 sro$ python3 shirts.py
-mens	small	heather maroon	1
-mens	small	royal blue	1
-mens	small	olive	1
-mens	large	graphite heather	1
-womens	medium	heather purple	3
-womens	medium	berry	2
-womens	medium	royal heather	1
-womens	medium	kiwi	2
+mens	small	heather maroon      1
+mens	small	royal blue          1
+mens	small	olive               1
+mens	large	graphite heather    1
+womens	medium	heather purple      3
+womens	medium	berry               2
+womens	medium	royal heather       1
+womens	medium	kiwi                2
 ...
 ```
 
