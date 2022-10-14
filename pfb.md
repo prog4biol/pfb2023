@@ -3790,10 +3790,10 @@ mens	small	Carolina Blue
 We want something like this:
 
 ```
-womens	small	antique heliconia	2
-womens	xs	heather orange	1
-womens	medium	kiwi	2
-womens	medium	royal heather	1
+womens	small	antique heliconia   2
+womens	xs      heather orange      1
+womens	medium  kiwi                2
+womens	medium	royal heather       1
 ```
 
 [shirts.py](scripts/shirts.py)
