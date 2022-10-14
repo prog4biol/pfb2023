@@ -3717,13 +3717,7 @@ gene2: As= 3
 
 Below is an example of building a list with a mixed collection of value types. Remember that all elements inside a list or dictionary should be the same type. In other words, the values in a list should all be lists or dictonaries or scalar values. This allows you to loop over the data structure.
 
-The dictionary which is a list value has a key that has a dictionary as a value.
-
-```
-[{'gene1' : {'sequence' : [1, 2, 3], [4, 5, 6], [7,8,9]]
-```
-
-Just spaced differently:
+This is a list with lists and a dictionary. The dictionary has a key with a value that is a dictionary. 
 ```
 [
    [1, 2, 3], 
@@ -4432,7 +4426,7 @@ show_n()
 
 The output is this `5` as you would expect, but the example below is better programming practice. Why? We'll see a little later.
 
-```python3
+```python
 def show_n(n):
   print(n)
 n = 5
