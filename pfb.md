@@ -4293,20 +4293,19 @@ This code will print 0.45161290322580644 to the screen. You can save this value 
 dna_gc = gc_content('GTACCTTGATTTCGTATTCTGAGAGGCTGCT')
 ```
 
-As you can see we can write a nice clear line of python to call this function and because the function has a name that describes what it does it's easy to understand how the code works. Don't give your functions names like this `def my_function(a):`!
+As you can see we can write a nice clear line of python to call this function and because the function has a name that describes what it does it's easy to understand how the code works. Don't give your functions names like this `my_function()`!
 
-How could you convert the GC fraction to % GC. Use `format()`.
+How could you convert the GC fraction to % GC. Use `f''`.
 
 ```python
 dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 dna_gc = gc_content(dna_string)
-pc_gc = '{:.2%}'.format(dna_gc)
-print('This sequence is' , pc_gc , 'GC')
+print('This sequence is {dna_gc:.2%} GC')
 ```
 
 Here's the output
 
-```python
+```
 This sequence is 45.16% GC
 ```
 
@@ -4322,7 +4321,7 @@ This sequence is 45.16% GC
 
 #### Naming Arguments
 
-You can name your argument variables anything you want, but the name should describe the data contained. The name needs to be consistent within your function. 
+You should name your argument variables so that they describe the data they contain. The name needs to be consistent within your function. 
 
 #### Keyword Arguments
 
@@ -4332,7 +4331,7 @@ Arguments can be named and these names can be used when the function is called. 
 >>> dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 >>> print(gc_content(dna_string))
 0.45161290322580644
->>> print(gc_content(dna=dna_string)
+>>> print(gc_content(dna=dna_string)  # gc_content is expecting a 'dna' argument
 0.45161290322580644
 
 ```
@@ -4365,7 +4364,7 @@ def gc_content(dna='N'):   # give our function a name and parameter 'dna'
 
 #### Lambda expressions
 
-Lambda expressions can be used to define simple (one-line) functions. There are some uses for lambda which we won't go into here. We are showing it to you because sometimes you will come across it.
+Lambda expressions can be used to define simple (one-line) functions. 
 
 Here is a one line custom function, like the functions we have already talked about:
 ```python
@@ -4376,9 +4375,17 @@ print(get_first_codon('ATGTTT'))
 ```
 > This will print `ATG`
 
+The format for lambda is like this
+
+```
+lambda <the variable you pass into the function> : <the expression that operates on your variable>
+```
+
 Here is the same function written as a lambda
+
 ```python
-get_first_codon = lambda dna : dna[0:3]
+get_first_codon = lambda dna : dna[0:3]  # pass data into 'dna' then extract 
+                                         # the first 3 characters
 print(get_first_codon('ATGTTT'))
 ```
 > This also prints `ATG`. lambdas can only contain one line and there is no `return` statement.
@@ -4387,7 +4394,7 @@ List comprehensions can often be used instead of lambdas and may be easier to re
 
 ### Scope
 
-Almost all python variables are global. This means they are available everywhere in your code.  Remember that python blocks are defined as code at the same level of indentation.
+Almost all python variables are global. This means you can use them everywhere in your code.  Remember that python blocks are defined as code at the same level of indentation.
 
 ```python
 #!/usr/bin/env python3
@@ -4454,7 +4461,7 @@ Variables inside functions are local and therefore can only been accessed from w
 
 def set_local_x_to_five(x):
   print('Inside def')
-  x = 5 # local to set_local_x_to_five()
+  x = 5 # local to function set_local_x_to_five()
   y=5   # also local
   print("x =",x)
   print("y = ",y)
@@ -4471,7 +4478,7 @@ print('x=',x)
 print('y=',y)
 
 ```
-> Here we have added a function `set_local_x_to_five` with an argument named 'x'. This variable exists only within the function where is replaces any variable with the same name outside the `def`. Inside the `def` we also initialize a variable `y` that also replaces any global `y` within the `def`
+> Here we have added a function `set_local_x_to_five()` with an argument named `x`. This variable exists only within the function where is replaces any variable with the same name outside the `def`. Inside the `def` we also initialize a variable `y` that also replaces any global `y` within the `def`
 
 Let's run it:
 ```bash
@@ -4489,7 +4496,7 @@ y= 100
 
 
 ```
-> There is a global variable, `x` = 100, but when the function is called, it makes a new local variable, also called `x` with value = 5. This variable disappears after the function finishes and we go back to using the global variable `x` = 100. Same for `y`
+> There is a global variable, `x` = 100, but when the function is called, it makes a **new local variable**, also called `x` with value = 5. This variable disappears after the function finishes and we go back to using the global variable `x` = 100. Same for `y`
 
 #### Global
 
@@ -4536,7 +4543,7 @@ Python comes with some core functions and methods. There are many useful modules
 
 #### Getting information about modules with `pydoc`
 
-How do you find out information about a module? Python has help pages built into the command line, like `man` we met earlier in the unix lecture. Online information may be more up to date. Search at https://docs.python.org/3.6/. But if you don't have internet access, you can always use `pydoc`.
+How do you find out information about a module? Python has help pages built into the command line, like `man` we met earlier in the unix lecture. Online information may be more up to date. Search at https://docs.python.org/3.9/. But if you don't have internet access, you can always use `pydoc`.
 To find out about the `re` module, type `pydoc re` on the command line. The last line in the output tells you where the python module is actually installed.
 
 ```bash
@@ -4547,7 +4554,7 @@ NAME
     re - Support for regular expressions (RE).
 
 MODULE REFERENCE
-    https://docs.python.org/3.6/library/re
+    https://docs.python.org/3.9/library/re
     
     The following documentation is automatically generated from the Python
     source files.  It may be incomplete, incorrect or include features that
@@ -4565,9 +4572,13 @@ DESCRIPTION
     Most ordinary characters, like "A", "a", or "0", are the simplest
     regular expressions; they simply match themselves.  You can
     concatenate ordinary characters, so last matches the string 'last'.
-...
-FILE
-    /anaconda3/lib/python3.6/glob.py
+    
+    The special characters are:
+        "."      Matches any character except a newline.
+        "^"      Matches the start of the string.
+        "$"      Matches the end of the string or just before the newline at
+                 the end of the string.
+
 
 ```
 
@@ -4587,7 +4598,7 @@ Here are some of the most common and useful modules, along with their methods an
 | os.path.isdir(path)    | does the path point to a directory?      |
 | os.path.splitext(path) | splits before and after the file extension (e.g. '.txt') |
 
-
+`__file__` is the path to your current python script
 
 #### os.system
 
@@ -4613,14 +4624,14 @@ Let's say we want to find all the files that have user amanda (or in the filenam
 
 `ls -l | grep amanda`
 
-becomes this 'shortcut' which will capture the output of the two unix commands in the variable `output`
+ We can write the following code to capture the output of the two unix commands in the variable `output`
 
 ```python
 import subprocess
 output = subprocess.check_output('ls -l | grep amanda', shell = True)
 ```
 
-This is better than alternatives with `subprocess.run()`. This is equivalent to the unix backtick quoted string.
+This is better than alternatives with `subprocess.run()`. This is the python equivalent of the unix backtick quoted string \`ls -l | grep amanda\`.
 
 `output` contains a bytes object (more or less a string of ASCII character encodings)
 
@@ -4671,7 +4682,7 @@ lines = stdout.splitlines()
 
 ##### Check the exit status of a command
 
-To run a command and check the exit status (really to check the exit status was ok or zero), use 
+To run a command and check the exit status (really to check the exit status = 0, which means success), use 
 
 ```python
 oops = subprocess.check_call(['ls', '-l'])
@@ -4679,7 +4690,7 @@ oops = subprocess.check_call(['ls', '-l'])
 oops = subprocess.check_call('ls -l', shell=True)
 ```
 
-##### Run a command with that redirects stdout to a file using python subprocess
+##### Run a command that redirects stdout to a file using python subprocess
 
 You can't write `ls -l > listing.txt`  to redirect stdout in the subprocess method, so use this instead
 
