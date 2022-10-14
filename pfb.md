@@ -3828,14 +3828,14 @@ for style in shirts:
 Output:
 ```
 sro$ python3 shirts.py
-mens	small	heather maroon	1
-mens	small	royal blue	1
-mens	small	olive	1
-mens	large	graphite heather	1
-womens	medium	heather purple	3
-womens	medium	berry	2
-womens	medium	royal heather	1
-womens	medium	kiwi	2
+mens	small	heather maroon      1
+mens	small	royal blue          1
+mens	small	olive               1
+mens	large	graphite heather    1
+womens	medium	heather purple      3
+womens	medium	berry               2
+womens	medium	royal heather       1
+womens	medium	kiwi                2
 ...
 ```
 
