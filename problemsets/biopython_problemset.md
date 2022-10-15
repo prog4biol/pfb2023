@@ -91,13 +91,11 @@ These questions will take some research and set up. Spend some time reading abou
 2. Print the E-value and the score and the length of the alignment and the % similiarity (not % identity)
 
 __Install NCBI Blast+__
-1. [Download NCBI BLAST+](https://lmgtfy.com/?q=download+ncbi+blast&s=g&t=w)
-2. Find the ftp link to the executables on the page you found in your google search [ BLAST+ executables](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) 
-3. `Installers and source code are available from ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ .`
-4. Make sure you are a guest user, click continue
-5. Since we are using Macs, click on the `ncbi-blast-2.6.0+.dmg`
-6. continue, continue, agree, install
-7. Now in a NEW terminal window, you will have the blast executables available. (blastn, blastx, tblastn, tblastx, blastp, makeblastdb, blastdbcmd)
+1. Install NCBI Blast using conda fomr bioconda
+```
+conda install -c bioconda blast
+```
+2. Now in a NEW terminal window, you will have the blast executables available. (blastn, blastx, tblastn, tblastx, blastp, makeblastdb, blastdbcmd)
 
 __Run BLAST+__
 1. First format you FASTA file so that BLAST+ can use it as a database
