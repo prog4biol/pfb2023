@@ -118,6 +118,7 @@ The purpose of this workshop is to gain experience working with the various file
 
 15. Extract CDS features present in `Ecoli.gff3` and create a new GFF3 file, then use `bedtools intersect` to determine:
     - How many SNPs and InDels intersect these CDS features?
-    - How many InDels might cause frameshifts? (Write a script)
+    - How many InDels might cause frameshifts? Write a script to read the VCF file and print out frameshift InDels to a new VCF.
+    - If there are frameshifts, which genes are they affecting?
 
 
