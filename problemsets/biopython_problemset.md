@@ -9,9 +9,9 @@ $HOME/miniconda/bin/conda init zsh
 source ~/.zshrc
 conda install biopython`
 ```
-> **If** you are on your own computer and not using one of the course machines you will have to download anaconda
+> **If** you are on your own computer and not using one of the course machines you will have to download miniconda
 > ```
-> wget command: "wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh"
+> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
 > ```
 
 ## FASTA Parser
