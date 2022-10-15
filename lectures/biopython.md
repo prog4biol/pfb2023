@@ -86,7 +86,7 @@ This is the core of biopython. And uses the Seq object. Seq is part of Bio. This
 #!/usr/bin/env python3
 import Bio.Seq                          
 seqobj = Bio.Seq.Seq('ATGCGATCGAGC')     
-print('{} has {} nucleotides'.format( seqobj , len(seqobj)))
+print(f"{seqobj} has {len(seqobj)} nucleotides")
 ```
 > Note: Sometimes you might have to convert an object to string to get sequence `seq_str = str(seqobj)`. The Seq Object predicts that if a user writes `print(seqobj)` they will want to print the sequence string not the entire Seq Object. Likewise, the Seq Object predicts that if a user writes `len(seqobj)` they will want to caluculate the length of the sequence not the length of the entire Seq Object
 
@@ -106,7 +106,7 @@ Another way to import modules is with `from ... import ...` . This saves typing 
 from Bio.Seq import Seq
 seqobj=Seq('ATGCGATCGAGC')
 protein = seqobj.translate()
-print('{} translates to {}'.format(seqobj,protein))
+print(f'{seqobj} translates to {protein}')
 ```
 
 produces
@@ -296,8 +296,8 @@ from Bio import SeqIO
 filename = "../files/seq.nt.fa"
 for seq_record in SeqIO.parse(filename, "fasta"):   
   print('ID',seq_record.id)
-  print('len {}'.format(len(seq_record)))
-  print('translation {}'.format(seq_record.seq.translate(to_stop=False)))
+  print(f'len {len(seq_record)}')
+  print(f'translation {seq_record.seq.translate(to_stop=False)}')
 ```
 > We added the translation of the DNA sequence into protein
 Output:  
@@ -556,7 +556,8 @@ for blast_record in blast_records:
    for alignment in blast_record.alignments:
      for hsp in alignment.hsps:
         if hsp.expect < 1e-10:
-           print('qid:' , query_id , 'hit_id:' , alignment.title, 'E:' , hsp.expect )
+           print(f'qid: {query_id} hit_id: {alignment.title} E: {hsp.expect}' )
+           # print(query_id, alignment.title, hsp.expect, sep="\t" ) # print tab delimited results table
 ```
 
 Output:
