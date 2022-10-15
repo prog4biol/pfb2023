@@ -2,9 +2,17 @@
 
 ## Install Biopython on your machine
 
+
 ```
-conda install biopython
+zsh ~admin/miniconda.sh -b -p $HOME/miniconda
+$HOME/miniconda/bin/conda init zsh
+source ~/.zshrc
+conda install biopython`
 ```
+> **If** you are on your own computer and not using one of the course machines you will have to download anaconda
+> ```
+> wget command: "wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh"
+> ```
 
 ## FASTA Parser
 
@@ -53,6 +61,12 @@ gunzip uniprot_sprot.fasta.gz
 This will create a file `uniprot_sprot.fasta`
 
 **Do not add uniprot_sprot.fasta to your github repo. It is too big.*** To be safe, find your .gitignore in the root of your github repository. Add `uniprot_sprot.fasta*` anywhere in the file. Make sure to add this file to our index as you are updating your repo.
+
+Here is a way to ENSURE that you don't mistakenly commit a large file. Get help from TA if you do not know where your .git directory is
+```
+cd .git/hooks/
+wget https://raw.githubusercontent.com/prog4biol/pfb2022/master/setup/pre-commit
+```
 
 
 3. What does the file contain? How many records? Does it look intact? How do you know?
