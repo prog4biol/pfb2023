@@ -8,7 +8,7 @@ A fully-featured code library for manipulating data arranged in tables (i.e. mat
 
 
 
-![](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/04/Python-Pandas-Applications.jpg)
+![](panda_images/matrix.jpg)
 
 
 
