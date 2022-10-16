@@ -7,20 +7,11 @@ The purpose of this workshop is to gain experience working with the various file
 
 0. First, create a new `ngs` directory for this workshop in which to perform these exercises, then change directory to it.
 
-1. Install the following command line software using [HomeBrew](https://brew.sh) (which is already installed on your workstation):
+1. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](https://github.com/prog4biol/pfb2022/blob/master/problemsets/biopython_problemset.md).
     ```bash
-    brew install wget  # if you don't have it already
-    brew install gnuplot
-    brew install bwa
-    brew install java11
-    brew install fastqc
-    brew install samtools
-    brew install bedtools
-    brew install vcftools
-
-    # The following lines are required to run Java-based applications
-    echo 'export PATH="/usr/local/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc
-    source ~/.zshrc
+    conda install -c anaconda wget
+    conda install -c conda-forge gnuplot
+    conda install -c bioconda bwa fastqc samtools bedtools vcftools
     ```
    
 
@@ -28,10 +19,9 @@ The purpose of this workshop is to gain experience working with the various file
     ```bash
     # 1. Fetch each software package .zip archive file:
     wget https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip
-    wget https://data.broadinstitute.org/igv/projects/downloads/2.14/IGV_2.14.1.zip
 
-    # 2. Unpack each .zip archive:
-    unzip filename.zip
+    # 2. Unpack the .zip archive:
+    unzip gatk-4.3.0.0.zip
     ```
 
 
