@@ -35,7 +35,7 @@ The purpose of this workshop is to gain experience working with the various file
     ```
 
 
-3. Download the [genome](https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/Ecoi.fasta.gz) and [annotation](https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/Ecoli.gff3.gz) files using `wget`, then decompress them both with `gunzip`.
+3. Download the [genome](https://github.com/prog4biol/pfb2022/raw/master/workshops/NGS/data/Ecoli.fasta.gz) and [annotation](https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/Ecoli.gff3.gz) files using `wget`, then decompress them both with `gunzip`.
     - How many of the sequences are chromosomes? How many plasmids?
     - What is the reference strain's genome size?
 
