@@ -87,7 +87,7 @@ Here the genus is _Salmonella_ and the species is _paratyphi_. There is also a s
 
 __For extra credit__
 These questions will take some research and set up. Spend some time reading about how to run blast and ask for help as needed.
-1. Blast this protein against the S. paratyphi B proteins. You can do this remotely or locally with a blast binary or with biopython.
+1. Blast a protein such as [purH]([https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/HDAC1.aa.fa](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/purH.aa.fa)) against the S. paratyphi B proteins. You can do this remotely or locally with a blast binary or with biopython.
 2. Print the E-value and the score and the length of the alignment and the % similiarity (not % identity)
 
 __Install NCBI Blast+__
