@@ -4,7 +4,7 @@
 
 **Python Data Analysis Library**
 
-A powerful library for manipulating data arranged in tables (i.e. matricies or data frames). It's arguably the most popular Python library used for data engineering. Pandas aims to provide Python users the same type of functionality as the popular statistical language, **R**.
+A fully-featured code library for manipulating data arranged in tables (i.e. matricies or data frames). It's arguably the most popular Python library used for data engineering. For those of you who have used the popular statistical language, R, Pandas brings many of that languages capabilities to python.
 
 
 
@@ -20,7 +20,7 @@ For example, lets say you want to parse your RNA-seq results to a list of genes 
 
 #### Pandas has the ability to read in various data formats
 
-- Open a local file using Pandas, usually a comma-separated values (CSV) file, but could also be a tab-delimited text file (TSV), Excel, etc
+- Open a local file using Pandas, usually a comma-separated values (CSV) file, but could also be a tab-delimited text file (TSV), Excel, json, etc
 
 - Read a remote file on a website through a URL or read data from a remote database.
 
@@ -54,7 +54,7 @@ A data frame is a table-like data structure and can contain different data types
 
 
 
-You can think of a vector (also reffered to as an [array](https://docs.python.org/3/library/array.html)) as a type of list that contains a single data type and optimized for parallel computing. For matricies and data frames in Pandas (also NumPy), vectors are rows and columns.
+You can think of a vector (also referred to as an [array](https://docs.python.org/3/library/array.html)) as a type of list that contains a single data type and optimized for parallel computing. For matricies and data frames in Pandas (also NumPy), vectors are rows and columns.
 
 Rather that looping through individual values (scalars), we apply operations to vectors (rows/columns). That is, the vector is treated as a single object. This topic can get a bit complicated, but it is worth doing your homework if you frequently work with these data types. Here's a few articles to get you started:
 
@@ -71,9 +71,27 @@ Vectorization with Pandas series is **~390x** faster than crude looping
 
 
 
+## Pandas documentation
+
+Each function (method) in Pandas has many options and might not work the way you expect. It's definitely worth reading the documentation. Functions and options are sometimes updated, so even if you are already familiar with a function, it's a good idea to have a quick look.
+
+Documentation is here https://pandas.pydata.org/docs/
+
+Read getting started first https://pandas.pydata.org/docs/getting_started/index.html#getting-started
+
+​	(what's possible: data types, summary stats, plots, table layouts, merging)
+
+Pandas user guide (how it works, details on how Pandas thinks about data types) https://pandas.pydata.org/docs/user_guide/index.html#user-guide
+
+Specific information about all the methods and classes https://pandas.pydata.org/docs/reference/index.html#api
+
+But you'll probably want to start with a google search like `pd load dataframe`or `pandas read excel skip rows`
+
+
+
 ## Basic methods for data manipulation
 
-### Reading in csv files and row/column slicing
+### Reading in files
 
 "Slicing" refers to subsetting, or extracting rows and columns from a data frame. Here we'll read in a data frame, look at the contents, and subset it by slicing out arbitrary regions.
 
@@ -84,9 +102,12 @@ import pandas as pd
 cell_attributes = pd.read_csv("./meta_data.csv", index_col = 0)
 
 type(cell_attributes)
-``` 
+# prints <class 'pandas.core.frame.DataFrame'>
+```
 
 Note: We can read/write data in many other formats like tab delimited text `.tsv` and excel spreadsheets `.xlsx`. Please refer to [this document]() for a full description of Pandas I/O tools.
+
+Pandas tries to convert input strings to the appropriate data `dtype` (float, int etc). This is generally very helpful.
 
 
 ```
@@ -101,7 +122,7 @@ pd.set_option('display.max_columns', 100)
 cell_attributes.head(10)
 ```
 
-#### Slicing
+### Slicing
 
 Pandas has different methods for subsetting dataframes.
 We'll dicuss the most common methods, **loc**, and **iloc**
@@ -114,9 +135,17 @@ like to subset the column 'n_counts', I would use the following command:
 cell_attributes.loc[:,'n_counts']
 ```
 
+Here's the general syntax `df.loc[ ROWS [, COLUMNS] ]` where ROWS and COLUMNS can be START INDEX : END INDEX or NAMES, depending on whether you have given your rows names or are using the default numerical labels
+
+If you just want a whole column, there's a shortcut format
+
+```
+cell_attributes['n_counts']
+```
 
 
-**iloc** allows us to subset rows and colums by index number. This is useful if we want to subset multiple rows or columns without typing index names. Lets say we want to remove the columns with names 'orig_ident', 'res_2', and 'louvain'.
+
+**iloc** allows us to subset rows and colums by index number. This is useful if we want to subset multiple rows or columns without typing index names. 
 
 Lets take a look at the column names first and see if we can slice out the ones we'd like to keep.
 
@@ -128,33 +157,17 @@ cell_attributes.columns.values
 cell_attributes.columns.values[[0,1,3,5,7]]
 ```
 
+Note `[[ ]]` allows us to mention a list of columns.
 
-
-Now we can apply the same indexing pattern to our **iloc** method to return only the columns we're interested in. I've also included a few more slicing variations so you can get a feel for more complex slicing patterns.
+Now we can apply the same indexing pattern to our **iloc** method to return only the columns we're interested in. 
 
 
 ```
 # Return columns 0, 1, 3, 5, and 7
-cell_attributes.iloc[:,[0,1,3,5,7]].head(10)
+cell_attributes.iloc[:,[0,1,3,5,7]]
 
 # Return rows 1 through 5 and columns 0, 1, 3, 5, and 7
-cell_attributes.iloc[:5,[0,1,3,5,7]].head(10)
-```
-
-##### Complex slicing patterns
-
-```
-# the method r_ allows us to slice with multiple ranges
-from numpy import r_
-
-# Let's see what it returns before we slice our data frame
-pd.np.r_[1:2, 4, 5:7]
-
-# With column names
-cell_attributes.columns.values[pd.np.r_[1:2, 4, 5:7]]
-
-# With the first 5 rows of the data frame
-cell_attributes.iloc[:5,pd.np.r_[1:3, 5:7]]
+cell_attributes.iloc[:5,[0,1,3,5,7]]   
 ```
 
 
@@ -165,14 +178,11 @@ Here we'll take look at ordering our data by a particular column value, or multi
 
 
 ```
-# Let's make a smaller dataset to work with
-cell_df_sub = cell_attributes.iloc[:25,[0,1,3,5]]
-
 # Set ascending=True to reverse the order
-cell_df_sub.sort_values('n_counts', ascending=False)
+cell_attributes.sort_values('n_counts', ascending=False)
 
 # Sort by multiple columns in different directions
-cell_df_sub.sort_values(by=['tree_ident', 'n_counts'], ascending=[True, False])
+cell_attributes.sort_values(by=['tree_ident', 'n_counts'], ascending=[True, False])
 ```
 
 
@@ -183,7 +193,9 @@ Understanding how to subset your data using conditional operations is *very*, _v
 
 ```
 # Subsetting on a single condition
-cell_df_sub.loc[(cell_df_sub['tree_ident'] == 1),]
+cell_attributes.loc[(cell_attributes['tree_ident'] == 1)]
+#or in shorter form if you want all the columns and rows that match the condition
+cell_attributes[(cell_attributes['tree_ident'] == 1)]
 ```
 
 In the example below we chain boolean operators together to achieve results that satisfy multiple conditions. You can make these statments complex as you'd like.
@@ -192,18 +204,18 @@ Note: Pandas uses the bitwise logical operators (see earlier lecture). A pipe sy
 
 ```
 # Subsetting on multiple conditions.
-cell_df_sub.loc[
-    (cell_df_sub['tree_ident'] == 1) | \
-    (cell_df_sub['tree_ident'] == 2) & \
-    (cell_df_sub['n_genes'] > 1000),]
+cell_attributes[
+    (cell_attributes['tree_ident'] == 1) | \
+    (cell_attributes['tree_ident'] == 2) & \
+    (cell_attributes['n_genes'] > 1000)]
 ```
 
-What's actually going on here? The rows in the data frame are actually subsetted on a vector of True/False statements. That is, for every row for which the condition evaluates to True will be returned. If we examine the boolean statements placed within `cell_df_sub.loc[]`, you can see why this is occuring.
+What's actually going on here? The rows in the data frame are actually subsetted on a vector of True/False statements. That is, for every row for which the condition evaluates to True will be returned. If we examine the boolean statements placed within `cell_attributes.loc[]`, you can see why this is occuring.
 
 ```
-cell_df_sub['tree_ident'] == 1 | \
-    (cell_df_sub['tree_ident'] == 2) & \
-    (cell_df_sub['n_genes'] > 1000)
+cell_attributes['tree_ident'] == 1 | \
+    (cell_attributes['tree_ident'] == 2) & \
+    (cell_attributes['n_genes'] > 1000)
 ```
 
 ### Performing mathmatical operations on vectors
@@ -212,10 +224,19 @@ Lets look at a couple examples where we apply caculations to our data frame. Fir
 
 ```
 # Returning summary statistics for all columns
-cell_df_sub.describe()
+cell_attributes.describe()
 
 # Returning summary statistics for a single column
-cell_df_sub.loc[:,'n_counts'].describe()
+cell_attributes['n_counts'].describe() # if you are working on a whole column
+# reports the following summary statistics
+# count 
+# mean  
+# std   
+# min   
+# 25%   
+# 50%   
+# 75%   
+# max   
 ```
 
 `n_counts` refers to the number of counts for "unique molecular identifiers", which are barcodes for individual transcripts within in a single cell. Ideally, if the number of `n_counts` is high, then the number of genes per cell should also be high. The number of genes per cell is in the `n_genes` column. Lets see if this observation holds true by calculating the pairwise correlation between these two variables. 
@@ -223,13 +244,12 @@ cell_df_sub.loc[:,'n_counts'].describe()
 
 ```
 # Simply add the .corr() method to your dataframe subset
-cell_df_sub.loc[:,['n_counts','n_genes']].corr()
+cell_attributes.loc[:,['n_counts','n_genes']].corr()
 ```
 
 That summarizes our introduction to Pandas. As you can see, Pandas greatly simplifies the process of exploring and making calculations in data frames and matricies. Check out the link below for the offical documentation.
 
 [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/index.html)
-
 
 
 

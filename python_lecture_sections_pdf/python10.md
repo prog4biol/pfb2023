@@ -63,7 +63,7 @@ How could you convert the GC fraction to % GC. Use `f''`.
 ```python
 dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 dna_gc = gc_content(dna_string)
-print('This sequence is {dna_gc:.2%} GC')
+print(f'This sequence is {dna_gc:.2%} GC')
 ```
 
 Here's the output
@@ -461,6 +461,10 @@ You can't write `ls -l > listing.txt`  to redirect stdout in the subprocess meth
  tmp_file = 'listing.txt'
  with open(tmp_file,'w') as ofh:
      oops = subprocess.check_call(['ls', '-l'], stdout=ofh )
+    
+if oops:
+  print('file error')
+  exit(1)
 ```
 
 
