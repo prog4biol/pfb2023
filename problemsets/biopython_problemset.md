@@ -2,9 +2,17 @@
 
 ## Install Biopython on your machine
 
+
 ```
+zsh ~admin/miniconda.sh -b -p $HOME/miniconda
+$HOME/miniconda/bin/conda init zsh
+source ~/.zshrc
 conda install biopython
 ```
+> **If** you are on your own computer and not using one of the course machines you will have to download miniconda
+> ```
+> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+> ```
 
 ## FASTA Parser
 
@@ -54,6 +62,12 @@ This will create a file `uniprot_sprot.fasta`
 
 **Do not add uniprot_sprot.fasta to your github repo. It is too big.*** To be safe, find your .gitignore in the root of your github repository. Add `uniprot_sprot.fasta*` anywhere in the file. Make sure to add this file to our index as you are updating your repo.
 
+Here is a way to ENSURE that you don't mistakenly commit a large file. Get help from TA if you do not know where your .git directory is
+```
+cd .git/hooks/
+wget https://raw.githubusercontent.com/prog4biol/pfb2022/master/setup/pre-commit
+```
+
 
 3. What does the file contain? How many records? Does it look intact? How do you know?
 
@@ -77,13 +91,11 @@ These questions will take some research and set up. Spend some time reading abou
 2. Print the E-value and the score and the length of the alignment and the % similiarity (not % identity)
 
 __Install NCBI Blast+__
-1. [Download NCBI BLAST+](https://lmgtfy.com/?q=download+ncbi+blast&s=g&t=w)
-2. Find the ftp link to the executables on the page you found in your google search [ BLAST+ executables](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) 
-3. `Installers and source code are available from ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ .`
-4. Make sure you are a guest user, click continue
-5. Since we are using Macs, click on the `ncbi-blast-2.6.0+.dmg`
-6. continue, continue, agree, install
-7. Now in a NEW terminal window, you will have the blast executables available. (blastn, blastx, tblastn, tblastx, blastp, makeblastdb, blastdbcmd)
+1. Install NCBI Blast using conda fomr bioconda
+```
+conda install -c bioconda blast
+```
+2. Now in a NEW terminal window, you will have the blast executables available. (blastn, blastx, tblastn, tblastx, blastp, makeblastdb, blastdbcmd)
 
 __Run BLAST+__
 1. First format you FASTA file so that BLAST+ can use it as a database
@@ -103,4 +115,3 @@ __Parse BLAST Output__
 
 1. Use BioPython to parse your XML BLAST results. Print out all the hit sequence ID that are better than 1e-5 as well as their descriptions in tab separated columns.
   
-
