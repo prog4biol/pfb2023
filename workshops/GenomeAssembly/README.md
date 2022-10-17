@@ -1,7 +1,10 @@
 # Genome Assembly Workshop
 
-See [PDF](workshops/GenomeAssembly/Triant_AssemblyWorkshop_CSHL20XX.pdf)
+Lecture Notes: See [PDF]()
+Workshop Notes: See [PDF](Triant_AssemblyWorkshop_PFB2022.pdf)
 
+
+# Problem Set
 
 Using [ecoli-0.25.contigs.fasta](https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/GenomeAssembly/ecoli_0.25.contigs.fasta), write a script that reports:
 
