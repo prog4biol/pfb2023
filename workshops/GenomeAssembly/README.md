@@ -1,6 +1,6 @@
 # Genome Assembly Workshop
 
-Lecture Notes: See [PDF]()
+Lecture Notes: See [PDF]()  
 Workshop Notes: See [PDF](Triant_AssemblyWorkshop_PFB2022.pdf)
 
 
