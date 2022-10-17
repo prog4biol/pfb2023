@@ -1,9 +1,9 @@
 # Genome Assembly Workshop
 
-See [PDF](workshops/GenomeAssembly/Triant_AssemblyWorkshop_CSHL2018.pdf)
+See [PDF](workshops/GenomeAssembly/Triant_AssemblyWorkshop_CSHL20XX.pdf)
 
 
-Using ecoli-0.25.contigs.fasta, write a script that reports:
+Using [ecoli-0.25.contigs.fasta](https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/GenomeAssembly/ecoli_0.25.contigs.fasta), write a script that reports:
 
 1. The number of contigs in the file
 2. The shortest contig.
