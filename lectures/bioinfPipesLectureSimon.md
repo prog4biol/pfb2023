@@ -6,6 +6,7 @@
 google 'python3 list comprehensions`  
 https://docs.python.org/3/    -> Quick search  
 Help is available inside python interactive shell
+
 ```python
 >>>help()
 ```
@@ -151,9 +152,9 @@ Your coding day is time spent doing these things:
 
 Where do you spend most of your time? What can you save time on? The more you plan out coding and check your data, the faster you'll get to the important second half of this list.
 
-Assume your data is corrupted. This will stress test your code before you start writing. It will mostly  even be true.
+Assume your data is corrupted, even if it came from a good colleague. This will stress test your code before you start writing.
 
-Check for consistent numbers of columns in your data, files that end halfway through a line are truncated or corrupted. Is a column always numbers or mixed numbers and text? Do some fields have quotes or other unusual characters, accents? Do the values seem reasonable? Are values for gene lengths about 5-10?
+Check for consistent numbers of columns in your data, files that end halfway through a line are truncated or corrupted. Is a column always numbers or mixed numbers and text? Be precise about numbers. `2000-3000` is not a number. Nor is `5kb`. Do some fields have quotes or other unusual characters, accents? Do the values seem reasonable? Are values for gene lengths between 1,000 and 10,000bp for example?
 
 * thinking: design   Lots of time!
 * preparation, testing  Lots of time!
@@ -202,12 +203,12 @@ import datetime
 
 # help message
 if len(sys.argv) < 4:
-    print('Usage: {}   <query protein fasta>  <formatted database>  <min E-value>'.format(sys.argv[0]))
+    print(f'Usage: {sys.argv[0]}   <query protein fasta>  <formatted database>  <min E-value>')
     exit(1)
 # get cmd line params
 query = sys.argv[1]
 db = sys.argv[2]
-evalue = sys.argv[3]
+evalue = float(sys.argv[3]) # immediately convert to appropriate type
 
 if not query.endswith( ('.fa','.fasta') ):
     print('Query input file needs to end with .fa or .fasta')
@@ -226,7 +227,7 @@ print('#' , 'was run on', now)
 out = query + '.blastp.out'
 
 # run the command
-blastcmd = 'blastp -query ' + query + ' -db ' + db + ' -outfmt 7 -out ' + out + ' -evalue ' + evalue
+blastcmd = f'blastp -query {query} -db {db} -outfmt 7 -out {out} -evalue {evalue}'
 
 # object is returned after run command
 blastcmd_run = subprocess.run(blastcmd, shell=True , stdout = subprocess.PIPE, stderr=subprocess.PIPE)
@@ -263,7 +264,7 @@ for query in sorted(homologs):
     print('Query:',query)
     for data in homologs[query]:
         query,evalue = data
-        print('{} E-value={}'.format( query, evalue) )
+        print(f'{query} E-value={evalue}' )
 
 
 ```
