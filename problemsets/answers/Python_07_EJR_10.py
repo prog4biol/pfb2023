@@ -85,12 +85,12 @@ def cut_seq(enzyme, seq, enzyme_dict):
             regex2_string = re.sub(regex, r"(\1)(\2)", pattern)
             # second regex is used to put ^ into locations where pattern matches
             regex2 = re.compile(regex2_string)
-            annotated_seq = re.sub(regex2, r"\1^\2", seq)    
+            seq = re.sub(regex2, r"\1^\2", seq)    
 
         # split after all cuts
-        seqs = annotated_seq.split("^")
+        seqs = seq.split("^")
         sorted_seqs = sorted(seqs, key = len, reverse=True)
-        print("Annotated Sequence: ", annotated_seq)
+        print("Annotated Sequence: ", seq)
         print("Number of Fragments: ", len(seqs))
         print("Fragments in natural order:\n"+ "\n".join(seqs))
         print("Fragments in sorted order:\n"+ "\n".join(sorted_seqs))
