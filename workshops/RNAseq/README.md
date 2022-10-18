@@ -11,8 +11,8 @@ git clone https://github.com/trinityrnaseq/CSHLProgForBiol2022
 The repository contains the workshop problem sets.
 
 Here are links to his problem sets and data files:  
-  - [Problem 1 -- kmer counter](https://github.com/trinityrnaseq/CSHLProgForBiol2019/tree/master/Exercise_1-counting_kmers)  
-  - [Problem 2 -- Count Number of reads mapped to each gene](https://github.com/trinityrnaseq/CSHLProgForBiol2019/tree/master/Exercise_2-aligned_reads_to_expression)  
+  - [Problem 1 -- kmer counter](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/master/Exercise_1-counting_kmers)  
+  - [Problem 2 -- Count Number of reads mapped to each gene](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/master/Exercise_2-aligned_reads_to_expression)  
  
  
 
