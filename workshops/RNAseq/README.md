@@ -12,8 +12,7 @@ The repository contains the workshop problem sets.
 
 Here are links to his problem sets and data files:  
   - [kmer counter](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/main/Exercise-counting_kmers)  
-  - [whats up with __name__](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/main/whatsupwith__name__%3F_
-   
+  - [whats up with name](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/main/whatsupwith__name__%3F)
  
  
 
