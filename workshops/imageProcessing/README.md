@@ -12,6 +12,7 @@ cd ~/
 mdkir image_processing
 git clone git@github.com:jayunruh/python_IP_course.git
 cd python_IP_course
-jupyter notebook 
 ``` 
+
+7. Now Follow the instructions in the [README.md](https://github.com/jayunruh/python_IP_course) of python_IP_course repository
 
