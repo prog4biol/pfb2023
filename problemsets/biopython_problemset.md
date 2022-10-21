@@ -21,13 +21,13 @@ conda install biopython
   1. total number of sequences
   2. total number of nucleotides
   3. average length of sequences
-  4. shortest seqeunce length
-  5. longest seqeunce length
+  4. shortest sequence length
+  5. longest sequence length
   6. average GC content
   7. highest GC content
   8. lowest GC content
   ```
-  seqeunce count:
+  sequence count:
   total number of nucleotides:
   avg len:
   shortest len:
