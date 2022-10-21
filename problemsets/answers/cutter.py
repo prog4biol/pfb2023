@@ -37,7 +37,7 @@ with open(fastafile,"r") as fh:
       id=match.group(1)
       seqs[id]=''
     else:
-      seqs[id]+=line
+      seqs[id]+=upper(line)
 
 ## parse cutter file into dictionary
 cutters={}
