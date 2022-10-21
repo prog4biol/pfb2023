@@ -2,8 +2,9 @@
 # regular expression cutter 
 # by Sofia Robb
 
-# find the cut sites for a user provided restriction enzyme name.
-# ./cutter.py FASTAFILE ENZYME_NAME
+# search for every cut site found in the bionet collection in a user provided FASTA file
+# report the sequence id, the enzyme name, the number of fragments, the average fragment length, the max and min fragment lengths
+
 
 import sys
 import re
@@ -19,13 +20,6 @@ try:
   fastafile = sys.argv[1]
 except:
   print("Missing FASTA file name. Please provide a FASTA file.") 
-  exit()
-
-
-try:
-  enzyme = sys.argv[2]
-except:
-  print("Missing enzyme name. Please provide an enzyme name. ie EcoRI")
   exit()
 
 
@@ -94,28 +88,27 @@ with open("bionet.txt","r") as fh:
       else:
         cutters[cuttername] = [cutleft,cutright]
 
-# get user inputed enzyme info
-cutParts = cutters[enzyme]
-pattern = f"({cutParts[0]})({cutParts[1]})"
      
 
 # find cut sites
+print ('id','cutter','fragCount','averFragLen','maxFragLen','minFragLen',sep="\t")
 for id in seqs:
    seq = seqs[id]
-   print(f"========== {id} =============")
-   if re.search(pattern,seq):
-     carrots=re.sub(pattern,r"\1^\2",seq)
-     fragments = carrots.split("^")
-     frag_num = len(fragments)
-     print (f"# {enzyme}: {frag_num} fragments")
-     print (f"# Sequence annotated with cut sites")
-     print(f">{id}\n{carrots}")
-     print (f"# Fragments Natural Order")
-     print(fragments)
-     print (f"# Fragments Sorted by Length small->large")
-     print(sorted(fragments,key=len))
-   else:
-     print (f"# {enzyme}: No Cut Sites Found")
+   for cutter in cutters:
+     cutParts = cutters[cutter]
+     pattern = f"({cutParts[0]})({cutParts[1]})"
+     if re.search(pattern,seq):
+       carrots=re.sub(pattern,r"\1^\2",seq)
+       fragments = carrots.split("^")
+       lengths = [len(frag) for frag in fragments]
+       fragCount = len(fragments)
+       maxFrag = max(lengths)
+       minFrag = min(lengths)
+       sumFrag = sum(lengths)
+       averFrag = round(sumFrag/fragCount)
+       print (id,cutter,fragCount,averFrag,maxFrag,minFrag,sep="\t")
+     else:
+       print (id,cutter,0,'N/A','N/A','N/A','N/A',sep="\t")
 
 
     
