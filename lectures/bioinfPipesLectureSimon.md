@@ -285,6 +285,7 @@ trimmomatic
 #### QC sequence data:
 
 fastqc
+multiqc (aggregate results from bioinformatics analyses across many samples into a single report)
 
 ### resequencing, variant calling
 
