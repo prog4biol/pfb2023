@@ -72,3 +72,14 @@ Into this list:
      - the number of fragments
      - the fragments in their natural order (unsorted)
      - the fragments in sorted order (largest to smallest)
+     
+__OPTIONAL__    
+    
+11. Search for every cut site found in the bionet collection of restriction enzymes in a user provided FASTA file. For each sequence report the 
+   - sequence id
+   - enzyme name
+   - number of fragments
+   - average fragment length
+   - max fragment length
+   - min fragment length
+
