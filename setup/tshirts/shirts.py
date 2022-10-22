@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 """
 mens	large	heather purple
 mens	small	heather seafoam
@@ -12,14 +11,16 @@ mens	large	Graphite Heather
 mens	large	sport grey
 """
 
+import sys
+
 shirts = {}
 with open("shirts.txt","r") as file_object: 
   for line in file_object:
     line = line.rstrip()
     [style, size, color] = line.split("\t")
-    style = style.lower()
-    size = size.lower()
-    color = color.lower()
+    style = style.strip().lower()
+    size = size.strip().lower()
+    color = color.strip().lower()
     if style not in shirts:
         shirts[style] = {}
     if size not in shirts[style]:
@@ -36,4 +37,4 @@ for style in shirts:
       print(style,size,color,count,sep="\t")
 
 
-print(shirts)
+print(shirts, file=sys.stderr)
