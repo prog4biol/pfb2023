@@ -5,29 +5,32 @@
 - PFB: Eric Ross
 
 
-# local machines
-
+## CSHL IT setup
+- 1 computer per student
+- 1 instrutor computer
+- 2 TA computers
 - small monitor imacs
-- networked mounted drive to share large files
 - students work on local machines
-- install
-   - iterm
-   - anaconda 
-   - python3
+- admin and student (non-admin) separate accounts
+- IT install
+   - iterm 
    - xcode
-   - wget & curl
-   - zcat & zgrep
+   - clean up task bar, only keep, terminal and/or iterm, browser.
+- remote control package for student computer management (if possible)
+- run MacOS updates on machines
 
 
-
-Notes to add
+## PFB IT setup
  - pssh
- - extra computer or 2 setup same as student computers for workshop testing
- - RUST remote interface
- - student accounts on each computer, do not give them admin permissions
- - install minicoda on each student account
- -  vim .vimrc setup
- -  .git/hooks/pre-commit
+ - vim .vimrc setup
+ - .git/hooks/pre-commit
+
+
+## Student tasks 
+ - Consistent name and location of github student repos
+ - install minicoda
+ - `conda install wget`
+ - standard location of large file
 
 
 
