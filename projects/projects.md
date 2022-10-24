@@ -4,7 +4,7 @@
 ### TA
 Eric  
 ### GitHub Repo
-https://github.com/jnjahncke/hot-seq-summer. 
+[https://github.com/jnjahncke/hot-seq-summer](https://github.com/jnjahncke/hot-seq-summer)
 ### Participants  
  - Carin
  - Kyle
@@ -23,7 +23,7 @@ https://github.com/jnjahncke/hot-seq-summer.
 Cynthia  
 
 ### GitHub Repo 
-https://github.com/cyntsc/Motif_Detectives
+[https://github.com/cyntsc/Motif_Detectives](https://github.com/cyntsc/Motif_Detectives)
 
 ### Participants:   
  - Brianda Lopez Aviña
@@ -40,7 +40,7 @@ https://github.com/cyntsc/Motif_Detectives
 Zachary
 
 ### GitHub Repo 
-https://github.com/xonq/git_chmods
+[https://github.com/xonq/git_chmods](https://github.com/xonq/git_chmods)
 
 ### Participants:   
  - Alex
@@ -67,19 +67,21 @@ Jessen V. Bredeson
  - Melissa Bentley-Ford  
 
 
-# [TEAMNAME]
-### [short project desc]
+# LaCROIX
+### Take user inputs to simulate a planet.
 
 ### TA 
 Shasta 
 
 ### GitHub Repo 
-[http:.....]
+[https://github.com/webbshasta/pfb2022_LaCROIX](https://github.com/webbshasta/pfb2022_LaCROIX)
 
-### Participants:   
- - [name]  
- - [name]  
-
+### Participants
+ - Omar
+ - Meike
+ - Irene
+ - Nick
+ - Reed
 
 
 
