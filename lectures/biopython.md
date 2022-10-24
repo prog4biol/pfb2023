@@ -9,36 +9,46 @@ Biopython is a collection of python modules that contain code for manipulating b
 This is very straightforward once you have anaconda or minconda installed. I use miniconda because it's smaller. We are going to use `sudo`, because this will give us permission to install in the 'correct' directory python is expecting to find the modules. Other users will be able to use it too. Using `sudo` can cause problems, but it's ok here. You will need the administrator password for the machine. If you don't have this, ask the person who does administration on your machine.
 
 ```bash
-% sudo conda install biopython
-WARNING: Improper use of the sudo command could lead to data loss
-or the deletion of important system files. Please double-check your
-typing when using sudo. Type "man sudo" for more information.
+% conda install biopython
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
 
-To proceed, enter your password, or type Ctrl-C to abort.
+## Package Plan ##
 
-Password:
-Fetching package metadata ...........
-Solving package specifications: .
+  environment location: /Users/smr/opt/anaconda3
 
-Package plan for installation in environment /anaconda3:
+  added / updated specs:
+    - biopython
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    biopython-1.78             |   py39h9ed2024_0         2.1 MB
+    conda-22.9.0               |   py39hecd8cb5_0         884 KB
+    ------------------------------------------------------------
+                                           Total:         3.0 MB
 
 The following NEW packages will be INSTALLED:
 
-    biopython: 1.69-np113py36_0              
+  biopython          pkgs/main/osx-64::biopython-1.78-py39h9ed2024_0
 
 The following packages will be UPDATED:
 
-    conda:     4.3.29-py36hbf39572_0 anaconda --> 4.3.30-py36h173c244_0
+  conda                               4.14.0-py39hecd8cb5_0 --> 22.9.0-py39hecd8cb5_0
 
-The following packages will be SUPERSEDED by a higher-priority channel:
 
-    conda-env: 2.6.0-h36134e3_0      anaconda --> 2.6.0-h36134e3_0     
+Proceed ([y]/n)?
 
-Proceed ([y]/n)? 
 
-conda-env-2.6. 100% |#################################################| Time: 0:00:00   4.02 MB/s
-biopython-1.69 100% |#################################################| Time: 0:00:00  21.02 MB/s
-conda-4.3.30-p 100% |#################################################| Time: 0:00:00  43.61 MB/s
+Downloading and Extracting Packages
+biopython-1.78       | 2.1 MB    | ####################################################################################### | 100%
+conda-22.9.0         | 884 KB    | ####################################################################################### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Retrieving notices: ...working... done
 
 ```
 
@@ -50,7 +60,7 @@ See if the install worked
 python3
 >>> import Bio
 >>> print(Bio.__version__)
-1.69
+1.78
 ```
 
 If we get no errors, biopython is installed correctly.
@@ -76,7 +86,7 @@ This is the core of biopython. And uses the Seq object. Seq is part of Bio. This
 #!/usr/bin/env python3
 import Bio.Seq                          
 seqobj = Bio.Seq.Seq('ATGCGATCGAGC')     
-print('{} has {} nucleotides'.format( seqobj , len(seqobj)))
+print(f"{seqobj} has {len(seqobj)} nucleotides")
 ```
 > Note: Sometimes you might have to convert an object to string to get sequence `seq_str = str(seqobj)`. The Seq Object predicts that if a user writes `print(seqobj)` they will want to print the sequence string not the entire Seq Object. Likewise, the Seq Object predicts that if a user writes `len(seqobj)` they will want to caluculate the length of the sequence not the length of the entire Seq Object
 
@@ -96,7 +106,7 @@ Another way to import modules is with `from ... import ...` . This saves typing 
 from Bio.Seq import Seq
 seqobj=Seq('ATGCGATCGAGC')
 protein = seqobj.translate()
-print('{} translates to {}'.format(seqobj,protein))
+print(f'{seqobj} translates to {protein}')
 ```
 
 produces
@@ -105,50 +115,6 @@ produces
 ATGCGATCGAGC translates to MRSS
 ```
 
-#### Bio.Alphabets
-
-Visit biopython.org to read about [Sequences and Alphabets](http://biopython.org/DIST/docs/tutorial/Tutorial.html#htoc17)
-
-A Seq object likes to know what alphabet it uses A,C,G,T for DNAAlpabet etc. Not essential for most uses, but prevents you trying to translate a protein sequence!
-
-__Specific Alphabets__
-
-For DNA
-
-```python
->>> seqobj
-Seq('ATG', Alphabet())
->>> from Bio.Alphabet import DNAAlphabet
->>> seqobj=Seq('ATG',DNAAlphabet())
->>> seqobj
-Seq('ATG', DNAAlphabet())
->>> seqobj.translate()
-Seq('M', ExtendedIUPACProtein())
-```
-
-For proteins
-
-```python
->>> seqobj = Seq('MGT')
->>> seqobj.translate()
-Seq('X', ExtendedIUPACProtein())
-```
-
-> 'X' That's not right! Wait! Why did python let us translate MGT? It's not DNA?
-
-
-```python
->>> from Bio.Alphabet import ProteinAlphabet
->>> seqobj = Seq('MGT', ProteinAlphabet())
->>> seqobj.translate()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/Users/smr/anaconda3/envs/py3.6/lib/python3.5/site-packages/Bio/Seq.py", line 1059, in translate
-    raise ValueError("Proteins cannot be translated!")
-ValueError: Proteins cannot be translated!
-```
-
-> That's better.
 
 ### Extracting a subsequence
 
@@ -159,7 +125,7 @@ Visit biopython.org to read about [Slicing a sequence](http://biopython.org/DIST
 ```python
 >>> seqobj=Seq('ATGCGATCGAGC')
 >>> seqobj[0:3]
-Seq('ATG', Alphabet())
+Seq('ATG')
 >>> print(seqobj[0:3])
 ATG
 ```
@@ -314,7 +280,10 @@ ID: seq1
 Name: seq1
 Description: seq1
 Number of features: 0
-Seq('AAGAGCAGCTCGCGCTAATGTGATAGATGGCGGTAAAGTAAATGTCCTATGGGC...AAC', SingleLetterAlphabet())
+Seq('AAGAGCAGCTCGCGCTAATGTGATAGATGGCGGTAAAGTAAATGTCCTATGGGC...AAC')
+<class 'Bio.SeqRecord.SeqRecord'>
+GCCACAGAGCCTAGGACCCCAACCTAACCTAACCTAACCTAACCTACAGTTTGATCTTAACCATGAGGCTGAGAAGCGATGTCCTGACCGGCCTGTCCTAACCGCCCTGACCTAACCGGCTTGACCTAACCGCCCTGACCTAACCAGGCTAACCTAACCAAACCGTGAAAAAAGGAATCT
+# ... etc
 ```
 
 
@@ -327,9 +296,8 @@ from Bio import SeqIO
 filename = "../files/seq.nt.fa"
 for seq_record in SeqIO.parse(filename, "fasta"):   
   print('ID',seq_record.id)
-  print('len {}'.format(len(seq_record)))
-  print('alphabet {}'.format(seq_record.seq.alphabet))
-  print('translation {}'.format(seq_record.seq.translate(to_stop=False)))
+  print(f'len {len(seq_record)}')
+  print(f'translation {seq_record.seq.translate(to_stop=False)}')
 ```
 > We added the translation of the DNA sequence into protein
 Output:  
@@ -337,22 +305,45 @@ Output:
 ```bash
 ID seq1
 len 180
-alphabet SingleLetterAlphabet()
 translation KSSSR*CDRWR*SKCPMGHQLWCMSESLVRDSLSNCCTQ**HVEIP*ASRVVQ*NTPLVN
 ID seq2
 len 180
-alphabet SingleLetterAlphabet()
 translation ATEPRTPT*PNLT*PTV*S*P*G*EAMS*PACPNRPDLTGLT*PP*PNQANLTKP*KKES
 ID seq3
 len 98
-alphabet SingleLetterAlphabet()
 translation MKVT*RLFDA*IVQF*KLTFC*SQVLVYNIN*
 ID seq4
 len 209
-alphabet SingleLetterAlphabet()
 translation MLTKVSVRTCR*ATLKKETTCQIETINSAMEIRTTISLEIKIEITGTISLIT*CRIKGIINLIQVIRTE
 ```
 
+Because one of our sample sequences is not a complete CDS we will get this message from biopython 
+
+```
+/Users/smr/opt/anaconda3/lib/python3.9/site-packages/Bio/Seq.py:2334: BiopythonWarning: Partial codon, len(sequence) not a multiple of three. Explicitly trim the sequence or add trailing N before translation. This may become an error in future.
+  warnings.warn(
+ ```
+ 
+ This is diplayed to standard error and and standard out, and therefore will not affect the contents if redirected from standard out into a file.
+  
+```
+% python3 biopython_translate.py > tmp
+/Users/smr/opt/anaconda3/lib/python3.9/site-packages/Bio/Seq.py:2334: BiopythonWarning: Partial codon, len(sequence) not a multiple of three. Explicitly trim the sequence or add trailing N before translation. This may become an error in future.
+  warnings.warn(  
+% cat tmp
+ID seq1
+len 180
+translation KSSSR*CDRWR*SKCPMGHQLWCMSESLVRDSLSNCCTQ**HVEIP*ASRVVQ*NTPLVN
+ID seq2
+len 180
+translation ATEPRTPT*PNLT*PTV*S*P*G*EAMS*PACPNRPDLTGLT*PP*PNQANLTKP*KKES
+ID seq3
+len 98
+translation MKVT*RLFDA*IVQF*KLTFC*SQVLVYNIN*
+ID seq4
+len 209
+translation MLTKVSVRTCR*ATLKKETTCQIETINSAMEIRTTISLEIKIEITGTISLIT*CRIKGIINLIQVIRTE
+```
 
 #### Convert FASTA file to Python dictionary in one line
 
@@ -360,9 +351,10 @@ translation MLTKVSVRTCR*ATLKKETTCQIETINSAMEIRTTISLEIKIEITGTISLIT*CRIKGIINLIQVIRT
 
 
 ```
+>>> from Bio import SeqIO
 >>> id_dict = SeqIO.to_dict(SeqIO.parse('../files/seq.nt.fa', 'fasta'))
 >>> id_dict
-{'seq1': SeqRecord(seq=Seq('AAGAGCAGCTCGCGCTAATGTGATAGATGGCGGTAAAGTAAATGTCCTATGGGC...AAC', SingleLetterAlphabet()), id='seq1', name='seq1', description='seq1', dbxrefs=[]), 'seq2': SeqRecord(seq=Seq('GCCACAGAGCCTAGGACCCCAACCTAACCTAACCTAACCTAACCTACAGTTTGA...TCT', SingleLetterAlphabet()), id='seq2', name='seq2', description='seq2', dbxrefs=[]), 'seq3': SeqRecord(seq=Seq('ATGAAAGTTACATAAAGACTATTCGATGCATAAATAGTTCAGTTTTGAAAACTT...AAT', SingleLetterAlphabet()), id='seq3', name='seq3', description='seq3', dbxrefs=[]), 'seq4': SeqRecord(seq=Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT', SingleLetterAlphabet()), id='seq4', name='seq4', description='seq4', dbxrefs=[])}
+{'seq1': SeqRecord(seq=Seq('AAGAGCAGCTCGCGCTAATGTGATAGATGGCGGTAAAGTAAATGTCCTATGGGC...AAC'), id='seq1', name='seq1', description='seq1', dbxrefs=[]), 'seq2': SeqRecord(seq=Seq('GCCACAGAGCCTAGGACCCCAACCTAACCTAACCTAACCTAACCTACAGTTTGA...TCT'), id='seq2', name='seq2', description='seq2', dbxrefs=[]), 'seq3': SeqRecord(seq=Seq('ATGAAAGTTACATAAAGACTATTCGATGCATAAATAGTTCAGTTTTGAAAACTT...AAT'), id='seq3', name='seq3', description='seq3', dbxrefs=[]), 'seq4': SeqRecord(seq=Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT'), id='seq4', name='seq4', description='seq4', dbxrefs=[])}
 
 ```
 
@@ -371,9 +363,9 @@ Let's retrieve some info from our new dictionary
 
 ```python
 >>> id_dict['seq4']
-SeqRecord(seq=Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT', SingleLetterAlphabet()), id='seq4', name='seq4', description='seq4', dbxrefs=[])
+SeqRecord(seq=Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT'), id='seq4', name='seq4', description='seq4', dbxrefs=[])
 >>> id_dict['seq4'].seq
-Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT', SingleLetterAlphabet())
+Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT')
 >>> str(id_dict['seq4'].seq)
 'ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAAACAACATGCCAAATAGAAACGATCAATTCGGCGATGGAAATCAGAACAACGATCAGTTTGGAAATCAAAATAGAAATAACGGGAACGATCAGTTTAATAACATGATGCAGAATAAAGGGAATAATCAATTTAATCCAGGTAATCAGAACAGAGGT'
 >>>
@@ -387,6 +379,7 @@ Seq('ATGCTAACCAAAGTTTCAGTTCGGACGTGTCGATGAGCGACGCTCAAAAAGGAA...GGT', SingleLetter
 Visit biopython.org to read how [Sequences act like strings](http://biopython.org/DIST/docs/tutorial/Tutorial.html#htoc18)
 
 ```python
+from Bio.Seq import Seq
 seqobj.count("A")  # counts how many As are in sequence
 seqobj.find("ATG") # find coordinate of ATG (-1 for not found)
 ```
@@ -394,6 +387,7 @@ seqobj.find("ATG") # find coordinate of ATG (-1 for not found)
 OR, as mentioned earlier in the interpreter you can use option+tab to find out what methods are available:
 
 ```python
+>>> from Bio.Seq import Seq
 >>> seqobj=Seq('ATGCGATCGAGC')
 >>> seqobj.
 seqobj.alphabet             seqobj.find(                seqobj.rstrip(              seqobj.transcribe(
@@ -468,7 +462,9 @@ Additional attributes:
 SeqRecord objects have .format() to convert to a string in various formats
 
 ```python
->>> seq.format('fasta')
+>>> for seq_record in SeqIO.parse("../files/seq.nt.fa", "fasta"):
+...   seq_record.format('fasta')
+...
 '>seq1\nAAGAGCAGCTCGCGCTAATGTGATAGATGGCGGTAAAGTAAATGTCCTATGGGCCACCAA\nTTATGGTGTATGAGTGAATCTCTGGTCCGAGATTCACTGAGTAACTGCTGTACACAGTAG\nTAACACGTGGAGATCCCATAAGCTTCACGTGTGGTCCAATAAAACACTCCGTTGGTCAAC\n'
 
 ```
@@ -551,15 +547,17 @@ You can get biopython to run the blast for you too. See `Bio.NCBIWWW`
 To parse the output, you'll write something like this
 
 ```python
+#!/usr/bin/env python3
 from Bio.Blast import NCBIXML
-result_handle = open("UTKBKAM5014-Alignment.xml")
+result_handle = open("../files/UTKBKAM5014-Alignment.xml")
 blast_records = NCBIXML.parse(result_handle)
 for blast_record in blast_records:
    query_id = blast_record.query_id
    for alignment in blast_record.alignments:
      for hsp in alignment.hsps:
         if hsp.expect < 1e-10:
-           print('qid:' , query_id , 'hit_id:' , alignment.title, 'E:' , hsp.expect )
+           print(f'qid: {query_id} hit_id: {alignment.title} E: {hsp.expect}' )
+           # print(query_id, alignment.title, hsp.expect, sep="\t" ) # print tab delimited results table
 ```
 
 Output:
@@ -571,7 +569,7 @@ qid: Query_26141 hit_id: sp|Q4QQW4.1| RecName: Full=Histone deacetylase 1; Short
 qid: Query_26141 hit_id: sp|Q32PJ8.1| RecName: Full=Histone deacetylase 1; Short=HD1 [Bos taurus] E: 0.0
 qid: Query_26141 hit_id: sp|P56517.1| RecName: Full=Histone deacetylase 1; Short=HD1 [Gallus gallus] E: 0.0
 qid: Query_26141 hit_id: sp|O42227.1| RecName: Full=Probable histone deacetylase 1-B; Short=HD1-B; AltName: Full=RPD3 homolog [Xenopus laevis] E: 0.0
-...
+... etc
 
 ```
 

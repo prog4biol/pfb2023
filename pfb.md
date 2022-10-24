@@ -1262,7 +1262,7 @@ The positional index of an exact string in a larger string can be found and retu
 >>> dna.count('T')
 4
 ```
-> The number of times 'T' is found is returned. The string stored in 'dna' is not altered.
+> The number of times 'T' is found and returned. The string stored in 'dna' is not altered.
 
 
 #### Replace one string with another
@@ -2459,7 +2459,16 @@ These functions work on several other data types too!
 | `dict.values()`                        | Returns list of dictionary dict's values |
 
 
-### Sets
+
+### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
+
+
+
+---
+
+## Python 6
+
+## Sets
 
 
 A set is another Python data type. It is essentially a dictionary with keys but no values.
@@ -2644,12 +2653,7 @@ nt count: {'G': 20, 'T': 21, 'A': 13, 'C': 16, 'N': 1}
 
 ---
 
-### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
 
-
-
----
-## Python 6
 
 
 ### I/O and Files
@@ -2678,12 +2682,16 @@ This is something new. There is a function which prints a message to the screen 
 Type Something Now: Hi
 >>> print(user_input)
 Hi
->>> type(user_input)
+>>> in_str = input("Enter a number: ")
+>>> type(in_str)
 <class 'str'>
+>>> num = int(in_str)
+>>> num
+445
 ```
 #### Reading from a File
 
-Most of the data we will be dealing with will be contained in files. 
+Mostly you will read data from files. 
 
 The first thing to do with a file is open it. We can do this with the `open()` function. The `open()` function takes the file name and access mode as arguments and returns a file object.
 
@@ -2692,16 +2700,16 @@ The most common access modes are read (r) and write (w).
 #### Open a File
 
 ```python
->>> file_object = open("seq.nt.txt","r")
+>>> seq_file_obj = open("seq.nt.txt","r")
 ```
-> 'file_object' is a name of a variable. This can be anything, but make it a helpful name that describes what kind of file you are opening.
+> `seq_file_obj` is a name of a variable. This can be anything, but make it a helpful name that describes what kind of file you are opening and to distinguish it from the filename.
 
 
 #### Reading the contents of a file
 
-Now that we have opened a file and created a file object we can do things with it, like read it. Let's read all the contents at once.  
+Now that we have opened a file and created a file object we can do things with it, like read from the file. Let's read all the contents at once.  
 
-Let's go to the command line and  `cat` the contents of the file to see what's in it first.
+Before we do that, let's go to the command line and  `cat` the contents of the file to see what's in it first.
 
 ```bash
 $ cat seq.nt.txt
@@ -2712,13 +2720,13 @@ $
 
 Note the new lines. Now, lets print the contents to the screen with Python. We will use `read()` to read the entire contents of the file into a variable. 
 ```python
->>> file = open("seq.nt.txt","r")
->>> contents = file.read()
+>>> seq_file_obj = open("seq.nt.txt","r")
+>>> contents = seq_file_obj.read()
 >>> print(contents)  # note newline characters are part of the file!
 ACAAAATACGTTTTGTAAATGTTGTGCTGTTAACACTGCAAATAAACTTGGTAGCAAACACTTCCAAAAG
 ACCGGTTTCCAAAGACAGTCTTCTAATTCCTCATTAGTAATAAGTAAAATGTTTATTGTTGTAGCTCTGG
 
->>> file.close()
+>>> seq_file_obj.close()
 ```
 > The complete contents can be retrieved with the `read()` method. Notice the newlines are maintained when `contents` is printed to the screen. `print()` adds another new line when it is finished printing.
 > It is good practice to close your file. Use the `close()` method. 
@@ -2728,8 +2736,8 @@ Here's another way to read data in from a file. A `for` loop can be used to iter
 ```python
 #!/usr/bin/env python3
 
-file = open("seq.nt.txt","r")
-for line in file: # Python magic: reads in a line from file
+seq_file_obj = open("seq.nt.txt","r")
+for line in seq_file_obj: # Python magic: reads in a line from file
   print(line)
 ```
 
@@ -2748,8 +2756,8 @@ Let's use `rstrip()` method to remove the newline from our file input.
 $ cat file_for_rstrip.py
 #!/usr/bin/env python3
 
-file_object = open("seq.nt.txt","r")
-for line in file_object:
+seq_file_obj = open("seq.nt.txt","r")
+for line in seq_file_obj:
   line = line.rstrip()
   print(line)
 ```
@@ -2771,9 +2779,9 @@ Many people add this, because it closes the file for you automatically. Good pro
 ```python
 #!/usr/bin/env python3
 
-with open("seq.nt.txt","r") as file_object: #cleans up after exiting 
+with open("seq.nt.txt","r") as seq_file_obj: #cleans up after exiting 
                                             # the 'with' block
-  for line in file_object:
+  for line in seq_file_obj:
     line = line.rstrip()
   	print(line)
 #file gets closed for you here.
@@ -2789,12 +2797,12 @@ Let's write a few lines to a file named "writing.txt".
 ```python
 #!/usr/bin/env python3
 
-fo = open("writing.txt" , "w")
+fo = open("writing.txt" , "w")  # note that we are writing so the mode is "w"
 fo.write("One line.\n")
 fo.write("2nd line.\n")
 fo.write("3rd line" + " has extra text\n")
 some_var = 5
-fo.write("4th line has " + str(some_var) + " words\n")
+fo.write("4th line has " + str(some_var) + " words\n")  # the write() method does not convert ints for you
 fo.close()
 print("Wrote to file 'writing.txt'") # it's nice to tell the user you wrote a file
 ```
@@ -2820,9 +2828,9 @@ with open("seq.nt.txt","r") as seq_read, open("nt.counts.txt","w") as seq_write:
     line = line.rstrip()
     nt_count = len(line)
     total_nts += nt_count
-    seq_write.write(str(nt_count) + "\n")
+    seq_write.write(f"{nt_count}\n")
 
-  seq_write.write("Total: " + str(total_nts) +"\n")
+  seq_write.write(f"Total: {total_nts}\n") # better than concatenation + str()
 
 print("Wrote 'nt.counts.txt'")
 ```
@@ -2830,6 +2838,7 @@ print("Wrote 'nt.counts.txt'")
 Output:
 ```
 $ python3 file_read_write.py
+Wrote 'nt.counts.txt'
 $ cat nt.counts.txt
 71
 71
@@ -3020,7 +3029,7 @@ A group of characters that are allowed to be matched one time. There are a few p
 | `\w`  | Word character. Also can be written `[A-Za-z0-9_]` Note underscore is part of this class |
 | `\W`  | Not a word character, or `[^A-Za-z0-9_]` |
 | `\s`  | White space character. Also can be written `[ \r\t\n]`. Note the space character after the first `[` |
-| `\S`  | Not whitespace. Also `[^ \r\\t\n]`       |
+| `\S`  | Not whitespace. Also `[^ \r\t\n]`        |
 | `[^]` |a carat within a bracketed list of characters indicates anything but the characters that follows |
 
 #### Anchors
@@ -3040,32 +3049,27 @@ g..t
 ```
 > matches "gaat", "goat", and "gotta get a goat" (twice)
 
-
-<br><br> 
 ```
 g[gatc][gatc]t
 ```
 > matches "gaat", "gttt", "gatt", and "gotta get an agatt" (once) 
 
-
-<br><br> 
 ```
 \d\d\d-\d\d\d\d
 ```
 > matches 867-5309, and 5867-5309 but not 8-67-5309.
 
-<br><br> 
-
 ```
 ^\d\d\d-\d\d\d\d
 ```
 >  matches 867-5309 and 867-53091 but not 5867-5309.
-<br><br> 
+ 
 ```
 ^\d\d\d-\d\d\d\d$
 ```
+
 > only matche 3 digits followed by a dash followed by 4 digits, not extra characters anywhere are allowed
-<br><br> 
+<br> 
 
 
 
@@ -3352,8 +3356,8 @@ TCTAATTCCTCATTAGTAATAAGTAAAATGTTTATTGTTGTAGCTCTGGATATTATCCGGTTTCCAAAGACAGTCTTCTA
 By default, regular expressions are "greedy".  They try to match as much as they can. Use the quantifier '?' to make the match not greedy. The not greedy match is called 'lazy' 
 
 ```python
->>> str = 'The fox ate my box of doughnuts'
->>> found = re.search(r"(f.+x)",str)
+>>> phrase = 'The fox ate my box of doughnuts'
+>>> found = re.search(r"(f.+x)",phrase)
 >>> print(found.group(1))
 fox ate my box
 ```
@@ -3362,7 +3366,7 @@ fox ate my box
 
 Let's make this match lazy by using '?'
 ```python
->>> found = re.search(r"(f.+?x)",str)
+>>> found = re.search(r"(f.+?x)",phrase)
 >>> print(found.group(1))
 fox
 ```
@@ -3420,45 +3424,40 @@ None
 
 Nest it!
 ```python
->>> 
 >>> if re.search( r"(.{50})TATTATZ(.{25})"  , dna ):
 ...    print("found it")
 ... else:
 ...    print("not found")
 ...
 not found
->>> print(found)
-None
 ```
-
-
 
 #### Using Regular expressions in substitutions 
 
 Earlier we went over how to find an **exact pattern** and replace it using the `replace()` method. To find a pattern, or inexact match, and make a replacement the regular expression `sub()` function is used. This function takes the pattern, the replacement, the string to be searched, the number of times to do the replacement, and flags.
 
 ```python
->>> str = "Who's afraid of the big bad wolf?"
->>> re.sub(r'w.+f' , 'goat', str)
+>>> phrase = "Who's afraid of the big bad wolf?"
+>>> re.sub(r'w.+f' , 'goat', phrase)
 "Who's afraid of the big bad goat?"
->>> print(str)
+>>> print(phrase)
 Who's afraid of the big bad wolf?
 ```
 > The `sub()` function returns "Who's afraid of the big bad goat?"  
-> The value of variable str has not been altered  
+> The value of variable phrase has not been altered  
 > The new string can be stored in a new variable for later use.
 
 Let's save the new string that is returned in a variable
 ```python
->>> str = "He had a wife."
->>> new_str = re.sub(r'w.+f' , 'goat', str)
->>> print(new_str)
+>>> phrase = "He had a wife."
+>>> new_phrase = re.sub(r'w.+f' , 'goat', phrase)
+>>> print(new_phrase)
 He had a goate.
->>> print(str)
+>>> print(phrase)
 He had a wife.
 ```
 > The characters between 'w' and 'f' have been replaced with 'goat'.  
-> The new string is saved in new_str  
+> The new string is saved in new_phrase  
 
 
 
@@ -3466,9 +3465,9 @@ He had a wife.
 
 Sometimes you want to find a pattern and use it in the replacement. 
 ```python
->>> str = "Who's afraid of the big bad wolf?"
->>> new_str = re.sub(r"(\w+) (\w+) wolf" , r"\2 \1 wolf" , str)
->>> print(new_str)
+>>> phrase = "Who's afraid of the big bad wolf?"
+>>> new_phrase = re.sub(r"(\w+) (\w+) wolf" , r"\2 \1 wolf" , phrase)
+>>> print(new_phrase)
 Who's afraid of the bad big wolf?
 ```
 > We found two words before 'wolf' and swapped the order.
@@ -3634,7 +3633,7 @@ You can also use the `get()` method to retrieve records.
 >>> kmers.get('ggaa')
 [4, 10]
 ```
-> These two statements returns the same results, but if the key does not exist you will get nothing and not an error.
+> These two statements return the same results, but if the key does not exist you will get nothing and not an error.
 
 #### Dictionaries of dictionaries
 
@@ -3698,8 +3697,6 @@ Alter one gene's nucleotide count with `+=` assignment operator:
 >>>
 >>> genes['gene1']['nt_comp']
 {'C': 2, 'G': 1, 'A': 2, 'T': 6}
->>>
->>>
 ```
 
 To retrieve the A composition of every gene use a for loop.
@@ -3718,13 +3715,7 @@ gene2: As= 3
 
 Below is an example of building a list with a mixed collection of value types. Remember that all elements inside a list or dictionary should be the same type. In other words, the values in a list should all be lists or dictonaries or scalar values. This allows you to loop over the data structure.
 
-The dictionary which is a list value has a key that has a dictionary as a value.
-
-```
-[{'gene1' : {'sequence' : [1, 2, 3], [4, 5, 6], [7,8,9]]
-```
-
-Just spaced differently:
+This is a list with lists and a dictionary. The dictionary has a key with a value that is a dictionary. 
 ```
 [
    [1, 2, 3], 
@@ -3793,10 +3784,10 @@ mens	small	Carolina Blue
 We want something like this:
 
 ```
-womens	small	antique heliconia	2
-womens	xs	heather orange	1
-womens	medium	kiwi	2
-womens	medium	royal heather	1
+womens	small	antique heliconia   2
+womens	xs      heather orange      1
+womens	medium  kiwi                2
+womens	medium	royal heather       1
 ```
 
 [shirts.py](scripts/shirts.py)
@@ -3831,14 +3822,14 @@ for style in shirts:
 Output:
 ```
 sro$ python3 shirts.py
-mens	small	heather maroon	1
-mens	small	royal blue	1
-mens	small	olive	1
-mens	large	graphite heather	1
-womens	medium	heather purple	3
-womens	medium	berry	2
-womens	medium	royal heather	1
-womens	medium	kiwi	2
+mens	small	heather maroon      1
+mens	small	royal blue          1
+mens	small	olive               1
+mens	large	graphite heather    1
+womens	medium	heather purple      3
+womens	medium	berry               2
+womens	medium	royal heather       1
+womens	medium	kiwi                2
 ...
 ```
 
@@ -4284,20 +4275,19 @@ This code will print 0.45161290322580644 to the screen. You can save this value 
 dna_gc = gc_content('GTACCTTGATTTCGTATTCTGAGAGGCTGCT')
 ```
 
-As you can see we can write a nice clear line of python to call this function and because the function has a name that describes what it does it's easy to understand how the code works. Don't give your functions names like this `def my_function(a):`!
+As you can see we can write a nice clear line of python to call this function and because the function has a name that describes what it does it's easy to understand how the code works. Don't give your functions names like this `my_function()`!
 
-How could you convert the GC fraction to % GC. Use `format()`.
+How could you convert the GC fraction to % GC. Use `f''`.
 
 ```python
 dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 dna_gc = gc_content(dna_string)
-pc_gc = '{:.2%}'.format(dna_gc)
-print('This sequence is' , pc_gc , 'GC')
+print('This sequence is {dna_gc:.2%} GC')
 ```
 
 Here's the output
 
-```python
+```
 This sequence is 45.16% GC
 ```
 
@@ -4313,7 +4303,7 @@ This sequence is 45.16% GC
 
 #### Naming Arguments
 
-You can name your argument variables anything you want, but the name should describe the data contained. The name needs to be consistent within your function. 
+You should name your argument variables so that they describe the data they contain. The name needs to be consistent within your function. 
 
 #### Keyword Arguments
 
@@ -4323,7 +4313,7 @@ Arguments can be named and these names can be used when the function is called. 
 >>> dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 >>> print(gc_content(dna_string))
 0.45161290322580644
->>> print(gc_content(dna=dna_string)
+>>> print(gc_content(dna=dna_string)  # gc_content is expecting a 'dna' argument
 0.45161290322580644
 
 ```
@@ -4356,7 +4346,7 @@ def gc_content(dna='N'):   # give our function a name and parameter 'dna'
 
 #### Lambda expressions
 
-Lambda expressions can be used to define simple (one-line) functions. There are some uses for lambda which we won't go into here. We are showing it to you because sometimes you will come across it.
+Lambda expressions can be used to define simple (one-line) functions. 
 
 Here is a one line custom function, like the functions we have already talked about:
 ```python
@@ -4367,9 +4357,17 @@ print(get_first_codon('ATGTTT'))
 ```
 > This will print `ATG`
 
+The format for lambda is like this
+
+```
+lambda <the variable you pass into the function> : <the expression that operates on your variable>
+```
+
 Here is the same function written as a lambda
+
 ```python
-get_first_codon = lambda dna : dna[0:3]
+get_first_codon = lambda dna : dna[0:3]  # pass data into 'dna' then extract 
+                                         # the first 3 characters
 print(get_first_codon('ATGTTT'))
 ```
 > This also prints `ATG`. lambdas can only contain one line and there is no `return` statement.
@@ -4378,7 +4376,7 @@ List comprehensions can often be used instead of lambdas and may be easier to re
 
 ### Scope
 
-Almost all python variables are global. This means they are available everywhere in your code.  Remember that python blocks are defined as code at the same level of indentation.
+Almost all python variables are global. This means you can use them everywhere in your code.  Remember that python blocks are defined as code at the same level of indentation.
 
 ```python
 #!/usr/bin/env python3
@@ -4426,7 +4424,7 @@ show_n()
 
 The output is this `5` as you would expect, but the example below is better programming practice. Why? We'll see a little later.
 
-```python3
+```python
 def show_n(n):
   print(n)
 n = 5
@@ -4445,7 +4443,7 @@ Variables inside functions are local and therefore can only been accessed from w
 
 def set_local_x_to_five(x):
   print('Inside def')
-  x = 5 # local to set_local_x_to_five()
+  x = 5 # local to function set_local_x_to_five()
   y=5   # also local
   print("x =",x)
   print("y = ",y)
@@ -4462,7 +4460,7 @@ print('x=',x)
 print('y=',y)
 
 ```
-> Here we have added a function `set_local_x_to_five` with an argument named 'x'. This variable exists only within the function where is replaces any variable with the same name outside the `def`. Inside the `def` we also initialize a variable `y` that also replaces any global `y` within the `def`
+> Here we have added a function `set_local_x_to_five()` with an argument named `x`. This variable exists only within the function where is replaces any variable with the same name outside the `def`. Inside the `def` we also initialize a variable `y` that also replaces any global `y` within the `def`
 
 Let's run it:
 ```bash
@@ -4480,7 +4478,7 @@ y= 100
 
 
 ```
-> There is a global variable, `x` = 100, but when the function is called, it makes a new local variable, also called `x` with value = 5. This variable disappears after the function finishes and we go back to using the global variable `x` = 100. Same for `y`
+> There is a global variable, `x` = 100, but when the function is called, it makes a **new local variable**, also called `x` with value = 5. This variable disappears after the function finishes and we go back to using the global variable `x` = 100. Same for `y`
 
 #### Global
 
@@ -4527,7 +4525,7 @@ Python comes with some core functions and methods. There are many useful modules
 
 #### Getting information about modules with `pydoc`
 
-How do you find out information about a module? Python has help pages built into the command line, like `man` we met earlier in the unix lecture. Online information may be more up to date. Search at https://docs.python.org/3.6/. But if you don't have internet access, you can always use `pydoc`.
+How do you find out information about a module? Python has help pages built into the command line, like `man` we met earlier in the unix lecture. Online information may be more up to date. Search at https://docs.python.org/3.9/. But if you don't have internet access, you can always use `pydoc`.
 To find out about the `re` module, type `pydoc re` on the command line. The last line in the output tells you where the python module is actually installed.
 
 ```bash
@@ -4538,7 +4536,7 @@ NAME
     re - Support for regular expressions (RE).
 
 MODULE REFERENCE
-    https://docs.python.org/3.6/library/re
+    https://docs.python.org/3.9/library/re
     
     The following documentation is automatically generated from the Python
     source files.  It may be incomplete, incorrect or include features that
@@ -4556,9 +4554,13 @@ DESCRIPTION
     Most ordinary characters, like "A", "a", or "0", are the simplest
     regular expressions; they simply match themselves.  You can
     concatenate ordinary characters, so last matches the string 'last'.
-...
-FILE
-    /anaconda3/lib/python3.6/glob.py
+    
+    The special characters are:
+        "."      Matches any character except a newline.
+        "^"      Matches the start of the string.
+        "$"      Matches the end of the string or just before the newline at
+                 the end of the string.
+
 
 ```
 
@@ -4578,7 +4580,7 @@ Here are some of the most common and useful modules, along with their methods an
 | os.path.isdir(path)    | does the path point to a directory?      |
 | os.path.splitext(path) | splits before and after the file extension (e.g. '.txt') |
 
-
+`__file__` is the path to your current python script
 
 #### os.system
 
@@ -4604,14 +4606,14 @@ Let's say we want to find all the files that have user amanda (or in the filenam
 
 `ls -l | grep amanda`
 
-becomes this 'shortcut' which will capture the output of the two unix commands in the variable `output`
+ We can write the following code to capture the output of the two unix commands in the variable `output`
 
 ```python
 import subprocess
 output = subprocess.check_output('ls -l | grep amanda', shell = True)
 ```
 
-This is better than alternatives with `subprocess.run()`. This is equivalent to the unix backtick quoted string.
+This is better than alternatives with `subprocess.run()`. This is the python equivalent of the unix backtick quoted string \`ls -l | grep amanda\`.
 
 `output` contains a bytes object (more or less a string of ASCII character encodings)
 
@@ -4662,7 +4664,7 @@ lines = stdout.splitlines()
 
 ##### Check the exit status of a command
 
-To run a command and check the exit status (really to check the exit status was ok or zero), use 
+To run a command and check the exit status (really to check the exit status = 0, which means success), use 
 
 ```python
 oops = subprocess.check_call(['ls', '-l'])
@@ -4670,7 +4672,7 @@ oops = subprocess.check_call(['ls', '-l'])
 oops = subprocess.check_call('ls -l', shell=True)
 ```
 
-##### Run a command with that redirects stdout to a file using python subprocess
+##### Run a command that redirects stdout to a file using python subprocess
 
 You can't write `ls -l > listing.txt`  to redirect stdout in the subprocess method, so use this instead
 

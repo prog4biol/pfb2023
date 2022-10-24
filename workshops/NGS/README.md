@@ -1,56 +1,83 @@
-NGS Workshop Tutorial
-=====================
-To See answers to the below questions, go to Jessen's the answers branch of his [repo](https://github.com/bredeson/pfb2022/blob/answers/workshops/NGS/README.md).
+NGS Workshop Excercises
+=======================
 
-**NOTE:** Unless otherwise specified, example command lines are available in this workshop's [lecture notes](https://github.com/bredeson/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) 
+The purpose of this workshop is to gain experience working with the various file formats discussed in the [NGS file formats lecture](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) and the tools designed to manipulate them. We will use real *E. coli* data to perform our analysis: find candidate frameshift mutants in a strain of interest.
 
-1. First, install the `gnuplot` command line plotting software using HomeBrew:
-   ```bash
-   brew install gnuplot
-   ```
+**NOTE**: Unless otherwise specified, example command lines are available in this workshop's [lecture notes](https://github.com/bredeson/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf)
+
+0. First, create a new `ngs` directory for this workshop in which to perform these exercises, then change directory to it.
+
+1. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](https://github.com/prog4biol/pfb2022/blob/master/problemsets/biopython_problemset.md).
+    ```bash
+    conda install -c anaconda wget
+    conda install -c conda-forge gnuplot
+    conda install -c bioconda bwa fastqc samtools bedtools vcftools
+    ```
    
-2. Download the sofware required for this tutorial using `wget` from `https://www.dropbox.com/s/zn4m0oqbasg4gal/software.tar.gz`. Unarchive the files by typing `tar -xzvf software.tar.gz`. Finally, add the `software/bin` directory to your `$PATH` environment variable:
+
+2. Download the Java-based sofware required for this tutorial using `wget`:
+    ```bash
+    # 1. Fetch each software package .zip archive file:
+    wget https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip
+
+    # 2. Unpack the .zip archive:
+    unzip gatk-4.3.0.0.zip
+    ```
+
+
+3. Download the following genome files with `wget`, then decompress both with `gunzip`:
    ```bash
-   export PATH=$PWD/software/bin:$PATH;
+   # Genome sequence:
+   https://github.com/prog4biol/pfb2022/raw/master/workshops/NGS/data/Ecoli.fasta.gz
+
+   # Genome annotation:
+   https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/Ecoli.gff3.gz
    ```
-   **NOTE**: You need to replaced `$PWD` above with the full, expanded path the the `software/bin` dir if you put the `export` statement in your `.bash_profile` or `.bashrc`. 
+    - How many of the sequences are chromosomes? How many plasmids?
+    - What is the reference strain's genome size?
 
-3. Download the [genome](https://www.dropbox.com/s/goo2bt4br9mqxtt/Scerevisiae.fasta.gz) and [annotation](https://www.dropbox.com/s/uq8mfp125jlgknq/Scerevisiae.gff3.gz) files using `wget` and decompress them both with `gunzip`.
 
-4. Index the genome as described in the lecture notes.
+4. Index the genome as described in the [lecture notes](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf).
 
-5. Download the reads with SRR number `SRR10178655` from the SRA and convert to FASTQ format:
-   ```bash
-   # Fetch the .sra container file from the SRA FTP:
-   wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR101/SRR10178655/SRR10178655.sra
-   # Use SRA Toolkit to extract the reads in FASTQ format:
-   fastq-dump --gzip --split-files --defline-seq '@$sn/$ri' --defline-qual '+' SRR10178655.sra
-   ```
 
-6. Run FastQC on the FASTQ files and examine the report (see `fastqc --help` for a complete list of options).
-   - How many read pairs are in included in the FASTQ file?
-   - How long are the reads?
-   - What quality encoding are the reads in? What is the quality offset?
-   - For which metrics are there warnings?
-   - Are there any over-represented sequences in the file? If so, what is it?
+5. Use `wget` to download the FASTQ file of sequencing [reads](https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/SRR21901339.fastq.gz) for our strain of interest, then use Unix commands to examine the FASTQ file:
+    - How long are the reads?
+    - Are these reads single-end or paired-end? Explain how can you tell.
+    - Which Phred quality encoding (ASCII offset) are the reads in? How can you tell?
 
-7. Next, run the Trimmomatic adapter trimmer on the FASTQ files in "PE" mode, using this [adapter file](https://www.dropbox.com/s/tpmhcz24jluq97s/adapters.fa). What fraction of the data were discarded? **NOTE**: Trimmomatic is in it's own subdirectory `sofware/Trimmomatic-0.39/trimmomatic-0.39.jar`.
 
-8. Align the reads to the genome sequence using BWA-MEM. Convert the file to BAM format, sort the BAM file, and index it (see lecture notes for how).
+6. Run FastQC on the FASTQ file and examine the report; see `fastqc --help` for a complete list of options. `open` the `fastqc_report.html` to view the report in your browser (you may have to `unzip` the FastQC archive file first). 
+    - How many read pairs are in included in the FASTQ file?
+    - For which metrics are there warnings?
+    - Are there any over-represented sequences in the file? If so, what are they?
+    - Are these reads of good quality?
 
-9. Now, Run GATK's `MarkDuplicates` tool on the BAM file to identify optical and PCR duplicate reads.
 
-10. Run `samtools stats` and `plot-bamstats` on the BAM file and examine the results.
-    - What is the mode insert size of the sequencing library?
-    - What is the estimated read base-call error rate?
-    - What fraction of your reads are duplicates?
-    - Within which base quality score range do the majority of mismatches occur? (*HINT*: see the "Mismatches per cycle" plot). Record the upper value of the range to use as the minimum base quality threshold for variant calling a later step.
+7. Write a python script to trim poor-quality bases from the ends of the FASTQ sequences and output a new FASTQ file. Your script should take as input from the command line: one FASTQ file name and one integer value (the minimum base quality threshold). *HINT*: Use the following approach:
+    1. Iterate from the 3'-end of the read to the 5'-end, examining the quality values at each base position (see the [lecture notes](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) for how to convert quality string characters to numberic values;  
+    2. `break` at the first base with a quality value greater-than or equal-to your inputted quality threshold;  
+    3. then use string slicing to extract the high-quality portion of both the sequence and quality strings.  
 
-11. Use `samtools view` to keep alignments with `PAIRED` and `PROPER_PAIR` flags *AND DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output as a BAM file. Index this new file with SAMtools (*HINT*: see `samtools flags` for help with flags). Be sure to index your filtered BAM file.
 
-12. Using the base quality score determined in *Step 10* as the minimum base quality threshold, call SNPs using the GATK HaplotypeCaller.
+8. Align the trimmed reads to the genome sequence using BWA-MEM (*i.e.* the `bwa` command). Make sure to specify a Read Group string (via `-R`) that, at a *minimum*, includes `ID`, `SM`, and `PL` tags. This Read Group information is required by GATK. Then, convert the output file to BAM format, sort the BAM file, and then index it (see the [lecture notes](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) for how).
 
-13. Use the `samtools depth` command to calculate the per-site depth of reads in the genome (see `samtools depth --help` for more info). The output file contains three columns: the chromosome name, position (1-based), and depth. For example:
+
+9. Run `samtools stats` and `plot-bamstats` on the BAM file and examine the `.html` report.
+    - What fraction of reads were mapped to the genome?
+    - What is the mode insert size of the sequencing library? Are the read distances reasonably Normally-distributed?
+    - Are the majority of reads pairs mapped in inward (FR), outward (RF), or other orientation?
+    - Below which base-quality score value does the majority of mismatches occur? Record this value for *Problem 11*.
+       >*HINT*: The reads were generated from a strain different from the reference strain and biological SNP differences will also appear in the plot.
+
+
+10. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it.
+    > *HINT*: see `samtools flags` for help with flags.
+
+
+11. Run the GATK HaplotypeCaller to call variants using the final filtered BAM file, set `--min-base-quality-score` to the value you determined in *Step 9*. **NOTE**: Run GATK in the backgound (i.e., `nohup gatk HaplotypeCaller ... &`) or open a second terminal window and work on Problems 12 and 13 while GATK is running in the first.
+
+
+12. Use the `samtools depth` command to calculate the per-site read depth across the genome (see `samtools depth --help` for more info) and output to a file. The output file will contain three columns: the chromosome name, position (1-based), and read depth. For example:
     ```
     chrI	1	15
     chrI	2	15
@@ -59,7 +86,8 @@ To See answers to the below questions, go to Jessen's the answers branch of his 
     chrI	5	16
     ```
     
-14. Write a script that computes a text histogram of depth with output similar to the following:
+
+13. Write a script that computes a text histogram of genomic read depth similar to the example output below (use a `dict` with depth as the key and the count of bases as the value):
     ```
      1 |                                        
      2 |]                                       
@@ -77,16 +105,17 @@ To See answers to the below questions, go to Jessen's the answers branch of his 
     14 |]                                       
     15 |                                        
     ```
+    - What is the mean and stdandard deviation of the depth?
 
-15. Filter SNPs and Indels for variant loci within the center 95% of the depth distribution (use your distribution from above; estimating by eye is fine). To filter loci, use VCFtools:
-    ```bash
-    vcftools --recode --recode-INFO-all --stdout --max-missing 1 --minDP <lower-threshold> --maxDP <upper-threshold> --vcf <your.vcf> >your.filtered.vcf
 
-16. Finally, how many of these SNPs and Indels intersect CDS features? (*HINT*: extract CDS features into a new GFF3 file and use `bedtools intersect` to do this to extract unique SNP loci).
 
-**BONUS:** Try loading the genome FASTA, annotation GFF3, and filtered SNPs into [IGV](https://software.broadinstitute.org/software/igv)
-   - Open IGV
-   - Navigate through `Genomes` => `Load Genomes from File...` and select the genome FASTA file.
-   - Navigate `File` => `Load from File...` and load a VCF/GFF3/BED file.
+14. Use `vcftools` to split the VCF into SNP-specific and InDel-specific files; see `man vcftools` for all available options.
+    > *HINT*: You must include `--recode --recode-INFO-all` to output VCF format.
+
+
+15. Extract CDS features present in `Ecoli.gff3` and create a new GFF3 file, then use `bedtools intersect` to determine:
+    - How many SNPs and InDels intersect these CDS features?
+    - How many InDels might cause frameshifts? Write a script to read the VCF file and print out frameshift InDels to a new VCF.
+    - If there are frameshifts, which genes are they affecting?
 
 

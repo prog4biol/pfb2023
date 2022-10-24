@@ -16,7 +16,6 @@ You should be well versed in writing to the screen. We have been using the `prin
 >>> print ("Hello, PFB2022!")
 Hello, PFB2022!
 ```
-
 > Remember this example from one of our first lessons?
 
 #### Reading input from the keyboard
@@ -28,13 +27,16 @@ This is something new. There is a function which prints a message to the screen 
 Type Something Now: Hi
 >>> print(user_input)
 Hi
->>> type(user_input)
+>>> in_str = input("Enter a number: ")
+>>> type(in_str)
 <class 'str'>
+>>> num = int(in_str)
+>>> num
+445
 ```
-
 #### Reading from a File
 
-Most of the data we will be dealing with will be contained in files. 
+Mostly you will read data from files. 
 
 The first thing to do with a file is open it. We can do this with the `open()` function. The `open()` function takes the file name and access mode as arguments and returns a file object.
 
@@ -43,17 +45,16 @@ The most common access modes are read (r) and write (w).
 #### Open a File
 
 ```python
->>> file_object = open("seq.nt.txt","r")
+>>> seq_file_obj = open("seq.nt.txt","r")
 ```
-
-> 'file_object' is a name of a variable. This can be anything, but make it a helpful name that describes what kind of file you are opening.
+> `seq_file_obj` is a name of a variable. This can be anything, but make it a helpful name that describes what kind of file you are opening and to distinguish it from the filename.
 
 
 #### Reading the contents of a file
 
-Now that we have opened a file and created a file object we can do things with it, like read it. Let's read all the contents at once.  
+Now that we have opened a file and created a file object we can do things with it, like read from the file. Let's read all the contents at once.  
 
-Let's go to the command line and  `cat` the contents of the file to see what's in it first.
+Before we do that, let's go to the command line and  `cat` the contents of the file to see what's in it first.
 
 ```bash
 $ cat seq.nt.txt
@@ -63,33 +64,29 @@ $
 ```
 
 Note the new lines. Now, lets print the contents to the screen with Python. We will use `read()` to read the entire contents of the file into a variable. 
-
 ```python
->>> file = open("seq.nt.txt","r")
->>> contents = file.read()
+>>> seq_file_obj = open("seq.nt.txt","r")
+>>> contents = seq_file_obj.read()
 >>> print(contents)  # note newline characters are part of the file!
 ACAAAATACGTTTTGTAAATGTTGTGCTGTTAACACTGCAAATAAACTTGGTAGCAAACACTTCCAAAAG
 ACCGGTTTCCAAAGACAGTCTTCTAATTCCTCATTAGTAATAAGTAAAATGTTTATTGTTGTAGCTCTGG
 
->>> file.close()
+>>> seq_file_obj.close()
 ```
-
 > The complete contents can be retrieved with the `read()` method. Notice the newlines are maintained when `contents` is printed to the screen. `print()` adds another new line when it is finished printing.
 > It is good practice to close your file. Use the `close()` method. 
 
 
 Here's another way to read data in from a file. A `for` loop can be used to iterate through the file one line at a time.
-
 ```python
 #!/usr/bin/env python3
 
-file = open("seq.nt.txt","r")
-for line in file: # Python magic: reads in a line from file
+seq_file_obj = open("seq.nt.txt","r")
+for line in seq_file_obj: # Python magic: reads in a line from file
   print(line)
 ```
 
 Output:
-
 ```
 $ python3 file_for.py
 ACAAAATACGTTTTGTAAATGTTGTGCTGTTAACACTGCAAATAAACTTGGTAGCAAACACTTCCAAAAG
@@ -97,25 +94,21 @@ ACAAAATACGTTTTGTAAATGTTGTGCTGTTAACACTGCAAATAAACTTGGTAGCAAACACTTCCAAAAG
 ACCGGTTTCCAAAGACAGTCTTCTAATTCCTCATTAGTAATAAGTAAAATGTTTATTGTTGTAGCTCTGG
 
 ```
-
 > Notice the blank line at after each line we print. `print()` adds a newline and we have a newline at the end of each line in our file. Use `rstrip()` method to remove the newline from each line.
 
 Let's use `rstrip()` method to remove the newline from our file input.
-
 ```python
 $ cat file_for_rstrip.py
 #!/usr/bin/env python3
 
-file_object = open("seq.nt.txt","r")
-for line in file_object:
+seq_file_obj = open("seq.nt.txt","r")
+for line in seq_file_obj:
   line = line.rstrip()
   print(line)
 ```
-
 > `rstrip()` without any parameters returns a string with whitespace removed from the end.
 
 Output:
-
 ```
 $ python3 file_for_rstrip.py
 ACAAAATACGTTTTGTAAATGTTGTGCTGTTAACACTGCAAATAAACTTGGTAGCAAACACTTCCAAAAG
@@ -131,9 +124,9 @@ Many people add this, because it closes the file for you automatically. Good pro
 ```python
 #!/usr/bin/env python3
 
-with open("seq.nt.txt","r") as file_object: #cleans up after exiting 
+with open("seq.nt.txt","r") as seq_file_obj: #cleans up after exiting 
                                             # the 'with' block
-  for line in file_object:
+  for line in seq_file_obj:
     line = line.rstrip()
   	print(line)
 #file gets closed for you here.
@@ -146,22 +139,20 @@ Writing to a file just required opening a file for writing then using the `write
 The `write()` method is like the `print()` function. The biggest difference is that it writes to your file object instead of the screen. Unlike `print()`, it does not add a newline by default.  `write()` takes a single string argument. 
 
 Let's write a few lines to a file named "writing.txt".  
-
 ```python
 #!/usr/bin/env python3
 
-fo = open("writing.txt" , "w")
+fo = open("writing.txt" , "w")  # note that we are writing so the mode is "w"
 fo.write("One line.\n")
 fo.write("2nd line.\n")
 fo.write("3rd line" + " has extra text\n")
 some_var = 5
-fo.write("4th line has " + str(some_var) + " words\n")
+fo.write("4th line has " + str(some_var) + " words\n")  # the write() method does not convert ints for you
 fo.close()
 print("Wrote to file 'writing.txt'") # it's nice to tell the user you wrote a file
 ```
 
 Output:
-
 ```
 $ python3 file_write.py
 Wrote to file 'writing.txt'
@@ -171,9 +162,7 @@ One line.
 3rd line has extra text
 4th line has 5 words
 ```
-
 Now, let's get crazy! Lets read from one file a line at a time. Do something to each line and write the results to a new file.
-
 ```python
 #!/usr/bin/env python3
 
@@ -192,7 +181,6 @@ print("Wrote 'nt.counts.txt'")
 ```
 
 Output:
-
 ```
 $ python3 file_read_write.py
 $ cat nt.counts.txt
@@ -200,7 +188,6 @@ $ cat nt.counts.txt
 71
 Total: 142
 ```
-
 > The file we are reading from is named, "seq.nt.txt"  
 > The file we are writing to is named, "nt.counts.txt"  
 > We read each line, calculate the length of each line, and print the length  
@@ -236,7 +223,6 @@ print(genes)
 ```
 
 Output:
-
 ```
 {'TP53': 'GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTC', 'BRCA1': 'GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA'}
 ```
@@ -245,5 +231,6 @@ Output:
 
 
 
+### [Link to Python 6 Problem Set](problemsets/Python_06_problemset.md)
 
-### 
+

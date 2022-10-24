@@ -13,7 +13,7 @@ B. How about 'TTT'?
 
 C. If you didn't already save the DNA string to a variable, do that now and redo [1 and 2](https://github.com/prog4biol/pfb2022#membership-operators).
 
-D. In the interpretor use `bool` to test a variety of values like '', 0, 0.0, FALSE, false, True, true, 'True', 'False' to see if they evalue to True or False.
+D. In the interpretor use `bool` to test a variety of values like `''`, `0`, `0.0`, `FALSE`, `false`, `True`, `true`, `'True'`, `'False'` to see if they evalue to True or False.
 
 E. Quit Interpreter
 
@@ -29,7 +29,7 @@ E. Quit Interpreter
 
 
 
-3. Create a script that has a [if/else statement](https://github.com/prog4biol/pfb2022#if-statement) that (remember to write a little bit at a time and test it)
+3. Create a script that has an [if/else statement](https://github.com/prog4biol/pfb2022#if-statement) the following conditions (remember to write a little bit at a time and test it)
     - Test to see if a number is positive or negative
     - print "positive" if it is positive
     - print "negative" if it is negative
@@ -53,7 +53,7 @@ E. Quit Interpreter
     -  if the number is larger than 50 and divisible by 3, print "it is larger than 50 and divisible by 3"  
     -  save it and run it
 
-8. In your previous nested loops, test the number 50. What prints to the screen? Is it the correct response? If not, you have a semantic error and need to alter your code to be correct with any number.  
+8. In your previous nested test script, test the number 50. What prints to the screen? Is it the correct response? If not, you have a semantic error and need to alter your code to be correct with any number.  
 
 9. Write a new script that does all the testing in 3-8, but gets the value being tested from the command line and stores it in a variable. Add in a print statement that reminds the user what number is being tested. [Remember `sys` in the notes](pfb2022#command-line-parameters-a-special-built-in-list). 
 

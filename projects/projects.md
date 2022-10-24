@@ -33,7 +33,6 @@ https://github.com/cyntsc/Motif_Detectives
  - Mina Peyton
  - Aparna Thomas  
 
-
 # git_chmods
 ### An interactive introduction to DNA sequencing
 
@@ -51,19 +50,6 @@ https://github.com/xonq/git_chmods
  - Riley
 
 
-# [TEAMNAME]
-### [short project desc]
-
-### TA 
-[Name]  
-
-### GitHub Repo 
-[http:.....]
-
-### Participants:   
- - [name]  
- - [name]  
-
 
 # SNP: S\w+\S Nematode Problems
 ### Compare multiple sets of variants (SNV, insertions, deletions), classify variant effects and visualize.
@@ -79,5 +65,23 @@ Jessen V. Bredeson
  - Dan Murphy  
  - Grace Johnson  
  - Melissa Bentley-Ford  
+
+
+# [TEAMNAME]
+### [short project desc]
+
+### TA 
+Shasta 
+
+### GitHub Repo 
+[http:.....]
+
+### Participants:   
+ - [name]  
+ - [name]  
+
+
+
+
 
 
