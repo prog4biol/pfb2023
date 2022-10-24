@@ -59,15 +59,18 @@ https://github.com/jnjahncke/hot-seq-summer.
  - [name]  
 
 
-# [TEAMNAME]
-### [short project desc]
+# SNP: S\w+\S Nematode Problems
+### Compare multiple sets of variants (SNV, insertions, deletions), classify variant effects and visualize.
 
 ### TA 
-[Name]  
+Jessen V. Bredeson
 
 ### GitHub Repo 
-[http:.....]
+[https://github.com/bredeson/snp](https://github.com/bredeson/snp)
 
 ### Participants:   
- - [name]  
- - [name]  
+ - Cassandra Herbert  
+ - Dan Murphy  
+ - Grace Johnson  
+ - Melissa Bentley-Ford  
+
