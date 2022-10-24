@@ -15,7 +15,7 @@ Participants:
 
 
 # [TEAMNAME]
-## [short project desc]
+### [short project desc]
 TA: [Name]  
 
 GitHub Repo: [http:.....]
