@@ -16,18 +16,22 @@ https://github.com/jnjahncke/hot-seq-summer.
 
 
 
-# [TEAMNAME]
-### [short project desc]
+# Motif Detectives
+### A program to identify an specific motif/consensus sequence, a.k.a transcription factor binding site, on their organism genome of interest.
 
 ### TA 
-[Name]  
+Cynthia  
 
 ### GitHub Repo 
-[http:.....]
+https://github.com/cyntsc/Motif_Detectives
 
 ### Participants:   
- - [name]  
- - [name]  
+ - Brianda Lopez Aviña
+ - Marleny García Lozano
+ - Bana Abolibdeh
+ - Chrissi Heil
+ - Mina Peyton
+ - Aparna Thomas  
 
 
 # [TEAMNAME]
