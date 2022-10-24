@@ -46,7 +46,7 @@ favorite_things_dict['organism'] = 'athelia'
 
 new_fav_key = input('Add a new type of favorite thing: ')
 new_fav_thing = input('Add your favorite item of that thing: ')
-favorite_things_dict[new_fav_key] = new_fav_thing]
+favorite_things_dict[new_fav_key] = new_fav_thing
 
 # 9. Use a for loop to print out each key and value of the dictionary
 # I'm going to use the faster way to do this

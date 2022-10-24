@@ -33,34 +33,22 @@ https://github.com/cyntsc/Motif_Detectives
  - Mina Peyton
  - Aparna Thomas  
 
-
-# [TEAMNAME]
-### [short project desc]
-
-### TA 
-[Name]  
-
-### GitHub Repo 
-[http:.....]
-
-### Participants:   
- - [name]  
- - [name]  
-
-
-
-# [TEAMNAME]
-### [short project desc]
+# git_chmods
+### An interactive introduction to DNA sequencing
 
 ### TA 
-[Name]  
+Zachary
 
 ### GitHub Repo 
-[http:.....]
+https://github.com/xonq/git_chmods
 
 ### Participants:   
- - [name]  
- - [name]  
+ - Alex
+ - Christian
+ - Elaine
+ - Jonathan
+ - Riley
+
 
 
 # SNP: S\w+\S Nematode Problems
@@ -77,4 +65,23 @@ Jessen V. Bredeson
  - Dan Murphy  
  - Grace Johnson  
  - Melissa Bentley-Ford  
+
+
+# [TEAMNAME]
+### [short project desc]
+
+### TA 
+Shasta 
+
+### GitHub Repo 
+[http:.....]
+
+### Participants:   
+ - [name]  
+ - [name]  
+
+
+
+
+
 
