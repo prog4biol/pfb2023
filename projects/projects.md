@@ -1,5 +1,5 @@
 # HotSeqSummer
-## Protein function conservation over large evolutionary distances
+### Protein function conservation over large evolutionary distances
 
 TA: Eric  
 GitHub Repo:  https://github.com/jnjahncke/hot-seq-summer
@@ -25,7 +25,7 @@ Participants:
 
 
 # [TEAMNAME]
-## [short project desc]
+### [short project desc]
 TA: [Name]  
 
 GitHub Repo: [http:.....]
@@ -36,7 +36,7 @@ Participants:
 
 
 # [TEAMNAME]
-## [short project desc]
+### [short project desc]
 TA: [Name]  
 
 GitHub Repo: [http:.....]
@@ -47,7 +47,7 @@ Participants:
 
 
 # [TEAMNAME]
-## [short project desc]
+### [short project desc]
 TA: [Name]  
 
 GitHub Repo: [http:.....]
