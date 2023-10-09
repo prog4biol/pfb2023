@@ -2,7 +2,7 @@
 
 1. Go to GitHub and create a free accout.
 
-2. Look back at the notes and create your SSH key and add it to your github account.  [Notes for key creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#generating-a-new-ssh-key)
+2. Look back at the notes and create your SSH key and add it to your github account.  [Notes for key creation](https://github.com/prog4biol/pfb2023/blob/master/unix.md#generating-a-new-ssh-key)
  
  #### Create Key and passphrase
 ```
@@ -40,7 +40,7 @@ Paste the contents of your public "Lock" to GitHub with a title
 cat ~/.ssh/id_ed25519.pub
 ```
 
-3. Create your first repository for your problem set code. [Notes for repository creation](https://github.com/prog4biol/pfb2022/blob/master/unix.md#git-for-beginners).
+3. Create your first repository for your problem set code. [Notes for repository creation](https://github.com/prog4biol/pfb2023/blob/master/unix.md#git-for-beginners).
    **NOTE: Don't create a repository inside of another repostitory.**
    - Create a new Repository by clicking "New" on the repository github page. https://github.com/YOURUSERNAME/repositories 
    - Create a local (your machine) directory with `mkdir <dirname>` 

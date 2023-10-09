@@ -51,8 +51,8 @@ Note: '$' indicates the command line prompt. Recall from Unix 1 that every compu
 First Python Commands:
 
 ```python
->>> print("Hello, PFB2022!")
-Hello, PFB2022!
+>>> print("Hello, PFB!")
+Hello, PFB!
 ```
 
 > Note: `print` is a function. Function names are followed by (), so formally, the function is `print()`
@@ -68,7 +68,7 @@ Hello, PFB2022!
 
 File Contents:  
 ```python
-print("Hello, PFB2022!")
+print("Hello, PFB!")
 ```
 
 #### Running Python Scripts
@@ -83,7 +83,7 @@ Execute the Python script like this (% represents the prompt)
 
 This produces the following result in the Terminal:
 ```bash
-Hello, PFB2022!
+Hello, PFB!
 ```
 
 #### A quicker/better way to run python scripts
@@ -107,14 +107,14 @@ The file hello.py now looks like this
 
 ```python
 #!/usr/bin/env python3
-print("Hello, PFB2022!")
+print("Hello, PFB!")
 ```
 
 Now you can simply type the symbol for the current directory `.` followed by a `/` and the name of the script to run it. Like this
 
 ```
 % ./hello.py
-Hello, PFB2022!
+Hello, PFB!
 ```
 
 
@@ -189,7 +189,7 @@ The first line of a script starting with `#!` is a special example of a comment 
 #!/usr/bin/env python3
 
 # this is my first script
-print("Hello, PFB2022!") # this line prints output to the screen
+print("Hello, PFB!") # this line prints output to the screen
 ```
 
 
@@ -2668,8 +2668,8 @@ You should be well versed in writing to the screen. We have been using the `prin
 
 
 ```python
->>> print ("Hello, PFB2022!")
-Hello, PFB2022!
+>>> print ("Hello, PFB!")
+Hello, PFB!
 ```
 > Remember this example from one of our first lessons?
 
