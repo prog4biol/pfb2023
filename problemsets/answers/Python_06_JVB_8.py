@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# JVB 2022-10-17
+# JVB 2023-10-17
 
 # 8. Open the [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) file
-#   [Python_06.fastq](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_06.fastq) and
+#   [Python_06.fastq](https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/Python_06.fastq) and
 #   go through each line of the file. Count the number of lines and the number of characters per line. Have
 #   your program report the:  
 #     - total number of lines  

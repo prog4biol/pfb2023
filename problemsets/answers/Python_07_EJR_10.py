@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# ejr: 2022-10-16
+# ejr: 2023-10-16
 # Eric's answer to problem set 7 question 10
 import re
 import sys

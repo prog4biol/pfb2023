@@ -1,5 +1,5 @@
 """
-1. Take a multi-FASTA [Python_08.fasta](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_08.fasta) file from user input and calculate the nucleotide comp for each seq. Use a datastructure to keep count. Print out each seq name and its compostion in this format `seqName\tA_count\tT_count\tG_count\C_count`
+1. Take a multi-FASTA [Python_08.fasta](https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/Python_08.fasta) file from user input and calculate the nucleotide comp for each seq. Use a datastructure to keep count. Print out each seq name and its compostion in this format `seqName\tA_count\tT_count\tG_count\C_count`
 
 Here is a structure of a handy datastructure to store this information
 
@@ -50,7 +50,7 @@ for seq_id in seq_comp:
 
 
 """
-2. Write a script that takes a multi-FASTA file [Python_08.fasta](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_08.fasta) from user input and breaks each seq into codons (every three nucleotides is a codon) in just the first reading frame. Your output should look like this
+2. Write a script that takes a multi-FASTA file [Python_08.fasta](https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/Python_08.fasta) from user input and breaks each seq into codons (every three nucleotides is a codon) in just the first reading frame. Your output should look like this
 ```
 seq1-frame-1-codons
 CAT GCT TGA GTC

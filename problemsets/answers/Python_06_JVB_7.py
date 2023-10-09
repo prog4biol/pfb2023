@@ -2,7 +2,7 @@
 
 
 # 7. Open and print the reverse complement of each sequence in
-#   [Python_06.seq.txt](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_06.seq.txt).
+#   [Python_06.seq.txt](https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/Python_06.seq.txt).
 #   Each line is the following format:    `seqName\tsequence\n.`
 #   Make sure to print the output in fasta format including the sequence name and a note in the description
 #   that this is the reverse complement. Print to STDOUT and capture the output into a file with a command

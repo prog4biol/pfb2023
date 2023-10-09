@@ -30,7 +30,7 @@ useful commands
 
 ### Try these examples
 
-**The files you need later in this review are in our [github repository](https://github.com/prog4biol/pfb2022). There will be direction on how to retrieve them**
+**The files you need later in this review are in our [github repository](https://github.com/prog4biol/pfb2023). There will be direction on how to retrieve them**
 
 Let's go to a directory with a lot of files in it and list those files
 
@@ -76,7 +76,7 @@ ls -lt | head
 kirstens-mbp-4:~ Kirsten$ ls -lt | head
 total 71020856
 drwxr-xr-x  19 Kirsten  staff          608 Oct 15 09:12 pfb2018
-drwxr-xr-x  18 Kirsten  staff          576 Oct 15 09:11 pfb2022
+drwxr-xr-x  18 Kirsten  staff          576 Oct 15 09:11 pfb2023
 drwxr-xr-x   6 Kirsten  staff          192 Oct 14 14:53 Analysis
 drwx------+ 44 Kirsten  staff         1408 Oct 13 21:56 Downloads
 drwx------@ 23 Kirsten  staff          736 Oct 11 21:05 OneDrive - UW-Madison
@@ -110,7 +110,7 @@ Tue Oct 15 09:35:30 EDT 2019
 __Download a file__
 You can use `wget` or `curl` to download files. On some systems only one of these may be available
 ```
-curl -O https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/cuffdiff.txt
+curl -O https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/cuffdiff.txt
 ```
 
 __Redirect STDOUT__  
@@ -229,14 +229,14 @@ bash-3.2$ pwd
 /Users/Kirsten/problemsets
 ```
 
-6. Use `wget` to copy <https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/sequences.nt.fa> from the web into your problemsets directory. If `wget` is not available on your system, use `curl -O` as an alternative.
+6. Use `wget` to copy <https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/sequences.nt.fa> from the web into your problemsets directory. If `wget` is not available on your system, use `curl -O` as an alternative.
 
 ```bash
-wget https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/sequences.nt.fa
+wget https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/sequences.nt.fa
 ```
 
 7. Without using a text editor calculate or report these qualities for the file `sequences.nt.fa`.
-  This file can be found here <https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/sequences.nt.fa>
+  This file can be found here <https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/sequences.nt.fa>
       - How many lines does this file contain?   
       - How many characters?    (Hint: check out the options of wc)
       - What is the first line of this file?    (Hint: read the man page of head)
@@ -278,9 +278,9 @@ bash-3.2$ grep ">" sequences.nt.fa  | wc -l
 bash-3.2$ mv sequences.nt.fa cancer_genes.fasta
 ```
 
-<div id="get-cuffdiff"></a> 9. Copy this remote file: <https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/cuffdiff.txt> to your problemset directory. 
+<div id="get-cuffdiff"></a> 9. Copy this remote file: <https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/cuffdiff.txt> to your problemset directory. 
 
-Use `wget` to copy <https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/cuffdiff.txt> from the web into your problemsets directory. If `wget` is not available on your system, use `curl -O` as an alternative.
+Use `wget` to copy <https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/cuffdiff.txt> from the web into your problemsets directory. If `wget` is not available on your system, use `curl -O` as an alternative.
 
 
 

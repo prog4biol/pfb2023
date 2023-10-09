@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# JVB 2022-10-17
+# JVB 2023-10-17
 
-# 5. Write a script to do the following to [Python_06.txt](https://raw.githubusercontent.com/prog4biol/pfb2022/master/files/Python_06.txt)
+# 5. Write a script to do the following to [Python_06.txt](https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/Python_06.txt)
 #    - Open and read the contents.  
 #    - Uppercase each line
 #    - Print each line to the STDOUT

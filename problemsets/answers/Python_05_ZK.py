@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Zachary Konkel
-2022/10/11 
+2023/10/11 
 Python 5 - Dictionaries and Sets - Problem Set
-Programming for Biology 2022
+Programming for Biology 2023
 """
 
 # 1. write a script in which you construct a dictionary of your favroite things
