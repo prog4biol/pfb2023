@@ -232,7 +232,8 @@ In addition to the files and directories shown with `ls -F`, there may be one or
 
 #### Getting Around
 
-[dir image]()
+![directory structure](/images/directory_structure.png)
+
 
 You can move around from directory to directory using the `cd` command.  Give the name of the directory you want to move to, or give no name to move back to your home directory.  Use the `pwd` command to see where you are (or rely on the prompt, if configured):
 
@@ -286,6 +287,12 @@ If you get lost, the `pwd` command prints out the full path to the current direc
 (~) 56% pwd
 /Users/lstein
 ```
+
+Also if you are lost or want to open the graphical display of your current directory:
+```
+(~) 57% open .
+```
+> this command will launch the Mac finder window. You can also use this to open a particular file, `open file`
 
 #### Essential Unix Commands
 
