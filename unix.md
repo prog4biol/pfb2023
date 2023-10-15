@@ -1,4 +1,4 @@
-# Programming For Biology 2022
+# Programming For Biology 2023
 [programmingforbiology.org](http://programmingforbiology.org)
 
 __Instructors__  
@@ -58,7 +58,7 @@ In this course, we will be writing Python scripts and running them exclusively f
 #### Logging into Your Workstation
 
 
-Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'student' and the password is 'pfb2022'
+Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'pfb' + workstation number and the password is 'pfb2023'
 
 #### Bringing up the Command-Line 
 
@@ -232,6 +232,7 @@ In addition to the files and directories shown with `ls -F`, there may be one or
 
 #### Getting Around
 
+[dir image]()
 
 You can move around from directory to directory using the `cd` command.  Give the name of the directory you want to move to, or give no name to move back to your home directory.  Use the `pwd` command to see where you are (or rely on the prompt, if configured):
 
