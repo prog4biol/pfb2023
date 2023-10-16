@@ -6,6 +6,7 @@ OPTION 1:
     2. Click in the 'setup' folder
     3. Search the 'pre-commit' file, and copy the content
     4. Paste it into a new file in your repo called '.git/hooks/pre-commit' 
+    5. Make your pre-commit file executable `chmod +x .git/hooks/pre-commit`
 
 OPTION 2:
 Go to the shell/bash of your terminal, and type:
