@@ -161,7 +161,7 @@ Problem Set
     - How many files does it contain?
     - How many directories?
 
-4. Make a directory called `problemsets` in your home directory.
+4. Make a directory called `PFB_problemsets` in your home directory.
 
 5. Navigate into this new directory called problemsets. Verify that you are in the correct directory by using `pwd`.
 
