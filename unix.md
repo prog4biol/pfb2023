@@ -1,4 +1,4 @@
-# Programming For Biology 2023
+# Programming For Biology 2022
 [programmingforbiology.org](http://programmingforbiology.org)
 
 __Instructors__  
@@ -37,39 +37,42 @@ What are our tips for having a successful programming course?
 
 ---
 
-# Unix
+# Unix (linux, mac OS)
 
 ## Unix 1
 
 ### Unix Overview
 
-#### What is the Command-Line?
+#### What is the Command Line?
 
-Underlying the pretty Mac OSX Graphical User Interface (GUI) is a powerful command-line operating system (OS). The command-line gives you access to the internals of the OS, and is also a convenient way to write custom software and scripts.  
+Underlying the pretty Mac OSX Graphical User Interface (GUI) is the operating system (OS). It's based on BSD which is a version of Unix. Linux is pretty similar and also a very common OS in bioinformatics and you'll run into dialects by Red Hat, Ubuntu and others.
+
+The command line gives you access to the internals of the OS, and is also a convenient way to write custom software and scripts.  
 
 
-Many bioinformatics tools are written to run on the command-line and have no Graphical User Interface. In many cases, a command-line tool is more versatile than a graphical tool, because you can easily combine command-line tools into automated scripts that accomplish custom tasks without human intervention.  
+Most bioinformatics tools are written to run on the command line and have no Graphical User Interface. In many cases, a command line tool is more versatile than a graphical tool, because you can easily combine command line tools into automated scripts that accomplish custom tasks sequentially without human intervention.  
 
+In this course, we will be writing Python scripts and running them from the command line.
 
-In this course, we will be writing Python scripts and running them exclusively from the command-line based.
+The Unix OS is complicated and there are always more things to learn about it. We'll just cover enough to get you going and show you 
 
 ### The Basics
 
 #### Logging into Your Workstation
 
 
-Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'pfb' + workstation number and the password is 'pfb2023'
+Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'student' and the password is 'pfb2022'
 
-#### Bringing up the Command-Line 
+#### Bringing up the command line 
 
 
-To bring up the command-line, use the Finder to navigate to _Applications->Utilities_ and double-click on the _Terminal_ application. This will bring up a window like the following:
+To bring up the command line, use the Finder to navigate to _Applications->Utilities_ and double-click on the _Terminal_ application. This will bring up a window like the following:
 
 
 
 <img src="unix.assets/Screen Shot 2022-10-09 at 8.27.56 PM.png" alt="Screen Shot 2022-10-09 at 8.27.56 PM" style="zoom:90%;" />
 
-You can open several Terminal windows at once. This is often helpful.
+You can open many Terminal windows at once. This is often helpful. A common way to work is to open your code editor in one window, run the code from another and view data and files in another.
 
 
 You will be using the Terminal application a lot, so I suggest that you drag its icon into the shortcuts bar at the bottom of your screen.
@@ -86,16 +89,16 @@ The terminal window is running **shell** called "zsh". (Mac recently changed fro
 5. Go back step 1.
 
 
-There are many different shells with bizarre names like **bash**, **sh**, **csh**, **tcsh**, **ksh**, and **zsh**.  The "sh" part means shell.  Each shell has slightly different syntax and features. Your accounts are set up to use **zsh**.  It's very similar to **bash** which is  standard on linux systems. Stay with **zsh** and you'll get used to it, eventually.
+There are many different shells with bizarre names like **bash**, **sh**, **csh**, **tcsh**, **ksh**, and **zsh**.  The "sh" part means shell.  Each shell has slightly different syntax and features. Your accounts are set up to use **zsh**.  It's very similar to **bash** which is  standard on linux systems.
 
 
-#### Command-Line Prompt
+#### Command Line Prompt
 
 
-Most of bioinformatics is done by running command-line software in a shell, so you should take some time to learn to use the shell effectively.
+Most of bioinformatics is done by running command line software in a shell, so you should take some time to learn to use the shell effectively.
 
 
-This is a command-line prompt:
+This is a command line prompt:
 
 ```
 bush202>
@@ -117,12 +120,12 @@ srobb@bush202 1:12PM>
 What you see depends on how the system administrator has customized your login.  You can customize it yourself (but we won't go into that here)
 
 
-The prompt tells you the shell is ready to accept a command.  Most commands run almost instantly, but if you run a long command, the prompt will not reappear until it is finished and the system is ready to accept your next request.
+The prompt tells you the shell is ready for you to type a command.  Most commands run almost instantly, but if you run a long command, the prompt will not reappear until it is finished and the system is ready to accept your next request.
 
 #### Issuing Commands
 
 
-Type in a command and press the &lt;Enter&gt; key.  If the command has output, it will appear on the screen.  Example:
+You type in a command and press the &lt;Enter&gt; key to execute it.  If the command has output, it will appear on the screen.  Example:
 
 ```
 (~) 53% ls -F
@@ -141,7 +144,7 @@ ccod/
 The command here is `ls -F`, which produces a listing of files and directories in the current directory (more on that later).  Below its output, the command prompt appears again.
 
 
-Some programs will take a long time to run. After you issue their command names, you won't recover the shell prompt until they're done. To keep working, you can either launch a new shell (from Terminal's File menu), or run the command in the background by adding an ampersand after the command
+Some programs will take a long time to run. After you issue their command names, you won't recover the shell prompt until they're done. You can keep working in the meantime, either by launching a new shell (from Terminal's File menu), or running the command in the background by adding an ampersand at the end of the command like so
 
 ```
 (~) 54% long_running_application &
@@ -149,9 +152,9 @@ Some programs will take a long time to run. After you issue their command names,
 ```
 > The command will now run in the background until it is finished. If it has any output, the output will be printed to the terminal window. You may wish to capture the output in a file (called redirection). We'll describe this later.
 
-#### Command-Line Editing
+#### command line Editing
 
-Most shells offer command-line editing.  Up until the comment you press \<Enter\>, you can go back over the command-line and edit it using the keyboard.  Here are the most useful keystrokes:
+Most shells offer command line editing.  Up until the comment you press \<Enter\>, you can go back over the command line and edit it using the keyboard.  Here are the most useful keystrokes:
 
 - _Backspace_: Delete the previous character and back up one.
 - _Left arrow_, right arrow: Move the text insertion point (cursor) one character to the left or right.
@@ -159,7 +162,7 @@ Most shells offer command-line editing.  Up until the comment you press \<Enter\
 - _control-e (^e)_: Move the cursor to the end of the line. (Mnemonic: E for the End) (^z was already used to interrupt a command).
 - _control-d (^d)_: Delete the character currently under the cursor. D=Delete.
 - _control-k (^k)_: Delete the entire line from the cursor to the end. k=kill.  The line isn't actually deleted, but put into a temporary holding place called the "kill buffer". This is like cutting text
-- _control-y (^y)_: Paste the contents of the kill buffer onto the command-line starting at the cursor.  y=yank. This is like paste.
+- _control-y (^y)_: Paste the contents of the kill buffer onto the command line starting at the cursor.  y=yank. This is like paste.
 - _Up arrow, down arrow_: Move up and down in the command history.  This lets you rerun previous commands, possibly modifying them before you do.
 
 There are also some useful shell commands you can issue:  
@@ -168,9 +171,9 @@ There are also some useful shell commands you can issue:
 - `!<number>` Reissue an old command, based on its number (which you can get from `history`).
 - `!!` Reissue the last command.
 - `!<partial command string>`: Reissue the previous command that began with the indicated letters.  For example, `!l` (the letter el, not a number 1) would reissue the`ls -F` command from the earlier example.
-- *control-r (^r)*: enter string and search through history for commands that match it.
+- *control-r (^r)*: enter string and search through history for commands that match it. This is really useful.
 
-**zsh** offers automatic command completion and spelling correction.  If you type part of a command and then the tab key, it will prompt you with all the possible completions of the command.  For example:
+**zsh** offers automatic command completion and spelling correction.  If you type part of a command and then the <tab> key, it will prompt you with all the possible completions of the command.  For example:
 
 ```
 (~) 51% fd<tab><tab>
@@ -178,7 +181,7 @@ There are also some useful shell commands you can issue:
 fd2ps    fdesign  fdformat fdlist   fdmount  fdmountd fdrawcmd fdumount
 (~) 51%
 ```
-> If you hit tab after typing a command, but before pressing \<Enter\>, **bash** will prompt you with a list of file names. This is because many commands operate on files.
+> If you hit tab after typing a command, but before pressing \<Enter\>, **zsh** will prompt you with a list of file names. This is because many commands operate on files.
 
 #### Wildcards
 
@@ -190,7 +193,7 @@ final_exam_questions.txt  genomics_problem.txt
 genebridge.txt            mapping_run.txt
 ```
 
-There are several more advanced types of wildcard patterns that you can read about in the **tcsh** manual page.  For example, if you want to match files that begin with the characters "f" or "g" and end with ".txt", you can put both characters inside square brackets `[fg]` as part of the wildcard pattern. Here's an example
+There are several more advanced types of wildcard patterns that you can read about in the **zsh** manual page.  For example, if you want to match files that begin with the characters "f" or "g" and end with ".txt", you can put both characters inside square brackets `[fg]` as part of the wildcard pattern. Here's an example
 
 ```
 (~) 57% ls -F [fg]*.txt
@@ -199,73 +202,56 @@ final_exam_questions.txt  genebridge.txt            genomics_problem.txt
 
 You can also search for a range of characters e.g. `[a-e]` or `[1-5]`.
 
-#### Home Sweet Home
+### Directories and how they are organized
+
+A computer comes with a place to store scripts, data, images, OS and other files. It used to be floppy disks, then hard drives and these days it's often a solid state drive (SSD). Let's talk about how the storage is organized to help you find what you are working on. Directories or folders are created inside other directories. One directory is special. This is the **root directory** because it is not inside any other directories (it's written `/`). Files that go together are created inside a directory to keep them organized. This creates a structure that can be drawn like a branching tree. We find it clearer to turn it upside down to look like branching roots. 
+
+**Example diagram of a linux directory structure starting from the root directory**
+
+![directory_structure](unix.assets/directory_structure.png)
 
 
-When you first log in, you'll be in your personal directory (or folder), called the _home directory_.  You are free to do with this area what you will: in particular you can create and delete files and other directories.  In general, you cannot create files elsewhere in the system.
-
-Your home directory lives somewhere in the filesystem.  On our iMacs, it is a directory with the same name as your login name, located inside the directory `/Users`.  The full directory path is therefore `/Users/username`.  Since this is a pain to write, the shell allows you to abbreviate it as `~username` (where "username" is your user name), or simply as `~`.  The weird character (called "tilde" or "twiddle") is hard to find, but usually at the upper left corner of your keyboard.
-
-To see what is in your home directory, issue the command `ls -F`:
-
-```
-(~) % ls -F
-INBOX         Mail/         News/         nsmail/       public_html/
-```
-
-This shows one file "INBOX" and four directories ("Mail", "News") and so on.  (The `-F` in the command turns on fancy mode, which appends special characters to directory listings to tell you more about what you're seeing.  `/` at the end of a filename means that file is a directory.)
 
 
-In addition to the files and directories shown with `ls -F`, there may be one or more hidden files.  These are files and directories whose names start with a `.` (called the "dot" character).  To see these hidden files, add an `a` to the options sent to the `ls` command:
 
-```
-(~) % ls -aF
-./                .cshrc            .login            Mail/
-../               .fetchhost        .netscape/        News/
-.Xauthority       .fvwmrc           .xinitrc*         nsmail/
-.Xdefaults        .history          .xsession@        public_html/
-.zprofile         .less             .xsession-errors
-.zshrc            .lessrc           INBOX
-```
-> Whoa!  There's a lot of hidden stuff there.  But don't go deleting dot files.  Many of them are essential configuration files for commands and other programs.  For example, the `.zprofile` file contains configuration information for the **zsh** shell.  You can peek into it and see all of **zsh**'s many options.  You can edit it (when you know what you're doing) in order to change things like the command prompt and command search path.
+#### Home Sweet Home (your home directory `~`)
 
+When you first log in, you'll be in your personal directory (or folder), called the **home directory**. This directory has the same name as your login name, and on mac OS is located inside the directory `/Users`.  (On linux, it's typically in `/home`). If your username is `dbrown`, your home directory would be `/Users/dbrown`. This is a filepath or a path. Unix if full of abbreviations to save on typing common things. The shell allows you to abbreviate it as `~username` (where "username" is your user name or someone elses), or simply as `~`.  The weird character (called "tilde" or "twiddle") is at the upper left corner of your keyboard.
 
-#### Getting Around
+In your home directory, you have permission to save, delete, open and move files and other directories. In general, you can read but not write or modify files elsewhere in the system.
 
-![directory structure](/images/directory_structure.png)
-
-
-You can move around from directory to directory using the `cd` command.  Give the name of the directory you want to move to, or give no name to move back to your home directory.  Use the `pwd` command to see where you are (or rely on the prompt, if configured):
+To see what is in your home directory, issue the command `ls` for list directory contents
 
 ```
-(~/docs/grad_course/i) 56% cd
-(~) 57% cd /
-(/) 58% ls -F
-bin/         dosc/        gmon.out     mnt/         sbin/
-boot/        etc/         home@        net/         tmp/
-cdrom/       fastboot     lib/         proc/        usr/
-dev/         floppy/      lost+found/  root/        var/
-(/) 59% cd ~/docs/
-(~/docs) 60% pwd
-/usr/home/lstein/docs
-(~/docs) 62% cd ../projects/
-(~/projects) 63% ls
-Ace-browser/               bass.patch
-Ace-perl/                  cgi/
-Foo/                       cgi3/
-Interface/                 computertalk/
-Net-Interface-0.02/        crypt-cbc.patch
-Net-Interface-0.02.tar.gz  fixer/
-Pts/                       fixer.tcsh
-Pts.bak/                   introspect.pl*
-PubMed/                    introspection.pm
-SNPdb/                     rhmap/
-Tie-DBI/                   sbox/
-ace/                       sbox-1.00/
-atir/                      sbox-1.00.tgz
-bass-1.30a/                zhmapper.tar.gz
-bass-1.30a.tar.gz
-(~/projects) 64%
+Desktop			Downloads		Movies			Pictures		expt1.countdata.tsv
+Documents		Library			Music			  Public			notes.txt
+```
+
+You can modify the way a command works with switches. These are single letters typed after a dash `-`. The case is important. So `ls -aF` lists all (`a`) files including hidden filenames that start with a `.` with fancy formatting turned on (`F`) such that a`/` is added to the end of directory names.
+
+```
+./									.git/				Desktop/			Library/		Pictures/		notes.txt
+../									.lesshst		Documents/		Movies/			Public/
+.CFUserTextEncoding	.zshrc			Downloads/		Music/			expt1.countdata.tsv
+```
+
+> Don't go deleting the hidden files. Many of them are essential configuration files for commands and other programs.  For example, the `.zshrc` file contains configuration information for the **zsh** shell. You can edit it (a bit later, when you know what you're doing) in order to change things like the command prompt and command search path.
+
+
+#### Changing to a New Directory
+
+
+You can move around from directory to directory using the `cd` command (for change directory).  Give the name of the directory you want to move to, or give no name to move back to your home directory.  Use the `pwd` command (print working directory) to see where you are (or, if configured, this information will appear in the prompt):
+
+```
+dbrown@WideIsLove ~ % cd Documents 
+dbrown@WideIsLove Documents % pwd
+/Users/dbrown/Documents
+dbrown@WideIsLove Documents % cd
+dbrown@WideIsLove ~ % cd /
+dbrown@WideIsLove / % ls -F
+Applications/	System/		Volumes/	cores/		etc@		opt/			sbin/		usr/
+Library/			Users/		bin/			dev/			home@		private/	tmp@		var@
 ```
 > Each directory contains two special hidden directories named `.` and `..`. The first, `.` refers always to the current directory. `..` refers to the parent directory.  This lets you move upward in the directory hierarchy like this:
 
@@ -273,12 +259,12 @@ bass-1.30a.tar.gz
 (~/docs) 64% cd ..
 ```
 
-and to do arbitrarily weird things like this:
+and to do cool things like this:
 
 ```
-(~/docs) 65% cd ../../lstein/docs
+(~/docs) 65% cd ../../dbrown/Documents
 ```
-> The latter command moves upward two levels, and then into a directory named `docs` inside a directory called `lstein`.
+> The latter command moves upward two levels, and then into a directory named `Documents` inside a directory called `dbrown`.
 
 
 If you get lost, the `pwd` command prints out the full path to the current directory:
@@ -288,13 +274,20 @@ If you get lost, the `pwd` command prints out the full path to the current direc
 /Users/lstein
 ```
 
-Also if you are lost or want to open the graphical display of your current directory:
-```
-(~) 57% open .
-```
-> this command will launch the Mac finder window. You can also use this to open a particular file, `open file`
+#### Absolute and relative paths
 
-#### Essential Unix Commands
+We can type a path in two ways, an absolute path always starts with a `/` character and reads from the root directory. A relative path starts with another character and reads from the directory you are currently in. Here are two ways to get to a directory called `Music` in the home directory of the user `dbrown`. From `Documents` we can go up a directory and down into `Music` (relative path) or go from `/` to `Users` to `dbrown` to `Music` (absolute path). 
+
+```
+dbrown@WideIsLove Documents % cd ../Music   
+dbrown@WideIsLove Music % cd
+dbrown@WideIsLove ~ % cd /Users/dbrown/Music
+dbrown@WideIsLove Music % 
+```
+
+>  Which of these paths would work for a different user as well as for `dbrown`?
+
+### Essential Unix Commands
 
 
 With the exception of a few commands that are built directly into the shell (e.g. `history`, `for`, `if`), all Unix commands are actually executable programs.  When you type the name of a command, the shell will search through all the directories listed in the PATH environment variable for an executable of the same name.  If found, the shell will execute the command. Otherwise, it will give a "command not found" error.
@@ -342,10 +335,10 @@ modes
 #### Arguments and Command Line Switches 
 
 
-Many commands take arguments.  Arguments are often the names of one or more files to operate on.  Most commands also take command-line "switches" or "options", which fine-tune what the command does.  Some commands recognize "short switches" that consist of a minus sign `-` followed by a single character, while others recognize "long switches" consisting of two minus signs `--` followed by a whole word.
+Many commands take arguments.  Arguments are often the names of one or more files to operate on.  Most commands also take command line "switches" or "options", which fine-tune what the command does.  Some commands recognize "short switches" that consist of a minus sign `-` followed by one or more single characters, while others recognize "long switches" consisting of two minus signs `--` followed by a whole word. 
 
 
-The `wc` (word count) program is an example of a command that recognizes both long and short options.  You can pass it the `-c`,  `-w` and/or `-l` options to count the characters, words, and lines in a text file, respectively.  Or you can use the longer but more readable `--chars`,  `--words` or `--lines` options.  Both these examples count the number of characters and lines in the text file `/var/log/messages`:
+The `wc` (word count) program is an example of a command that recognizes both long and short options.  You can pass it the single`-c`,  `-w` and/or `-l` options (or combinations of them) to count the characters, words, and lines in a text file, respectively.  Or you can use the longer but more readable `--chars`,  `--words` or `--lines` options.  Both these examples count the number of characters and lines in the text file `/var/log/messages`:
 
 ```
 (~) 102% wc -c -l /var/log/messages
@@ -363,7 +356,7 @@ You can cluster one-character switches by concatenating them together, as shown 
 
 Many commands will give a brief usage summary when you call them with the `-h` or `--help` switch.
 
-#### Spaces and Funny Characters
+#### Spaces, tabs and newline Characters
 
 The shell uses spaces to separate arguments.  If you want to embed a space (see below for other whitespace or non-printing characters like a tab or newline etc) in an argument, put single quotes around it.  For example:
 
@@ -386,66 +379,72 @@ Certain special non-printing characters have _escape codes_ associated with them
 
 
 
-#### Useful Commands
+### Useful Commands
 
 Here are some commands that are used extremely frequently.  Use `man` to learn more about them.  Some of these commands may be useful for solving the problem set ;-)
 
-#### Manipulating Directories
+#### Manipulating  Directories
 
-| Command | Description                              |
-| ------- | ---------------------------------------- |
+| Command | Description                                                  |
+| ------- | ------------------------------------------------------------ |
 | `ls`    | Directory listing.  Most frequently used as `ls -F` (decorated listing), `ls -l` (long listing), `ls -a` (list all files). |
-| `mv`    | Rename or move a file or directory.      |
-| `cp`    | Copy a file.                             |
-| `rm`    | Remove (delete) a file.                  |
-| `mkdir` | Make a directory.                         |
-| `rmdir` | Remove a directory.                       |
-| `ln`    | Create a symbolic or hard link.          |
-| `chmod` | Change the permissions of a file or directory. |
+| `mv`    | Rename or move a file or directory.                          |
+| `cp`    | Copy a file. `cp -r` (recursively) to copy directories       |
+| `rm`    | Remove (delete) a file. `rm -rf olddata.tsv`                 |
+| `mkdir` | Make a directory                                             |
+| `ln`    | Create a symbolic or hard link. `ln -s` makes a symbolic (sym) link |
+| `chmod` | Change the permissions of a file or directory.               |
 
+
+#### Reading files
 
 | Command           | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | `cat`             | Concatenate program.  Can be used to concatenate multiple files together into a single file, or, much more frequently, to view the contents of a file or files in the terminal. |
-| `echo`            | print a copy of some text to the screen. E.g. `echo 'Hello World!'` |
 | `more`            | Scroll through a file page by page.  Very useful when viewing large files.  Works even with files that are too big to be opened by a text editor. |
 | `less`            | A version of `more` with more features.                      |
-| `head`            | View the first few lines of a file.  You can control how many lines to view. |
+| `head`            | View the first few lines of a file.  You can control how many lines to view `head -3` prints the first three lines. |
 | `tail`            | View the end of a file.  You can control how many lines to view.  You can also use `tail -f` to view a file that you are writing to. |
+
+#### Analyzing, processing files
+| Command | Description                                                  |
+| ------- | ------------------------------------------------------------ |
 | `wc`              | Count words, lines and/or characters in one or more files.   |
-| `tr`              | Substitute one character for another.  Also useful for deleting characters. |
-| `sort`            | Sort the lines in a file alphabetically or numerically.      |
+| `sort`            | Sort the lines in a file alphabetically or numerically (-g or -n) in reverse order (-r). |
 | `uniq`            | Remove duplicated lines in a file.                           |
 | `cut`             | Remove columns from each line of a file or files.            |
-| `fold`            | Wrap each input line to fit in a specified width.            |
 | `grep`            | Filter a file for lines matching a specified pattern.  Can also be reversed to print out lines that don't match the specified pattern. |
 | `gzip` (`gunzip`) | Compress (uncompress) a file.                                |
 | `tar`             | Archive or unarchive an entire directory into a single file. |
+
+#### Editing files
+| Command | Description                                                  |
+| ------- | ------------------------------------------------------------ |
+| `tr`              | Substitute one character for another.  Also useful for deleting characters. |
 | `emacs`           | Run the Emacs text editor (good for experts).                |
 | `vi`              | Run the vi text editor (confusing even for experts).         |
+| `echo`            | print text to the screen. E.g. `echo 'Hello World!'` |
 
 
-#### Networking
+#### Connecting to other computers
 
 | Command                | Description                                                  |
 | ---------------------- | ------------------------------------------------------------ |
 | `ssh`                  | A secure (encrypted) way to log into machines.               |
 | `scp`                  | A secure way to copy (cp) files to and from remote machines. |
-| `ping`                 | See if a remote host is available.                           |
-| `ftp`/ `sftp` (secure) | Transfer files using the File Transfer Protocol.             |
 
 #### Standard I/O and Redirection
 
 
-Unix commands communicate via the command-line interface.  They can print information out to the terminal for you to see, and accept input from the keyboard (that is, from _you_!)
+Unix commands print output to the terminal (screen) for you to see, and accept input from the keyboard (that is, from _you_!)
 
 
 Every Unix program starts out with three connections to the outside world.  These connections are called "streams", because they act like a stream of information (metaphorically speaking):
 
 
-| Stream Type     | Description                                                  |
+| Stream Name     | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| standard input  | This is a communications stream initially attached to the keyboard.  When the program reads from standard input, it reads whatever text you type in. |
+| standard input  | This is initially attached to the keyboard.  When the program reads from standard input, it reads whatever text you type in. |
 | standard output | This stream is initially attached to the terminal. Anything the program prints to this stream appears in your terminal window. |
 | standard error  | This stream is also initially attached to the terminal. It is a separate stream intended for printing error messages. |
 
@@ -464,36 +463,31 @@ little lamb.
 
 Mary had a little lamb,
 whose fleece was white as snow.
-^d * NOTE - this needs to be typed but will not be show up in terminal window
+^d                    # ** NOTE - this is ctrl-d which you type, but no output shows up 
+                      # in terminal window
       6      20     107
 ```
-In this example, I ran the `wc` program.  It waited for me to type in a little poem.  When I was done, I typed the END-OF-FILE character, control-d (^d for short).  `wc` then printed out three numbers indicating the number of lines, words, and characters in the input.
+In this example, I ran the `wc` program.  It waited for me to type in a little poem.  When I was done, I typed the END-OF-FILE character, control-d (^d for short).  `wc` then printed out three numbers indicating the number of lines (6), words (20), and characters (107) in the input.
 
-More often, you'll want to count the number of lines in a big file; say a file filled with DNA sequences.  You can do this by _redirecting_ the contents of a file to the standard input of  `wc`. This uses
-the `<`  symbol:
+More often, you'll want to count the number of lines in a big file and save the results in another file. We'll see this in two steps. First, we send the output of `wc` to stdout. In the second command, we _redirect_ stdout from `wc` to a file with the `>` symbol.
 
 ```
-(~) 63% wc < big_file.fasta
+(~) 63% wc big_file.fasta
       2943    2998     419272
-```
-
-If you wanted to record these counts for posterity, you could redirect standard output as well using the `>` symbol:
-
-```
-(~) 64% wc < big_file.fasta > count.txt
+(~) 64% wc big_file.fasta > count.txt
 ```
 
 
-Now if you `cat` the file _count.txt_, you'll see that the data has been recorded.  `cat` works by taking its standard input and copying it to standard output.  We redirect standard input from the _count.txt_ file, and leave standard output at its default, attached to the terminal:
+Now if you `cat` the file _count.txt_, you'll see that the data has been recorded.
 
 ```
-(~) 65% cat < count.txt
+(~) 65% cat count.txt
       2943    2998     419272
 ```
 
 #### Redirection Meta-Characters
 
-Here's the complete list of redirection commands for `bash`:
+Here's the complete list of redirection commands for `zsh`:
 
 | Redirect command    | Description                              |
 | ------------------- | ---------------------------------------- |
@@ -508,24 +502,26 @@ Here's the complete list of redirection commands for `bash`:
 These can be combined.  For example, this command redirects standard input from the file named `/etc/passwd`, writes its results into the file `search.out`, and writes its error messages (if any) into a file named `search.err`.  What does it do?  It searches the password file for a user named "root" and returns all lines that refer to that user.
 
 ```
-(~) 66% grep root < /etc/passwd > search.out 2> search.err
+(~) 66% grep root /etc/passwd > search.out 2> search.err
 ```
+
+
 
 #### Filters, Filenames, and Standard Input
 
-Many Unix commands act as filters, taking data from a file or standard input, transforming the data, and writing the results to standard output.  Most filters are designed so that if they are called with one or more filenames on the command-line, they will use those files as input.  Otherwise they will act on standard input.  For example, these two commands are equivalent:
+Many Unix commands act as filters, taking data from a file or standard input, transforming the data, and writing the results to standard output.  Most filters are designed so that if they are called with one or more filenames on the command line, they will use those files as input.  Otherwise they will act on standard input.  For example, these two commands are equivalent:
 
 ```
-(~) 66% grep 'gatttgc' < big_file.fasta
 (~) 67% grep 'gatttgc' big_file.fasta
+(~) 68% grep 'gatttgc' < big_file.fasta
 ```
-Both commands use the `grep` command to search for the string "gatttgc" in the file `big_file.fasta`.  The first one searches standard input, which happens to be redirected from the file.  The second command is explicitly given the name of the file on the command line.
+Both commands use the `grep` command to search for the string "gatttgc" in the file `big_file.fasta`.  The first command is explicitly given the name of the file on the command line; the second one searches standard input, which is redirected from the file to stdin of `grep`.
 
 
-Sometimes you want a filter to act on a series of files, one of which happens to be standard input.  Many commands let you use `-` on the command-line as an alias for standard input.  Example:
+Sometimes you want a filter to act on a series of files, one of which happens to be standard input.  Many commands let you use `-` on the command line as an alias for standard input.  Example:
 
 ```
-(~) 68% grep 'gatttgc' big_file.fasta bigger_file.fasta -
+(~) 70% grep 'gatttgc' big_file.fasta bigger_file.fasta -
 ```
 This example searches for "gatttgc" in three places.  First it looks in file `big_file.fasta`, then in `bigger_file.fasta`, and lastly in standard input (which, since it isn't redirected, will come from the keyboard).
 
@@ -539,14 +535,14 @@ The coolest thing about the Unix shell is its ability to chain commands together
 (~) 65% grep gatttgc big_file.fasta | wc -l
 22
 ```
-There are two commands here. `grep` searches a file or standard input for lines containing a particular string.  Lines which contain the string are printed to standard output.  `wc -l` is the familiar word count program, which counts words, lines, and characters in a file or standard input.  The `-l` command-line option instructs `wc` to print out just the line count.  The `|` character, which is known as a "pipe", connects the two commands together so that the standard output of `grep` becomes the standard input of `wc`. Think of pipes connecting streams of flowing data. 
+There are two commands here. `grep` searches a file or standard input for lines containing a particular string.  Lines which contain the string are printed to standard output.  `wc -l` is the familiar word count program, which counts words, lines, and characters in a file or standard input.  The `-l` command line option instructs `wc` to print out just the line count.  The `|` character, which is known as a "pipe", connects the two commands together so that the standard output of `grep` becomes the standard input of `wc`. Think of pipes connecting streams of flowing data. 
 
 
 What does this pipe do?  It prints out the number of lines in which the string "gatttgc" appears in the file `big_file.fasta`.
 
 #### More Pipe Idioms
 
-Pipes are very powerful. Here are some common command-line idioms.
+Pipes are very powerful. Here are some common command line idioms.
 
 **Count the Number of Times a Pattern does NOT Appear in a File**
 
@@ -602,8 +598,96 @@ Pipe the output of `ls` to the `more` program, which shows a page at a time.  If
 Pipe the output of `tail -f` (which monitors a growing file and prints out the new lines) to `grep`.  For example, this will monitor the `/var/log/syslog`file for the appearance of e-mails addressed to 'mzhang':
 
 ```
-(~) 70% tail -f /var/log/syslog | grep mzhang
+(~) 70% tail -f /var/log/syslog | grep dbrown
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="page-break-after: always;"></div>  
+
+
+### Permissions
+
+Often several different users work on the same computer. To help them work without disrupting each other, a set of permissions is attached to files and directories. These permissions allow or prevent reading, writing or executing a file. There are permissions for the user, group and other.  You can view permissions with an `ls -l` command.
+
+```
+dbrown@WideIsLove ~ % ls -l
+total 16
+drwx------+  3 dbrown  staff   96 Oct 15 14:09 Desktop
+drwx------+  3 dbrown  staff   96 Oct 15 14:09 Documents
+...
+-rw-r--r--   1 dbrown  staff    9 Oct 15 14:12 expt1.countdata.tsv
+-rw-r--r--   1 dbrown  staff   20 Oct 15 14:11 notes.txt
+-rw-r--r--   1 dbrown  staff   23 Oct 16 13:37 print.py
+```
+
+The series of characters at the beginning of the line describe the permissions. The first character is 
+
+```
+d (directory) l for link - for file
+```
+
+Then there are three triples of characters (- means not allowed, a letter means you have read, write, exectute permission). x for a directory means you can access the directory
+
+```
+rwx
+--- 
+```
+
+for user, group, other, like so
+
+```
+ UsrGrpOth
+drwxrwxrwx+
+```
+
+Users can belong to groups (who collaborate) and other is everyone else.
+
+The `chmod` command (change mode) alters permissions. You add permissions with `+` and take them away with `-`
+
+You can alter permissions for user `u`, group `g`, other `o` or all `a`
+
+To make the print.py file executable (i.e. runnable like a programme) you write
+
+```
+dbrown@WideIsLove ~ % ls -l print.py 
+-rw-r--r--  1 dbrown  staff  23 Oct 16 13:37 print.py
+dbrown@WideIsLove ~ % chmod a+x print.py 
+dbrown@WideIsLove ~ % ls -l print.py 
+-rwxr-xr-x  1 dbrown  staff  23 Oct 16 13:37 print.py
+dbrown@WideIsLove ~ % 
+```
+
+To stop others from reading or executing the python script, you write
+
+```
+dbrown@WideIsLove ~ % chmod o-rx print.py 
+dbrown@WideIsLove ~ % ls -l print.py 
+-rwxr-x---  1 dbrown  staff  23 Oct 16 13:37 print.py
+```
+
+To convert a script into an exectuable programme, you'll need to make it executable with chmod and then add the current directory to your PATH (we'll see how to do this later) for you, you can type the command in your terminal window.
+
+```
+export PATH=".:${PATH}"       # add '.', the current dir to the list of paths
+                              # the OS looks for programmes in
+rehash    # this rebuilds set of paths for the shell
+```
+
+
+<div style="page-break-after: always;"></div>  
+
 
 ### More Unix
 
@@ -1097,9 +1181,9 @@ Github requires authentication with the use of ssh keys. Essentially, our github
 
 
 
- 
+
  Here is a summary of the steps:
- 
+
 ### Generating a new SSH KEY
 Make your key and add your email address.
 ```
@@ -1117,9 +1201,9 @@ Next, pick a passphrase, something easy. It is a password, so that not just anyo
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
 > Enter same passphrase again: [Type passphrase again]
 ```
- 
+
  ### Adding your SSH key to the ssh-agent
- 
+
  ```
  $ eval "$(ssh-agent -s)"
 > Agent pid 59566
@@ -1130,7 +1214,7 @@ Next, pick a passphrase, something easy. It is a password, so that not just anyo
   $ open ~/.ssh/config
 > The file /Users/YOU/.ssh/config does not exist.
   ```
-  
+
 If the file doesn't exist, create the file.
 ```
 $ touch ~/.ssh/config
@@ -1153,7 +1237,7 @@ $ cat  ~/.ssh/id_ed25519.pub
 ### Paste into your GitHub account
 
 1.  Go to Settings 
-  
+
   ![Settings](images/github-userbar-account-settings.png)
 
 2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
@@ -1174,7 +1258,7 @@ $ cat  ~/.ssh/id_ed25519.pub
 You will KNOW if you need to use these features of git.
 
 1. [View Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
+2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command line/)
 3. [Undoing Previous Commits](https://github.com/blog/2022-how-to-undo-almost-anything-with-git)
 
 ---
