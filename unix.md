@@ -1150,8 +1150,8 @@ Let's clone the course material.
 
 Let's do it!
 
-1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2023)) 
-2. Click the 'Code or Download' Button
+1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2023)
+2. Click the 'Code' or 'Download' Button
 3. Copy the URL
     ~[Clone PFB2023](images/github-clone.png)
 4. _Clone_ the repository to your local machine
