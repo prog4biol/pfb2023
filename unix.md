@@ -1030,6 +1030,73 @@ Usually you have a local copy of your project/repository and a remote copy. The 
 
 You can use a web browser to interact with the remote server (gitHub) and the terminal to interact with the local repository.
 
+
+
+## SSH Keys
+SSH Keys are needed to write to a personal repository. Lets set this up first
+
+Github requires authentication with the use of ssh keys. Essentially, our github repos are LOCKED, we need a KEY to write to them. We will generate the a key (private) and a lock (public). Then We tell github about our lock and keep our key to ourselves.
+
+ [Here is a great GitHub Tutoral](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
+
+### Adding a new SSH key to your GitHub account
+
+
+
+
+ Here is a summary of the steps:
+
+### Generating a new SSH KEY
+Make your key and add your email address.
+```
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+
+Save your key and lock in your `.ssh` directory. It will prompt you for a path, the default is usually a good place to store your SSH key files
+```
+> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]
+```
+
+Next, pick a passphrase, something easy. It is a password, so that not just anyone on your physical computer can access your GitHub account. You CAN leave it blank. 
+```
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+```
+
+ ### Adding your SSH key to the ssh-agent
+
+ ```
+ $ eval "$(ssh-agent -s)"
+> Agent pid 59566
+ ```
+
+  First, check to see if your ~/.ssh/config file exists in the default location.
+  ```
+  $ open ~/.ssh/config
+> The file /Users/YOU/.ssh/config does not exist.
+  ```
+
+If the file doesn't exist, create the file.
+```
+$ touch ~/.ssh/config
+```
+
+Open your ~/.ssh/config file using `vi` and add the following content:
+```
+Host *
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+
+### Adding a new SSH key to your GitHub account
+Print the contents of your PUBLIC ssh key file (our lock) and paste them into your github account
+
+```
+$ cat  ~/.ssh/id_ed25519.pub
+```
+
+
 ### Creating a new repository 
 
 A repository is a project that contains all of the project files, and stores each file's revision history. Repositories can have multiple collaborators. Repositories usually have two components, one __remote__ and one __local__.
@@ -1171,69 +1238,6 @@ If changes are made to any of these files in the online, remote repository, and 
 
 
 
-## SSH Keys
-
-Github requires authentication with the use of ssh keys. Essentially, our github repos are LOCKED, we need a KEY to write to them. We will generate the a key (private) and a lock (public). Then We tell github about our lock and keep our key to ourselves.
-
- [Here is a great GitHub Tutoral](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
-
-### Adding a new SSH key to your GitHub account
-
-
-
-
- Here is a summary of the steps:
-
-### Generating a new SSH KEY
-Make your key and add your email address.
-```
-$ ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-
-Save your key and lock in your `.ssh` directory. It will prompt you for a path, the default is usually a good place to store your SSH key files
-```
-> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter]
-```
-
-Next, pick a passphrase, something easy. It is a password, so that not just anyone on your physical computer can access your GitHub account. You CAN leave it blank. 
-```
-> Enter passphrase (empty for no passphrase): [Type a passphrase]
-> Enter same passphrase again: [Type passphrase again]
-```
-
- ### Adding your SSH key to the ssh-agent
-
- ```
- $ eval "$(ssh-agent -s)"
-> Agent pid 59566
- ```
-
-  First, check to see if your ~/.ssh/config file exists in the default location.
-  ```
-  $ open ~/.ssh/config
-> The file /Users/YOU/.ssh/config does not exist.
-  ```
-
-If the file doesn't exist, create the file.
-```
-$ touch ~/.ssh/config
-```
-
-Open your ~/.ssh/config file using `vi` and add the following content:
-```
-Host *
-  IdentityFile ~/.ssh/id_ed25519
-```
-
-
-### Adding a new SSH key to your GitHub account
-Print the contents of your PUBLIC ssh key file (our lock) and paste them into your github account
-
-```
-$ cat  ~/.ssh/id_ed25519.pub
-```
-
 ### Paste into your GitHub account
 
 1.  Go to Settings 
@@ -1258,8 +1262,8 @@ $ cat  ~/.ssh/id_ed25519.pub
 You will KNOW if you need to use these features of git.
 
 1. [View Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command line/)
-3. [Undoing Previous Commits](https://github.com/blog/2022-how-to-undo-almost-anything-with-git)
+2. [Resolving Merge Conflicts](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
+3. [Undoing Previous Commits](https://docs.github.com/en/desktop/managing-commits/reverting-a-commit-in-github-desktop)
 
 ---
 
