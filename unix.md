@@ -1,4 +1,4 @@
-# Programming For Biology 2022
+# Programming For Biology 2023
 [programmingforbiology.org](http://programmingforbiology.org)
 
 __Instructors__  
@@ -61,7 +61,7 @@ The Unix OS is complicated and there are always more things to learn about it. W
 #### Logging into Your Workstation
 
 
-Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'student' and the password is 'pfb2022'
+Your workstation is an iMac. To log into it, provide your user name and password. Your username is 'student' and the password is 'pfb2023'
 
 #### Bringing up the command line 
 
@@ -1150,12 +1150,12 @@ Let's clone the course material.
 
 Let's do it!
 
-1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2022) 
+1. Go to our [PFB GitHub Repository](https://github.com/prog4biol/pfb2023)) 
 2. Click the 'Code or Download' Button
 3. Copy the URL
-    ~[Clone PFB2022](images/github-clone.png)
+    ~[Clone PFB2023](images/github-clone.png)
 4. _Clone_ the repository to your local machine
-   `git clone git@github.com:prog4biol/pfb2022.git`
+   `git clone git@github.com:prog4biol/pfb2023.git`
 
 Now you have a copy of the course material on your computer!
 
