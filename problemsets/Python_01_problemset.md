@@ -1,14 +1,16 @@
 Python 1 Problem Set
 ==================
- 
 
-1. Start up the Python Interactive Interpreter. 
+Do all work in you github problemset repository.  
+
+1. Start up the Python Interactive Interpreter.
+    - `% python3` this is how you start the interpreter on the command line
     - Print out "Hello New York"
     - Store your name in a variable
     - Print the contents of this variable.
     - QUIT the Interpreter
     
-2. Working with a text editor. Use `vi` to write a script. Name your script `me.py`. Python scripts should always have the `.py` extension.
+3. Working with a text editor. Use `vi` to write a script. Name your script `me.py`. Python scripts should always have the `.py` extension.
    - `vi me.py`   
    - Make sure to include `#!/usr/bin/env python3` on line 1 of your script. It has to be line one. Do not leave a blank line above. 
    - Add code to print out, your name
