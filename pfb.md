@@ -2061,7 +2061,7 @@ Output:
 
 ## PCR Program Loop Example
 
-[pcr.py](../scripts/pcr.py)
+[pcr.py](scripts/pcr.py)
 
 **Standard PCR program**
  1. Initial Denature: 94°C 3 min   
