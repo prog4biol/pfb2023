@@ -85,7 +85,13 @@ Python 4 Problem Set -- Lists and Loops
 
 14. Have you been commiting you work?
 
-## Fun challenge problems! These are real scripts you might use in real life. You have already learned all you need to know to do each. If you don't have enough time in this session to complete, come back and try later. Or save for when you get home.
+-----------------
+-----------------
+
+**Fun challenge problems! These are real scripts you might use in real life. You have already learned all you need to know to do each. If you don't have enough time in this session to complete, come back and try later. Or save for when you get home.**  
+
+-----------------
+-----------------
 
 1. Create a shuffled sequence ([Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle))
     - Use a `for` loop to perform the following procedure N times (N = length of seq)
