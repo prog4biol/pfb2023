@@ -830,7 +830,7 @@ __vi has two modes.__
 
 **Insert Mode** is for typing your file contents. All keyboard strokes will be interpreted as characters you want to see in your file.
 
-**Command Mode** is for using commands. All keyboard stokes will be interprested as commands and ***not*** as part of your file. Common commands are for deleting, copying, searching, replacing, and saving.
+**Command Mode** is for using commands. All keyboard stokes will be interpreted as commands and ***not*** as part of your file. Common commands are for deleting, copying, searching, replacing, and saving.
 
  
 
