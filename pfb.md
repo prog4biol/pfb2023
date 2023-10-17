@@ -2059,6 +2059,121 @@ Output:
 4
 ```
 
+## PCR Program Loop Example
+
+[pcr.py](../scripts/pcr.py)
+
+**Standard PCR program**
+ 1. Initial Denature: 94°C 3 min   
+ 2. Denature: 94°C 30 sec  
+ 3. Annealing: 57°C 30 sec  
+ 4. Extension: 72°C 1 min  
+ 5. Go to step 2, for additional 29 times  
+ 6. Final Extension: 72°C 5 min  
+ 7. 4°C for ever   
+
+```python
+#!/usr/bin/env python3
+
+def doAnnealing(temp,time):
+  print(f"  Annealing at temp {temp}oC for {time}")
+
+def doDenature(temp,time):
+  print(f"  Denaturing at temp {temp}oC for {time}")
+
+def doExtension(temp,time):
+  print(f"  Extending at temp {temp}oC for {time}")
+
+def doChilling(temp,time):
+  print(f"  Chilling at temp {temp}oC for {time}")
+
+print(f"PCR Started.")
+
+(temp, time) = ('','')
+cycles = 30
+
+(temp,time) = (94, "3min")
+doDenature(temp,time)
+
+for cycle in range(cycles):
+  cycle+=1
+  print(f"Starting Cycle {cycle}")
+  (temp,time) = (94, "30sec")
+  doDenature(temp,time)
+  (temp,time) = (57, "30sec")
+  doAnnealing(temp,time)
+  (temp,time) = (72, "1min")
+  doExtension(temp,time)
+  (temp,time) = (72, "5min")
+
+doAnnealing(temp,time)
+
+print(f"PCR Complete.")
+print(f"Starting Chilling")
+
+while (1):
+ (temp,time) = (4, "forever")
+ doChilling(temp,time)
+```
+
+Output: 
+```
+% python pcr.py
+PCR Started.
+  Denaturing at temp 94oC for 3min
+Starting Cycle 1
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 2
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 3
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 4
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 5
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 6
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+...
+Starting Cycle 26
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 27
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 28
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 29
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+Starting Cycle 30
+  Denaturing at temp 94oC for 30sec
+  Annealing at temp 57oC for 30sec
+  Extending at temp 72oC for 1min
+  Annealing at temp 72oC for 5min
+PCR Complete.
+Starting Chilling
+  Chilling at temp 4oC for forever
+  Chilling at temp 4oC for forever
+  ...
+```
+
 
 #### Loop Control
 
