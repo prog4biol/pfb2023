@@ -1097,6 +1097,27 @@ $ cat  ~/.ssh/id_ed25519.pub
 ```
 
 
+
+### Paste into your GitHub account
+
+1.  Go to Settings 
+
+  ![Settings](images/github-userbar-account-settings.png)
+
+2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
+
+3.  Click New SSH key or Add SSH key. 
+![Add SSH key](images/github-ssh-add-ssh-key-with-auth.png)
+
+4.  Add a title, for example "PFB CSHL KEY" 
+![Paste Key](images/github-ssh-key-paste-with-type.png).
+
+5.  Click "Add SSH Key" 
+![Click Add](images/github-ssh-add-key.png)
+
+
+
+
 ### Creating a new repository 
 
 A repository is a project that contains all of the project files, and stores each file's revision history. Repositories can have multiple collaborators. Repositories usually have two components, one __remote__ and one __local__.
@@ -1235,25 +1256,6 @@ If changes are made to any of these files in the online, remote repository, and 
 | --------------------------------------- | ---------------------------------------- |
 | `git pull` | To get changes from the remote into your local copy|
 
-
-
-
-### Paste into your GitHub account
-
-1.  Go to Settings 
-
-  ![Settings](images/github-userbar-account-settings.png)
-
-2.  In the "Access" section of the sidebar, click  SSH and GPG keys.
-
-3.  Click New SSH key or Add SSH key. 
-![Add SSH key](images/github-ssh-add-ssh-key-with-auth.png)
-
-4.  Add a title, for example "PFB CSHL KEY" 
-![Paste Key](images/github-ssh-key-paste-with-type.png).
-
-5.  Click "Add SSH Key" 
-![Click Add](images/github-ssh-add-key.png)
 
 
 
