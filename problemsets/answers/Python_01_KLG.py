@@ -1,24 +1,28 @@
 #!/usr/bin/env python3
 
+
 import sys
-
-
 
 #  Python 1 Problem Set
 # ==================
  
 
-    
-# 2. Working with a text editor. Use nano to write a script. 
-#    - Make sure to include `#!/usr/bin/env python3` at the top!! 
-#    - Add code to print out, your name  
+
+# 2. Working with a text editor. Use vi to write a script.
+# Make sure to include #!/usr/bin/env python3 at the top!!
+# Add code to print out, your name
 
 my_name = sys.argv[1]
 
 print('My name:', my_name)
 
 
+# On the command line make it executable using chmod (only have to do this one time per script).
+# Run it from the command line.
+# Remember it is important to write only a bit, test, then write more.
+# If it works, ADD/COMMIT. Make a good message, like "added name to print"
 
+### in the terminal `chmod +x Python_01_KLG.py`
 
 #     - Now add some code to print out your favorite color:  
 
@@ -47,5 +51,13 @@ print('My favorite animal:' + animal)
 #     - try using commas to separate your print arguments. 
 #     - try using '+' to separate your print arguments.
 
+
+##Make sure to keep your remote repository synced with your local repo. (ADD/COMMIT/PUSH)
+
+
+## in the terminal
+## git add Python_01_KLG.py
+## git commit -m 'updating first problem set 2023'
+## git push
 
 
