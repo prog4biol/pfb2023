@@ -47,7 +47,7 @@ Python 1 Problem Set
          My favorite animal: Chicken
         ```
         >  Remember, write a bit, then run your code, write some more, then run again. This makes code easier to debug.
-   - Try out [f"" string formatting](../pfb.md#string-formatting). Change one or all of your print statements to use `f""` with your varible in curly braces.
+   - Try out [f"" string formatting](../pfb.md#string-formatting). Change one or all of your print statements to use `f""` with your variable in curly braces.
        example: 
        ```
        print(f"My name: {name}") 
