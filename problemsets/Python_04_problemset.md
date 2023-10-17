@@ -64,9 +64,9 @@ Python 4 Problem Set -- Lists and Loops
 9. **Write a new script** that uses `range()` in a `for` loop to print out every number between 0 and 99  
       - Modify your loop to print out every number between 1 and 100.
       
-10. **Create a new script** that uses list comprehension to do the same thing as problem 8. (Use `range()` to print out every number between 1 and 100.)
+10. **Create a new script** that uses list comprehension to print out every number between 1 and 100.
 
-11. **Write a new script** that takes the start and end values from the command line. If you call your script like this `count.py 3 10` it will print the numbers from 3 to 10.
+11. **Write a new script** that takes the start and end values from the command line (sys.argv). If you call your script like this `count.py 3 10` it will print the numbers from 3 to 10.
       - Modify your script so that it will only print the number if it is odd.
       
 12. **Write a new script** to create a list with the following data  `['ATGCCCGGCCCGGC','GCGTGCTAGCAATACGATAAACCGG', 'ATATATATCGAT','ATGGGCCC']`. Use a `for` loop to iterate through each element of this list and:
