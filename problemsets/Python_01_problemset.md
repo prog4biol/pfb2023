@@ -4,7 +4,7 @@ Python 1 Problem Set
 Do all work in you github problemset repository.  
 
 1. Start up the Python Interactive Interpreter.
-    - `% python3` this is how you start the interpreter on the command line
+    - `python3` this is how you start the interpreter on the command line
     - Print out "Hello New York"
     - Store your name in a variable
     - Print the contents of this variable.
