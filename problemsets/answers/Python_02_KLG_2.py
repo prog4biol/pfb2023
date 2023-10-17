@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-number = float(sys.argv[1]) ## By default, sys imports variables as strings
+number = float(sys.argv[1]) ## By default, sys imports variables as strings change it to a float
 
 ## here I'm setting some variables that can be evaluated to true using bool()
 ## this will help me later on to prevent printing redundant information to the terminal
