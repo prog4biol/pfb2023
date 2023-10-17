@@ -9,6 +9,7 @@ Sofia Robb
 * [Big Picture](unix.md/#big-picture)
    * [Why?](unix.md/#why)
    * [Helpful Tips](unix.md/#helpful-tips)
+   
 * [Unix](unix.md/#unix)
    * [Unix 1](unix.md/#unix-1)
       * [Unix Overview](unix.md/#unix-overview)
@@ -38,8 +39,9 @@ Sofia Robb
          * [Standard I/O and Pipes](unix.md/#standard-io-and-pipes)
          * [More Pipe Idioms](unix.md/#more-pipe-idioms)
       * [More Unix](unix.md/#more-unix)
-      * [</a><a href="problemsets/Unix_01_problemset.md">Link to Unix 1 Problem Set</a>](unix.md/#link-to-unix-1-problem-set)
+      
    * [Unix 2](unix.md/#unix-2)
+      
       * [Text Editors](unix.md/#text-editors)
       * [Introduction to vi](unix.md/#introduction-to-vi)
          * [Getting Started with vi](unix.md/#getting-started-with-vi)
@@ -47,6 +49,7 @@ Sofia Robb
          * [Common Activities and vi Commands](unix.md/#common-activities-and-vi-commands)
          * [Other Useful Tips](unix.md/#other-useful-tips)
          * [Mug of vi](unix.md/#mug-of-vi)
+      
    * [Git for Beginners](unix.md/#git-for-beginners)
       * [The Big Picture.](unix.md/#the-big-picture)
          * [Collaboration](unix.md/#collaboration)
@@ -62,22 +65,28 @@ Sofia Robb
          * [Tips](unix.md/#tips)
       * [Cloning a Repository](unix.md/#cloning-a-repository)
          * [Bringing Changes in from the Remote Repository to your Local Repository](unix.md/#bringing-changes-in-from-the-remote-repository-to-your-local-repository)
+      
    * [SSH Keys](unix.md/#ssh-keys)
       * [Adding a new SSH key to your GitHub account](unix.md/#adding-a-new-ssh-key-to-your-github-account)
       * [Generating a new SSH KEY](unix.md/#generating-a-new-ssh-key)
       * [Adding your SSH key to the ssh-agent](unix.md/#adding-your-ssh-key-to-the-ssh-agent)
       * [Adding a new SSH key to your GitHub account](unix.md/#adding-a-new-ssh-key-to-your-github-account-1)
       * [Paste into your GitHub account](unix.md/#paste-into-your-github-account)
+      
    * [Links to <em>slightly</em> less basic topics](unix.md/#links-to-slightly-less-basic-topics)
-   * [</a><a href="problemsets/Unix_02_problemset.md">Link To Unix 2 Problem Set</a>](unix.md/#link-to-unix-2-problem-set)
+   
+      
+   
 * [Python Lectures](pfb.md/#python-lectures)
    * [Python 1](pfb.md/#python-1)
       * [Python Overview](pfb.md/#python-overview)
+      
       * [Running Python](pfb.md/#running-python)
          * [Interactive Interpreter](pfb.md/#interactive-interpreter)
          * [Python Scripts are Text Files](pfb.md/#python-scripts-are-text-files)
          * [Running Python Scripts](pfb.md/#running-python-scripts)
          * [A quicker/better way to run python scripts](pfb.md/#a-quickerbetter-way-to-run-python-scripts)
+         
       * [Syntax](pfb.md/#syntax)
          * [Python Variable Names](pfb.md/#python-variable-names)
          * [Naming conventions for Python Variable Names](pfb.md/#naming-conventions-for-python-variable-names)
@@ -85,6 +94,7 @@ Sofia Robb
          * [Lines and Indentation](pfb.md/#lines-and-indentation)
          * [Comments](pfb.md/#comments)
          * [Blank Lines](pfb.md/#blank-lines)
+         
       * [Data Types and Variables](pfb.md/#data-types-and-variables)
          * [Numbers and Strings](pfb.md/#numbers-and-strings)
          * [Lists](pfb.md/#lists)
@@ -92,7 +102,9 @@ Sofia Robb
          * [Dictionary](pfb.md/#dictionary)
          * [Command line parameters: A Special Built-in List](pfb.md/#command-line-parameters-a-special-built-in-list)
          * [What kind of object am I working with?](pfb.md/#what-kind-of-object-am-i-working-with)
-      * [</a><a href="problemsets/Python_01_problemset.md">Link to Python 1 Problem Set</a>](pfb.md/#link-to-python-1-problem-set)
+         
+         
+      
    * [Python 2](pfb.md/#python-2)
       * [Operators](pfb.md/#operators)
          * [Arithmetic Operators](pfb.md/#arithmetic-operators)
@@ -101,22 +113,30 @@ Sofia Robb
          * [Logical Operators](pfb.md/#logical-operators)
          * [Membership Operators](pfb.md/#membership-operators)
          * [Operator Precedence](pfb.md/#operator-precedence)
+         
       * [Truth](pfb.md/#truth)
          * [Use bool() to test for truth](pfb.md/#use-bool-to-test-for-truth)
+         
       * [Logic: Control Statements](pfb.md/#logic-control-statements)
          * [If Statement](pfb.md/#if-statement)
          * [if/elif](pfb.md/#ifelif)
+         
       * [Numbers](pfb.md/#numbers)
          * [integer](pfb.md/#integer)
          * [floating point number](pfb.md/#floating-point-number)
          * [complex number](pfb.md/#complex-number)
          * [Conversion functions](pfb.md/#conversion-functions)
          * [Numeric Functions](pfb.md/#numeric-functions)
+         
       * [Comparing two numbers](pfb.md/#comparing-two-numbers)
-      * [</a><a href="problemsets/Python_02_problemset.md">Link to Python 2 Problem Set</a>](pfb.md/#link-to-python-2-problem-set)
+      
+         
+      
    * [Python 3](pfb.md/#python-3)
       * [Sequences](pfb.md/#sequences)
+      
       * [What functions go with my object?](pfb.md/#what-functions-go-with-my-object)
+      
       * [Strings](pfb.md/#strings)
          * [Quotation Marks](pfb.md/#quotation-marks)
          * [Strings and the print() function](pfb.md/#strings-and-the-print-function)
@@ -130,11 +150,14 @@ Sofia Robb
          * [Extracting a Substring, or Slicing](pfb.md/#extracting-a-substring-or-slicing)
          * [Reverse a string or a list](pfb.md/#reverse-a-string-or-a-list)
          * [Other String Methods](pfb.md/#other-string-methods)
+         
       * [String Formatting](pfb.md/#string-formatting)
          * [The f-string mini-language](pfb.md/#the-f-string-mini-language)
          * [Summary of special formatting symbols so far](pfb.md/#summary-of-special-formatting-symbols-so-far)
          * [What's the point?](pfb.md/#whats-the-point)
-      * [</a><a href="problemsets/Python_03_problemset.md">Link to Python 3 Problem Set</a>](pfb.md/#link-to-python-3-problem-set)
+         
+         
+      
    * [Python 4](pfb.md/#python-4)
       * [Lists and Tuples](pfb.md/#lists-and-tuples)
          * [Lists](pfb.md/#lists-1)
@@ -147,6 +170,7 @@ Sofia Robb
          * [List Functions](pfb.md/#list-functions)
          * [List Methods](pfb.md/#list-methods)
          * [Building a List one Value at a Time](pfb.md/#building-a-list-one-value-at-a-time)
+         
       * [Loops](pfb.md/#loops)
          * [While loop](pfb.md/#while-loop)
          * [While Loop Syntax](pfb.md/#while-loop-syntax)
@@ -158,7 +182,9 @@ Sofia Robb
          * [Loop Control: Continue](pfb.md/#loop-control-continue)
          * [Iterators](pfb.md/#iterators)
          * [List Comprehension](pfb.md/#list-comprehension)
-      * [</a><a href="problemsets/Python_04_problemset.md">Link to Python 4 Problem Set</a>](pfb.md/#link-to-python-4-problem-set)
+         
+         
+      
    * [Python 5](pfb.md/#python-5)
       * [Dictionaries](pfb.md/#dictionaries)
          * [Creating a Dictionary](pfb.md/#creating-a-dictionary)
@@ -172,8 +198,11 @@ Sofia Robb
          * [Sorting Dictionary Keys](pfb.md/#sorting-dictionary-keys)
          * [Dictionary Functions](pfb.md/#dictionary-functions)
          * [Dictionary Methods](pfb.md/#dictionary-methods)
-      * [</a><a href="problemsets/Python_05_problemset.md">Link to Python 5 Problem Set</a>](pfb.md/#link-to-python-5-problem-set)
+         
+         
+      
    * [Python 6](pfb.md/#python-6)
+   
    * [Sets](pfb.md/#sets)
          * [Set Operators](pfb.md/#set-operators)
          * [Set Functions](pfb.md/#set-functions)
@@ -188,8 +217,11 @@ Sofia Robb
          * [Opening a file with with open() as fh:](pfb.md/#opening-a-file-with-with-open-as-fh)
          * [Writing to a File](pfb.md/#writing-to-a-file)
          * [Building a Dictionary from a File](pfb.md/#building-a-dictionary-from-a-file)
-      * [</a><a href="problemsets/Python_06_problemset.md">Link to Python 6 Problem Set</a>](pfb.md/#link-to-python-6-problem-set)
+         
+         
+     
    * [Python 7](pfb.md/#python-7)
+      
       * [Regular Expressions](pfb.md/#regular-expressions)
          * [Individual Characters](pfb.md/#individual-characters)
          * [Character Classes](pfb.md/#character-classes)
@@ -207,8 +239,11 @@ Sofia Robb
          * [Using Regular expressions in substitutions](pfb.md/#using-regular-expressions-in-substitutions)
          * [Using subpatterns in the replacement](pfb.md/#using-subpatterns-in-the-replacement)
          * [Regular Expression Option Modifiers](pfb.md/#regular-expression-option-modifiers)
+         
       * [Helpful Regex tools](pfb.md/#helpful-regex-tools)
-      * [</a><a href="problemsets/Python_07_problemset.md">Link to Python 7 Problem Set</a>](pfb.md/#link-to-python-7-problem-set)
+      
+         
+      
    * [Python 8](pfb.md/#python-8)
       * [Data Structures](pfb.md/#data-structures)
          * [List of lists](pfb.md/#list-of-lists)
@@ -217,6 +252,7 @@ Sofia Robb
          * [Dictionaries of dictionaries](pfb.md/#dictionaries-of-dictionaries)
          * [Building Complex Datastructures](pfb.md/#building-complex-datastructures)
       * [</a><a href="problemsets/Python_08_problemset.md">Link to Python 8 Problem Set</a>](pfb.md/#link-to-python-8-problem-set)
+      
    * [Python 9](pfb.md/#python-9)
       * [Exceptions](pfb.md/#exceptions)
          * [try/except/else/finally](pfb.md/#tryexceptelsefinally)
@@ -224,6 +260,7 @@ Sofia Robb
          * [Raising an Exception](pfb.md/#raising-an-exception)
          * [Creating Custom Exceptions](pfb.md/#creating-custom-exceptions)
       * [</a><a href="problemsets/Python_09_problemset.md">Link to Python 9 Problem Set</a>](pfb.md/#link-to-python-9-problem-set)
+      
    * [Python 10](pfb.md/#python-10)
       * [Functions](pfb.md/#functions)
          * [Defining a Function that calculates GC Content](pfb.md/#defining-a-function-that-calculates-gc-content)
@@ -233,9 +270,11 @@ Sofia Robb
          * [Keyword Arguments](pfb.md/#keyword-arguments)
          * [Default Values for Arguments](pfb.md/#default-values-for-arguments)
          * [Lambda expressions](pfb.md/#lambda-expressions)
+         
       * [Scope](pfb.md/#scope)
          * [Local Variables](pfb.md/#local-variables)
          * [Global](pfb.md/#global)
+         
       * [Modules](pfb.md/#modules)
          * [Getting information about modules with pydoc](pfb.md/#getting-information-about-modules-with-pydoc)
          * [os.path](pfb.md/#ospath)
@@ -254,8 +293,11 @@ Sofia Robb
          * [statistics](pfb.md/#statistics)
          * [glob](pfb.md/#glob)
          * [argparse](pfb.md/#argparse)
+         
       * [Many more modules that do many things](pfb.md/#many-more-modules-that-do-many-things)
-      * [</a><a href="problemsets/Python_10_problemset.md">Link to Python 10 Problem Set</a>](pfb.md/#link-to-python-10-problem-set)
+      
+         
+      
    * [Python 11](pfb.md/#python-11)
       * [Classes](pfb.md/#classes)
          * [You have been using classes to create objects](pfb.md/#you-have-been-using-classes-to-create-objects)
@@ -266,15 +308,7 @@ Sofia Robb
          * [Using class methods](pfb.md/#using-class-methods)
          * [Getting data into a new instance of our class](pfb.md/#getting-data-into-a-new-instance-of-our-class)
             * [<strong>init</strong>](pfb.md/#init)
-      * [</a><a href="problemsets/Python_11_problemset.md">Link to Python 11 Problem Set</a>](pfb.md/#link-to-python-11-problem-set)
-* [Workshops](workshops.md/#workshops)
-   * [BioPython  -- Sofia Robb](workshops.md/#biopython-----sofia-robb)
-   * [NGS -- Anoja Perera](workshops.md/#ngs----anoja-perera)
-   * [Bioinformatics and Useful Tools -- Simon Prochnik](workshops.md/#bioinformatics-and-useful-tools----simon-prochnik)
-   * [Genome Assembly -- Deb Triant](workshops.md/#genome-assembly----deb-triant)
-   * [RNAseq -- Brian Haas](workshops.md/#rnaseq----brian-haas)
-   * [Image Processing -- Jay Unruh](workshops.md/#image-processing----jay-unruh)
-   * [Sequence Homology -- Bill Pearson](workshops.md/#sequence-homology----bill-pearson)
-   * [Ethics and Responsibility in Bioinformatics -- Simon Prochnik](workshops.md/#ethics-and-responsibility-in-bioinformatics----simon-prochnik)
-   * [GMOD -- Scott Cain](workshops.md/#gmod----scott-cain)
-   * [GO/Ontology/Pathere -- Paul Thomas](workshops.md/#goontologypathere----paul-thomas)
+         
+         
+   
+   

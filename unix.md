@@ -208,7 +208,7 @@ A computer comes with a place to store scripts, data, images, OS and other files
 
 **Example diagram of a linux directory structure starting from the root directory**
 
-![directory_structure](unix.assets/directory_structure.png)
+![directory_structure](images/directory_structure.png)
 
 
 
