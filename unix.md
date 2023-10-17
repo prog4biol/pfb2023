@@ -1137,7 +1137,7 @@ Follow Step 3 to create your __local repository__ and **link it** to the __remot
   ![Fill in the form and click the 'Create Repository Button'](images/github-newRepoForm.png)  
 
 
-3. Create a directory on your computer, navigate into it, and then and follow the instructions provided.  
+3. Create a directory on your computer `cd ~; mkdir PFB_problemsets`, navigate into it, and then follow the instructions provided.  
 
   ![Create a directory on your computer and follow these instructions.](images/github-newRepoInstructions.png)  
     
