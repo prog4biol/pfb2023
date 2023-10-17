@@ -77,9 +77,9 @@ GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTCTAGAGCCACC
 - Also find the ending nucleotide position of the EcoRI site?
 - Use [f"" string formating](../pfb.md#string-formatting) to print out these two values like this:  
  
-	```
-	EcoRI startPos:yourStartPos endPos:yourEndPos
-	```
+```
+EcoRI startPos:yourStartPos endPos:yourEndPos
+```
 
 
 15. ADD/COMMIT/PUSH
