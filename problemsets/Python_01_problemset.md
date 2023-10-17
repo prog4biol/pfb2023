@@ -8,10 +8,12 @@ Python 1 Problem Set
     - Print the contents of this variable.
     - QUIT the Interpreter
     
-2. Working with a text editor. Use `vi` to write a script. 
-   - Make sure to include `#!/usr/bin/env python3` at the top!! 
-   - Add code to print out, your name  
-   
+2. Working with a text editor. Use `vi` to write a script. Name your script `me.py`. Python scripts should always have the `.py` extension.
+   - `vi me.py`   
+   - Make sure to include `#!/usr/bin/env python3` on line 1 of your script. It has to be line one. Do not leave a blank line above. 
+   - Add code to print out, your name
+      
+        Script Output:
         ```
          My name: Sofia
         ```
@@ -19,8 +21,9 @@ Python 1 Problem Set
     - Run it from the command line. 
     - Remember it is important to write only a bit, test, then write more.
     - If it works, ADD/COMMIT. Make a good message, like "added name to print"
-    - Now add some code to print out your favorite color:  
-  
+    - Now add some code to print out your favorite color:
+   
+         Script Output:
          ```
          My name: Sofia
          My favorite color: Green
