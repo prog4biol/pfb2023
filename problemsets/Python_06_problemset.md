@@ -81,7 +81,7 @@ __Generate Gene Lists:__
 
 _Get all genes:_
 
-1. Go to [Ensembl Biomart](https://useast.ensembl.org/info/data/biomart/index.html).
+1. Go to [Ensembl Biomart](http://useast.ensembl.org/biomart/martview/3e66a7a80107043f1317566a8a10fed1).
 2. In dropdown box, select "Ensembl Genes 107"  (or most current version)
 3. In dropdown box, select "Alpaca Genes" 
 4. On the left, click Attributes
