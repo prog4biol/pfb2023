@@ -44,12 +44,12 @@ Python 1 Problem Set
          My favorite animal: Chicken
         ```
         >  Remember, write a bit, then run your code, write some more, then run again. This makes code easier to debug.
-   - Try out [f"" string formatting](https://github.com/prog4biol/pfb2023/blob/master/pfb.md#string-formatting). Change one or all of your print statements to use `f""` with your varible in curly braces.
+   - Try out [f"" string formatting](../pfb.md#string-formatting). Change one or all of your print statements to use `f""` with your varible in curly braces.
        example: 
        ```
        print(f"My name: {name}") 
        ```
-4. Use `sys.argv` (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line. Remember to check out the [example in the notes](https://github.com/prog4biol/pfb2023#command-line-parameters-a-special-built-in-list). Print all the variables in one print statement.
+4. Use `sys.argv` (make sure to import sys!!!) to retrieve your name, favorite color, favorite activity, and favorite animal from the command line. Remember to check out the [example in the notes](../pfb.md#command-line-parameters-a-special-built-in-list). Print all the variables in one print statement.
     - try using commas to separate your print arguments. 
     - try using '+' to separate your print arguments.
 
