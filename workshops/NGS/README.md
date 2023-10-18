@@ -94,13 +94,13 @@ The purpose of this workshop is to gain experience working with the various file
 14. Write a python script that computes the genome-wide [mean](https://en.wikipedia.org/wiki/Arithmetic_mean) and [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) read depth parameters.
 
 
-16. Using command-line tools, extract CDS features present in `Ecoli.gff3` and create a new GFF3 file. Then use `bedtools intersect` to determine how many SNPs and InDels in the VCF file intersect these CDS features?
+16. Using command-line tools, extract CDS features present in `Ecoli.gff3` and create a new GFF3 file. Then use `bedtools intersect` to determine how many SNPs and InDels in the VCF file intersect these CDS features.
 
 
 17. Compress the VCF with `bgzip`, then index it with `bcftools index --tbi your.vcf.gz`.
 
 
-18. Calculate variant consequence using the `bcftools csq` tool (inputting `Ecoli.gff3` and *not* the CDS-specific GFF3) and output to a new VCF file. Then, write a python script to parse variant consequence annotations from the INFO-BCSQ tag and calculate the [Z-score](https://en.wikipedia.org/wiki/Standard_score) from the Sample-DP field in this new VCF and output this information into a tab-delimited file summarizing the framehift variants. Use the mean and standard deviation parameters calculated in Problem 14 as inputs to your script to calculate the Z-score.
+18. Calculate variant consequence using the `bcftools csq` tool (inputting `Ecoli.gff3` and *not* the CDS-specific GFF3) and output to a new VCF file. Then, write a python script to parse variant consequence annotations from the INFO BCSQ tag and calculate the [Z-score](https://en.wikipedia.org/wiki/Standard_score) from the Sample DP field in this new VCF, then output this information into a tab-delimited file summarizing the framehift variants. Use the mean and standard deviation parameters calculated in Problem 14 as inputs to your script to calculate the Z-score.
     - How many variants induce frameshifts?
     - How many frameshifts cause stop codons to be lost? How many gained?
     - How many of these frameshift variants have a read depth Z-scores between -2 and +2?
