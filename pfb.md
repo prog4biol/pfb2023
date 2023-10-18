@@ -1625,7 +1625,7 @@ Lists are data types that store a collection of data.
 ( 'Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'Jul' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec' )
 ```
 
-Many functions and methods return tuples like `math.modf(x)`.	This function returns the fractional and integer parts of `x` in a two-item tuple. Here the is no reason to change this sequence.
+Many functions and methods return tuples like `math.modf(x)`.  This function returns the fractional and integer parts of `x` in a two-item tuple. There is no reason to change this sequence.
 
 ```python
 >>> math.modf(2.6)
