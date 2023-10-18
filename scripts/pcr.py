@@ -1,42 +1,38 @@
 #!/usr/bin/env python3
 
-def doAnnealing(temp,time):
+def doAnnealing(time):
+  temp = 57
   print(f"  Annealing at temp {temp}oC for {time}")
 
-def doDenature(temp,time):
+def doDenature(time):
+  temp = 94
   print(f"  Denaturing at temp {temp}oC for {time}")
 
-def doExtension(temp,time):
+def doExtension(time):
+  temp = 72
   print(f"  Extending at temp {temp}oC for {time}")
 
-def doChilling(temp,time):
+def doChilling(time):
+  temp = 4
   print(f"  Chilling at temp {temp}oC for {time}")
 
 
+cycles = 30
 print(f"PCR Started.")
 
-(temp, time) = ('','')
-cycles = 30
-
-(temp,time) = (94, "3min")
-doDenature(temp,time)
+doDenature("3min")
 
 for cycle in range(cycles):
   cycle+=1
   print(f"Starting Cycle {cycle}")
-  (temp,time) = (94, "30sec")
-  doDenature(temp,time)
-  (temp,time) = (57, "30sec")
-  doAnnealing(temp,time)
-  (temp,time) = (72, "1min")
-  doExtension(temp,time)
-  (temp,time) = (72, "5min")
-
-doAnnealing(temp,time)
+  doDenature("30sec")
+  doAnnealing("30sec")
+  doExtension("1min")
+ 
+doExtension("5min")
 
 print(f"PCR Complete.")
 print(f"Starting Chilling")
 
-while (1):
- (temp,time) = (4, "forever")
- doChilling(temp,time)
+while (True):
+ doChilling("forever")
