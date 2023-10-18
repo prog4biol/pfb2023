@@ -883,6 +883,8 @@ It returns three different values depending on x and y
 
 ----
 
+<div style="page-break-after: always;"></div>
+
 ##  Python 3
 
 ### Sequences
@@ -1587,6 +1589,8 @@ So much can be done with the `format()` function. Here is one last example, but 
 ### [Link to Python 3 Problem Set](problemsets/Python_03_problemset.md)
 
 
+
+<div style="page-break-after: always;"></div>
 
 ---
 ## Python 4
@@ -2323,6 +2327,7 @@ Here is an example of using mathematical operators to generate a list:
 
 
 
+<div style="page-break-after: always;"></div>
 ---
 ## Python 5
 
@@ -2581,6 +2586,7 @@ These functions work on several other data types too!
 
 
 
+<div style="page-break-after: always;"></div>
 ---
 
 ## Python 6
@@ -3008,6 +3014,7 @@ Output:
 
 
 
+<div style="page-break-after: always;"></div>
 ---
 ## Python 7
 
@@ -3634,6 +3641,9 @@ There are a lot of online tools for actually seeing what is happening in your re
 ### [Link to Python 7 Problem Set](problemsets/Python_07_problemset.md)
 
 
+<div style="page-break-after: always;"></div>
+---
+
 ## Python 8
 
 
@@ -4056,6 +4066,8 @@ Here is a very nice [interactive tutorial](https://www.learnpython.org/en/Pandas
 ---
 ### [Link to Python 8 Problem Set](problemsets/Python_08_problemset.md)
 
+<div style="page-break-after: always;"></div>
+---
 ## Python 9
 ### Exceptions
 
@@ -4333,6 +4345,7 @@ File needs to be a FASTA file and end with .fa
 
 
 
+<div style="page-break-after: always;"></div>
 ---
 ## Python 10
 
@@ -4931,6 +4944,7 @@ Also, non-core: BioPython for bioinformatics, Numpy for mathematics, statistics,
 
 ---
 
+<div style="page-break-after: always;"></div>
 
 ## Python 11
 
