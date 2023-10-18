@@ -904,7 +904,7 @@ You can ask what the length of any sequence is
 3
 ```
 
-You can also use string-specific functions on strings, but not on lists and vice versa. We'll learn more about this later on. `rstrip()` is a string method or function. You get an error if you try to use it on a list.
+You can also use string-specific functions on strings, but not on lists and vice versa. We'll learn more about this later on. `rstrip()` is a string-specific function or "method". You get an error if you try to use it on a list.
 
 ```python
 >>> 'ACGTGA'.rstrip('A')
@@ -915,15 +915,15 @@ Traceback (most recent call last):
 AttributeError: 'list' object has no attribute 'rstrip'
 ```
 
-### What functions go with my object?
+### What object-specific functions or "methods" go with my object?
 
-How do you find out what functions work with an object? There's a handy function `dir()`. As an example what functions can you call on our string `'ACGTGA'`?
+How do you find out what methods work with an object? There's a handy function `dir()`. As an example what methods you can call on our string `'ACGTGA'`?
 
 ```python
 >>> dir('ACGTGA')
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
 ```
-`dir()` will return all atributes of an object, among them its functions. Technically, functions belonging to a specific class (object type) are called methods.
+`dir()` will return all atributes of an object, among them its methods. Methods are functions belonging to a specific class (object type).
 You can call `dir()` on any object, most often, you'll use it in the interactive Python shell. 
 
 ### Strings
@@ -942,7 +942,7 @@ Notes about quotation marks:
 
 - Single and double quotes are equivalent.  
 - A variable name inside quotes is just the string identifier, not the value stored inside the variable. `f''` or f-strings are useful for variable interpolation in python 
-- Triple quotes (single or doubel) are used before and after a string that spans multiple lines.  
+- Triple quotes (single or double) are used before and after a string that spans multiple lines.  
 
 Use of quotation examples:  
 
@@ -1510,7 +1510,7 @@ Use a `<` to indicate left-justification.
 2     genes
 >>> print( f"{20:<5} genes" )
 20    genes
->>> print( f"{20:<5} genes" )
+>>> print( f"{200:<5} genes" )
 200   genes
 ```
 Center aligning is done with `^` instead of `>` or `<`. You can also pad with characters other than 0. Here let's try `_` or underscore as in `:_^`. The fill symbol goes before the alignment symbol.
@@ -2581,10 +2581,13 @@ These functions work on several other data types too!
 ---
 ### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
 
+
 <div style="page-break-after: always;"></div>
 
 ---
 ## Python 6
+=======
+
 
 ## Sets
 
@@ -2771,7 +2774,15 @@ nt count: {'G': 20, 'T': 21, 'A': 13, 'C': 16, 'N': 1}
 
 ---
 
+`set` problemset questions are combined into Python 6: File I/O problemset.     
+[Link to Python 6 Problem Set](problemsets/Python_06_problemset.md)   
+Question 1-5 are all about Sets.  
+Question 6+ are a combination of File I/O and sets.  
 
+
+---
+
+## Python 6
 
 
 ### I/O and Files
