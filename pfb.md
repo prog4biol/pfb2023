@@ -1585,14 +1585,12 @@ So much can be done with the `format()` function. Here is one last example, but 
 
 
 ---
-
 ### [Link to Python 3 Problem Set](problemsets/Python_03_problemset.md)
 
-
-
 <div style="page-break-after: always;"></div>
-
 ---
+
+--- 
 ## Python 4
 
 ### Lists and Tuples
@@ -2325,12 +2323,11 @@ Here is an example of using mathematical operators to generate a list:
 
 ### [Link to Python 4 Problem Set](problemsets/Python_04_problemset.md)
 
-
-
 <div style="page-break-after: always;"></div>
 ---
-## Python 5
 
+---
+## Python 5
 
 ### Dictionaries
 
@@ -2581,14 +2578,13 @@ These functions work on several other data types too!
 | `dict.values()`                        | Returns list of dictionary dict's values |
 
 
-
+---
 ### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
-
-
 
 <div style="page-break-after: always;"></div>
 ---
 
+---
 ## Python 6
 
 ## Sets
@@ -3007,14 +3003,10 @@ Output:
 ```
 
 ---
-
-
-
 ### [Link to Python 6 Problem Set](problemsets/Python_06_problemset.md)
 
-
-
 <div style="page-break-after: always;"></div>
+
 ---
 ## Python 7
 
@@ -3636,18 +3628,11 @@ There are a lot of online tools for actually seeing what is happening in your re
  - [pythex](https://pythex.org/)
 
 ---
-
-
 ### [Link to Python 7 Problem Set](problemsets/Python_07_problemset.md)
-
-
 <div style="page-break-after: always;"></div>
+
 ---
-
 ## Python 8
-
-
-
 
 ### Data Structures
 
@@ -4065,8 +4050,8 @@ Here is a very nice [interactive tutorial](https://www.learnpython.org/en/Pandas
 
 ---
 ### [Link to Python 8 Problem Set](problemsets/Python_08_problemset.md)
-
 <div style="page-break-after: always;"></div>
+
 ---
 ## Python 9
 ### Exceptions
@@ -4340,12 +4325,10 @@ File needs to be a FASTA file and end with .fa
 
 
 ---
-
 ### [Link to Python 9 Problem Set](problemsets/Python_09_problemset.md)
 
-
-
 <div style="page-break-after: always;"></div>
+
 ---
 ## Python 10
 
@@ -4939,12 +4922,10 @@ time, HTML, XML, email, CGI, sockets, audio, GUIs with Tk, debugging, testing, u
 Also, non-core: BioPython for bioinformatics, Numpy for mathematics, statistics, pandas for data, scikitlearn for machine learning.
 
 ---
-
 ### [Link to Python 10 Problem Set](problemsets/Python_10_problemset.md)
 
----
-
 <div style="page-break-after: always;"></div>
+---
 
 ## Python 11
 
