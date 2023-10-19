@@ -1,19 +1,22 @@
 Python 6 - Sets and IO - Problem Set
 ===================
 
-1. Make a set using the two different syntaxes for creating a set `myset = set()` and `myset2 = {}`. What is the difference? Does it matter how you make it?
+1. Make a set using the two different syntaxes for creating a set `myset = set()` and `myset2 = {}`.  
 
-```
+```python
 mySet = set('ATGTGGG')
-mySet2 = {'ATGCCT'}
+mySet2 = {'ATGTGGG'}
 ```
+  -  **What is the difference?**
+  -  **Does it matter which method you use?**
+  -  **How many items are in mySet and mySet2?**
 
-2. Write a script to find the intersection, difference, union, and symetrical difference between these two sets.
 
-```
-Set A = 3 14 15 9 26 5 35 9
-Set B = 60 22 14 0 9
-```
+
+2. Write a script that creates 2 sets using the collections of numbers below. Find the intersection, difference, union, and symetrical difference between these two sets.  
+  - 3, 14, 15, 9, 26, 5, 35, 9
+  - 60, 22, 14, 0, 9  
+
 
 3. If you create a set using a DNA sequence, what will you get back? Try it with this sequence:
 
