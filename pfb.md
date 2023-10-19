@@ -2579,13 +2579,8 @@ These functions work on several other data types too!
 ### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
 
 
-<div style="page-break-after: always;"></div>
 
-
-
-
-
-## Sets
+### Sets
 
 
 A set is another Python data type. It is essentially a dictionary with keys but no values.
