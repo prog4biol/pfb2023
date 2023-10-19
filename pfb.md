@@ -2581,13 +2581,7 @@ These functions work on several other data types too!
 ---
 ### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
 
-
-<div style="page-break-after: always;"></div>
-
 ---
-## Python 6
-=======
-
 
 ## Sets
 
