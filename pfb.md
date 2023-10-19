@@ -2331,7 +2331,7 @@ Here is an example of using mathematical operators to generate a list:
 
 Dictionaries are another iterable, like a string and list. They act like lists, with one big difference, instead of retrieving values with a numerical index they use strings. You can look items up in a python dictionary just like you do when you look up items in the English dictionary, the key, or a string.  
 
-For example, when you want to know what the definition of the word, 'onomatopoeia', you look it up using the word, 'onomatopoeia'. If you want to know the value, or in our exampple below, the sequence of TP53 you would use 'TP53' as a look up.
+For example, when you want to know what the definition of the word, 'onomatopoeia', you look it up using the word, 'onomatopoeia'. If you want to know the value, or in our example below, the sequence of TP53 you would use 'TP53' as a look up.
 
 Dictionaries are a collection of key/value pairs. In Python, each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: `{}`
 
@@ -2581,9 +2581,8 @@ These functions work on several other data types too!
 
 <div style="page-break-after: always;"></div>
 
----
-## Python 6
-=======
+
+
 
 
 ## Sets
@@ -3117,7 +3116,7 @@ A quick count of all the matching sites can be done by counting the length of th
 
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. If you want to find just the first occurrence of a pattern, what method do you use?
 
@@ -3232,7 +3231,7 @@ g.*t
 >  matches US telephone numbers (no extra text allowed).
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What would be a pattern to recognize an email address?
 2. What would be a pattern to recognize the ID portion of a sequence record in a FASTA file?
@@ -3270,7 +3269,7 @@ big bad (wolf|sheep)
 > - "big bad sheep"
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What would a pattern to match 'ATG' followed by a C or a T look like?
 
@@ -3298,7 +3297,7 @@ Who's afraid of the big (bad )?wolf\?
 > This also shows how to literally match special characters. Use a '\\' in to escape them.
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What pattern could you use to capture the ID in a sequence record of a FASTA file in a subpattern.
 
@@ -3598,7 +3597,7 @@ Who's afraid of the bad big wolf?
 > \\1 refers to the first subpattern
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. How would you use regular expressions to find all occurrences of 'ATG' and replace with '-M-' in this sequence 'GCAGAGGTGATGGACTCCGTAATGGCCAAATGACACGT'? 
 
