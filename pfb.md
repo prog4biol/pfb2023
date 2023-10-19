@@ -2906,7 +2906,7 @@ with open("seq.nt.txt","r") as seq_file_obj: #cleans up after exiting
                                             # the 'with' block
   for line in seq_file_obj:
     line = line.rstrip()
-  	print(line)
+    print(line)
 #file gets closed for you here.
 ```
 
