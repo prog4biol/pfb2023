@@ -159,7 +159,7 @@ Sofia Robb
          * [Infinite Loops](pfb.md/#infinite-loops)
          * [For Loops](pfb.md/#for-loops)
          * [For Loop Syntax](pfb.md/#for-loop-syntax)
-   * [PCR Program Loop Example](pfb.md/#pcr-program-loop-example)
+         * [PCR Program Loop Example](pfb.md/#pcr-program-loop-example)
          * [Loop Control](pfb.md/#loop-control)
          * [Loop Control: Break](pfb.md/#loop-control-break)
          * [Loop Control: Continue](pfb.md/#loop-control-continue)
