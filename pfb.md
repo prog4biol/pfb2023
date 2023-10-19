@@ -1625,7 +1625,7 @@ Lists are data types that store a collection of data.
 ( 'Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'Jul' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec' )
 ```
 
-Many functions and methods return tuples like `math.modf(x)`.	This function returns the fractional and integer parts of `x` in a two-item tuple. Here the is no reason to change this sequence.
+Many functions and methods return tuples like `math.modf(x)`.  This function returns the fractional and integer parts of `x` in a two-item tuple. There is no reason to change this sequence.
 
 ```python
 >>> math.modf(2.6)
@@ -2061,7 +2061,7 @@ Output:
 4
 ```
 
-## PCR Program Loop Example
+####  PCR Program Loop Example
 
 [pcr.py](scripts/pcr.py)
 
@@ -2077,45 +2077,42 @@ Output:
 ```python
 #!/usr/bin/env python3
 
-def doAnnealing(temp,time):
+def doAnnealing(time):
+  temp = 57
   print(f"  Annealing at temp {temp}oC for {time}")
 
-def doDenature(temp,time):
+def doDenature(time):
+  temp = 94
   print(f"  Denaturing at temp {temp}oC for {time}")
 
-def doExtension(temp,time):
+def doExtension(time):
+  temp = 72
   print(f"  Extending at temp {temp}oC for {time}")
 
-def doChilling(temp,time):
+def doChilling(time):
+  temp = 4
   print(f"  Chilling at temp {temp}oC for {time}")
 
+
+cycles = 30
 print(f"PCR Started.")
 
-(temp, time) = ('','')
-cycles = 30
-
-(temp,time) = (94, "3min")
-doDenature(temp,time)
+doDenature("3min")
 
 for cycle in range(cycles):
   cycle+=1
   print(f"Starting Cycle {cycle}")
-  (temp,time) = (94, "30sec")
-  doDenature(temp,time)
-  (temp,time) = (57, "30sec")
-  doAnnealing(temp,time)
-  (temp,time) = (72, "1min")
-  doExtension(temp,time)
-  (temp,time) = (72, "5min")
+  doDenature("30sec")
+  doAnnealing("30sec")
+  doExtension("1min")
 
-doAnnealing(temp,time)
+doExtension("5min")
 
 print(f"PCR Complete.")
 print(f"Starting Chilling")
 
-while (1):
- (temp,time) = (4, "forever")
- doChilling(temp,time)
+while (True):
+ doChilling("forever")
 ```
 
 Output: 
@@ -2168,7 +2165,7 @@ Starting Cycle 30
   Denaturing at temp 94oC for 30sec
   Annealing at temp 57oC for 30sec
   Extending at temp 72oC for 1min
-  Annealing at temp 72oC for 5min
+  Extending at temp 72oC for 5min
 PCR Complete.
 Starting Chilling
   Chilling at temp 4oC for forever
@@ -2334,7 +2331,7 @@ Here is an example of using mathematical operators to generate a list:
 
 Dictionaries are another iterable, like a string and list. They act like lists, with one big difference, instead of retrieving values with a numerical index they use strings. You can look items up in a python dictionary just like you do when you look up items in the English dictionary, the key, or a string.  
 
-For example, when you want to know what the definition of the word, 'onomatopoeia', you look it up using the word, 'onomatopoeia'. If you want to know the value, or in our exampple below, the sequence of TP53 you would use 'TP53' as a look up.
+For example, when you want to know what the definition of the word, 'onomatopoeia', you look it up using the word, 'onomatopoeia'. If you want to know the value, or in our example below, the sequence of TP53 you would use 'TP53' as a look up.
 
 Dictionaries are a collection of key/value pairs. In Python, each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: `{}`
 
@@ -2583,7 +2580,8 @@ These functions work on several other data types too!
 
 ---
 
-## Sets
+
+### Sets
 
 
 A set is another Python data type. It is essentially a dictionary with keys but no values.
@@ -3114,7 +3112,7 @@ A quick count of all the matching sites can be done by counting the length of th
 
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. If you want to find just the first occurrence of a pattern, what method do you use?
 
@@ -3229,7 +3227,7 @@ g.*t
 >  matches US telephone numbers (no extra text allowed).
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What would be a pattern to recognize an email address?
 2. What would be a pattern to recognize the ID portion of a sequence record in a FASTA file?
@@ -3267,7 +3265,7 @@ big bad (wolf|sheep)
 > - "big bad sheep"
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What would a pattern to match 'ATG' followed by a C or a T look like?
 
@@ -3295,7 +3293,7 @@ Who's afraid of the big (bad )?wolf\?
 > This also shows how to literally match special characters. Use a '\\' in to escape them.
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What pattern could you use to capture the ID in a sequence record of a FASTA file in a subpattern.
 
@@ -3595,7 +3593,7 @@ Who's afraid of the bad big wolf?
 > \\1 refers to the first subpattern
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. How would you use regular expressions to find all occurrences of 'ATG' and replace with '-M-' in this sequence 'GCAGAGGTGATGGACTCCGTAATGGCCAAATGACACGT'? 
 
