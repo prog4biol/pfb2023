@@ -180,7 +180,7 @@ Sofia Robb
          * [Dictionary Functions](pfb.md/#dictionary-functions)
          * [Dictionary Methods](pfb.md/#dictionary-methods)
       * [</a><a href="problemsets/Python_05_problemset.md">Link to Python 5 Problem Set</a>](pfb.md/#link-to-python-5-problem-set)
-   * [Sets](pfb.md/#sets)
+      * [Sets](pfb.md/#sets)
          * [Set Operators](pfb.md/#set-operators)
          * [Set Functions](pfb.md/#set-functions)
          * [Set Methods](pfb.md/#set-methods)

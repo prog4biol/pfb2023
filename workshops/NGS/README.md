@@ -1,13 +1,13 @@
-NGS Workshop Excercises
+NGS File Types Workshop Excercises
 =======================
 
-The purpose of this workshop is to gain experience working with the various file formats discussed in the [NGS file formats lecture](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) and the tools designed to manipulate them. We will use real *E. coli* data to perform our analysis: find candidate frameshift mutants in a strain of interest.
+The purpose of this workshop is to gain experience working with the various file formats discussed in the [NGS file formats lecture](bio_info_formats.pdf) and the tools designed to manipulate them. We will use real *E. coli* data to perform our analysis: find candidate frameshift mutants in a strain of interest.
 
-**NOTE**: Unless otherwise specified, example command lines are available in this workshop's [lecture notes](https://github.com/bredeson/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf)
+**NOTE**: Unless otherwise specified, example command lines are available in this workshop's [lecture notes](bio_info_formats.pdf)
 
 1. First, create a new `ngs` directory for this workshop in which to perform these exercises, then change directory to it.
 
-2. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](https://github.com/prog4biol/pfb2022/blob/master/problemsets/biopython_problemset.md).
+2. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](../../problemsets/biopython_problemset.md).
     ```bash
     conda install -c anaconda wget
     conda install -c conda-forge gnuplot
@@ -28,25 +28,25 @@ The purpose of this workshop is to gain experience working with the various file
 4. Download the following genome files with `wget`, then decompress both with `gunzip`:
    ```bash
    # Genome sequence:
-   https://github.com/prog4biol/pfb2022/raw/master/workshops/NGS/data/Ecoli.fasta.gz
+   wget https://github.com/prog4biol/pfb2023/raw/master/workshops/NGS/data/Ecoli.fasta.gz
 
    # Genome annotation:
-   https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/Ecoli.gff3.gz
+   wget https://raw.githubusercontent.com/prog4biol/pfb2023/master/workshops/NGS/data/Ecoli.gff3.gz
    ```
-    - How many of the sequences are chromosomes? How many plasmids?
-    - What is the reference strain's genome size?
+    - Use the _E. coli_ FASTA file to determine how many of the sequences are chromosomes? How many plasmids?
+    - Use the _E. coli_ FASTA file to determine the genome size?
 
 
-5. Index the genome as described in the [lecture notes](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf).
+5. Index the genome as described in the [lecture notes](bio_info_formats.pdf).
 
 
-6. Use `wget` to download the FASTQ file of sequencing [reads]() for our strain of interest, then use Unix commands to examine the FASTQ file:
+6. Use `wget` to download the FASTQ file of sequencing [reads](data/SRR21901339.fastq.gz) for our strain of interest, then use Unix commands to examine the FASTQ file:
    ```
    # Whole-genome sequnecing reads:
-   https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/SRR21901339.fastq.gz
+   wget https://github.com/prog4biol/pfb2023/blob/master/workshops/NGS/data/SRR21901339.fastq.gz
    ```
     - How long are the reads?
-    - Are these reads single-end or paired-end? Explain how can you tell.
+    - Are these reads single-end or paired-end? Explain how can you tell. 
     - Which Phred quality encoding (ASCII offset) are the reads in? How can you tell?
 
 
@@ -58,12 +58,12 @@ The purpose of this workshop is to gain experience working with the various file
 
 
 8. Write a python script to trim poor-quality bases from the ends of the FASTQ sequences and output a new FASTQ file. Your script should take as input from the command line: one FASTQ file name and one integer value (the minimum base quality threshold). *HINT*: Use the following approach:
-    1. Iterate from the 3'-end of the read to the 5'-end, examining the quality values at each base position (see the [lecture notes](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) for how to convert quality string characters to numberic values;  
+    1. Iterate from the 3'-end of the read to the 5'-end, examining the quality values at each base position (see the [lecture notes](bio_info_formats.pdf) for how to convert quality string characters to numberic values;  
     2. `break` at the first base with a quality value greater-than or equal-to your inputted quality threshold;  
     3. then use string slicing to extract the high-quality portion of both the sequence and quality strings.  
 
 
-9. Align the trimmed reads to the genome sequence using BWA-MEM (*i.e.* the `bwa` command). Make sure to specify a Read Group string (via `-R`) that, at a *minimum*, includes `ID`, `SM`, and `PL` tags. This Read Group information is required by GATK. Then, convert the output file to BAM format, sort the BAM file, and then index it (see the [lecture notes](https://github.com/prog4biol/pfb2022/blob/master/workshops/NGS/bio_info_formats.pdf) for how).
+9. Align the trimmed reads to the genome sequence using BWA-MEM (*i.e.* the `bwa` command). Make sure to specify a Read Group string (via `-R`) that, at a *minimum*, includes `ID`, `SM`, and `PL` tags. This Read Group information is required by GATK. Then, convert the output file to BAM format, sort the BAM file, and then index it (see the [lecture notes](bio_info_formats.pdf) for how).
 
 
 10. Run `samtools stats` and `plot-bamstats` on the BAM file and examine the `.html` report.
