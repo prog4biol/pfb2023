@@ -1,4 +1,4 @@
-NGS FILE TYPES Workshop Excercises
+NGS File Types Workshop Excercises
 =======================
 
 The purpose of this workshop is to gain experience working with the various file formats discussed in the [NGS file formats lecture](bio_info_formats.pdf) and the tools designed to manipulate them. We will use real *E. coli* data to perform our analysis: find candidate frameshift mutants in a strain of interest.
