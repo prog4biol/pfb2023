@@ -1,6 +1,7 @@
 # Conda Package Manager
 
-## 
+### Resources:
+- [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ## What is Conda and why should you use it?
 
@@ -22,7 +23,6 @@ The following will create a minimal (i.e., "empty") virtual environment called `
 $ conda create --name envName
 ```
 
-### 
 
 ### How to load/activate an environment:
 
