@@ -4,13 +4,13 @@
 
 ## What is Conda and why should you use it?
 
-The [Conda](https://docs.conda.io/en/latest/) Python toolkit is a collection of tools for creating and managing virtual environments -- (semi-)self-contained Unix and/or Python command-line configurations -- that allow flexible installation of and access to the executables and libraries needed to perform different analyses. Conda can be used to install third-party software in addition to Python modules, and it tracks the specific version and build information for each install. This promotes reproducibility and transparency of data analyses, making Conda a valuable component of the scientific software stack.
+The [Conda](https://docs.conda.io/en/latest/) Python toolkit is a collection of tools for creating and managing virtual environments --- (semi-)self-contained Unix and/or Python command-line configurations --- that allow flexible installation of and access to the executables and libraries needed to perform different analyses. Conda can be used to install third-party software in addition to Python modules, and it tracks the specific version and build information for each install. This promotes reproducibility and transparency of data analyses, making Conda a valuable component of the scientific software stack.
 
 There are two main distributions of Conda:
 
-1.  [Miniconda](%5Bhttps://docs.conda.io/projects/miniconda/en/latest%5D(https://docs.conda.io/projects/miniconda/en/latest/)%7B.uri%7D) - Contains the Conda command-line package manager, plus the Python interpreter with a minimal set of libraries/modules installed.
+1.  [Miniconda](https://docs.conda.io/projects/miniconda/en/latest) : Contains the Conda command-line package manager, plus the Python interpreter with a minimal set of libraries/modules installed.
 
-2.  [Anaconda](%5Bhttps://www.anaconda.com%5D(https://www.anaconda.com/)%7B.uri%7D) - Contains the tools provided in Miniconda, but also includes a suite of various graphical tools useful for data science, machine learning, AI, among others.
+2.  [Anaconda](https://www.anaconda.com) : Contains the tools provided in Miniconda, but also includes a suite of various graphical tools useful for data science, machine learning, AI, among others.
 
 ## The basics
 
@@ -62,7 +62,7 @@ $ conda install pkgName1 pkgName2 ...
 $ conda install --name envName pkgName
 ```
 
-If you want to specify a particular version (and build) of a tool you want to install, include the version, and optionally the build identifier, after the package name separated by equal (`=`) signs:
+If you want to specify a particular version (and build) of a tool you want to install, include the version, and optionally the build identifier, after the package name separated by equal (`=`) signs (the square brackets `[]` below denote optional components of the command):
 
 ``` bash
 $ conda install pkgName[=Version[=Build]]
