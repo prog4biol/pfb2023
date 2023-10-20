@@ -4366,7 +4366,7 @@ print(gc_content)
 ```
 #### Defining a Function that calculates GC Content
 
-We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
+We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. If you have more than one parameter, you separate them with commas. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
 
 ```python
 def gc_content(dna):   # give our function a name and parameter 'dna'
@@ -4399,7 +4399,7 @@ How could you convert the GC fraction to % GC. Use `f''`.
 ```python
 dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 dna_gc = gc_content(dna_string)
-print('This sequence is {dna_gc:.2%} GC')
+print(f'This sequence is {dna_gc:.2%} GC')
 ```
 
 Here's the output
