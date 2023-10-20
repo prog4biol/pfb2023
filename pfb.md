@@ -4915,7 +4915,7 @@ parser.add_argument('-f', "-fasta", required=True, help='Output fasta filename',
 
 ```
 
-
+Here's an example python template that uses several different capabilities of the argparse module.
 
 
 
@@ -4924,6 +4924,16 @@ parser.add_argument('-f', "-fasta", required=True, help='Output fasta filename',
 time, HTML, XML, email, CGI, sockets, audio, GUIs with Tk, debugging, testing, unix utils
 
 Also, non-core: BioPython for bioinformatics, Numpy for mathematics, statistics, pandas for data, scikitlearn for machine learning.
+
+### Your own modules
+
+You can also make your own modules. They are just text files containing python. The file name should end with `.py`. You need to put them in the right directory (same directory as your main script works for getting going). Then you can write your own import statement. For example
+```
+#!/usr/bin/env python3
+import sequence_utilities    # import functions in your own file 'sequence_utilities.py'
+import sys                   # import built-in python module
+```
+
 
 ---
 ### [Link to Python 10 Problem Set](problemsets/Python_10_problemset.md)
