@@ -5,16 +5,15 @@
 #
 
 import argparse
+# you need to install biopython for the next two imports to work
 #from Bio import SeqIO
 # from Bio import SeqFeature
 import re
 import os
 import random
+# need numpy and pandas installed for these
 #import numpy as np
 #import pandas as pd
-
-import Fasta
-import util
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                  description='''
