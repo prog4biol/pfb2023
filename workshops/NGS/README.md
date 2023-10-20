@@ -7,7 +7,7 @@ The purpose of this workshop is to gain experience working with the various file
 
 1. First, create a new `ngs` directory for this workshop in which to perform these exercises, then change directory to it.
 
-2. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](https://github.com/prog4biol/pfb2022/blob/master/problemsets/biopython_problemset.md).
+2. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](../../problemsets/biopython_problemset.md).
     ```bash
     conda install -c anaconda wget
     conda install -c conda-forge gnuplot
@@ -28,10 +28,10 @@ The purpose of this workshop is to gain experience working with the various file
 4. Download the following genome files with `wget`, then decompress both with `gunzip`:
    ```bash
    # Genome sequence:
-   https://github.com/prog4biol/pfb2022/raw/master/workshops/NGS/data/Ecoli.fasta.gz
+   wget https://github.com/prog4biol/pfb2023/raw/master/workshops/NGS/data/Ecoli.fasta.gz
 
    # Genome annotation:
-   https://raw.githubusercontent.com/prog4biol/pfb2022/master/workshops/NGS/data/Ecoli.gff3.gz
+   wget https://raw.githubusercontent.com/prog4biol/pfb2023/master/workshops/NGS/data/Ecoli.gff3.gz
    ```
     - Use the _E. coli_ FASTA file to determine how many of the sequences are chromosomes? How many plasmids?
     - Use the _E. coli_ FASTA file to determine the genome size?
