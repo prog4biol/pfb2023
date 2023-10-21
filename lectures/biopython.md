@@ -154,10 +154,14 @@ The Seq Object predicts that we want a string when we `print()` our seqobj or if
 >>> seqobj=Seq('ATGCGATCGAGC')
 >>> type(seqobj)
 <class 'Bio.Seq.Seq'>
+>>> seqobj
+Seq('ATGCGATCGAGC')
 >>> str(seqobj)
 'ATGCGATCGAGC'
 >>> type(str(seqobj))
 <class 'str'>
+>>> print(seqobj)
+ATGCGATCGAGC
 ```
 
 ## Read a FASTA file
