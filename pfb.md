@@ -5006,6 +5006,8 @@ DNARecord Rules:
 Here is the first, but not final draft of our class. We will go through each section of this code below:
 
 ```python
+
+### START of CLASS DNARecord ###
 class DNARecord(object):
   # define class attributes
   sequence = 'ACGTAGCTGACGATC' 
@@ -5027,8 +5029,11 @@ class DNARecord(object):
     t_count = self.sequence.count('T') 
     at_content = (a_count + t_count) / length 
     return at_content
+### END of CLASS DNARecord ###
 
-## create a new DNARecord Object
+
+### OUTSIDE CLASS ###
+## Create a new DNARecord Object
 dna_rec_obj = DNARecord() 
 
 ## Use New DNARecord object
