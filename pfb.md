@@ -5033,7 +5033,7 @@ class DNARecord(object):
 ### END of CLASS DNARecord ###
 
 
-### OUTSIDE CLASS ###
+### Outside class defintion ###
 ## Create a new DNARecord Object
 dna_rec_obj = DNARecord() 
 
