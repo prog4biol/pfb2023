@@ -12,7 +12,8 @@ Sofia Robb
 
 ## NGS -- Anoja Perera
   - [Lecture](NGS/) Need to add link 
-  - [Workshop](NGS) Need to add link
+  - [NGS File Formats Lecture](NGS/FileFormats.md) Need to add link
+  - [NGS File Formats Workshop](NGS)
 
 ## Bioinformatics and Useful Tools -- Simon Prochnik 
   - [Lecture](../lectures/bioinfPipesLectureSimon.md) Need to update
