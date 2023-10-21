@@ -4366,7 +4366,7 @@ print(gc_content)
 ```
 #### Defining a Function that calculates GC Content
 
-We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
+We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. If you have more than one parameter, you separate them with commas. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
 
 ```python
 def gc_content(dna):   # give our function a name and parameter 'dna'
@@ -4399,7 +4399,7 @@ How could you convert the GC fraction to % GC. Use `f''`.
 ```python
 dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 dna_gc = gc_content(dna_string)
-print('This sequence is {dna_gc:.2%} GC')
+print(f'This sequence is {dna_gc:.2%} GC')
 ```
 
 Here's the output
@@ -4915,7 +4915,7 @@ parser.add_argument('-f', "-fasta", required=True, help='Output fasta filename',
 
 ```
 
-
+Here's an example python template that uses several different capabilities of the argparse module.
 
 
 
@@ -4924,6 +4924,16 @@ parser.add_argument('-f', "-fasta", required=True, help='Output fasta filename',
 time, HTML, XML, email, CGI, sockets, audio, GUIs with Tk, debugging, testing, unix utils
 
 Also, non-core: BioPython for bioinformatics, Numpy for mathematics, statistics, pandas for data, scikitlearn for machine learning.
+
+### Your own modules
+
+You can also make your own modules. They are just text files containing python. The file name should end with `.py`. You need to put them in the right directory (same directory as your main script works for getting going). Then you can write your own import statement. For example
+```
+#!/usr/bin/env python3
+import sequence_utilities    # import functions in your own file 'sequence_utilities.py'
+import sys                   # import built-in python module
+```
+
 
 ---
 ### [Link to Python 10 Problem Set](problemsets/Python_10_problemset.md)
