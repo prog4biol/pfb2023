@@ -160,8 +160,6 @@ Seq('ATGCGATCGAGC')
 'ATGCGATCGAGC'
 >>> type(str(seqobj))
 <class 'str'>
->>> print(seqobj)
-ATGCGATCGAGC
 ```
 
 ## Read a FASTA file
