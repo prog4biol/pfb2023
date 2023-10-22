@@ -247,6 +247,127 @@ cell_attributes['n_counts'].describe() # if you are working on a whole column
 cell_attributes.loc[:,['n_counts','n_genes']].corr()
 ```
 
+
+
+### dtypes
+
+### Plotting in pandas
+
+Here's a few lines from a data file (`fuelEfficiency.tsv`)
+
+| **Mfr Name**            | **Carline** | **Eng Displ** | **Cylinders** | **Transmission** | **CityMPG** | **HwyMPG** | **CombMPG** | **# Gears** |
+| ----------------------- | ----------- | ------------- | ------------- | ---------------- | ----------- | ---------- | ----------- | ----------- |
+| **aston martin**        | Vantage V8  | 4             | 8             | Auto(S8)         | 18          | 25         | 21          | 8           |
+| **Volkswagen Group of** | Chiron      | 8             | 16            | Auto(AM-S7)      | 9           | 14         | 11          | 7           |
+| **General Motors**      | CORVETTE    | 6.2           | 8             | Auto(S8)         | 12          | 20         | 15          | 8           |
+| **General Motors**      | CORVETTE    | 6.2           | 8             | Auto(S8)         | 15          | 25         | 18          | 8           |
+| **General Motors**      | CORVETTE    | 6.2           | 8             | Auto(S8)         | 14          | 23         | 17          | 8           |
+
+It has 718 lines of data and a header line.
+
+Let's examine the data in the file: data types, inconsistencies. What about trends in values?
+
+We can use the python interpreter
+
+```
+>>> import pandas as pd
+>>> import  matplotlib.pyplot as plt
+>>> df = pd.read_csv('fuelEfficiency.tsv', sep='\t')
+>>> df
+                Mfr Name                 Carline  Eng Displ  Cylinders Transmission  CityMPG  HwyMPG  CombMPG  # Gears
+0           aston martin              Vantage V8        4.0          8     Auto(S8)       18      25       21        8
+1    Volkswagen Group of                  Chiron        8.0         16  Auto(AM-S7)        9      14       11        7
+2         General Motors                CORVETTE        6.2          8     Auto(S8)       12      20       15        8
+3         General Motors                CORVETTE        6.2          8     Auto(S8)       15      25       18        8
+4         General Motors                CORVETTE        6.2          8     Auto(S8)       14      23       17        8
+..                   ...                     ...        ...        ...          ...      ...     ...      ...      ...
+713               Toyota             4RUNNER 4WD        4.0          6     Auto(S5)       17      20       18        5
+714               Toyota  LAND CRUISER WAGON 4WD        5.7          8     Auto(S8)       13      18       15        8
+715               Toyota             SEQUOIA 4WD        5.7          8     Auto(S6)       13      17       14        6
+716                Volvo                XC90 AWD        2.0          4     Auto(S8)       19      26       22        8
+717                Volvo                XC90 AWD        2.0          4     Auto(S8)       20      27       23        8
+```
+
+To get very useful summary statistics, use df.describe()
+
+```
+>>> df.describe()
+        Eng Displ   Cylinders     CityMPG      HwyMPG     CombMPG     # Gears
+count  718.000000  718.000000  718.000000  718.000000  718.000000  718.000000
+mean     3.092061    5.493036   20.442897   27.760446   23.139276    7.147632
+std      1.344572    1.752251    5.298504    5.607924    5.368443    1.507929
+min      1.400000    3.000000    9.000000   14.000000   11.000000    1.000000
+25%      2.000000    4.000000   17.000000   24.000000   19.000000    6.000000
+50%      3.000000    6.000000   20.000000   27.000000   23.000000    7.000000
+75%      3.600000    6.000000   23.000000   31.000000   26.000000    8.000000
+max      8.000000   16.000000   57.000000   59.000000   58.000000   10.000000
+```
+
+#### 
+
+We can make simple plots with pandas and matplotlib
+
+#### Histograms
+
+We can show the distribution and range of a single set of data in a histogram.
+
+Here are the bare bones, you can add/customize parameters yourself.
+
+```
+#!/usr/bin/env python3
+import pandas as pd
+import  matplotlib.pyplot as plt # we will use this plotting library
+
+# read data into a pandas dataframe
+df = pd.read_csv('fuelEfficiency.tsv', sep='\t')
+fig,ax=plt.subplots(figsize=(6,6))
+ax.hist(df['Cylinders'], bins=10)
+# set title, axis labels
+ax.set_xlabel('Number of cylinders')
+ax.set_ylabel('Count')
+ax.set_title('Vehicle fuel efficiency data')
+#write histogram to a PNG graphics file
+png_file = 'cylinders.hist.png'
+fig.savefig(png_file)
+print(f'Wrote {png_file}')
+```
+
+Here's the plot
+
+
+
+![cylinders.hist](Pandas.assets/cylinders.hist.png)
+
+#### Scatter plots
+
+These are great for looking at a relationship between two measurements or values.
+
+```
+#!/usr/bin/env python3
+import pandas as pd
+import  matplotlib.pyplot as plt # we will use this plotting library
+
+fig,ax=plt.subplots(figsize=(6,6))
+# set transparency with alpha and data point size with s
+ax.scatter(df['Cylinders'],df['HwyMPG'], alpha = 0.5, s=2)
+# set title, axis labels
+ax.set_xlabel('Number of cylinders')
+ax.set_ylabel('Highway Miles per Gallon')
+ax.set_title('Vehicle fuel efficiency data')
+#write histogram to a PNG graphics file
+png_file = 'cylindersVShwyMPG.scatter.png'
+fig.savefig(png_file)
+print(f'Wrote {png_file}')
+```
+
+Here's the scatter plot. You can clearly see a relationship as well as variability in the data.
+
+![cylindersVShwyMPG.scatter](Pandas.assets/cylindersVShwyMPG.scatter.png)
+
+What's another good way to investigate a relationship between two sets of data?
+
+### Documentation
+
 That summarizes our introduction to Pandas. As you can see, Pandas greatly simplifies the process of exploring and making calculations in data frames and matricies. Check out the link below for the offical documentation.
 
 [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/index.html)
