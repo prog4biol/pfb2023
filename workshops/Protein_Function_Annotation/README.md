@@ -2,7 +2,7 @@ Interproscan PTHR2GO
 ====================
 
 
-We have a gene list we created for stem cell proliferation genes in alpaca. Let's look at these genes and see if there are any reoccurring GO terms or PFAM domains in our gene set.
+We have a gene list we created for stem cell proliferation genes in alpaca in a [previous problemset](../../problemsets/Python_06_problemset.md). Let's look at these genes and see if there are any reoccurring GO terms or PFAM domains in our gene set.
 
 
 Generate a FASTA file to use to predict protein domains and motifs using InterProScan. 
