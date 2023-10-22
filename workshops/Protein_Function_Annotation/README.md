@@ -2,7 +2,7 @@ Interproscan PTHR2GO
 ====================
 
 
-We have a gene list we created for stem cell proliferation genes in alpaca. Let's look at these genes and see if there are any reoccurring GO terms or PFAM domains in our gene set.
+We have a gene list we created for stem cell proliferation genes in alpaca in a [previous problemset](../../problemsets/Python_06_problemset.md). Let's look at these genes and see if there are any reoccurring GO terms or PFAM domains in our gene set.
 
 
 Generate a FASTA file to use to predict protein domains and motifs using InterProScan. 
@@ -36,7 +36,7 @@ __Predict Protein domains and motifs__
 3. Paste in your stem cell proliferation FASTA file. "alpaca_stemcellproliferation_genes.fa"
 4. Click the Automatic FASTA clean button. We have *s in our file for stop codons, InterProScan does not like those.
 5. Once the search is complete, Click 'Group Actions' then Download All. You will get a json file that is named similar to this: 20231021-172942-29.json
-6. Parse the downloaded json file. Use the PANTR2GO mappings to see if there is a recurring GO term in our stem cell proliferation gene list. You can try this from scratch or use my script and fill in a few keys to get the GO terms. 
+6. Parse the downloaded json file. Use the PANTR2GO mappings to see if there is a recurring GO term in our stem cell proliferation gene list. You can try this from scratch or use [my script](parseIPRSjson.py) and fill in a few keys to get the GO terms. 
 7. See if there is a PFAM domain that is recurring in our stem cell proliferation gene list. You can try this from scratch or use my script and fill in a few keys to get the PFAM domain hits. 
 8. If you finish the all the other questions, look through your IPRSCAN results to pick another type of domain hit to add to your parser in a similar format to PFAM domains.
 
