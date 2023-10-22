@@ -1,19 +1,22 @@
 Python 6 - Sets and IO - Problem Set
 ===================
 
-1. Make a set using the two different syntaxes for creating a set `myset = set()` and `myset2 = {}`. What is the difference? Does it matter how you make it?
+1. Make a set using the two different syntaxes for creating a set `myset = set()` and `myset2 = {}`.  
 
-```
+```python
 mySet = set('ATGTGGG')
-mySet2 = {'ATGCCT'}
+mySet2 = {'ATGTGGG'}
 ```
+  -  **What is the difference?**
+  -  **Does it matter which method you use?**
+  -  **How many items are in mySet and mySet2?**
 
-2. Write a script to find the intersection, difference, union, and symetrical difference between these two sets.
 
-```
-Set A = 3 14 15 9 26 5 35 9
-Set B = 60 22 14 0 9
-```
+
+2. Write a script that creates 2 sets using the collections of numbers below. Find the intersection, difference, union, and symetrical difference between these two sets.  
+  - 3, 14, 15, 9, 26, 5, 35, 9
+  - 60, 22, 14, 0, 9  
+
 
 3. If you create a set using a DNA sequence, what will you get back? Try it with this sequence:
 
@@ -94,7 +97,7 @@ _Get all genes:_
 _In the same Ensembl window, follow the steps below to get genes that have been labeled with Gene Ontology term "stem cell proliferation". For extra information on stem cell proliferation, check out  [stem cell proliferation](http://purl.obolibrary.org/obo/GO_0072089)_
 
 11. Click "Filters"
-12. Under "Gene Ontology", check "Go term name" and enter "stem cell proliferation"
+12. Under "Gene Ontology", check "Go term name" and enter "stem cell proliferation" (clear out any previous GO term names)
 13. Click Results (top left)
 14. Export all results to "File" "TSV" --> GO
 15. Rename the file to "alpaca_stemcellproliferation_genes.tsv"

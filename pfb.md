@@ -1964,7 +1964,7 @@ three
 four
 ```
 
-This next example is using a for loop to iterating over a string. Remember a string is a sequence like a list. Each character has a position. Look back at "Extracting a Substring, or Slicing" in the [Strings](#strings) section to see other ways that strings can be treated like lists.
+This next example is using a for loop to iterate over a string. Remember a string is a sequence like a list. Each character has a position. Look back at "Extracting a Substring, or Slicing" in the [Strings](#strings) section to see other ways that strings can be treated like lists.
 
 Code:
 ```python
@@ -2061,7 +2061,7 @@ Output:
 4
 ```
 
-## PCR Program Loop Example
+####  PCR Program Loop Example
 
 [pcr.py](scripts/pcr.py)
 
@@ -2579,13 +2579,11 @@ These functions work on several other data types too!
 ### [Link to Python 5 Problem Set](problemsets/Python_05_problemset.md)
 
 
-<div style="page-break-after: always;"></div>
+---
 
 
 
-
-
-## Sets
+### Sets
 
 
 A set is another Python data type. It is essentially a dictionary with keys but no values.
@@ -2908,7 +2906,7 @@ with open("seq.nt.txt","r") as seq_file_obj: #cleans up after exiting
                                             # the 'with' block
   for line in seq_file_obj:
     line = line.rstrip()
-  	print(line)
+    print(line)
 #file gets closed for you here.
 ```
 
@@ -3116,7 +3114,7 @@ A quick count of all the matching sites can be done by counting the length of th
 
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. If you want to find just the first occurrence of a pattern, what method do you use?
 
@@ -3231,7 +3229,7 @@ g.*t
 >  matches US telephone numbers (no extra text allowed).
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What would be a pattern to recognize an email address?
 2. What would be a pattern to recognize the ID portion of a sequence record in a FASTA file?
@@ -3269,7 +3267,7 @@ big bad (wolf|sheep)
 > - "big bad sheep"
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What would a pattern to match 'ATG' followed by a C or a T look like?
 
@@ -3297,7 +3295,7 @@ Who's afraid of the big (bad )?wolf\?
 > This also shows how to literally match special characters. Use a '\\' in to escape them.
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. What pattern could you use to capture the ID in a sequence record of a FASTA file in a subpattern.
 
@@ -3597,7 +3595,7 @@ Who's afraid of the bad big wolf?
 > \\1 refers to the first subpattern
 
 __Let' Try It__  
-![try it](images/Try-It-Now.jpg)
+![try it](images/Try-It-Now.png)
 
 1. How would you use regular expressions to find all occurrences of 'ATG' and replace with '-M-' in this sequence 'GCAGAGGTGATGGACTCCGTAATGGCCAAATGACACGT'? 
 
@@ -4368,7 +4366,7 @@ print(gc_content)
 ```
 #### Defining a Function that calculates GC Content
 
-We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
+We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. If you have more than one parameter, you separate them with commas. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
 
 ```python
 def gc_content(dna):   # give our function a name and parameter 'dna'
@@ -4917,7 +4915,7 @@ parser.add_argument('-f', "-fasta", required=True, help='Output fasta filename',
 
 ```
 
-
+Here's an example python template that uses several different capabilities of the argparse module.
 
 
 
@@ -4927,10 +4925,21 @@ time, HTML, XML, email, CGI, sockets, audio, GUIs with Tk, debugging, testing, u
 
 Also, non-core: BioPython for bioinformatics, Numpy for mathematics, statistics, pandas for data, scikitlearn for machine learning.
 
+### Your own modules
+
+You can also make your own modules. They are just text files containing python. The file name should end with `.py`. You need to put them in the right directory (same directory as your main script works for getting going). Then you can write your own import statement. For example
+```
+#!/usr/bin/env python3
+import sequence_utilities    # import functions in your own file 'sequence_utilities.py'
+import sys                   # import built-in python module
+```
+
+
 ---
 ### [Link to Python 10 Problem Set](problemsets/Python_10_problemset.md)
 
 <div style="page-break-after: always;"></div>
+
 ---
 
 ## Python 11
@@ -4998,6 +5007,8 @@ DNARecord Rules:
 Here is the first, but not final draft of our class. We will go through each section of this code below:
 
 ```python
+
+### START of CLASS DNARecord ###
 class DNARecord(object):
   # define class attributes
   sequence = 'ACGTAGCTGACGATC' 
@@ -5019,8 +5030,11 @@ class DNARecord(object):
     t_count = self.sequence.count('T') 
     at_content = (a_count + t_count) / length 
     return at_content
+### END of CLASS DNARecord ###
 
-## create a new DNARecord Object
+
+### Outside class defintion ###
+## Create a new DNARecord Object
 dna_rec_obj = DNARecord() 
 
 ## Use New DNARecord object

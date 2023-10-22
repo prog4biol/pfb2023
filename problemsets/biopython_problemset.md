@@ -4,9 +4,6 @@
 
 
 ```
-zsh ~admin/miniconda.sh -b -p $HOME/miniconda
-$HOME/miniconda/bin/conda init zsh
-source ~/.zshrc
 conda install biopython
 ```
 > **If** you are on your own computer and not using one of the course machines you will have to download miniconda
@@ -18,28 +15,28 @@ conda install biopython
 
 1. Create a new FASTA parser that uses BioPython to get the sequence name, description, and sequence.
 2. Add in some code to print out stats about your FASTA records in your mult-FASTA file:
-  1. total number of sequences
-  2. total number of nucleotides
-  3. average length of sequences
-  4. shortest sequence length
-  5. longest sequence length
-  6. average GC content
-  7. highest GC content
-  8. lowest GC content
+   -  total number of sequences
+   -  total number of nucleotides
+   -  average length of sequences
+   -  shortest sequence length
+   -  longest sequence length
+   -  average GC content
+   -  highest GC content
+   -  lowest GC content
   ```
-  sequence count:
-  total number of nucleotides:
-  avg len:
-  shortest len:
-  longest len:
-  avg GC content:
-  lowest GC content:
-  highest GC content:
+  sequence count: ? 
+  total number of nucleotides: ? 
+  avg len: ? 
+  shortest len: ? 
+  longest len: ? 
+  avg GC content: ? 
+  lowest GC content: ? 
+  highest GC content: ?
 
   ```
   
-3. use a small test set
-4. Run your code on https://github.com/prog4biol/pfb2023/blob/master/files/Python_08.fasta
+3. Test your code with a small test set of 2 or 3 very short sequences.
+4. Run your code on [Python_08.fasta](../files/Python_08.fasta)
 
 ## Parsing BLAST output
 ### Preparation for problem
@@ -69,7 +66,7 @@ wget https://raw.githubusercontent.com/prog4biol/pfb2023/master/setup/pre-commit
 ```
 
 
-3. What does the file contain? How many records? Does it look intact? How do you know?
+3. What does the uniprot_sprot.fasta file contain? How many records? Does it look intact? How do you know?
 
 Extract IDs from fasta file
 
@@ -81,11 +78,11 @@ Extract IDs from fasta file
 sp|A9N862|AAEB_SALPB p-hydroxybenzoic acid efflux pump subunit AaeB OS=Salmonella paratyphi B (strain ATCC BAA-1250 / SPB7) GN=aaeB PE=3 SV=1
 ```
 
-Here the genus is _Salmonella_ and the species is _paratyphi_. There is also a strain 'B (strain ATCC BAA-1250 / SPB7). You can ignore this part. Using regular expressions, extract just the genus and species  and count the number of sequences present for that genus/species combination. List comprehensions make this kind of data processing quick to code, but you might want to start by going step by step in a for loop.
+Here the genus is _Salmonella_ and the species is _paratyphi_. There is also a strain 'B (strain ATCC BAA-1250 / SPB7). You can ignore this part. Using regular expressions, extract just the genus and species and count the number of sequences present for that genus/species combination. List comprehensions make this kind of data processing quick to code, but you might want to start by going step by step in a for loop.
 
 3. Make a new fasta file of all the sequences containing the species 'Salmonella paratyphi B'. Include the 'B' for this part of the exercise. Call this protein file s_paratyphi.prot.fa. You'll want to loop through all the sequence records, extract the description, find matches to 'Salmonella paratyphi B' and convert to fasta.
 
-__For extra credit__
+__Running BLAST Locally__
 These questions will take some research and set up. Spend some time reading about how to run blast and ask for help as needed.
 1. Blast a protein such as [purH](https://raw.githubusercontent.com/prog4biol/pfb2023/master/files/purH.aa.fa) against the S. paratyphi B proteins. You can do this remotely or locally with a blast binary or with biopython.
 2. Print the E-value and the score and the length of the alignment and the % similiarity (not % identity)
