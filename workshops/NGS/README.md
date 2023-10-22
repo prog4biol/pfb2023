@@ -9,43 +9,59 @@ The purpose of this workshop is to gain experience working with the various file
 
 2. Install the following command line software using Miniconda. If you haven't already, use the instructions to install Miniconda detailed in the [Biopython problemset](../../problemsets/biopython_problemset.md).
     ```bash
-    conda install -c anaconda wget
-    conda install -c conda-forge gnuplot
-    conda install -c bioconda bwa fastqc samtools bcftools bedtools 
+    # add channels to download tools from:
+    $ conda config --add channels defaults
+    $ conda config --add channels conda-forge
+    $ conda config --add channels bioconda
+
+    # create an environment and activate it
+    $ conda create --name ngs
+    $ conda activate ngs
+
+    # Install tools for analysis
+    $ conda install wget gnuplot
+    $ conda install -c bioconda bwa fastqc samtools bcftools bedtools 
     ```
    
 
 3. Download the Java-based sofware required for this tutorial using `wget`:
     ```bash
     # 1. Fetch each software package .zip archive file:
-    wget https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip
+    $ wget https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip
 
     # 2. Unpack the .zip archive:
-    unzip gatk-4.3.0.0.zip
+    $ unzip gatk-4.3.0.0.zip
     ```
 
 
 4. Download the following genome files with `wget`, then decompress both with `gunzip`:
-   ```bash
-   # Genome sequence:
-   wget https://github.com/prog4biol/pfb2023/raw/master/workshops/NGS/data/Ecoli.fasta.gz
+    ```bash
+    # Genome sequence:
+    $ wget https://github.com/prog4biol/pfb2023/raw/master/workshops/NGS/data/Ecoli.fasta.gz
 
-   # Genome annotation:
-   wget https://raw.githubusercontent.com/prog4biol/pfb2023/master/workshops/NGS/data/Ecoli.gff3.gz
-   ```
+    # Genome annotation:
+    $ wget https://raw.githubusercontent.com/prog4biol/pfb2023/master/workshops/NGS/data/Ecoli.gff3.gz
+    ```
     - Use the _E. coli_ FASTA file to determine how many of the sequences are chromosomes? How many plasmids?
     - Use the _E. coli_ FASTA file to determine the genome size?
 
 
-5. Index the genome as described in the [lecture notes](bio_info_formats.pdf).
+5. Index the genome to make it quickly searchable by BWA, GATK, and other tools.
+    ```bash
+    $ samtools faidx Ecoli.fasta
+    $ samtools dict Ecoli.fasta >Ecoli.dict
+    $ bwa index Ecoli.fasta
+    ```
 
 
 6. Use `wget` to download the FASTQ file of sequencing [reads](data/SRR21901339.fastq.gz) for our strain of interest, then use Unix commands to examine the FASTQ file:
-   ```
-   # Whole-genome sequnecing reads:
-   wget https://github.com/prog4biol/pfb2023/blob/master/workshops/NGS/data/SRR21901339.fastq.gz
-   ```
-    - How long are the reads?
+    ```
+    # Whole-genome sequnecing reads:
+    $ wget https://github.com/prog4biol/pfb2023/raw/master/workshops/NGS/data/SRR21901339.fastq.gz
+
+    $ gunzip SRR21901339.fastq.gz
+    ```
+    - How long are the reads? (hint: you can use `head`, `tail`, and `wc`)
     - Are these reads single-end or paired-end? Explain how can you tell. 
     - Which Phred quality encoding (ASCII offset) are the reads in? How can you tell?
 
@@ -57,13 +73,23 @@ The purpose of this workshop is to gain experience working with the various file
     - Are these reads of good quality?
 
 
-8. Write a python script to trim poor-quality bases from the ends of the FASTQ sequences and output a new FASTQ file. Your script should take as input from the command line: one FASTQ file name and one integer value (the minimum base quality threshold). *HINT*: Use the following approach:
+8. Write a python script to trim poor-quality bases from the ends of the FASTQ sequences and output a new FASTQ file and output the trimmed reads to a file named `SRR21901339.trim.fastq`. Your script should take as input from the command line: one FASTQ file name and one integer value (the minimum base quality threshold). *HINT*: Use the following approach:
     1. Iterate from the 3'-end of the read to the 5'-end, examining the quality values at each base position (see the [lecture notes](bio_info_formats.pdf) for how to convert quality string characters to numberic values;  
     2. `break` at the first base with a quality value greater-than or equal-to your inputted quality threshold;  
     3. then use string slicing to extract the high-quality portion of both the sequence and quality strings.  
 
 
 9. Align the trimmed reads to the genome sequence using BWA-MEM (*i.e.* the `bwa` command). Make sure to specify a Read Group string (via `-R`) that, at a *minimum*, includes `ID`, `SM`, and `PL` tags. This Read Group information is required by GATK. Then, convert the output file to BAM format, sort the BAM file, and then index it (see the [lecture notes](bio_info_formats.pdf) for how).
+    ```bash
+    # use BWA's MEM algorithm to align reads to the genome as paired-ends:
+    $ bwa mem -Mp -t4 -R '@RG\tID:SRR21901339\tSM:Ecoli\tPL:ILLUMINA' Ecoli.fasta SRR21901339.trim.fastq | samtools view -b - >SRR21901339.bam
+
+    # sort the alignments by genomic coordinates:
+    $ samtools sort -m 1g -o SRR21901339.srt.bam SRR21901339.bam
+
+    # index the sorted alignments:
+    $ samtools index SRR21901339.srt.bam
+    ```
 
 
 10. Run `samtools stats` and `plot-bamstats` on the BAM file and examine the `.html` report.
@@ -75,10 +101,36 @@ The purpose of this workshop is to gain experience working with the various file
 
 
 11. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it. What fraction of the reads are properly paired?
+    ```bash
+    # Get the SAM flags for properly-paired reads, do:
+    $ samtools flags PAIRED,PROPER_PAIR
+    0x3	     3	   PAIRED,PROPER_PAIR
+
+    # Get the SAM flags value to exclude poor quality data:
+    $ samtools flags UNMAP,MUNMAP,SECONDARY,QCFAIL,DUP,SUPPLEMENTARY
+    0xf0c	3852	UNMAP,MUNMAP,SECONDARY,QCFAIL,DUP,SUPPLEMENTARY
+
+    # Then filter reads with `samtools view` to output to a new BAM
+    # file, selecting _for_ reads that are properly-paired and
+    # _removing_ the poor-quality reads:
+    $ samtools view -b -f3 -F3852 SRR21901339.srt.bam >SRR21901339.proper.bam
+
+    # Now, index the new BAM file:
+    $ samtools index SRR21901339.proper.bam
+    ```
     > *HINT*: see `samtools flags` for help with flags.
 
 
 12. Run the GATK HaplotypeCaller to call variants using the final filtered BAM file, set `--min-base-quality-score` to the value you determined in *Step 9*. **NOTE**: Run GATK in the backgound (i.e., `nohup gatk HaplotypeCaller ... &`) or open a second terminal window and work on Problems 13 and 14 while GATK is running in the first.
+    ```bash
+    ./gatk-4.3.0.0/gatk HaplotypeCaller \
+         --minimum-mapping-quality 30 \
+         --min-base-quality-score 30 \
+         --read-validation-stringency SILENT \
+         --reference Ecoli.fasta \
+         --input SRR21901339.proper.bam \
+         --output SRR21901339.vcf
+    ```
 
 
 13. Use the `samtools depth` command to calculate the per-site read depth across the genome (see `samtools depth --help` for more info) and output to a file. The output file will contain three columns: the chromosome name, position (1-based), and read depth. For example:
