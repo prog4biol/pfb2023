@@ -326,7 +326,9 @@ Because one of our sample sequences is not a complete CDS we will get this messa
   warnings.warn(
  ```
  
+
  This is displayed to standard error and not standard out, and therefore will not affect the contents if redirected from standard out into a file.
+ 
   
 ```
 % python3 biopython_translate.py > tmp

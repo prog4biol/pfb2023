@@ -8,7 +8,7 @@ A fully-featured code library for manipulating data arranged in tables (i.e. mat
 
 
 
-![](panda_images/matrix.jpg)
+![](https://pythongis.org/_images/pandas-structures-annotated.png)
 
 
 
@@ -16,7 +16,7 @@ A fully-featured code library for manipulating data arranged in tables (i.e. mat
 
 So far we've discussed how you build your own multidimensional objects like lists of lists and dictionaries of dictionaries from raw data. However, bioinformatics modules (and many others) will often **return** results in the form of Pandas **data frame** or **a matrix**. Further manipulation of these results (e.g. filtering, statistical analysis, data reorganization) will require some knowledge of Pandas operations.
 
-For example, lets say you want to parse your RNA-seq results to a list of genes within a specific range of p-values and log fold changes, e.g., all p-values < 1e-15 and log fold changes > 1.2. You can apply your knowledge of Python operators such as `and, >, <` to subset a data frame based on the afformentioned parameters.
+For example, lets say you want to parse your RNA-seq results to a list of genes within a specific range of p-values and log fold changes, e.g., all p-values < 1e-15 and log fold changes > 1.2. You can apply your knowledge of Python operators such as `and, >, <` to subset a data frame based on the afforementioned parameters.
 
 #### Pandas has the ability to read in various data formats
 
@@ -30,18 +30,17 @@ For example, lets say you want to parse your RNA-seq results to a list of genes 
 
 ### Matrices
 
-A matrix is an data structure where numbers are arranged into rows and columns. They will typically conatin floats __or__ integers, but not both. Matrices are used when you need to perform mathmatical operations between datasets that contain multiple dimensions (i.e. measurements for two or more variables that change at the same time).
+A matrix is an data structure where numbers are arranged into rows and columns. They will typically contain floats __or__ integers, but not both. Matrices are used when you need to perform mathematical operations between datasets that contain multiple dimensions (i.e. measurements for two or more variables that change at the same time). **New picture that's less complicated**
 
+![](https://miro.medium.com/v2/resize:fit:1400/1*brq_vvcnVqsOWoVvsjT0pA.png)
 
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Gene_co-expression_network_construction_steps.png/720px-Gene_co-expression_network_construction_steps.png)
-
-<br/>
 
 ### Data frames
 
 A data frame is a table-like data structure and can contain different data types (strings, floats, integers, etc.) in different columns. This is the type of data structure you're used seeing in Excel. Each column should only contain one data type.
 
+
+![](https://media.geeksforgeeks.org/wp-content/uploads/finallpandas.png)
 
 
 ![](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0161567.t005&type=large)
@@ -52,8 +51,6 @@ A data frame is a table-like data structure and can contain different data types
 
 **Operations in Pandas, like R, work most efficiently when vectorized**
 
-
-
 You can think of a vector (also referred to as an [array](https://docs.python.org/3/library/array.html)) as a type of list that contains a single data type and optimized for parallel computing. For matricies and data frames in Pandas (also NumPy), vectors are rows and columns.
 
 Rather that looping through individual values (scalars), we apply operations to vectors (rows/columns). That is, the vector is treated as a single object. This topic can get a bit complicated, but it is worth doing your homework if you frequently work with these data types. Here's a few articles to get you started:
@@ -63,7 +60,7 @@ Rather that looping through individual values (scalars), we apply operations to 
 - [Python Lists vs. Numpy Arrays, what's the difference?](https://webcourses.ucf.edu/courses/1249560/pages/python-lists-vs-numpy-arrays-what-is-the-difference)
 
 
-
+![](https://datascience.blog.wzb.eu/wp-content/uploads/10/2018/02/vectorization.png)
 
 <img src="https://miro.medium.com/max/2060/1*p4zjrqG97C4bFmOXU5UQog.png" width="80%" height="80%" />
 
@@ -103,6 +100,8 @@ cell_attributes = pd.read_csv("./meta_data.csv", index_col = 0)
 
 type(cell_attributes)
 # prints <class 'pandas.core.frame.DataFrame'>
+
+
 ```
 
 Note: We can read/write data in many other formats like tab delimited text `.tsv` and excel spreadsheets `.xlsx`. Please refer to [this document]() for a full description of Pandas I/O tools.
@@ -125,10 +124,11 @@ cell_attributes.head(10)
 ### Slicing
 
 Pandas has different methods for subsetting dataframes.
-We'll dicuss the most common methods, **loc**, and **iloc**
+Each cell of a dataframe has coordinates by `df[row,column]`
+We'll discuss the most common methods, **loc**, and **iloc**
 
-**loc** allows us to subset data by row or column label. For example, if I would
-like to subset the column 'n_counts', I would use the following command:
+**loc** allows us to subset data by row or column **label**. For example, if I would
+like to pull out the column 'n_counts', I would use the following command:
 
 ```
 # The comma separates rows and columns, and the colon returns all rows.
@@ -159,8 +159,7 @@ cell_attributes.columns.values[[0,1,3,5,7]]
 
 Note `[[ ]]` allows us to mention a list of columns.
 
-Now we can apply the same indexing pattern to our **iloc** method to return only the columns we're interested in. 
-
+Now we can apply the same indexing pattern to our **iloc** method to return only the columns we're interested in. **iloc** = location by index
 
 ```
 # Return columns 0, 1, 3, 5, and 7
@@ -171,11 +170,12 @@ cell_attributes.iloc[:5,[0,1,3,5,7]]
 ```
 
 
+![](https://c8j9w8r3.rocketcdn.me/wp-content/uploads/2016/10/Pandas-selections-and-indexing.png)
+
+
 ### Ordering dataframes by column values
 
 Here we'll take look at ordering our data by a particular column value, or multiple column values.
-
-
 
 ```
 # Set ascending=True to reverse the order

@@ -4,9 +4,6 @@
 
 
 ```
-zsh ~admin/miniconda.sh -b -p $HOME/miniconda
-$HOME/miniconda/bin/conda init zsh
-source ~/.zshrc
 conda install biopython
 ```
 > **If** you are on your own computer and not using one of the course machines you will have to download miniconda
