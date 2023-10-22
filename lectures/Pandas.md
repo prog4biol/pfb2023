@@ -10,8 +10,6 @@ A fully-featured code library for manipulating data arranged in tables (i.e. mat
 
 So far we've discussed how you build your own multidimensional objects like lists of lists and dictionaries of dictionaries from raw data. However, bioinformatics modules (and many others) will often **return** results in the form of Pandas **data frame** or **a matrix**. Further manipulation of these results (e.g. filtering, statistical analysis, data reorganization) will require some knowledge of Pandas operations.
 
-For example, lets say you want to parse your RNA-seq results to a list of genes within a specific range of p-values and log fold changes, e.g., all p-values < 1e-15 and log fold changes > 1.2. You can apply your knowledge of Python operators such as `and, >, <` to subset a data frame based on the afforementioned parameters.
-
 #### Pandas has the ability to read in various data formats
 
 - Open a local file using Pandas, usually a comma-separated values (CSV) file, but could also be a tab-delimited text file (TSV), Excel, json, etc
@@ -281,36 +279,52 @@ seq_info_input[
 
 What's actually going on here? The rows in the data frame are actually subsetted on a vector of True/False statements. That is, for every row for which the condition evaluates to True will be returned. 
 
-### Performing mathmatical operations on vectors
+ Subsetting might be the way you parse your RNA-seq results to a list of genes within a specific range of p-values and log fold changes, e.g., all p-values < 1e-15 and log fold changes > 1.2. 
 
-Lets look at a couple examples where we apply caculations to our data frame. First lets calculate some summary statistics. This can be a useful when viewing our results for the first time to get a handle on how our data is distributed.
+### Performing mathematical operations on vectors
+
+Lets look at a couple examples where we apply calculations to our data frame. First lets calculate some summary statistics. This can be a useful when viewing our results for the first time to get a handle on how our data is distributed.
 
 ```
+# For this numerical data
+data_df
+
+   A   B    C   D   E
+0  45  38   10  60  76
+1  37  31   15  99  98
+2  42  26   17  23  78
+3  50  90  100  56  90
+
+
+
 # Returning summary statistics for all columns
-cell_attributes.describe()
+data_df.describe()
+
+               A         B           C          D          E
+count   4.000000   4.00000    4.000000   4.000000   4.000000
+mean   43.500000  46.25000   35.500000  59.500000  85.500000
+std     5.446712  29.57899   43.100657  31.118055  10.376255
+min    37.000000  26.00000   10.000000  23.000000  76.000000
+25%    40.750000  29.75000   13.750000  47.750000  77.500000
+50%    43.500000  34.50000   16.000000  58.000000  84.000000
+75%    46.250000  51.00000   37.750000  69.750000  92.000000
+max    50.000000  90.00000  100.000000  99.000000  98.000000
 
 # Returning summary statistics for a single column
-cell_attributes['n_counts'].describe() # if you are working on a whole column
-# reports the following summary statistics
-# count 
-# mean  
-# std   
-# min   
-# 25%   
-# 50%   
-# 75%   
-# max   
+data_df['A'].describe() # if you are working on a whole column 
 ```
-
-`n_counts` refers to the number of counts for "unique molecular identifiers", which are barcodes for individual transcripts within in a single cell. Ideally, if the number of `n_counts` is high, then the number of genes per cell should also be high. The number of genes per cell is in the `n_genes` column. Lets see if this observation holds true by calculating the pairwise correlation between these two variables. 
 
 
 ```
 # Simply add the .corr() method to your dataframe subset
-cell_attributes.loc[:,['n_counts','n_genes']].corr()
+data_df.loc[:,['A','B']].corr()
+
+          A         B
+A  1.000000  0.830705
+B  0.830705  1.000000
 ```
 
-That summarizes our introduction to Pandas. As you can see, Pandas greatly simplifies the process of exploring and making calculations in data frames and matricies. Check out the link below for the offical documentation.
+That summarizes our introduction to Pandas. As you can see, Pandas greatly simplifies the process of exploring and making calculations in data frames and matricies. Check out the link below for the official documentation.
 
 [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/index.html)
 
