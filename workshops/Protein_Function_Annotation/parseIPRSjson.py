@@ -101,8 +101,9 @@ for result in iprscan['results']:
 
 
     ## Get some other protein motif 
-    # review your json to see if you can figure out how to add in another type of domain result
-    # also add in a count like we did with pfam domain counts and PNTHR2GO counts
+    # review your json to see if you can figure out how to add in another domain result
+    # follow the format used for PFAM
+    # add in a count, similar to the pfam domain counts and PNTHR2GO counts
 
 print("\n")
 print("Summary Cumulative Counts")
