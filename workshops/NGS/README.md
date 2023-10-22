@@ -102,17 +102,18 @@ The purpose of this workshop is to gain experience working with the various file
 
 11. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it. What fraction of the reads are properly paired?
     ```bash
-    # for example, to get the flags for properly-paired reads, do:
+    # Get the SAM flags for properly-paired reads, do:
     $ samtools flags PAIRED,PROPER_PAIR
     0x3	     3	   PAIRED,PROPER_PAIR
 
+    # Get the SAM flags value to exclude poor quality data:
     $ samtools flags UNMAP,MUNMAP,SECONDARY,QCFAIL,DUP,SUPPLEMENTARY
     0xf0c	3852	UNMAP,MUNMAP,SECONDARY,QCFAIL,DUP,SUPPLEMENTARY
 
-    # then filter reads with `samtools view`
+    # Then filter reads with `samtools view`
     $ samtools view -b -f3 -F3852 SRR21901339.srt.bam >SRR21901339.proper.bam
 
-    # now index the new BAM file:
+    # Now, index the new BAM file:
     $ samtools index SRR21901339.proper.bam
     ```
     > *HINT*: see `samtools flags` for help with flags.
