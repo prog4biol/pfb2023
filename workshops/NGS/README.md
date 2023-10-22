@@ -110,7 +110,9 @@ The purpose of this workshop is to gain experience working with the various file
     $ samtools flags UNMAP,MUNMAP,SECONDARY,QCFAIL,DUP,SUPPLEMENTARY
     0xf0c	3852	UNMAP,MUNMAP,SECONDARY,QCFAIL,DUP,SUPPLEMENTARY
 
-    # Then filter reads with `samtools view`
+    # Then filter reads with `samtools view` to output to a new BAM
+    # file, selecting _for_ reads that are properly-paired and
+    # _removing_ the poor-quality reads:
     $ samtools view -b -f3 -F3852 SRR21901339.srt.bam >SRR21901339.proper.bam
 
     # Now, index the new BAM file:
