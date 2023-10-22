@@ -1590,7 +1590,7 @@ So much can be done with the `format()` function. Here is one last example, but 
 <div style="page-break-after: always;"></div>
 
 
---- 
+---
 ## Python 4
 
 ### Lists and Tuples
@@ -1964,7 +1964,7 @@ three
 four
 ```
 
-This next example is using a for loop to iterating over a string. Remember a string is a sequence like a list. Each character has a position. Look back at "Extracting a Substring, or Slicing" in the [Strings](#strings) section to see other ways that strings can be treated like lists.
+This next example is using a for loop to iterate over a string. Remember a string is a sequence like a list. Each character has a position. Look back at "Extracting a Substring, or Slicing" in the [Strings](#strings) section to see other ways that strings can be treated like lists.
 
 Code:
 ```python
@@ -3183,7 +3183,7 @@ g[gatc][gatc]t
 ^\d\d\d-\d\d\d\d
 ```
 >  matches 867-5309 and 867-53091 but not 5867-5309.
- 
+
 ```
 ^\d\d\d-\d\d\d\d$
 ```
@@ -4366,7 +4366,7 @@ print(gc_content)
 ```
 #### Defining a Function that calculates GC Content
 
-We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
+We use `def` do define our own function. It is followed by the name of the function (`gc_content`) and parameters it will take in parentheses. If you have more than one parameter, you separate them with commas. A colon is the last character on the `def` line. The parameter variables will be available for your code inside the function to use.
 
 ```python
 def gc_content(dna):   # give our function a name and parameter 'dna'
@@ -4399,7 +4399,7 @@ How could you convert the GC fraction to % GC. Use `f''`.
 ```python
 dna_string = "GTACCTTGATTTCGTATTCTGAGAGGCTGCT"
 dna_gc = gc_content(dna_string)
-print('This sequence is {dna_gc:.2%} GC')
+print(f'This sequence is {dna_gc:.2%} GC')
 ```
 
 Here's the output
@@ -4915,7 +4915,7 @@ parser.add_argument('-f', "-fasta", required=True, help='Output fasta filename',
 
 ```
 
-
+Here's an example python template that uses several different capabilities of the argparse module.
 
 
 
@@ -4925,10 +4925,21 @@ time, HTML, XML, email, CGI, sockets, audio, GUIs with Tk, debugging, testing, u
 
 Also, non-core: BioPython for bioinformatics, Numpy for mathematics, statistics, pandas for data, scikitlearn for machine learning.
 
+### Your own modules
+
+You can also make your own modules. They are just text files containing python. The file name should end with `.py`. You need to put them in the right directory (same directory as your main script works for getting going). Then you can write your own import statement. For example
+```
+#!/usr/bin/env python3
+import sequence_utilities    # import functions in your own file 'sequence_utilities.py'
+import sys                   # import built-in python module
+```
+
+
 ---
 ### [Link to Python 10 Problem Set](problemsets/Python_10_problemset.md)
 
 <div style="page-break-after: always;"></div>
+
 ---
 
 ## Python 11
@@ -4996,6 +5007,8 @@ DNARecord Rules:
 Here is the first, but not final draft of our class. We will go through each section of this code below:
 
 ```python
+
+### START of CLASS DNARecord ###
 class DNARecord(object):
   # define class attributes
   sequence = 'ACGTAGCTGACGATC' 
@@ -5017,8 +5030,11 @@ class DNARecord(object):
     t_count = self.sequence.count('T') 
     at_content = (a_count + t_count) / length 
     return at_content
+### END of CLASS DNARecord ###
 
-## create a new DNARecord Object
+
+### Outside class defintion ###
+## Create a new DNARecord Object
 dna_rec_obj = DNARecord() 
 
 ## Use New DNARecord object

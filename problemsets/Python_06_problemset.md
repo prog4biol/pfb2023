@@ -97,7 +97,7 @@ _Get all genes:_
 _In the same Ensembl window, follow the steps below to get genes that have been labeled with Gene Ontology term "stem cell proliferation". For extra information on stem cell proliferation, check out  [stem cell proliferation](http://purl.obolibrary.org/obo/GO_0072089)_
 
 11. Click "Filters"
-12. Under "Gene Ontology", check "Go term name" and enter "stem cell proliferation"
+12. Under "Gene Ontology", check "Go term name" and enter "stem cell proliferation" (clear out any previous GO term names)
 13. Click Results (top left)
 14. Export all results to "File" "TSV" --> GO
 15. Rename the file to "alpaca_stemcellproliferation_genes.tsv"
