@@ -21,7 +21,7 @@ So far we've discussed how you build your own multidimensional objects like list
 
 ### Matrices
 
-A matrix is an data structure where numbers are arranged into rows and columns. They will typically contain floats __or__ integers, but not both. Matrices are used when you need to perform mathematical operations between datasets that contain multiple dimensions (i.e. measurements for two or more variables that change at the same time). **New picture that's less complicated**
+A matrix is an data structure where numbers are arranged into rows and columns. They will typically contain floats __or__ integers, but not both. Matrices are used when you need to perform mathematical operations between datasets that contain multiple dimensions (i.e. measurements for two or more variables that change at the same time). 
 
 ![](https://miro.medium.com/v2/resize:fit:1400/1*brq_vvcnVqsOWoVvsjT0pA.png)
 
