@@ -1590,7 +1590,7 @@ So much can be done with the `format()` function. Here is one last example, but 
 <div style="page-break-after: always;"></div>
 
 
---- 
+---
 ## Python 4
 
 ### Lists and Tuples
@@ -3183,7 +3183,7 @@ g[gatc][gatc]t
 ^\d\d\d-\d\d\d\d
 ```
 >  matches 867-5309 and 867-53091 but not 5867-5309.
- 
+
 ```
 ^\d\d\d-\d\d\d\d$
 ```
