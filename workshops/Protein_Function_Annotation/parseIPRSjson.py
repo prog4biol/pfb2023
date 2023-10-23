@@ -75,12 +75,13 @@ for result in iprscan['results']:
         # get the info about the go term 
         # iprscan = { 'results' : [ {'matches': [ {'accession': 'PTHR0000'} , {'goXRefs': {'id': 'GO:0030182', 'name':'neuron differentiation'} } ] }  , {'matches': [] } ] }
         for goXRef in match['goXRefs']:
+          ## Replace the question marks with the appropriate keys
           go_id = goXRef['?'] # use goXRef as your dictionary, what key do you use to get id? 
           go_name =  goXRef['?'] # use goXRef as your dictionary, what key do you use to get name?
           goinfo=f"{go_id} {go_name}"
           print(f"\t{goinfo}")
 
-          # lets count up each time we see each GO term hit on our sequences
+          # lets count up each time we see each GO term hit across all of our sequences in our gene set
           if goinfo not in go:
             go[goinfo]=0
           go[goinfo]+=1
@@ -89,12 +90,13 @@ for result in iprscan['results']:
     # iprscan = { 'results' : [ {'matches': [{'signature': {'accession' : 'PF03826' , 'description': 'OAR motif', 'name': 'OAR' }}] } ] }
     signature_accession = match['signature']['accession']
     if signature_accession.startswith('PF'):
+      ## Replace the question marks with the appropriate keys
       name=match['signature']['?'] # what key do you use to get PFAM domain name?
       desc=match['signature']['?'] # what key do you use to get PFAM domain description
       pfaminfo=f"{signature_accession} {name} {desc}"
       print(f"PFAM: {pfaminfo}")
 
-      # lets count up each time we see each pfam domain hit on our sequences
+      # lets count up each time we see each pfam domain hit across all our sequences in our gene set
       if pfaminfo not in pfam:
         pfam[pfaminfo]=0
       pfam[pfaminfo]+=1
