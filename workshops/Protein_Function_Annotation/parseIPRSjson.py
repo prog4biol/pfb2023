@@ -70,9 +70,9 @@ for result in iprscan['results']:
         print(f"PNTHR: {accession} {name}")
      
         # now lets get the GO terms
-        # Panther hits with associated GO terms have a key:value pair that is 'goXRefs': {}.
+        # Panther hits with associated GO terms have a key:value pair that is in the sub-dict 'goXRefs': {}.
         # the value is a dictionary that contains information about each go term.
-        # get the info about the go term 
+        # get and store the info (id and name) about the go term 
         # iprscan = { 'results' : [ {'matches': [ {'accession': 'PTHR0000'} , {'goXRefs': {'id': 'GO:0030182', 'name':'neuron differentiation'} } ] }  , {'matches': [] } ] }
         for goXRef in match['goXRefs']:
           ## Replace the question marks with the appropriate keys
@@ -87,6 +87,9 @@ for result in iprscan['results']:
           go[goinfo]+=1
 
     ## Get PFAM hits
+    # Our sequences may have Pfam domain hits, they are stored in the sub-dict in 'signature' : {}
+    # the value is a dictionary that contains information about each Pfam term
+    # get and store the info (accession, name, and description) about the Pfam term 
     # iprscan = { 'results' : [ {'matches': [{'signature': {'accession' : 'PF03826' , 'description': 'OAR motif', 'name': 'OAR' }}] } ] }
     signature_accession = match['signature']['accession']
     if signature_accession.startswith('PF'):
