@@ -1,18 +1,19 @@
 # RNAseq Workshop -- Brian Haas
 
-Clone [Brian's Repository](https://github.com/trinityrnaseq/CSHLProgForBiol2022). 
+Clone [Brian's Repository](https://github.com/trinityrnaseq/CSHLProgForBio). 
 
 ## Make sure to not clone it inside one of your existing repositories
 
 ```
-git clone https://github.com/trinityrnaseq/CSHLProgForBiol2022
+git clone git@github.com:trinityrnaseq/CSHLProgForBio.git
 ```
 
 The repository contains the workshop problem sets.
 
 Here are links to his problem sets and data files:  
-  - [kmer counter](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/main/Exercise-counting_kmers)  
-  - [whats up with name](https://github.com/trinityrnaseq/CSHLProgForBiol2022/tree/main/whatsupwith__name__%3F)
+  - [kmer counter](https://github.com/trinityrnaseq/CSHLProgForBio/tree/main/Exercise-counting_kmers)
+  - [expression level, reads per gene](https://github.com/trinityrnaseq/CSHLProgForBio/tree/main/Exercise_2-aligned_reads_to_expression)  
+  - [whats up with name](https://github.com/trinityrnaseq/CSHLProgForBio/tree/main/whatsupwith__name__%3F)
  
  
 
