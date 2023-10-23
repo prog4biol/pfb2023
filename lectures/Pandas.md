@@ -251,6 +251,8 @@ cell_attributes.loc[:,['n_counts','n_genes']].corr()
 
 ### dtypes
 
+More advanced, good to look up on your own
+
 ### Plotting in pandas
 
 Here's a few lines from a data file (`fuelEfficiency.tsv`)
