@@ -16,12 +16,12 @@ Sofia Robb
   - [NGS File Formats Workshop](NGS)
 
 ## Bioinformatics and Useful Tools -- Simon Prochnik 
-  - [Lecture](../lectures/bioinfPipesLectureSimon.md) Need to update
-  - [jupyter notebook lecture notes](lectures/jupyterNotebook.md) Need to update
+  - [Lecture](../lectures/bioinfPipesLectureSimon.md)
+  - [jupyter notebook lecture notes](lectures/jupyterNotebook.md)
 
 ## Genome Assembly -- Deb Triant
-  - [Lecture](workshops/GenomeAssembly)  Need to update 
-  - [Workshop](workshops/GenomeAssembly)  Need to update
+  - [Lecture](workshops/GenomeAssembly)
+  - [Workshop](workshops/GenomeAssembly)
 
 
 ## RNAseq -- Brian Haas
@@ -29,24 +29,24 @@ Sofia Robb
   - [Workshop](RNAseq)  need to update
   
 ## Image Processing -- Jay Unruh
-  - [Workshop](imageProcessing)   need to update
+  - [Workshop](imageProcessing)
 
 ## Sequence Homology -- Bill Pearson
-  - [Lecture1](Sequence_homology/) need to update
-  - [Workshop1](https://fasta.bioch.virginia.edu/mol_evol/) need to update
-  - [Lecture2](Sequence_homology/) need to update
-  - [Workshop2](https://fasta.bioch.virginia.edu/mol_evol/pfb_python_matrices.html) need to update
+  - [Lecture1](Sequence_homology/cshl_pfb_23a.pdf)
+  - [Workshop1](https://fasta.bioch.virginia.edu/mol_evol/)
+  - [Lecture2](Sequence_homology/cshl_pfb_23b.pdf)
+  - [Workshop2](https://fasta.bioch.virginia.edu/mol_evol/pfb_python_matrices.html)
 
 
 
 
 ## Ethics and Responsibility in Bioinformatics -- Simon Prochnik
-  - Lecture -- need to add link
+  - Lecture 
 
 ## GMOD -- Scott Cain
   - [Lecture](GMOD/tbd) update
   - [Workshop](GMOD)  update
 
-## GO/Ontology/Pathere -- Paul Thomas
+## Protein Function Annotation -- Paul Thomas
   - add lecture
-  - add workshop
+  - [Workshop](Protein_Function_Annotation)
