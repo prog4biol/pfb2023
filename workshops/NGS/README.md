@@ -93,6 +93,14 @@ The purpose of this workshop is to gain experience working with the various file
 
 
 10. Run `samtools stats` and `plot-bamstats` on the BAM file and examine the `.html` report.
+    ```bash
+    $ samtools stats --ref-seq Ecoli.fasta SRR21901339.srt.bam >SRR21901339.stats
+    $ plot-bamstats -s Ecoli.fasta >Ecoli.gc
+    $ plot-bamstats -r Ecoli.gc -p SRR21901339 SRR21901339.stats
+
+    # Finally, open the output HTML file in your web Safari browser:
+    $ open -a Safari.app SRR21901339.html
+    ```
     - What fraction of reads were mapped to the genome?
     - What is the mode insert size of the sequencing library? Are the read distances reasonably Normally-distributed?
     - Are the majority of reads pairs mapped in inward (FR), outward (RF), or other orientation?
@@ -100,7 +108,7 @@ The purpose of this workshop is to gain experience working with the various file
        >*HINT*: The reads were generated from a strain different from the reference strain and biological SNP differences will also appear in the plot.
 
 
-11. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it. What fraction of the reads are properly paired?
+12. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it. What fraction of the reads are properly paired?
     ```bash
     # Get the SAM flags for properly-paired reads, do:
     $ samtools flags PAIRED,PROPER_PAIR
@@ -121,7 +129,7 @@ The purpose of this workshop is to gain experience working with the various file
     > *HINT*: see `samtools flags` for help with flags.
 
 
-12. Run the GATK HaplotypeCaller to call variants using the final filtered BAM file, set `--min-base-quality-score` to the value you determined in *Step 9*. **NOTE**: Run GATK in the backgound (i.e., `nohup gatk HaplotypeCaller ... &`) or open a second terminal window and work on Problems 13 and 14 while GATK is running in the first.
+13. Run the GATK HaplotypeCaller to call variants using the final filtered BAM file, set `--min-base-quality-score` to the value you determined in *Step 9*. **NOTE**: Run GATK in the backgound (i.e., `nohup gatk HaplotypeCaller ... &`) or open a second terminal window and work on Problems 13 and 14 while GATK is running in the first.
     ```bash
     ./gatk-4.3.0.0/gatk HaplotypeCaller \
          --minimum-mapping-quality 30 \
@@ -133,7 +141,7 @@ The purpose of this workshop is to gain experience working with the various file
     ```
 
 
-13. Use the `samtools depth` command to calculate the per-site read depth across the genome (see `samtools depth --help` for more info) and output to a file. The output file will contain three columns: the chromosome name, position (1-based), and read depth. For example:
+14. Use the `samtools depth` command to calculate the per-site read depth across the genome (see `samtools depth --help` for more info) and output to a file. The output file will contain three columns: the chromosome name, position (1-based), and read depth. For example:
     ```
     chrI	1	15
     chrI	2	15
@@ -143,7 +151,7 @@ The purpose of this workshop is to gain experience working with the various file
     ```
     
 
-14. Write a python script that computes the genome-wide [mean](https://en.wikipedia.org/wiki/Arithmetic_mean) and [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) read depth parameters.
+15. Write a python script that computes the genome-wide [mean](https://en.wikipedia.org/wiki/Arithmetic_mean) and [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) read depth parameters.
 
 
 16. Using command-line tools, extract CDS features present in `Ecoli.gff3` and create a new GFF3 file. Then use `bedtools intersect` to determine how many SNPs and InDels in the VCF file intersect these CDS features.
