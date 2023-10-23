@@ -1,7 +1,7 @@
 # Genome Assembly Workshop
 
-Lecture Notes: See [PDF]()  
-Workshop Notes: See [PDF](Triant_AssemblyWorkshop_PFB2022.pdf)
+Lecture Notes: See [PDF](Triant_GenomeAssembly_PFB_2023.pdf)  
+Workshop Notes: See [PDF](Triant_GenomeAssembly_PFB_2023.pdf)
 
 
 # Problem Set
