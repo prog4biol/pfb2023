@@ -16,12 +16,12 @@ Sofia Robb
   - [NGS File Formats Workshop](NGS)
 
 ## Bioinformatics and Useful Tools -- Simon Prochnik 
-  - [Lecture](../lectures/bioinfPipesLectureSimon.md) Need to update
-  - [jupyter notebook lecture notes](lectures/jupyterNotebook.md) Need to update
+  - [Lecture](../lectures/bioinfPipesLectureSimon.md)
+  - [jupyter notebook lecture notes](lectures/jupyterNotebook.md)
 
 ## Genome Assembly -- Deb Triant
-  - [Lecture](workshops/GenomeAssembly)  Need to update 
-  - [Workshop](workshops/GenomeAssembly)  Need to update
+  - [Lecture](workshops/GenomeAssembly)
+  - [Workshop](workshops/GenomeAssembly)
 
 
 ## RNAseq -- Brian Haas
@@ -29,7 +29,7 @@ Sofia Robb
   - [Workshop](RNAseq)  need to update
   
 ## Image Processing -- Jay Unruh
-  - [Workshop](imageProcessing)   need to update
+  - [Workshop](imageProcessing)
 
 ## Sequence Homology -- Bill Pearson
   - [Lecture1](Sequence_homology/) need to update
