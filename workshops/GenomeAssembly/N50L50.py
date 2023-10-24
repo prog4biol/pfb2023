@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #N50L50_commented.py
 #Genome assembly exercise to calculate N50, L50 and contig totals, min and max from fasta file
-#23 October 2019
+#23 October 2023
 
 import sys
 
