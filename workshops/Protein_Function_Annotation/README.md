@@ -73,7 +73,7 @@ Note: If you are having issues using Biomart to download the protein fasta, the 
 8. Look through by opening your IPRSCAN results (the JSON **file**) to pick another type of domain/motif hit (i.e, Coils, TMHMM, SignalP_EUK). Add code to your parser, following a similar format to Pfam domain extraction, to extract the new protein domain/motif information to create a count and report your gene hits.
 
 
-
+#### summary datastructure
 Here is an example of the JSON 2 Python data structure in which the PTHR and Pfam results are stored.
 ```
 iprscan = { 
