@@ -70,10 +70,10 @@ for result in iprscan['results']:
         print(f"PNTHR: {accession} {name}")
      
         # now lets get the GO terms
-        # Panther hits with associated GO terms have a key:value pair that is in the sub-dict 'goXRefs': {}.
-        # the value is a dictionary that contains information about each go term.
+        # Panther hits with associated GO terms have a key:value pair that is in the sub-dict 'goXRefs': [{},{}].
+        # the value is a list of dictionaries that contains information about each go term.
         # get and store the info (id and name) about the go term 
-        # iprscan = { 'results' : [ {'matches': [ {'accession': 'PTHR0000'} , {'goXRefs': {'id': 'GO:0030182', 'name':'neuron differentiation'} } ] }  , {'matches': [] } ] }
+        # iprscan = { 'results' : [ {'matches': [ {'accession': 'PTHR0000'} , {'goXRefs': [{'id': 'GO:0030182', 'name':'neuron differentiation'}] } ] }  , {'matches': [] } ] }
         for goXRef in match['goXRefs']:
           ## Replace the question marks with the appropriate keys
           go_id = goXRef['?'] # use goXRef as your dictionary, what key do you use to get id? 
