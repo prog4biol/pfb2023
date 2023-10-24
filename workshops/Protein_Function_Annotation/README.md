@@ -66,7 +66,7 @@ Note: If you are having issues using Biomart to download the protein fasta, the 
 6. The format of the results that are printed to the screen in [the provided script](parseIPRSjson.py) are not pretty. Think about what is a useful way to look at this data
   - Reformat them in a tab delimeted format that can be opened in a spreadsheet.
   - Perphaps separating out the id, name, and description in the concatenated string would be nice.
-  - Adding the GO category could also be helpful
+  - Adding the GO category (Biological Process, Molecular Function, Cellular Component) could also be helpful. These can be retrieved from the datastructure in a similar way as the GO id and name.
 7. Review your results.
   - What do you think?
   - Are the GO terms reasonable?
