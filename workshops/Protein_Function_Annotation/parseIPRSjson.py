@@ -26,11 +26,15 @@ for seq_record in SeqIO.parse(fastafile, "fasta"):
 with open(jsonfile, 'r') as myfile:
     data=myfile.read()
 
-# create a dict to count up how many times we see the same PANTR2GO term.
+# create a dict to count up how many times we see the same PANTHER2GO term.
+# create a dict to count up how many times we see the same InterPro2GO term.
+# Some big picture questions to think about while coding.
 # Is there a recurring GO term?
+# Are the two sets of GO terms different?
 # create a dict to count up how many times we see the same PFAM domain. 
 # Is there a recurring domain?
-go   = {}
+panther2go   = {}
+interpro2go  = {}
 pfam = {}
 
 # parse iprscan json file
@@ -61,7 +65,7 @@ for result in iprscan['results']:
   # 'matches' : []
   for match in result['matches']:
 
-    ## Get Panther hits and PNTHR GO terms
+    ## Get Panther hits and PANTHER2GO terms
     # iprscan = { 'results' : [ {'matches': [ {'accession': 'PTHR0000'} ] }  , {'matches': [] } ] }
     if 'accession' in match:
       accession=match['accession']
@@ -83,8 +87,9 @@ for result in iprscan['results']:
 
           # lets count up each time we see each GO term hit across all of our sequences in our gene set
           if goinfo not in go:
-            go[goinfo]=0
-          go[goinfo]+=1
+            panther2go[goinfo]=0
+          panther2go[goinfo]+=1
+
 
     ## Get PFAM hits
     # Our sequences may have Pfam domain hits, they are stored in the sub-dict in 'signature' : {}
@@ -104,18 +109,24 @@ for result in iprscan['results']:
         pfam[pfaminfo]=0
       pfam[pfaminfo]+=1
 
+    ## Get InterPro2GO terms. 
+    # Review the summary datastructure and the workshop notes to create this block to collect and count Interpro associated GO terms. 
+    # the Panther2GO and Pfam code blocks are good models on how to write this block
+
 
     ## Get some other protein motif 
     # review your json to see if you can figure out how to add in another domain result
     # follow the format used for PFAM
-    # add in a count, similar to the pfam domain counts and PNTHR2GO counts
+    # add in a count, similar to the pfam domain counts and PANTHER2GO counts
 
 print("\n")
 print("Summary Cumulative Counts")
 print("==== GO TERM Counts ===")
-for info,count in sorted(go.items(), key=lambda x:x[1], reverse=True):
+for info,count in sorted(panther2go.items(), key=lambda x:x[1], reverse=True):
   if count > 1:
     print(info,count)
+
+## Add a counter for interpro2go using the above block as a model
 
 print("\n")
 print("==== PFAM Counts ===")
