@@ -6,9 +6,13 @@ We have a gene list we created for stem cell proliferation genes in alpaca (ment
 ## Overview
 - You will need to create a FASTA file of the protein sequences of a curated list of genes using Ensembl Biomart. (see steps below)
 - Predict protein domains and motifs that are contained in our protein sequences using InterProScan. (see steps below)
-- Review PANTHER protein family hits and extract associated Gene Ontology (GO) Term information for each of our proteins.
+- Review PANTHER protein family hits and extract associated Gene Ontology (GO) Term information for each of our proteins, PANTHER2GO. 
+- Review InterPro hits and extract associated Gene Ontology (GO) Term information for each of our proteins, InterPro2GO. 
 - Review Pfam protein domain hits and extract domain information for each of our proteins.
-- Do a count of GO terms and Pfam domains combined across all proteins to try to discern if there are any overlapping annotations in our curated gene list.
+- Count up and compare the PANTHER2GO and InterPro2GO terms associated with your genes. 
+- Review your GO terms and Pfam domains combined across all proteins to try to discern if there are any overlapping annotations in our curated gene list.
+- Think about enrichment analysis.
+
 
 ### Generate a FASTA file of our stem cell proliferation gene set to use in prediction of protein domains and motifs using InterProScan. 
 
@@ -40,11 +44,33 @@ Note: If you are having issues using Biomart to download the protein fasta, the 
 3. Click the red "Automatic FASTA clean up" button. We have `*`s in our file for stop codons, InterProScan does not like those.
 4. Click the teal "Search" button and wait until complete (~2 mins).
 5. Once the search is complete, Click "Group Actions" (on the right), then select "Download All". You will get a JSON file that will be named similar to this: 20231021-172942-29.json
-6. Parse the downloaded JSON file using the `json` module to "load" the data into your script. Extract the GO term information (`id` and `name`) from the PANTHER (`PTHR*`) matches data structure to see if there are recurring GO terms in our stem cell proliferation gene list. You can try this from scratch or use [the provided script](parseIPRSjson.py) and fill in a few keys to get the GO term information (`id` and `name`). 
-7. In the same script, determine if there is a Pfam domain that is recurring in our stem cell proliferation gene list. Extract the Pfam (`PF*`) signature information (`accession`, `name`, and `description`) for each. You can try this from scratch or use my script and fill in a few keys to get the Pfam domain hits.
-8. In the same script add a block to extract GO term from Interproscan hit section. This is found in the entry dictionary. Use the PFAM python block and the PANTER python blocks as a model.    
-9. Look through your IPRSCAN results to pick another type of domain/motif hit (i.e, Coils, TMHMM, SignalP_EUK). Add code to your parser, following the a similar format to Pfam domain extraction, to extract the new protein domain/motif information.
-11. The format of the results that are printed out in [the provided script](parseIPRSjson.py) are not pretty. Reformat them.
+
+#### Parse the Protein prediction output
+1. All of the subsequent tasks can be completed by creating your own script from scratch or by making edits to [the provided script](parseIPRSjson.py).
+2. Parse the downloaded JSON file (produced by our InterProScan search) using the `json` module to "load" the data into your script.
+  - First thing you should do is open your output file and look at it. MOST output files from MOST bioinformatic tools are flat text files. This means you can open them with any text editor like `vi`. You can also `head`, `less`, `more`, or `cat` them. This particular output file is large and has a lot of text and isn't super easy for human eyes to read. It is in JSON format which is a format that is used to make output parsable by scripts. There are a lot of key/value pairs in JSON, the keys are standarized and will be the same in every InterProScan JSON output.
+3. PANTHER2GO
+  -  Extract the PANTHER2GO term information. These are the GO terms associated with PANTHER hit records. You will need the `id` and `name` from the PANTHER (`PTHR*`) _matches_ data structure (see summary datastructure below).
+  -  Save the terms in a dictionary to create a counter, `p2go[goterminfo]=+1`, to see if there are recurring PANTHER2GO terms in our stem cell proliferation gene list.
+  -  You can try this from scratch or use [the provided script](parseIPRSjson.py) and fill in a few keys to get the GO term information (`id` and `name`). 
+4. Pfam Domains
+  - In the same script from above, in a similar way, extract Pfam (`PF*`) hit information.
+  - You will need the `accession`, `name`, and `description` from the Pfam (`PF*`) _signature_ data strucutre (see summary datastructure below).
+  - Save the terms in a dictionary to create a counter, `pfam[pfinfo]=+1`, to determine if there is a Pfam domain that is recurring in our stem cell proliferation gene list.
+  - You can try this from scratch or use [the provided script](parseIPRSjson.py) and fill in a few keys (`accession`, `name`, and `description`) to get the Pfam domain hits.
+5.InterPro2GO
+  - Extract the InterPro2GO term informatoin. These are GO terms associated with InterPro hit records.
+  - To your script, add a block to get the GO term from InterProScan hit section. This is found in the _entry_ data structure (see summary datastructure below).
+  - Use the Pfam python block and the PANTER python blocks as a model.    
+6. The format of the results that are printed to the screen in [the provided script](parseIPRSjson.py) are not pretty. Think about what is a useful way to look at this data
+  - Reformat them in a tab delimeted format that can be opened in a spreadsheet.
+  - Perphaps separating out the id, name, and description in the concatenated string would be nice.
+  - Adding the GO category could also be helpful
+7. Think about GO enrichment. If you were going to do GO enrichment (we are not asking you to, but we won't stop you if you wanted to explore this topic) how would you do it?
+  - Is one curated gene set enough? Do you need a background gene set to compare? If so, what would it be in our example?
+  - What statistical test or tests would you perform?
+  - Is there a python module to help with this?     
+8. Look through by opening your IPRSCAN results (the JSON **file**) to pick another type of domain/motif hit (i.e, Coils, TMHMM, SignalP_EUK). Add code to your parser, following a similar format to Pfam domain extraction, to extract the new protein domain/motif information to create a count and report your gene hits.
 
 
 
