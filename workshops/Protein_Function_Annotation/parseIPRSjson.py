@@ -86,7 +86,7 @@ for result in iprscan['results']:
           print(f"\t{goinfo}")
 
           # lets count up each time we see each GO term hit across all of our sequences in our gene set
-          if goinfo not in go:
+          if goinfo not in panther2go:
             panther2go[goinfo]=0
           panther2go[goinfo]+=1
 
