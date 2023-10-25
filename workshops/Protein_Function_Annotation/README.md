@@ -4,7 +4,7 @@ Instructions start on slide 64 of [lecture material](CSHL2023-function-and-enric
 - Download the files at      
   - http://data.pantherdb.org/ftp/tools/samples/
   - use [Piwi_2fold_down_id](http://data.pantherdb.org/ftp/tools/samples/Piwi_2fold_down_id) first
-  - Do Enrichment analysis at https://www.pantherdb.org/ with [Piwi_2fold_down_id](http://data.pantherdb.org/ftp/tools/samples/Piwi_2fold_down_id)
+  - Do Enrichment analysis at [PANTHER DB](https://www.pantherdb.org/) with [Piwi_2fold_down_id](http://data.pantherdb.org/ftp/tools/samples/Piwi_2fold_down_id)
 - They are from the publication  
   - https://www.ncbi.nlm.nih.gov/pubmed/26780607
  
