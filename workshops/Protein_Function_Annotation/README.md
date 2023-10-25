@@ -1,6 +1,6 @@
 GO Enrichment Hands On
 ======================
-Instructions start on slide 64 of [lecture material]()
+Instructions start on slide 64 of [lecture material](CSHL2023-function-and-enrichment.pdf)
 - Download the files at      
   - http://data.pantherdb.org/ftp/tools/samples/  
 - They are from the publication  
