@@ -30,6 +30,12 @@ Sofia Robb
 ## Protein Function Annotation -- Paul Thomas
   - [Lecture](Protein_Function_Annotation/CSHL2023-function-and-enrichment.pdf)
   - [Workshop](Protein_Function_Annotation)
+
+
+## GMOD -- Scott Cain
+  - [Lecture](GMOD/tbd) update
+  - [Workshop](GMOD)  update
+
   
 ## Image Processing -- Jay Unruh
   - [Workshop](imageProcessing)
@@ -45,8 +51,4 @@ Sofia Robb
 
 ## Ethics and Responsibility in Bioinformatics -- Simon Prochnik
   - Lecture 
-
-## GMOD -- Scott Cain
-  - [Lecture](GMOD/tbd) update
-  - [Workshop](GMOD)  update
 
