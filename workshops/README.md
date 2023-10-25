@@ -24,8 +24,8 @@ Sofia Robb
   - [Workshop](workshops/GenomeAssembly)
 
 ## RNAseq -- Brian Haas
-  - [Lecture](https://github.com/trinityrnaseq/CSHLProgForBiol2022/blob/main/rnaseq_slides_PFB2022.pptx) need to update
-  - [Workshop](RNAseq)  need to update
+  - [Lecture](https://github.com/trinityrnaseq/CSHLProgForBiol2022/blob/main/rnaseq_slides_PFB2022.pptx)
+  - [Workshop](RNAseq)
 
 ## Protein Function Annotation -- Paul Thomas
   - [Lecture](Protein_Function_Annotation/CSHL2023-function-and-enrichment.pdf)
