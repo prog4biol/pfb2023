@@ -33,8 +33,8 @@ Sofia Robb
 
 
 ## GMOD -- Scott Cain
-  - [Lecture](GMOD/tbd) update
-  - [Workshop](GMOD)  update
+  - [Lecture](GMOD/GMOD2023.pdf) 
+
 
   
 ## Image Processing -- Jay Unruh
