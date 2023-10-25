@@ -8,7 +8,7 @@ GO Enrichment Hands On
 
 
 
-Interproscan PTHR2GO
+Interproscan PTHR2GO Workshop
 ====================
 
 We have a gene list we created for stem cell proliferation genes in alpaca (mentioned in a [previous problemset](../../problemsets/Python_06_problemset.md)). Let's annotate these genes and assess if there are any reoccurring GO terms or Pfam domains in this gene set. 
