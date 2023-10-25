@@ -72,11 +72,13 @@ Note: If you are having issues using Biomart to download the protein fasta, the 
   - You will need the `accession`, `name`, and `description` from the Pfam (`PF*`) _signature_ data strucutre (see summary datastructure below).
   - Save the terms in a dictionary to create a counter, `pfam[pfinfo]=+1`, to determine if there is a Pfam domain that is recurring in our stem cell proliferation gene list.
   - You can try this from scratch or use [the provided script](parseIPRSjson.py) and fill in a few keys (`accession`, `name`, and `description`) to get the Pfam domain hits.
-6. The [the provided script](parseIPRSjson.py) should now have the '?' replaced with the appropriate keys and is now able to be run. Run it and review the output.
+  -  The [the provided script](parseIPRSjson.py) should now have the '?' replaced with the appropriate keys and is now able to be run. Run it and review the output.
+
 5.InterPro2GO
   - Extract the InterPro2GO term informatoin. These are GO terms associated with InterPro hit records.
   - To your script, add a block to get the GO term from InterProScan hit section. This is found in the _entry_ data structure (see summary datastructure below).
-  - Use the Pfam python block and the PANTHER python blocks as a model.    
+  - Use the Pfam python block and the PANTHER python blocks as a model.
+      
 6. The format of the results that are printed to the screen in [the provided script](parseIPRSjson.py) are not pretty. Think about what is a useful way to look at this data
   - Reformat them in a tab delimeted format that can be opened in a spreadsheet.
   - Perphaps separating out the id, name, and description in the concatenated string would be nice.
@@ -100,8 +102,8 @@ iprscan = {
     'results' : [ {
                  'sequence' = 'DQLNSEEKKKRKQRRNRTTFNSSQLQALERVFERTHY',
                    'matches' : [
-                     {'_accession_': 'PTHR12027:SF93',
-                      '_evalue_': 6.1e-88,
+                     {'accession_: 'PTHR12027:SF93',
+                      'evalue': 6.1e-88,
                       'goXRefs': [{'category': 'BIOLOGICAL_PROCESS',
                                    'databaseName': 'GO',
                                    'id': 'GO:0030182',
