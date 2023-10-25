@@ -3,11 +3,12 @@ GO Enrichment Hands On
 Instructions start on slide 64 of [lecture material](CSHL2023-function-and-enrichment.pdf)
 - Download the files at      
   - http://data.pantherdb.org/ftp/tools/samples/
-  - use [Piwi_2fold_down_id](http://data.pantherdb.org/ftp/tools/samples/Piwi_2fold_down_id) first 
+  - use [Piwi_2fold_down_id](http://data.pantherdb.org/ftp/tools/samples/Piwi_2fold_down_id) first
+  - Do Enrichment analysis at https://www.pantherdb.org/ with [Piwi_2fold_down_id](http://data.pantherdb.org/ftp/tools/samples/Piwi_2fold_down_id)
 - They are from the publication  
   - https://www.ncbi.nlm.nih.gov/pubmed/26780607
  
-- Do Enrichment analysis at https://www.pantherdb.org/ 
+
 
 
 
