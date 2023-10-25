@@ -1,6 +1,6 @@
 GO Enrichment Hands On
 ======================
-
+Instructions start on slide 64 of [lecture material]()
 - Download the files at      
   - http://data.pantherdb.org/ftp/tools/samples/  
 - They are from the publication  
