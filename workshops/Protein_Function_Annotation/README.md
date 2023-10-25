@@ -1,3 +1,13 @@
+GO Enrichment Hands On
+======================
+
+- Download the files at      
+  - http://data.pantherdb.org/ftp/tools/samples/  
+- They are from the publication  
+  - https://www.ncbi.nlm.nih.gov/pubmed/26780607
+
+
+
 Interproscan PTHR2GO
 ====================
 
