@@ -5,6 +5,8 @@ Instructions start on slide 64 of [lecture material](CSHL2023-function-and-enric
   - http://data.pantherdb.org/ftp/tools/samples/  
 - They are from the publication  
   - https://www.ncbi.nlm.nih.gov/pubmed/26780607
+ 
+- Do Enrichment analysis at https://www.pantherdb.org/ 
 
 
 
