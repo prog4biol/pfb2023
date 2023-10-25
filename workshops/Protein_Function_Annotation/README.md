@@ -75,7 +75,7 @@ Note: If you are having issues using Biomart to download the protein fasta, the 
   -  The [the provided script](parseIPRSjson.py) should now have the '?' replaced with the appropriate keys and is now able to be run. Run it and review the output.
 
 5.InterPro2GO
-  - Extract the InterPro2GO term informatoin. These are GO terms associated with InterPro hit records.
+  - Extract the InterPro2GO term information. These are GO terms associated with InterPro hit records.
   - To your script, add a block to get the GO term from InterProScan hit section. This is found in the _entry_ data structure (see summary datastructure below).
   - Use the Pfam python block and the PANTHER python blocks as a model.ccv
 
