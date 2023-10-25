@@ -23,10 +23,13 @@ Sofia Robb
   - [Lecture](workshops/GenomeAssembly)
   - [Workshop](workshops/GenomeAssembly)
 
-
 ## RNAseq -- Brian Haas
   - [Lecture](https://github.com/trinityrnaseq/CSHLProgForBiol2022/blob/main/rnaseq_slides_PFB2022.pptx) need to update
   - [Workshop](RNAseq)  need to update
+
+## Protein Function Annotation -- Paul Thomas
+  - [Lecture](Protein_Function_Annotation/CSHL2023-function-and-enrichment.pdf)
+  - [Workshop](Protein_Function_Annotation)
   
 ## Image Processing -- Jay Unruh
   - [Workshop](imageProcessing)
@@ -47,6 +50,3 @@ Sofia Robb
   - [Lecture](GMOD/tbd) update
   - [Workshop](GMOD)  update
 
-## Protein Function Annotation -- Paul Thomas
-  - add lecture
-  - [Workshop](Protein_Function_Annotation)
