@@ -77,21 +77,24 @@ Note: If you are having issues using Biomart to download the protein fasta, the 
 5.InterPro2GO
   - Extract the InterPro2GO term informatoin. These are GO terms associated with InterPro hit records.
   - To your script, add a block to get the GO term from InterProScan hit section. This is found in the _entry_ data structure (see summary datastructure below).
-  - Use the Pfam python block and the PANTHER python blocks as a model.
-      
+  - Use the Pfam python block and the PANTHER python blocks as a model.ccv
+
 6. The format of the results that are printed to the screen in [the provided script](parseIPRSjson.py) are not pretty. Think about what is a useful way to look at this data
   - Reformat them in a tab delimeted format that can be opened in a spreadsheet.
   - Perphaps separating out the id, name, and description in the concatenated string would be nice.
   - Adding the GO category (Biological Process, Molecular Function, Cellular Component) could also be helpful. These can be retrieved from the datastructure in a similar way as the GO id and name.
+    
 7. Review your results.
   - What do you think?
   - Are the GO terms reasonable?
   - Do they make sense considering we have a list of predicted stem cell proliferation genes?
-  - How do the PANTHER2GO and InterPro2GO term sets compare? Are the the same/different? 
+  - How do the PANTHER2GO and InterPro2GO term sets compare? Are the the same/different?
+    
 8. Think about GO enrichment. If you were going to do GO enrichment (we are not asking you to, but we won't stop you if you wanted to explore this topic) how would you do it?
   - Is one curated gene set enough? Do you need a background gene set to compare? If so, what would it be in our example?
   - What statistical test or tests would you perform?
-  - Is there a python module to help with this?     
+  - Is there a python module to help with this?
+        
 9. Look through your IPRSCAN results (the JSON **file**) by opening it with a text editor to pick another type of domain/motif hit (i.e, Coils, TMHMM, SignalP_EUK). Add code to your parser, following a similar format to Pfam domain extraction, to extract the new protein domain/motif information to create a count and report your gene hits.
 
 
