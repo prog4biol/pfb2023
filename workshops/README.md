@@ -11,8 +11,8 @@ Sofia Robb
   - [Workshop](../problemsets/biopython_problemset.md)
 
 ## NGS -- Anoja Perera
-  - [Lecture](NGS/CSHL-Presentation-Sequencing_2023_agp.pdf) Need to add link 
-  - [NGS File Formats Lecture](NGS/bio_info_formats.pdf) Need to add link
+  - [Lecture](NGS/CSHL-Presentation-Sequencing_2023_agp.pdf)
+  - [NGS File Formats Lecture](NGS/bio_info_formats.pdf)
   - [NGS File Formats Workshop](NGS)
 
 ## Bioinformatics and Useful Tools -- Simon Prochnik 
