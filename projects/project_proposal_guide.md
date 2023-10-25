@@ -1,3 +1,4 @@
+
 Project Proposal and Presentation Guide
 =======================================
 
@@ -20,4 +21,14 @@ In addition to discussing the above points, strong presentations integrate:
 - Code walk-throughs/highlights
 - Discussion of lessons learned
 - Future directions/improvements
+
+Project Rules
+==========
+- Projects should be focused on programming therefore no project or propsals should be dependent on running applications and making pipelines.
+- All data should be preexisting and downloadable, or you need to create a fake dataset. Data has to be approved or provided by TA.
+- Data can not be owned by any memeber of the project group.
+- All code should have postive and negative controls
+- Datasets should be small for development. Larger datasets can be used once all code is complete and working as expected.
+- TAs are there to advise not to code.
+- All project groups should create a new github repository.
 
