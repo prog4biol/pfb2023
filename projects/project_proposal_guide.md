@@ -34,8 +34,7 @@ The purpose of group projects is to reinforce the coding skills you have learned
 - TAs are there to advise not to code.
 - All project groups should create a new github repository.
 
-Time line
-=========
+## Time line
 Proposals due: Friday the 27th at 2pm.
 Project sign up: Saturday 8:30AM - 9AM 
-First Group MeetingL Saturday (M
+First group meeting: Saturday 9AM
