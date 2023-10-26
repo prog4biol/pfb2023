@@ -128,20 +128,19 @@ iprscan = {
                        'signature': {'accession': 'PF03826',
                                      'description': 'OAR motif',
                                      'name': 'OAR'
-                         },
-                       'entry' : {
-                         'accession' : 'IPR001356',
-                         'name' : 'Homeobox_dom',
-                         'description' : 'Homeobox domain',
-                         'type' : 'DOMAIN',
-                         'goXRefs' : [ {
-                             'name' : 'DNA binding',
-                             'databaseName' : 'GO',
-                             'category' : 'MOLECULAR_FUNCTION',
-                             'id' : 'GO:0003677'
-                           } ],  
+                                     'entry' : {
+                                       'accession' : 'IPR001356',
+                                       'name' : 'Homeobox_dom',
+                                       'description' : 'Homeobox domain',
+                                       'type' : 'DOMAIN',
+                                       'goXRefs' : [ {
+                                          'name' : 'DNA binding',
+                                          'databaseName' : 'GO',
+                                          'category' : 'MOLECULAR_FUNCTION',
+                                          'id' : 'GO:0003677'
+                                        } ],  
+                                     }
                        }
-                     }
                    ]
                  }
              ]
