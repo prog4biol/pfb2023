@@ -39,8 +39,14 @@ Usage: {program} <input.tsv>
 def parse_INFO_to_dict(info_string):
     info_keyval_pairs = info_string.split(';')
     info_dict = {}
+    # VCF INFO field looks like:
+    # DP=12;ExcessHet=0;FS=0;MLEAC=2;MLEAF=1;MQ=60;QD=30.43;SOR=1.022;BCSQ=frameshift&stop_retained|mutT|NP_308130.1|protein_coding|+|133*>133*|116046TA>T
+    # since we want key: value pairs to pack into a dictionary, first split on `;` to get "Key=Value" strings to iterate over and parse further:
     for keyval in info_keyval_pairs:
+        # keyval contains strings that look like "MLEAC=2" etc
+        # the maxsplit keyword arg limits the number of string splits (starting from the left):
         (key, value) = keyval.split('=', maxsplit=1)
+        
         info_dict[key] = value
 
     return info_dict
@@ -48,6 +54,8 @@ def parse_INFO_to_dict(info_string):
 
 
 def parse_sample_to_dict(format_string, sample_string):
+    # Each Sample field is paired with the FORMAT field, in order:
+    # "GT:AD:DP" "0/1:4,5:9" -> {GT: "0/1", "AD": "4,5", "DP":"9"}
     return dict(zip(format_string.split(':'), sample_string.split(':')))
 
 
@@ -57,30 +65,49 @@ def calc_Zscore(x, mean, sd):
 
 
 def extract_csq_info_from_file(infile=sys.stdin):
-
+    # Read in the VCF file, and extract the BCSQ tag from the INFO field
+    # Also extract the Sample DP (depth) field.
     bcsq = []
     for line in infile:
+        # remove terminal whitespaces (including newlines):
         line = line.strip()
-        
+
+        # VCF metadata lines start with '#', skip them:
         if line.startswith('#'):
             continue
 
+        # VCF files are tab-delimited files, split on tab specifically:
         fields = line.split("\t")
 
+        # Including the FORMAT and Sample fields in the VCF is not required,
+        # but is worth checking for, as we will rely on them to extract the
+        # Sample DP field:
         if len(fields) < 10:
             # our VCF has no Sample field
             continue
 
+        # fields[8] is the FORMAT field
+        # fields[9] is the Sample field
+        # you need both to parse the Sample field to a dict:
         sample = parse_sample_to_dict(fields[8], fields[9])
+
+        # Convert the INFO field string to a dict:
         info = parse_INFO_to_dict(fields[7])
-        
+
+        # if our sample genotype isn't homozygous for the alternate allele, skip
         if sample['GT'].startswith("0"):
             # our sample isn't variant at this position
             continue
 
+        # Not all variants will be annotated with BCSQ INFO keys (the variants
+        # aren't located in CDS regions and don't get annotated:
         if 'BCSQ' in info:
+            # not all InDel variants cause frameshifts, check that our annotation
+            # is a frameshift:
             if 'frameshift' in info['BCSQ']:
+                # Append the chromosome, position, depth, and BCSQ info to our list: 
                 bcsq.append((fields[0], fields[1], int(sample['DP']), info['BCSQ']))
+    
     return bcsq
 
 
