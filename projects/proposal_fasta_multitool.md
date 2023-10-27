@@ -71,33 +71,33 @@ GC%: 55%
 ./fasta_multi_tool.py upper myfasta.fa 
 ```  
 
-11. Lowercase all sequences.
+12. Lowercase all sequences.
 ```
 ./fasta_multi_tool.py lower myfasta.fa 
 ```  
 
-12. Longest ORF: Provide a FASTA file, calculate the 6 reading frames, find the longest open reading frame. Return FASTA formated nucleotide sequence with the reading frame of the longest orf reported as well as the length of the longest ORF reported in the header.  
+13. Longest ORF: Provide a FASTA file, calculate the 6 reading frames, find the longest open reading frame. Return FASTA formated nucleotide sequence with the reading frame of the longest orf reported as well as the length of the longest ORF reported in the header.  
 ```
 ./fasta_multi_tool.py orf myfasta.fa 
 ```  
 
-13. Translated longest ORF: Provide a FASTA file, calculate the 6 reading frames, find the longest open reading frame. Return the translated protein in FASTA formated with the reading frame and length of protein reported in the FASTA header.  
+14. Translated longest ORF: Provide a FASTA file, calculate the 6 reading frames, find the longest open reading frame. Return the translated protein in FASTA formated with the reading frame and length of protein reported in the FASTA header.  
 ```
 ./fasta_multi_tool.py orf myfasta.fa 
 ```
 
-14. Shuffled sequence: Provide a FASTA file, shuffle each sequence. Return a FASTA formated shuffled sequence for each sequence in the provided FASTA file. 
+15. Shuffled sequence: Provide a FASTA file, shuffle each sequence. Return a FASTA formated shuffled sequence for each sequence in the provided FASTA file. 
 ```
 ./fasta_multi_tool.py shuffle myfasta.fa 
 ```
 
-15. Any other functionality you would like to see? Add it.
+16. Any other functionality you would like to see? Add it.
 
-16. Make it so that your script takes a file or FASTA from standard-in so that you can pipe from one tool into another
+17. Make it so that your script takes a file or FASTA from standard-in so that you can pipe from one tool into another
 ```
 ./fasta_multi_tool.py lower myfasta.fa  | ./fasta_multi_tool.py wrap 60
 ```  
 
-17. Make a module that contains classes with attributes methods.
-18. Use exceptions to inform users when they give the wrong input.
-19. If you have time, create a protein FASTA multi tool as well. 
+18. Make a module that contains classes with attributes methods.
+19. Use exceptions to inform users when they give the wrong input.
+20. If you have time, create a protein FASTA multi tool as well. 
