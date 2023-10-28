@@ -2,7 +2,7 @@
 
 
 ## Launching an EC2 instance with an Ubuntu AMI 
-1. Log into the Amazon *EC2 Management Console*.
+1. Log into the Amazon *EC2 Management Console* by going to https://us-east-1.console.aws.amazon.com/ec2/home.
 2. Click on the _EC2_ link under the *AWS services* pane to view the *EC2 Dashboard*.
 3. Click on the blue `Launch Instance` button.
 4. From the *Amazon Machine Image* (AMI) table, select the latest version of Ubuntu Server available (18.04 LTS as of this writing).
