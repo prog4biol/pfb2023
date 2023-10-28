@@ -18,9 +18,11 @@
 
 
 ## Assigning project server domain names
-1. In the *AWS EC2 Dashboad*, click _Instances_ from the side bar and copy the elastic IP for the running instance to your clipboard.
+1. Go to: https://us-east-1.console.aws.amazon.com/route53/v2/home
 
-2. Open a new *Console* window, select the _Route 53_ link under the *Networking & Content Delivery* Section of the *Services* dropdown menu (upper left corner of the browser page). Add the elastic IP address to a new "Record Set" associated with programmingforbiology.org:
+2. In the *AWS EC2 Dashboad*, click _Instances_ from the side bar and copy the elastic IP for the running instance to your clipboard.
+
+3. Open a new *Console* window, select the _Route 53_ link under the *Networking & Content Delivery* Section of the *Services* dropdown menu (upper left corner of the browser page). Add the elastic IP address to a new "Record Set" associated with programmingforbiology.org:
   1. Click the _Hosted zones_ link.
   2. Click the _programmingforbiology.org_ link.
   3. Click the blue `Create Record Set` button.
