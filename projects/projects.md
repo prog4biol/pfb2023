@@ -19,23 +19,32 @@ Eric Ross
 
 
 ---
-# TEAM NAME
+# Microbial Mayhem
 ---
 
 ### Short summary
 
+Microbial interactions shape the diversity of life. Biosynthetic gene clusters (BGCs) are
+contiguous groups of genes within microbial genomes that work in concert to produce
+complex bioactive molecules. These molecules, often secondary metabolites, can mediate
+various interactions between microbes, including competition, communication, and
+cooperation. In this project, we will design a game that tests the capabilities of different
+microbes to compete against each other, based on various factors including their
+biosynthetic gene content. 
+
 ### TA
-TA name  
+Kirsten Gotting  
 
 ### GitHub Repo
-[Repo name](repo link)
+[MicrobialMayhem](https://github.com/htoth99/MicrobialMayhem)
 
 ### Participants  
- - Participant
- - Participant
- - Participant
- - Participant
- - Participant
+ - Hannah Toth
+ - Clare Cahir
+ - Maria Blanco Salazar
+ - Tiffany Halvorsen
+ - Benjamin Muhoya
+ - Cristina Paraschivescu
 
 
 ---
