@@ -1,21 +1,21 @@
 ---
-# TEAM NAME
+# Betta Stronga Fasta
 ---
 
 ### Short summary
+Multi-purpose FASTA manipulation tool
 
 ### TA
-TA name  
+Eric Ross
 
 ### GitHub Repo
-[Repo name](repo link)
+[Betta_Stronga_Fasta](https://github.com/CamiVazEche/BETTA_STRONGA_FASTA)
 
 ### Participants  
- - Participant
- - Participant
- - Participant
- - Participant
- - Participant
+ - Ayushman Dobhal
+ - Camila Vazquez Echegaray
+ - Shreya Saha
+ - Thompson Gana
 
 
 ---
