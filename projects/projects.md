@@ -48,23 +48,25 @@ Kirsten Gotting
 
 
 ---
-# TEAM NAME
+# VCFruits
 ---
 
 ### Short summary
+VCFruits is a collection of tools for VCF manipulation, including annotation, motif finding, variant effect, visualization, and population-level analysis. 
 
 ### TA
-TA name  
+Riley Kellermeyer
 
 ### GitHub Repo
-[Repo name](repo link)
+[VCFruits](https://github.com/rikellermeyer/VCFruits)
 
 ### Participants  
- - Participant
- - Participant
- - Participant
- - Participant
- - Participant
+ - Thomas Gebert
+ - Anastasiya Mankouski
+ - Riccardo Rossi
+ - Esra Sengul
+ - Shahar Silverman
+ - Leah VandenBosch
 
 ---
 # TEAM NAME
