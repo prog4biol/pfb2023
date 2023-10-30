@@ -69,26 +69,24 @@ Riley Kellermeyer
  - Leah VandenBosch
 
 ---
-# TEAM NAME
+# PFBseq
 ---
 
 ### Short summary
+PFBseq is a pipeline for integrating analyses of ChIP-seq, CITE-seq, and scRNA-seq data. The pipeline calls ChIP-seq peaks, annotates nearest transcription start sites, calculates log fold change, performes single-cell clustering and identification, generates UMAP and other diagnostic plots, and GO annotation enrichment of significantly up-regulated genes.
 
 ### TA
-TA name  
+- Simon Prochnik
+- Jessen Bredeson
 
 ### GitHub Repo
-[Repo name](repo link)
+[pfbseq](https://github.com/procho/pfbseq)
 
 ### Participants  
- - Participant
- - Participant
- - Participant
- - Participant
- - Participant
-
-
-
-
-
-
+ - Melinda Angus-Hill
+ - Robert Dalipovic
+ - Gabriela Fort
+ - Danni Jin
+ - Ian MacFawn
+ - David Paulding
+ - Lifang Zhang
