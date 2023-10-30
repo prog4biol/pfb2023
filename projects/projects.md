@@ -16,6 +16,7 @@ Eric Ross
  - Camila Vazquez Echegaray
  - Shreya Saha
  - Thompson Gana
+ - José Gabriel Barcia Durán
 
 
 ---
