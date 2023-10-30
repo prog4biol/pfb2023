@@ -2,7 +2,7 @@
 
 
 ## Launching an EC2 instance with an Ubuntu AMI 
-1. Log into the Amazon *EC2 Management Console*.
+1. Log into the Amazon *EC2 Management Console* by going to https://us-east-1.console.aws.amazon.com/ec2/home.
 2. Click on the _EC2_ link under the *AWS services* pane to view the *EC2 Dashboard*.
 3. Click on the blue `Launch Instance` button.
 4. From the *Amazon Machine Image* (AMI) table, select the latest version of Ubuntu Server available (18.04 LTS as of this writing).
@@ -18,9 +18,11 @@
 
 
 ## Assigning project server domain names
-1. In the *AWS EC2 Dashboad*, click _Instances_ from the side bar and copy the elastic IP for the running instance to your clipboard.
+1. Go to: https://us-east-1.console.aws.amazon.com/route53/v2/home
 
-2. Open a new *Console* window, select the _Route 53_ link under the *Networking & Content Delivery* Section of the *Services* dropdown menu (upper left corner of the browser page). Add the elastic IP address to a new "Record Set" associated with programmingforbiology.org:
+2. In the *AWS EC2 Dashboad*, click _Instances_ from the side bar and copy the elastic IP for the running instance to your clipboard.
+
+3. Open a new *Console* window, select the _Route 53_ link under the *Networking & Content Delivery* Section of the *Services* dropdown menu (upper left corner of the browser page). Add the elastic IP address to a new "Record Set" associated with programmingforbiology.org:
   1. Click the _Hosted zones_ link.
   2. Click the _programmingforbiology.org_ link.
   3. Click the blue `Create Record Set` button.
