@@ -1,89 +1,93 @@
-# HotSeqSummer
-### Protein function conservation over large evolutionary distances
+---
+# Betta Stronga Fasta
+---
+
+### Short summary
+Multi-purpose FASTA manipulation tool
 
 ### TA
-Eric  
+Eric Ross
+
 ### GitHub Repo
-[https://github.com/jnjahncke/hot-seq-summer](https://github.com/jnjahncke/hot-seq-summer)
+[Betta_Stronga_Fasta](https://github.com/CamiVazEche/BETTA_STRONGA_FASTA)
+
 ### Participants  
- - Carin
- - Kyle
- - Dmitry
- - Sarah
- - Jennifer
+ - Ayushman Dobhal
+ - Camila Vazquez Echegaray
+ - Shreya Saha
+ - Thompson Gana
+ - José Gabriel Barcia Durán
 
 
+---
+# Microbial Mayhem
+---
+
+### Short summary
+
+Microbial interactions shape the diversity of life. Biosynthetic gene clusters (BGCs) are
+contiguous groups of genes within microbial genomes that work in concert to produce
+complex bioactive molecules. These molecules, often secondary metabolites, can mediate
+various interactions between microbes, including competition, communication, and
+cooperation. In this project, we will design a game that tests the capabilities of different
+microbes to compete against each other, based on various factors including their
+biosynthetic gene content. 
+
+### TA
+Kirsten Gotting  
+
+### GitHub Repo
+[MicrobialMayhem](https://github.com/htoth99/MicrobialMayhem)
+
+### Participants  
+ - Hannah Toth
+ - Clare Cahir
+ - Maria Blanco Salazar
+ - Tiffany Halvorsen
+ - Benjamin Muhoya
+ - Cristina Paraschivescu
 
 
+---
+# VCFruits
+---
 
-# Motif Detectives
-### A program to identify an specific motif/consensus sequence, a.k.a transcription factor binding site, on their organism genome of interest.
+### Short summary
+VCFruits is a collection of tools for VCF manipulation, including annotation, motif finding, variant effect, visualization, and population-level analysis. 
 
-### TA 
-Cynthia  
+### TA
+Riley Kellermeyer
 
-### GitHub Repo 
-[https://github.com/cyntsc/Motif_Detectives](https://github.com/cyntsc/Motif_Detectives)
+### GitHub Repo
+[VCFruits](https://github.com/rikellermeyer/VCFruits)
 
-### Participants:   
- - Brianda Lopez Aviña
- - Marleny García Lozano
- - Bana Abolibdeh
- - Chrissi Heil
- - Mina Peyton
- - Aparna Thomas  
+### Participants  
+ - Thomas Gebert
+ - Anastasiya Mankouski
+ - Riccardo Rossi
+ - Esra Sengul
+ - Shahar Silverman
+ - Leah VandenBosch
 
-# git_chmods
-### An interactive introduction to DNA sequencing
+---
+# PFBseq
+---
 
-### TA 
-Zachary
+### Short summary
+PFBseq is a pipeline for integrating analyses of ChIP-seq, CITE-seq, and scRNA-seq data. The pipeline calls ChIP-seq peaks, annotates nearest transcription start sites, calculates log fold change, performes single-cell clustering and identification, generates UMAP and other diagnostic plots, and GO annotation enrichment of significantly up-regulated genes.
 
-### GitHub Repo 
-[https://github.com/xonq/git_chmods](https://github.com/xonq/git_chmods)
+### TA
+- Simon Prochnik
+- Jessen Bredeson
 
-### Participants:   
- - Alex
- - Christian
- - Elaine
- - Jonathan
- - Riley
+### GitHub Repo
+[pfbseq](https://github.com/procho/pfbseq)
 
-
-
-# SNP: S\w+\S Nematode Problems
-### Compare multiple sets of variants (SNV, insertions, deletions), classify variant effects and visualize.
-
-### TA 
-Jessen V. Bredeson
-
-### GitHub Repo 
-[https://github.com/bredeson/snp](https://github.com/bredeson/snp)
-
-### Participants:   
- - Cassandra Herbert  
- - Dan Murphy  
- - Grace Johnson  
- - Melissa Bentley-Ford  
-
-
-# LaCROIX
-### Take user inputs to simulate a planet.
-
-### TA 
-Shasta 
-
-### GitHub Repo 
-[https://github.com/webbshasta/pfb2022_LaCROIX](https://github.com/webbshasta/pfb2022_LaCROIX)
-
-### Participants
- - Omar
- - Meike
- - Irene
- - Nick
- - Reed
-
-
-
-
-
+### Participants  
+ - Melinda Angus-Hill
+ - Robert Dalipovic
+ - Gabriela Fort
+ - Danni Jin
+ - Ian MacFawn
+ - David Paulding
+ - Lifang Zhang

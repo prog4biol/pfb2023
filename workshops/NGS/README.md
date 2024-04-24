@@ -108,7 +108,7 @@ The purpose of this workshop is to gain experience working with the various file
        >*HINT*: The reads were generated from a strain different from the reference strain and biological SNP differences will also appear in the plot.
 
 
-12. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it. What fraction of the reads are properly paired?
+11. Use `samtools view` to filter your BAM file to keep alignments with `PAIRED` and `PROPER_PAIR` flags, AND *DO NOT* contain `UNMAP`, `MUNMAP`, `SECONDARY`, `QCFAIL`, `DUP`, or `SUPPLEMENTARY` flags; write the output to a new BAM file and index it. What fraction of the reads are properly paired?
     ```bash
     # Get the SAM flags for properly-paired reads, do:
     $ samtools flags PAIRED,PROPER_PAIR
@@ -129,7 +129,7 @@ The purpose of this workshop is to gain experience working with the various file
     > *HINT*: see `samtools flags` for help with flags.
 
 
-13. Run the GATK HaplotypeCaller to call variants using the final filtered BAM file, set `--min-base-quality-score` to the value you determined in *Step 9*. **NOTE**: Run GATK in the backgound (i.e., `nohup gatk HaplotypeCaller ... &`) or open a second terminal window and work on Problems 13 and 14 while GATK is running in the first.
+12. Run the GATK HaplotypeCaller to call variants using the final filtered BAM file, set `--min-base-quality-score` to the value you determined in *Step 9*. **NOTE**: Run GATK in the backgound (i.e., `nohup gatk HaplotypeCaller ... &`) or open a second terminal window and work on Problems 13 and 14 while GATK is running in the first.
     ```bash
     ./gatk-4.3.0.0/gatk HaplotypeCaller \
          --minimum-mapping-quality 30 \
@@ -141,7 +141,7 @@ The purpose of this workshop is to gain experience working with the various file
     ```
 
 
-14. Use the `samtools depth` command to calculate the per-site read depth across the genome (see `samtools depth --help` for more info) and output to a file. The output file will contain three columns: the chromosome name, position (1-based), and read depth. For example:
+13. Use the `samtools depth` command to calculate the per-site read depth across the genome (see `samtools depth --help` for more info) and output to a file. The output file will contain three columns: the chromosome name, position (1-based), and read depth. For example:
     ```
     chrI	1	15
     chrI	2	15
@@ -151,16 +151,16 @@ The purpose of this workshop is to gain experience working with the various file
     ```
     
 
-15. Write a python script that computes the genome-wide [mean](https://en.wikipedia.org/wiki/Arithmetic_mean) and [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) read depth parameters.
+14. Write a python script that computes the genome-wide [mean](https://en.wikipedia.org/wiki/Arithmetic_mean) and [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) read depth parameters.
 
 
-16. Using command-line tools, extract CDS features present in `Ecoli.gff3` and create a new GFF3 file. Then use `bedtools intersect` to determine how many SNPs and InDels in the VCF file intersect these CDS features.
+15. Using command-line tools, extract CDS features present in `Ecoli.gff3` and create a new GFF3 file. Then use `bedtools intersect` to determine how many SNPs and InDels in the VCF file intersect these CDS features.
 
 
-17. Compress the VCF with `bgzip`, then index it with `bcftools index --tbi your.vcf.gz`.
+16. Compress the VCF with `bgzip`, then index it with `bcftools index --tbi your.vcf.gz`.
 
 
-18. Calculate variant consequence using the `bcftools csq` tool (inputting `Ecoli.gff3` and *not* the CDS-specific GFF3) and output to a new VCF file. Then, write a python script to parse variant consequence annotations from the INFO BCSQ tag and calculate the [Z-score](https://en.wikipedia.org/wiki/Standard_score) from the Sample DP field in this new VCF, then output this information into a tab-delimited file summarizing the framehift variants. Use the mean and standard deviation parameters calculated in Problem 14 as inputs to your script to calculate the Z-score.
+17. Calculate variant consequence using the `bcftools csq` tool (inputting `Ecoli.gff3` and *not* the CDS-specific GFF3) and output to a new VCF file. Then, write a python script to parse variant consequence annotations from the INFO BCSQ tag and calculate the [Z-score](https://en.wikipedia.org/wiki/Standard_score) from the Sample DP field in this new VCF, then output this information into a tab-delimited file summarizing the framehift variants. Use the mean and standard deviation parameters calculated in Problem 14 as inputs to your script to calculate the Z-score.
     - How many variants induce frameshifts?
     - How many frameshifts cause stop codons to be lost? How many gained?
     - How many of these frameshift variants have a read depth Z-scores between -2 and +2?
