@@ -3652,7 +3652,7 @@ List of lists, often called a matrix are important for organizing and accessing 
 Here's a way to make a 3 x 3 table of values.
 
 ```python
->>> M = [[1,2,3], [4,5,6],[7,8,9]]
+>>> M = [[1,2,3],[4,5,6],[7,8,9]]
 >>> M[1] # second row (starts with index 0)
 [4,5,6]
 >>>M[1][2] # second row, third element
