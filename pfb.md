@@ -4050,7 +4050,7 @@ There are also specific data table and frame handling libraries like [Pandas](ht
 
 Here is a [intro](https://pandas.pydata.org/pandas-docs/stable/dsintro.html) to data structures in Panda.
 
-Here is a very nice [interactive tutorial](https://www.learnpython.org/en/Pandas_Basics)
+Here is a very nice [interactive tutorial](https://www.w3schools.com/python/pandas/pandas_getting_started.asp)
 
 ---
 ### [Link to Python 8 Problem Set](problemsets/Python_08_problemset.md)
